@@ -14,7 +14,7 @@ To generate the previews, I recommend the `yarn` tool, instead of `npm`.
 npm install -g yarn@berry
 ```
 
-After installing `yarn`, you have to install all devDepencies present in `package.json`.
+After installing `yarn`, you have to install all devDependencies present in `package.json`.
 
 ```
 yarn install
