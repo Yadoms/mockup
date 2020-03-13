@@ -161,6 +161,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ansi-colors@npm:^4.1.1":
+  version: 4.1.1
+  resolution: "ansi-colors@npm:4.1.1"
+  checksum: 93525340295b4a9e791ac518dfac9d8f073261baea7a4d447f49359519cffb96a3ebb0b78312a7524e880d7f6244ca75ef4e63e8713f530738ac6fc9ceac9435
+  languageName: node
+  linkType: hard
+
 "ansi-cyan@npm:^0.1.1":
   version: 0.1.1
   resolution: "ansi-cyan@npm:0.1.1"
@@ -1301,6 +1308,13 @@ __metadata:
   version: 4.1.1
   resolution: "commander@npm:4.1.1"
   checksum: db4fadfeb5f18e6aa182f2c8dd6b9e8a2632886f2174c8115f0fb787f86ae778be99d380c043cbf771a4bde841de2ef2fd1e547b9e317835a800fd9ca61aea6e
+  languageName: node
+  linkType: hard
+
+"commander@npm:~2.20.3":
+  version: 2.20.3
+  resolution: "commander@npm:2.20.3"
+  checksum: eae98d97c0a3a59096be01418e7d882978bbc0c9b8921db75e9907a738dd764ecca833950a883fa1a81d9149e7492bc65af0adaef17f5b112558c176089062bd
   languageName: node
   linkType: hard
 
@@ -2613,6 +2627,19 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"gulp-clean@npm:^0.4.0":
+  version: 0.4.0
+  resolution: "gulp-clean@npm:0.4.0"
+  dependencies:
+    fancy-log: ^1.3.2
+    plugin-error: ^0.1.2
+    rimraf: ^2.6.2
+    through2: ^2.0.3
+    vinyl: ^2.1.0
+  checksum: 65756ba8d0a76a8a22feb0f832caa0e4ac650abef6112b5fa7abf52d7d4506fb3bd9227290ef33985815ac25c09106c9e00f984f120174a714a10f37c31c4318
+  languageName: node
+  linkType: hard
+
 "gulp-cli@npm:^2.2.0":
   version: 2.2.0
   resolution: "gulp-cli@npm:2.2.0"
@@ -2717,6 +2744,40 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"gulp-typescript@npm:^6.0.0-alpha.1":
+  version: 6.0.0-alpha.1
+  resolution: "gulp-typescript@npm:6.0.0-alpha.1"
+  dependencies:
+    ansi-colors: ^4.1.1
+    plugin-error: ^1.0.1
+    source-map: ^0.7.3
+    through2: ^3.0.1
+    vinyl: ^2.2.0
+    vinyl-fs: ^3.0.3
+  peerDependencies:
+    typescript: "~2.7.1 || >=2.8.0-dev || >=2.9.0-dev || ~3.0.0 || >=3.0.0-dev || >=3.1.0-dev || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.7.0-dev "
+  checksum: 812d90407b0c1ffd5347792a9ad5e7e04d7b5974ee4ddeea4fc6bb295789d6ac15b78879bbbbeacb84393bd51ac988237b261a9983aa134dee04aa33339eb749
+  languageName: node
+  linkType: hard
+
+"gulp-uglify@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "gulp-uglify@npm:3.0.2"
+  dependencies:
+    array-each: ^1.0.1
+    extend-shallow: ^3.0.2
+    gulplog: ^1.0.0
+    has-gulplog: ^0.1.0
+    isobject: ^3.0.1
+    make-error-cause: ^1.1.1
+    safe-buffer: ^5.1.2
+    through2: ^2.0.0
+    uglify-js: ^3.0.5
+    vinyl-sourcemaps-apply: ^0.2.0
+  checksum: b4d347660b64d830e371a37866a9de8ceede3b792e0af709c38eda63151c903226cd12aaaee860c07e06b4f6b27f92d9bd4955f50c8dc9c1adf574afef156fc1
+  languageName: node
+  linkType: hard
+
 "gulp@npm:^4.0.2":
   version: 4.0.2
   resolution: "gulp@npm:4.0.2"
@@ -2779,6 +2840,15 @@ fsevents@^1.2.7:
   version: 4.0.0
   resolution: "has-flag@npm:4.0.0"
   checksum: 8c9a32ef47dfc77c5caf80a0e33a2d921414006ce954047d2274a8774e07cd916f2dd546aed7d89017504cb3fe66248dabb64f9c5bd893520cdd4c81e95d1198
+  languageName: node
+  linkType: hard
+
+"has-gulplog@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "has-gulplog@npm:0.1.0"
+  dependencies:
+    sparkles: ^1.0.0
+  checksum: 4f7f010173b5e69b996a20aac91bfcb06bb5ab7777b7ed173f2d22a560d47ea2e194e2d22d0372298ee442c35bdba86053ac2fb72d5fb409cf01553b76ef6406
   languageName: node
   linkType: hard
 
@@ -3797,6 +3867,22 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"make-error-cause@npm:^1.1.1":
+  version: 1.2.2
+  resolution: "make-error-cause@npm:1.2.2"
+  dependencies:
+    make-error: ^1.2.0
+  checksum: 90553e754bc5f03201b834fd9efd1032e232a683e0949cd53b320329a135cdb1e10e4eb706a908ca6400f29b956fc67475e867c9934eaf8645128f7a10c34067
+  languageName: node
+  linkType: hard
+
+"make-error@npm:^1.2.0":
+  version: 1.3.6
+  resolution: "make-error@npm:1.3.6"
+  checksum: e45e9bc9cfc037b2df4c3dcfd690e0171ea72955fe7ac878f383452b25f3471512f3886b67214e1a8bd7b06880cda708f3744ba3d027964d7e9e2bbb031606f5
+  languageName: node
+  linkType: hard
+
 "make-iterator@npm:^1.0.0":
   version: 1.0.1
   resolution: "make-iterator@npm:1.0.1"
@@ -4023,16 +4109,20 @@ fsevents@^1.2.7:
     gulp: ^4.0.2
     gulp-add-src: ^1.0.0
     gulp-append-prepend: ^1.0.8
+    gulp-clean: ^0.4.0
     gulp-concat: ^2.6.1
     gulp-csso: ^4.0.1
     gulp-less: ^4.0.1
     gulp-postcss: ^8.0.0
     gulp-pug: ^4.0.1
     gulp-purgecss: ^2.1.0
+    gulp-typescript: ^6.0.0-alpha.1
+    gulp-uglify: ^3.0.2
     less: ^3.11.1
     pug: ^2.0.4
     tailwindcss: ^1.2.0
     tailwindcss-dark-mode: ^1.1.2
+    typescript: ^3.8.3
   languageName: unknown
   linkType: soft
 
@@ -5583,7 +5673,7 @@ resolve@1.1.7:
   languageName: node
   linkType: hard
 
-"rimraf@npm:^2.6.1, rimraf@npm:^2.6.3":
+"rimraf@npm:^2.6.1, rimraf@npm:^2.6.2, rimraf@npm:^2.6.3":
   version: 2.7.1
   resolution: "rimraf@npm:2.7.1"
   dependencies:
@@ -5867,10 +5957,17 @@ resolve@1.1.7:
   languageName: node
   linkType: hard
 
-"source-map@npm:^0.6.1, source-map@npm:~0.6.0":
+"source-map@npm:^0.6.1, source-map@npm:~0.6.0, source-map@npm:~0.6.1":
   version: 0.6.1
   resolution: "source-map@npm:0.6.1"
   checksum: fa17f30e37dfa8d8065fc98e8c51ae80d7050055f90dbd40e8644269bda04707386180c4c43af7104a29af56109663e994ccbc2cf766af01e915285c7f93cc40
+  languageName: node
+  linkType: hard
+
+"source-map@npm:^0.7.3":
+  version: 0.7.3
+  resolution: "source-map@npm:0.7.3"
+  checksum: d5a95c781e7513293bd8309e8b9ceb79839726304dcb2c3596595f05af0fba9741ef945d72f574470d7f11c52a9f83f277cb7938e5c7c9014aad154cc096f3a4
   languageName: node
   linkType: hard
 
@@ -6509,6 +6606,26 @@ resolve@1.1.7:
   languageName: node
   linkType: hard
 
+typescript@^3.8.3:
+  version: 3.8.3
+  resolution: "typescript@npm:3.8.3"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: f7ceabe73db82d73813c40f275444a6fec6ae000a5e856dbf69fdc58c27a4849e872b177ed8a5c5b10d86d800d207e0f491795e11cf8f3e73ca4756decc07161
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@^3.8.3#builtin<compat/typescript>":
+  version: 3.8.3
+  resolution: "typescript@patch:typescript@npm%3A3.8.3#builtin<compat/typescript>::version=3.8.3&hash=226bd1"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 1033769c6cc55dd2ff174a82998fa130c10293bcafcf734375baa92f15e21699d7e5dd726b088b469d093052b02801bc3b53bcd4ff04b24e4e66f1f3cc96d2aa
+  languageName: node
+  linkType: hard
+
 "uglify-js@npm:^2.6.1, uglify-js@npm:^2.8.22":
   version: 2.8.29
   resolution: "uglify-js@npm:2.8.29"
@@ -6522,6 +6639,18 @@ resolve@1.1.7:
   bin:
     uglifyjs: bin/uglifyjs
   checksum: c59f412462fa16602452e4e90ed7bfa67632185cc95ed7061afd965039e0c78af89c479cf9920eb24aa5c8530f4c5c332fe0216a71f26b092a11101842c32924
+  languageName: node
+  linkType: hard
+
+"uglify-js@npm:^3.0.5":
+  version: 3.8.0
+  resolution: "uglify-js@npm:3.8.0"
+  dependencies:
+    commander: ~2.20.3
+    source-map: ~0.6.1
+  bin:
+    uglifyjs: bin/uglifyjs
+  checksum: 81ffe9f9a4a702b400fe9875355a78d959c8132a777371f144dcb3bac2b385eba3b7337f276cecb161e8899cf7f0ba7090aadac14daca5ea598aa627accd14a4
   languageName: node
   linkType: hard
 
@@ -6751,7 +6880,7 @@ resolve@1.1.7:
   languageName: node
   linkType: hard
 
-"vinyl-fs@npm:^3.0.0, vinyl-fs@npm:~3.0.2":
+"vinyl-fs@npm:^3.0.0, vinyl-fs@npm:^3.0.3, vinyl-fs@npm:~3.0.2":
   version: 3.0.3
   resolution: "vinyl-fs@npm:3.0.3"
   dependencies:
@@ -6800,7 +6929,7 @@ resolve@1.1.7:
   languageName: node
   linkType: hard
 
-"vinyl@npm:^2.0.0":
+"vinyl@npm:^2.0.0, vinyl@npm:^2.1.0, vinyl@npm:^2.2.0":
   version: 2.2.0
   resolution: "vinyl@npm:2.2.0"
   dependencies:

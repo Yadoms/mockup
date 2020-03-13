@@ -10,6 +10,9 @@ const tailwindcss = require('tailwindcss');
 const autoprefixer = require('autoprefixer');
 const addSrc = require('gulp-add-src');
 const concat = require('gulp-concat');
+const typescript = require('gulp-typescript');
+const uglify = require('gulp-uglify');
+const clean = require('gulp-clean');
 
 function html() {
   return src('src/pug/*.pug')
@@ -26,7 +29,7 @@ function css() {
       autoprefixer(),
     ]))
     .pipe(addSrc(['src/lib/fontawesome/css/all.css']))
-    .pipe(concat('main.min.css'))
+    .pipe(concat('app.min.css'))
     .pipe(purgecss({
       content: [
         'dest/**/*.html',
@@ -51,9 +54,18 @@ function fonts() {
       .pipe(dest('dest/webfonts'));
 }
 
+function js() {
+  return src('src/ts/*.ts')
+      .pipe(typescript())
+      .pipe(concat('app.min.js'))
+      .pipe(uglify())
+      .pipe(dest('dest/js'));
+}
+
 function server() {
   watch('src/less/**/*.less', css);
   watch('src/pug/**/*.pug', series(html, css));
+  watch('src/ts/**/*.ts', js);
   budo({
     live: true,
     dir: 'dest',
@@ -63,6 +75,12 @@ function server() {
   });
 }
 
+function cleanDest() {
+  return src('dest', {read : false})
+      .pipe(clean());
+}
+
+exports.default = series(cleanDest, html, css, js, fonts, server);
 exports.css = css;
-exports.default = series(html, css, fonts, server);
+exports.js = js;
 exports.html = html;

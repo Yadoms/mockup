@@ -33,6 +33,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "locationDiscardData": [
     ],
     "locationLengthData": [
+      141,
       130,
       118,
       112,
@@ -90,16 +91,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gulp", "npm:4.0.2"],
             ["gulp-add-src", "npm:1.0.0"],
             ["gulp-append-prepend", "npm:1.0.8"],
+            ["gulp-clean", "npm:0.4.0"],
             ["gulp-concat", "npm:2.6.1"],
             ["gulp-csso", "npm:4.0.1"],
             ["gulp-less", "npm:4.0.1"],
             ["gulp-postcss", "npm:8.0.0"],
             ["gulp-pug", "npm:4.0.1"],
             ["gulp-purgecss", "npm:2.1.0"],
+            ["gulp-typescript", "virtual:3b1f7c2fbd969c0691a2fc053e60aa17677b1513d34ee3de1e11c79696551de90c8d4d481c704ad00df555d0ecfc733e3f3e03c6b8cbd69cab1e487ddf33ea4c#npm:6.0.0-alpha.1"],
+            ["gulp-uglify", "npm:3.0.2"],
             ["less", "npm:3.11.1"],
             ["pug", "npm:2.0.4"],
             ["tailwindcss", "npm:1.2.0"],
-            ["tailwindcss-dark-mode", "npm:1.1.2"]
+            ["tailwindcss-dark-mode", "npm:1.1.2"],
+            ["typescript", "patch:typescript@npm%3A3.8.3#builtin<compat/typescript>::version=3.8.3&hash=226bd1"]
           ],
           "linkType": "SOFT"
         }]
@@ -269,6 +274,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["ansi-colors", "npm:1.1.0"],
             ["ansi-wrap", "npm:0.1.0"]
+          ],
+          "linkType": "HARD"
+        }],
+        ["npm:4.1.1", {
+          "packageLocation": "./.yarn/cache/ansi-colors-npm-4.1.1-97ad42f223-1.zip/node_modules/ansi-colors/",
+          "packageDependencies": [
+            ["ansi-colors", "npm:4.1.1"]
           ],
           "linkType": "HARD"
         }]
@@ -1530,6 +1542,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["commander", [
+        ["npm:2.20.3", {
+          "packageLocation": "./.yarn/cache/commander-npm-2.20.3-d8dcbaa39b-1.zip/node_modules/commander/",
+          "packageDependencies": [
+            ["commander", "npm:2.20.3"]
+          ],
+          "linkType": "HARD"
+        }],
         ["npm:4.1.1", {
           "packageLocation": "./.yarn/cache/commander-npm-4.1.1-22a0fe921b-1.zip/node_modules/commander/",
           "packageDependencies": [
@@ -3013,6 +3032,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"
         }]
       ]],
+      ["gulp-clean", [
+        ["npm:0.4.0", {
+          "packageLocation": "./.yarn/cache/gulp-clean-npm-0.4.0-1ef6c87bdf-1.zip/node_modules/gulp-clean/",
+          "packageDependencies": [
+            ["gulp-clean", "npm:0.4.0"],
+            ["fancy-log", "npm:1.3.3"],
+            ["plugin-error", "npm:0.1.2"],
+            ["rimraf", "npm:2.7.1"],
+            ["through2", "npm:2.0.5"],
+            ["vinyl", "npm:2.2.0"]
+          ],
+          "linkType": "HARD"
+        }]
+      ]],
       ["gulp-cli", [
         ["npm:2.2.0", {
           "packageLocation": "./.yarn/cache/gulp-cli-npm-2.2.0-6138f5baef-1.zip/node_modules/gulp-cli/",
@@ -3122,6 +3155,44 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"
         }]
       ]],
+      ["gulp-typescript", [
+        ["virtual:3b1f7c2fbd969c0691a2fc053e60aa17677b1513d34ee3de1e11c79696551de90c8d4d481c704ad00df555d0ecfc733e3f3e03c6b8cbd69cab1e487ddf33ea4c#npm:6.0.0-alpha.1", {
+          "packageLocation": "./.yarn/$$virtual/gulp-typescript-virtual-d3c296e74c/0/cache/gulp-typescript-npm-6.0.0-alpha.1-98557634b8-1.zip/node_modules/gulp-typescript/",
+          "packageDependencies": [
+            ["gulp-typescript", "virtual:3b1f7c2fbd969c0691a2fc053e60aa17677b1513d34ee3de1e11c79696551de90c8d4d481c704ad00df555d0ecfc733e3f3e03c6b8cbd69cab1e487ddf33ea4c#npm:6.0.0-alpha.1"],
+            ["ansi-colors", "npm:4.1.1"],
+            ["plugin-error", "npm:1.0.1"],
+            ["source-map", "npm:0.7.3"],
+            ["through2", "npm:3.0.1"],
+            ["typescript", "patch:typescript@npm%3A3.8.3#builtin<compat/typescript>::version=3.8.3&hash=226bd1"],
+            ["vinyl", "npm:2.2.0"],
+            ["vinyl-fs", "npm:3.0.3"]
+          ],
+          "packagePeers": [
+            "typescript"
+          ],
+          "linkType": "HARD"
+        }]
+      ]],
+      ["gulp-uglify", [
+        ["npm:3.0.2", {
+          "packageLocation": "./.yarn/cache/gulp-uglify-npm-3.0.2-d3e347c732-1.zip/node_modules/gulp-uglify/",
+          "packageDependencies": [
+            ["gulp-uglify", "npm:3.0.2"],
+            ["array-each", "npm:1.0.1"],
+            ["extend-shallow", "npm:3.0.2"],
+            ["gulplog", "npm:1.0.0"],
+            ["has-gulplog", "npm:0.1.0"],
+            ["isobject", "npm:3.0.1"],
+            ["make-error-cause", "npm:1.2.2"],
+            ["safe-buffer", "npm:5.1.2"],
+            ["through2", "npm:2.0.5"],
+            ["uglify-js", "npm:3.8.0"],
+            ["vinyl-sourcemaps-apply", "npm:0.2.1"]
+          ],
+          "linkType": "HARD"
+        }]
+      ]],
       ["gulplog", [
         ["npm:1.0.0", {
           "packageLocation": "./.yarn/cache/gulplog-npm-1.0.0-f78e7dcd95-1.zip/node_modules/gulplog/",
@@ -3184,6 +3255,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/has-flag-npm-4.0.0-32af9f0536-1.zip/node_modules/has-flag/",
           "packageDependencies": [
             ["has-flag", "npm:4.0.0"]
+          ],
+          "linkType": "HARD"
+        }]
+      ]],
+      ["has-gulplog", [
+        ["npm:0.1.0", {
+          "packageLocation": "./.yarn/cache/has-gulplog-npm-0.1.0-052df0e9ab-1.zip/node_modules/has-gulplog/",
+          "packageDependencies": [
+            ["has-gulplog", "npm:0.1.0"],
+            ["sparkles", "npm:1.0.1"]
           ],
           "linkType": "HARD"
         }]
@@ -4313,6 +4394,25 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"
         }]
       ]],
+      ["make-error", [
+        ["npm:1.3.6", {
+          "packageLocation": "./.yarn/cache/make-error-npm-1.3.6-ccb85d9458-1.zip/node_modules/make-error/",
+          "packageDependencies": [
+            ["make-error", "npm:1.3.6"]
+          ],
+          "linkType": "HARD"
+        }]
+      ]],
+      ["make-error-cause", [
+        ["npm:1.2.2", {
+          "packageLocation": "./.yarn/cache/make-error-cause-npm-1.2.2-a8184cb0ea-1.zip/node_modules/make-error-cause/",
+          "packageDependencies": [
+            ["make-error-cause", "npm:1.2.2"],
+            ["make-error", "npm:1.3.6"]
+          ],
+          "linkType": "HARD"
+        }]
+      ]],
       ["make-iterator", [
         ["npm:1.0.1", {
           "packageLocation": "./.yarn/cache/make-iterator-npm-1.0.1-3f3e0a179c-1.zip/node_modules/make-iterator/",
@@ -4564,16 +4664,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gulp", "npm:4.0.2"],
             ["gulp-add-src", "npm:1.0.0"],
             ["gulp-append-prepend", "npm:1.0.8"],
+            ["gulp-clean", "npm:0.4.0"],
             ["gulp-concat", "npm:2.6.1"],
             ["gulp-csso", "npm:4.0.1"],
             ["gulp-less", "npm:4.0.1"],
             ["gulp-postcss", "npm:8.0.0"],
             ["gulp-pug", "npm:4.0.1"],
             ["gulp-purgecss", "npm:2.1.0"],
+            ["gulp-typescript", "virtual:3b1f7c2fbd969c0691a2fc053e60aa17677b1513d34ee3de1e11c79696551de90c8d4d481c704ad00df555d0ecfc733e3f3e03c6b8cbd69cab1e487ddf33ea4c#npm:6.0.0-alpha.1"],
+            ["gulp-uglify", "npm:3.0.2"],
             ["less", "npm:3.11.1"],
             ["pug", "npm:2.0.4"],
             ["tailwindcss", "npm:1.2.0"],
-            ["tailwindcss-dark-mode", "npm:1.1.2"]
+            ["tailwindcss-dark-mode", "npm:1.1.2"],
+            ["typescript", "patch:typescript@npm%3A3.8.3#builtin<compat/typescript>::version=3.8.3&hash=226bd1"]
           ],
           "linkType": "SOFT"
         }]
@@ -6598,6 +6702,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["source-map", "npm:0.6.1"]
           ],
           "linkType": "HARD"
+        }],
+        ["npm:0.7.3", {
+          "packageLocation": "./.yarn/cache/source-map-npm-0.7.3-e3b4f7982a-1.zip/node_modules/source-map/",
+          "packageDependencies": [
+            ["source-map", "npm:0.7.3"]
+          ],
+          "linkType": "HARD"
         }]
       ]],
       ["source-map-resolve", [
@@ -7318,6 +7429,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"
         }]
       ]],
+      ["typescript", [
+        ["patch:typescript@npm%3A3.8.3#builtin<compat/typescript>::version=3.8.3&hash=226bd1", {
+          "packageLocation": "./.yarn/cache/typescript-patch-e4843c6e26-1.zip/node_modules/typescript/",
+          "packageDependencies": [
+            ["typescript", "patch:typescript@npm%3A3.8.3#builtin<compat/typescript>::version=3.8.3&hash=226bd1"]
+          ],
+          "linkType": "HARD"
+        }]
+      ]],
       ["uglify-js", [
         ["npm:2.8.29", {
           "packageLocation": "./.yarn/cache/uglify-js-npm-2.8.29-37b1cddbdd-1.zip/node_modules/uglify-js/",
@@ -7326,6 +7446,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["source-map", "npm:0.5.7"],
             ["uglify-to-browserify", "npm:1.0.2"],
             ["yargs", "npm:3.10.0"]
+          ],
+          "linkType": "HARD"
+        }],
+        ["npm:3.8.0", {
+          "packageLocation": "./.yarn/cache/uglify-js-npm-3.8.0-ac72b22122-1.zip/node_modules/uglify-js/",
+          "packageDependencies": [
+            ["uglify-js", "npm:3.8.0"],
+            ["commander", "npm:2.20.3"],
+            ["source-map", "npm:0.6.1"]
           ],
           "linkType": "HARD"
         }]
