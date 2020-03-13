@@ -12,7 +12,7 @@ const addSrc = require('gulp-add-src');
 const concat = require('gulp-concat');
 const typescript = require('gulp-typescript');
 const uglify = require('gulp-uglify');
-const clean = require('gulp-clean');
+const clean = require('del');
 
 function html() {
   return src('src/pug/*.pug')
@@ -23,13 +23,14 @@ function html() {
 function css() {
   return src('src/less/*.less')
     .pipe(less())
+    .pipe(addSrc(['src/lib/fontawesome/css/all.css']))
+    .pipe(concat('app.min.css'))
     .pipe(gap.prependText('@tailwind base;\n@tailwind components;\n@tailwind utilities;\n@tailwind screens;\n'))
     .pipe(postcss([
       tailwindcss('./tailwind.config.js'),
       autoprefixer(),
     ]))
-    .pipe(addSrc(['src/lib/fontawesome/css/all.css']))
-    .pipe(concat('app.min.css'))
+    //.pipe(dest('debug/beforePurge'))
     .pipe(purgecss({
       content: [
         'dest/**/*.html',
@@ -76,8 +77,7 @@ function server() {
 }
 
 function cleanDest() {
-  return src('dest', {read : false})
-      .pipe(clean());
+  return clean(['dest', 'debug']);
 }
 
 exports.default = series(cleanDest, html, css, js, fonts, server);

@@ -4,10 +4,10 @@
   "devDependencies": {
     "autoprefixer": "^9.7.4",
     "budo": "^11.6.3",
+    "del": "^5.1.0",
     "gulp": "^4.0.2",
     "gulp-add-src": "^1.0.0",
     "gulp-append-prepend": "^1.0.8",
-    "gulp-clean": "^0.4.0",
     "gulp-concat": "^2.6.1",
     "gulp-csso": "^4.0.1",
     "gulp-less": "^4.0.1",
