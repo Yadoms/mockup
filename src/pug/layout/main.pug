@@ -1,11 +1,13 @@
 doctype html
-html(lang="en")
+html.mode-dark(lang="en")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    link(rel="stylesheet", href="/css/main.css")
-    
-  body
+    link(rel="stylesheet", href="/css/main.min.css")
+
+  body.flex.h-screen.bg-gray-100.font-sans(class="dark:bg-gray-900")
+    include ../inc/sidebar
+
     include ../inc/header
 
     block main

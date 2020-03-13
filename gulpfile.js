@@ -8,6 +8,8 @@ const gap = require('gulp-append-prepend');
 const postcss = require('gulp-postcss');
 const tailwindcss = require('tailwindcss');
 const autoprefixer = require('autoprefixer');
+const addSrc = require('gulp-add-src');
+const concat = require('gulp-concat');
 
 function html() {
   return src('src/pug/*.pug')
@@ -23,20 +25,33 @@ function css() {
       tailwindcss('./tailwind.config.js'),
       autoprefixer(),
     ]))
+    .pipe(addSrc(['src/lib/fontawesome/css/all.css']))
+    .pipe(concat('main.min.css'))
     .pipe(purgecss({
-      content: ['dest/**/*.html'],
+      content: [
+        'dest/**/*.html',
+        'dest/**/*.js'
+      ],
       defaultExtractor: (content) => {
         const contentWithoutStyleBlocks = content.replace(/<style[^]+?<\/style>/gi, '')
         return contentWithoutStyleBlocks.match(/[A-Za-z0-9-_/:]*[A-Za-z0-9-_/]+/g) || []
       },
-      whitelistPatterns: [ /-(leave|enter|appear)(|-(to|from|active))$/, /^(?!cursor-move).+-move$/, /^router-link(|-exact)-active$/ ],
+      whitelistPatterns: [ 
+        /-(leave|enter|appear)(|-(to|from|active))$/, 
+        /^(?!cursor-move).+-move$/, 
+        /^router-link(|-exact)-active$/
+      ],
     }))
     .pipe(minifyCSS())
     .pipe(dest('dest/css'));
 }
 
-function server()
-{
+function fonts() {
+  return src(['src/lib/fontawesome/webfonts/*.*'])
+      .pipe(dest('dest/webfonts'));
+}
+
+function server() {
   watch('src/less/**/*.less', css);
   watch('src/pug/**/*.pug', series(html, css));
   budo({
@@ -49,5 +64,5 @@ function server()
 }
 
 exports.css = css;
-exports.default = series(html, css, server);
+exports.default = series(html, css, fonts, server);
 exports.html = html;
