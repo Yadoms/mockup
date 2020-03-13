@@ -1,5 +1,7 @@
+- let targetString = (value) => { return '' + value}
+
 mixin menu_entry_content(icon, text, target)
-  a.block.align-middle.text-gray-600.no-underline.flex(class="md:py-3 hover:text-teal-400 dark:text-gray-400 dark-hover:text-teal-600", href=target)
+  a.block.align-middle.text-gray-600.no-underline.flex(class="md:py-3 hover:text-teal-400 dark:text-gray-400 dark-hover:text-teal-600", href='' + targetString(target))
     span.inline-block.w-6.text-center
       i(class=icon)
     span.absolute.text-sm.opacity-0.ml-3.ease-in-out.transition-all.duration-300.ml-6.pl-2(class="md:pb-0")= text
@@ -15,8 +17,8 @@ mixin menu_entry(icon, text, target, isActive = false)
 #sidebar.h-screen.w-16.menu.bg-white.pr-4.flex.items-center.fixed.shadow.ease-in-out.transition-all.duration-300.z-50(class="hover:w-48 hover:shadow-2xl dark:bg-blue-900 dark:shadow-white dark-hover:shadow-2xl-white")
   ul
     +menu_entry('fas fa-home', 'Accueil', '/', true)
-    +menu_entry('fas fa-door-open', 'Volets', '/')
-    +menu_entry('far fa-chart-bar', 'Suivi', '/')
-    +menu_entry('fas fa-bullhorn', 'Alarme', '/')
-    +menu_entry('far fa-hdd', 'Système', '/')
-    +menu_entry('far fa-lightbulb', 'Test', '/')
+    +menu_entry('fas fa-door-open', 'Volets', '/volets')
+    +menu_entry('far fa-chart-bar', 'Suivi', '/suivi')
+    +menu_entry('fas fa-bullhorn', 'Alarme', '/alarme')
+    +menu_entry('far fa-hdd', 'Système', '/systme')
+    +menu_entry('far fa-lightbulb', 'Test', '/test')
