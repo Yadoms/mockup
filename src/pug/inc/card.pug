@@ -1,0 +1,7 @@
+mixin card(title)
+  .w-auto.h-auto.inline-block.m-2
+    .card.rounded-lg.p-1.flex.flex-col-reverse
+      .p-2.font-bold.text-xs.text-primaryColor
+        p.pt-1.title= title
+      if block
+          block

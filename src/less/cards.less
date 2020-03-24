@@ -1,0 +1,29 @@
+@import '_vars_colors';
+
+@shadow_size : 5px;
+
+.card {
+  background: linear-gradient(145deg, lighten(@light_front_color, 1.1), 
+                                      darken(@light_front_color, 1.1)
+                             );
+  box-shadow:  @shadow_size  @shadow_size @shadow_size darken(@light_front_color, 5), 
+              -@shadow_size -@shadow_size @shadow_size lighten(@light_front_color, 5);
+
+  .title {
+    border-top: 1px solid darken(@light_front_color, 10);
+  }
+}
+
+.mode-dark {
+  .card {
+    background: linear-gradient(145deg, lighten(@dark_front_color, 1.1), 
+                                        darken(@dark_front_color, 1.1)
+                               );
+    box-shadow:  @shadow_size  @shadow_size @shadow_size darken(@dark_front_color, 5), 
+                -@shadow_size -@shadow_size @shadow_size lighten(@dark_front_color, 5);
+
+    .title {
+      border-top: 1px solid lighten(@dark_front_color, 10);
+    }
+  }
+}

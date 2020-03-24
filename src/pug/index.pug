@@ -1,5 +1,10 @@
 extends layout/main
 
+include inc/card
+
 block main
-  .graphics.rounded-lg.p-1.bg-frontColor.w-auto.inline-block
+  +card('Vent')
     #myChart
+
+  +card('foo')
+    p Test
