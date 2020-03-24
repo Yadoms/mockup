@@ -27,3 +27,52 @@
   .makeColor(primary, @dark_primary_color);
   .makeColor(highlight, @dark_highlight_color);
 }
+
+
+// override c3
+.c3 path, .c3 line {
+  stroke: @light_primary_color;
+}
+
+.c3-chart-arc path,
+.c3-chart-arc rect {
+  stroke: @light_front_color;
+}
+
+.c3-chart-arc text {
+  fill: @light_primary_color;
+}
+
+.mode-dark {
+  .c3 {
+    path, 
+    line {
+      stroke: @dark_primary_color;
+    }
+  }
+
+  .c3-chart-arc {
+    path,
+    rect {
+      stroke: @dark_front_color;
+    }
+
+    text {
+      fill: @dark_primary_color;
+    }
+  }
+
+  .c3-grid {
+    line {
+      stroke: darken(@dark_primary_color, 10);
+    }
+
+    text {
+      fill: darken(@dark_primary_color, 10);
+    }
+  }
+
+  .c3-text.c3-empty {
+    fill: @dark_highlight_color;
+  }
+}

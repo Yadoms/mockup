@@ -1,18 +1,23 @@
-const { src, dest, watch, series } = require('gulp');
-const less = require('gulp-less');
-const minifyCSS = require('gulp-csso');
-const pug = require('gulp-pug');
-const purgecss = require('gulp-purgecss');
-const budo = require('budo');
-const gap = require('gulp-append-prepend');
-const postcss = require('gulp-postcss');
-const tailwindcss = require('tailwindcss');
-const autoprefixer = require('autoprefixer');
-const addSrc = require('gulp-add-src');
-const concat = require('gulp-concat');
-const typescript = require('gulp-typescript');
-const uglify = require('gulp-uglify');
-const clean = require('del');
+const { src, 
+        dest, 
+        watch, 
+        series 
+      }                = require('gulp');
+const less             = require('gulp-less');
+const minifyCSS        = require('gulp-csso');
+const pug              = require('gulp-pug');
+const purgecss         = require('gulp-purgecss');
+const budo             = require('budo');
+const gap              = require('gulp-append-prepend');
+const postcss          = require('gulp-postcss');
+const tailwindcss      = require('tailwindcss');
+const autoprefixer     = require('autoprefixer');
+const addSrc           = require('gulp-add-src');
+const concat           = require('gulp-concat');
+const clean            = require('del');
+const webpack          = require('webpack-stream');
+const PnpWebpackPlugin = require(`pnp-webpack-plugin`);
+const path             = require('path');
 
 function html() {
   return src('src/pug/*.pug')
@@ -23,8 +28,7 @@ function html() {
 function css() {
   return src('src/less/*.less')
     .pipe(less())
-    .pipe(addSrc(['src/lib/fontawesome/css/all.css']))
-    .pipe(concat('app.min.css'))
+    .pipe(concat('app.css'))
     .pipe(gap.prependText('@tailwind base;\n@tailwind components;\n@tailwind utilities;\n@tailwind screens;\n'))
     .pipe(postcss([
       tailwindcss('./tailwind.config.js'),
@@ -37,16 +41,23 @@ function css() {
         'dest/**/*.js'
       ],
       defaultExtractor: (content) => {
-        const contentWithoutStyleBlocks = content.replace(/<style[^]+?<\/style>/gi, '')
+        const contentWithoutStyleBlocks = content.replace(/<style[^]+?<\/style>/gi, '');
         return contentWithoutStyleBlocks.match(/[A-Za-z0-9-_/:]*[A-Za-z0-9-_/]+/g) || []
       },
       whitelistPatterns: [ 
         /-(leave|enter|appear)(|-(to|from|active))$/, 
         /^(?!cursor-move).+-move$/, 
-        /^router-link(|-exact)-active$/
+        /^router-link(|-exact)-active$/,
+        /^mode-dark$/
       ],
     }))
+    .pipe(addSrc([
+      'src/lib/fontawesome/css/all.css',
+      'src/lib/c3/c3.css'
+    ]))
+    .pipe(concat('app.min.css'))
     .pipe(minifyCSS())
+    .pipe(concat('app.min.css'))
     .pipe(dest('dest/css'));
 }
 
@@ -56,22 +67,39 @@ function fonts() {
 }
 
 function js() {
-  return src('src/ts/*.ts')
-      .pipe(typescript())
-      .pipe(concat('app.min.js'))
-      .pipe(uglify())
+  return src('src/js/entry.js')
+      .pipe(webpack({
+        entry:{
+           main: './src/js/entry.js'
+        },
+        output:{
+           filename:'app.min.js',
+           publicPath: '/js/',
+           path: path.resolve(__dirname, 'dist/js')
+        },
+        mode: "production",
+        resolve: {
+          plugins: [
+            PnpWebpackPlugin,
+          ],
+        },
+        resolveLoader: {
+          plugins: [
+            PnpWebpackPlugin.moduleLoader(module),
+          ],
+        },
+      }))
       .pipe(dest('dest/js'));
 }
 
 function server() {
   watch('src/less/**/*.less', css);
-  watch('src/pug/**/*.pug', series(html, css));
-  watch('src/ts/**/*.ts', js);
+  watch('src/pug/**/*.pug', series(html, js, css));
+  watch('src/js/**/*.js', js);
   budo({
     live: true,
     dir: 'dest',
     port: 9966,
-    //ssl: true,
     open: true
   });
 }
@@ -80,7 +108,13 @@ function cleanDest() {
   return clean(['dest', 'debug']);
 }
 
-exports.default = series(cleanDest, html, css, js, fonts, server);
+exports.default = series(cleanDest, 
+                         html, 
+                         css, 
+                         js, 
+                         fonts, 
+                         server
+                        );
 exports.css = css;
 exports.js = js;
 exports.html = html;
