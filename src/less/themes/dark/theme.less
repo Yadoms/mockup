@@ -14,7 +14,43 @@
   #cards();
   #override_c3();
 
-  // override
+  // overrides
+  .shadow, .sm\:shadow, .md\:shadow, .lg\:shadow, .xl\:shadow, .hover\:shadow:hover, .focus\:shadow:focus {
+    box-shadow: 0 1px 3px 0 rgba(81, 81, 81, .1), 0 1px 2px 0 rgba(81, 81, 81, .06);
+  }
+  
+  .shadow-md, .sm\:shadow-md, .md\:shadow-md, .lg\:shadow-md, .xl\:shadow-md, .hover\:shadow-md:hover, .focus\:shadow-md:focus {
+    box-shadow: 0 4px 6px -1px rgba(81, 81, 81, .1), 0 2px 4px -1px rgba(81, 81, 81, .06);
+  }
+
+  .shadow-lg, .sm\:shadow-lg, .md\:shadow-lg, .lg\:shadow-lg, .xl\:shadow-lg, .hover\:shadow-lg:hover, .focus\:shadow-lg:focus {
+    box-shadow: 0 10px 15px -3px rgba(81, 81, 81, .1), 0 4px 6px -2px rgba(81, 81, 81, .05);
+  }
+
+  .shadow-xl, .sm\:shadow-xl, .md\:shadow-xl, .lg\:shadow-xl, .xl\:shadow-xl, .hover\:shadow-xl:hover, .focus\:shadow-xl:focus {
+    box-shadow: 0 20px 25px -5px rgba(81, 81, 81, .1), 0 10px 10px -5px rgba(81, 81, 81, .04);
+  }
+
+  .shadow-2xl, .sm\:shadow-2xl, .md\:shadow-2xl, .lg\:shadow-2xl, .xl\:shadow-2xl, .hover\:shadow-2xl:hover, .focus\:shadow-2xl:focus {
+    box-shadow: 0 25px 50px -12px rgba(81, 81, 81, .25);
+  }
+
+  .shadow-3xl, .sm\:shadow-3xl, .md\:shadow-3xl, .lg\:shadow-3xl, .xl\:shadow-3xl, .hover\:shadow-3xl:hover, .focus\:shadow-3xl:focus {
+    box-shadow: 0 35px 60px -15px rgba(81, 81, 81, .3);
+  }
+
+  .shadow-inner, .sm\:shadow-inner, .md\:shadow-inner, .lg\:shadow-inner, .xl\:shadow-inner, .hover\:shadow-inner:hover, .focus\:shadow-inner:focus {
+    box-shadow: inset 0 2px 4px 0 rgba(81, 81, 81,0.06);
+  }
+
+  .shadow-outline, .sm\:shadow-outline, .md\:shadow-outline, .lg\:shadow-outline, .xl\:shadow-outline, .hover\:shadow-outline:hover, .focus\:shadow-outline:focus {
+    box-shadow: 0 0 0 3px rgba(189, 202, 30, 0.5);
+  }
+
+  .shadow-focus, .sm\:shadow-focus, .md\:shadow-focus, .lg\:shadow-focus, .xl\:shadow-focus, .hover\:shadow-focus:hover, .focus\:shadow-focus:focus {
+    box-shadow: 0 0 0 3px rgba(189, 202, 30, 0.5);
+  }
+
   .card {
     .title {
       border-top: 1px solid lighten(@front_color, 10);

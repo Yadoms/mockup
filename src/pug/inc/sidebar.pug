@@ -14,7 +14,7 @@ mixin menu_entry(icon, text, target, isActive = false)
     li.block.px-4.w-full
       +menu_entry_content(icon, text, target)
 
-#sidebar.h-screen.w-16.bg-frontColor.flex.items-center.fixed.shadow.ease-in-out.transition-all.duration-300.z-50(class="hover:w-48 hover:shadow-2xl dark:shadow-white dark-hover:shadow-2xl-white")
+#sidebar.h-screen.w-16.bg-frontColor.flex.items-center.fixed.shadow.ease-in-out.transition-all.duration-300.z-50(class="hover:w-48 hover:shadow-2xl")
   ul.w-full
     +menu_entry('fas fa-home', 'Accueil', '/', true)
     +menu_entry('fas fa-door-open', 'Volets', '/volets')

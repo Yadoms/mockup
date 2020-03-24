@@ -110,10 +110,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:1.2.0"
       ],
       [
-        "tailwindcss-dark-mode",
-        "npm:1.1.2"
-      ],
-      [
         "webpack",
         "npm:4.42.1"
       ],
@@ -149,7 +145,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["pnp-webpack-plugin", "npm:1.6.4"],
             ["pug", "npm:2.0.4"],
             ["tailwindcss", "npm:1.2.0"],
-            ["tailwindcss-dark-mode", "npm:1.1.2"],
             ["webpack", "npm:4.42.1"],
             ["webpack-stream", "npm:5.2.1"]
           ],
@@ -6123,7 +6118,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["pnp-webpack-plugin", "npm:1.6.4"],
             ["pug", "npm:2.0.4"],
             ["tailwindcss", "npm:1.2.0"],
-            ["tailwindcss-dark-mode", "npm:1.1.2"],
             ["webpack", "npm:4.42.1"],
             ["webpack-stream", "npm:5.2.1"]
           ],
@@ -8919,16 +8913,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["pretty-hrtime", "npm:1.0.3"],
             ["reduce-css-calc", "npm:2.1.7"],
             ["resolve", "patch:resolve@npm%3A1.15.1#builtin<compat/resolve>::version=1.15.1&hash=8fccd0"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["tailwindcss-dark-mode", [
-        ["npm:1.1.2", {
-          "packageLocation": "./.yarn/cache/tailwindcss-dark-mode-npm-1.1.2-a42bf9dce0-2.zip/node_modules/tailwindcss-dark-mode/",
-          "packageDependencies": [
-            ["tailwindcss-dark-mode", "npm:1.1.2"],
-            ["tailwindcss", "npm:1.2.0"]
           ],
           "linkType": "HARD",
         }]

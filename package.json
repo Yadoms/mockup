@@ -22,7 +22,6 @@
     "pnp-webpack-plugin": "^1.6.4",
     "pug": "^2.0.4",
     "tailwindcss": "^1.2.0",
-    "tailwindcss-dark-mode": "^1.1.2",
     "webpack": "^4.42.1",
     "webpack-stream": "^5.2.1"
   }

@@ -5393,7 +5393,6 @@ fsevents@^1.2.7:
     pnp-webpack-plugin: ^1.6.4
     pug: ^2.0.4
     tailwindcss: ^1.2.0
-    tailwindcss-dark-mode: ^1.1.2
     webpack: ^4.42.1
     webpack-stream: ^5.2.1
   languageName: unknown
@@ -7896,16 +7895,7 @@ resolve@1.1.7:
   languageName: node
   linkType: hard
 
-"tailwindcss-dark-mode@npm:^1.1.2":
-  version: 1.1.2
-  resolution: "tailwindcss-dark-mode@npm:1.1.2"
-  dependencies:
-    tailwindcss: ^1.1.4
-  checksum: 2/8b3edcecf133b684cd4c7c3f70351bca63ba843a8cdc7cac6fcdd19896666d3101b1d2d95c648ad5a8b450f7912a86b78da4d75da17567a3764854c6746cd48e
-  languageName: node
-  linkType: hard
-
-"tailwindcss@npm:^1.1.4, tailwindcss@npm:^1.2.0":
+"tailwindcss@npm:^1.2.0":
   version: 1.2.0
   resolution: "tailwindcss@npm:1.2.0"
   dependencies:
