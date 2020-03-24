@@ -1,0 +1,15 @@
+@import '../../_vars.less';
+
+#cards() {
+  .card {
+    background: linear-gradient(145deg, lighten(@front_color, 1.1), 
+                                        darken(@front_color, 1.1)
+                                );
+    box-shadow:  @shadow_size  @shadow_size @shadow_size darken(@front_color, 5), 
+                -@shadow_size -@shadow_size @shadow_size lighten(@front_color, 5);
+  
+    .title {
+      border-top: 1px solid darken(@front_color, 10);
+    }
+  }  
+}

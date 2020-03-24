@@ -1,0 +1,23 @@
+// dark_mode
+@base_color :      #111111;
+@front_color:      #1D1C22;
+@active_color:     #292833;
+@primary_color:    #FFFFFF;
+@highlight_color:  #5980FF;
+
+@import '../_common/colors.less';
+@import '../_common/cards.less';
+@import '../_common/override_c3.less';
+
+.yadoms_theme_dark {
+  #colors();
+  #cards();
+  #override_c3();
+
+  // override
+  .card {
+    .title {
+      border-top: 1px solid lighten(@front_color, 10);
+    }
+  }
+}

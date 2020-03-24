@@ -26,7 +26,7 @@ function html() {
 }
 
 function css() {
-  return src('src/less/*.less')
+  return src(['src/less/*.less', '!src/less/_*.less'])
     .pipe(less())
     .pipe(concat('app.css'))
     .pipe(gap.prependText('@tailwind base;\n@tailwind components;\n@tailwind utilities;\n@tailwind screens;\n'))
@@ -48,7 +48,7 @@ function css() {
         /-(leave|enter|appear)(|-(to|from|active))$/, 
         /^(?!cursor-move).+-move$/, 
         /^router-link(|-exact)-active$/,
-        /^mode-dark$/
+        /^yadoms_theme_(\w+)$/
       ],
     }))
     .pipe(addSrc([
