@@ -2,6 +2,7 @@
   "name": "mockup",
   "private": true,
   "devDependencies": {
+    "@tailwindcss/custom-forms": "^0.2.1",
     "autoprefixer": "^9.7.4",
     "budo": "^11.6.3",
     "c3": "^0.7.15",

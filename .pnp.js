@@ -30,6 +30,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     ],
     "fallbackPool": [
       [
+        "@tailwindcss/custom-forms",
+        "virtual:3b1f7c2fbd969c0691a2fc053e60aa17677b1513d34ee3de1e11c79696551de90c8d4d481c704ad00df555d0ecfc733e3f3e03c6b8cbd69cab1e487ddf33ea4c#npm:0.2.1"
+      ],
+      [
         "autoprefixer",
         "npm:9.7.4"
       ],
@@ -125,6 +129,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {
           "packageLocation": "./",
           "packageDependencies": [
+            ["@tailwindcss/custom-forms", "virtual:3b1f7c2fbd969c0691a2fc053e60aa17677b1513d34ee3de1e11c79696551de90c8d4d481c704ad00df555d0ecfc733e3f3e03c6b8cbd69cab1e487ddf33ea4c#npm:0.2.1"],
             ["autoprefixer", "npm:9.7.4"],
             ["budo", "npm:11.6.3"],
             ["c3", "npm:0.7.15"],
@@ -178,6 +183,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@nodelib/fs.walk", "npm:1.2.4"],
             ["@nodelib/fs.scandir", "npm:2.1.3"],
             ["fastq", "npm:1.6.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@tailwindcss/custom-forms", [
+        ["virtual:3b1f7c2fbd969c0691a2fc053e60aa17677b1513d34ee3de1e11c79696551de90c8d4d481c704ad00df555d0ecfc733e3f3e03c6b8cbd69cab1e487ddf33ea4c#npm:0.2.1", {
+          "packageLocation": "./.yarn/$$virtual/@tailwindcss-custom-forms-virtual-cb1fe649f1/0/cache/@tailwindcss-custom-forms-npm-0.2.1-128e89db00-2.zip/node_modules/@tailwindcss/custom-forms/",
+          "packageDependencies": [
+            ["@tailwindcss/custom-forms", "virtual:3b1f7c2fbd969c0691a2fc053e60aa17677b1513d34ee3de1e11c79696551de90c8d4d481c704ad00df555d0ecfc733e3f3e03c6b8cbd69cab1e487ddf33ea4c#npm:0.2.1"],
+            ["lodash", "npm:4.17.15"],
+            ["mini-svg-data-uri", "npm:1.1.3"],
+            ["tailwindcss", "npm:1.2.0"],
+            ["traverse", "npm:0.6.6"]
+          ],
+          "packagePeers": [
+            "tailwindcss"
           ],
           "linkType": "HARD",
         }]
@@ -5973,6 +5994,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["mini-svg-data-uri", [
+        ["npm:1.1.3", {
+          "packageLocation": "./.yarn/cache/mini-svg-data-uri-npm-1.1.3-c598cd700d-2.zip/node_modules/mini-svg-data-uri/",
+          "packageDependencies": [
+            ["mini-svg-data-uri", "npm:1.1.3"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["minimalistic-assert", [
         ["npm:1.0.1", {
           "packageLocation": "./.yarn/cache/minimalistic-assert-npm-1.0.1-dc8bb23d29-2.zip/node_modules/minimalistic-assert/",
@@ -6098,6 +6128,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["mockup", "workspace:."],
+            ["@tailwindcss/custom-forms", "virtual:3b1f7c2fbd969c0691a2fc053e60aa17677b1513d34ee3de1e11c79696551de90c8d4d481c704ad00df555d0ecfc733e3f3e03c6b8cbd69cab1e487ddf33ea4c#npm:0.2.1"],
             ["autoprefixer", "npm:9.7.4"],
             ["budo", "npm:11.6.3"],
             ["c3", "npm:0.7.15"],
@@ -9197,6 +9228,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["tough-cookie", "npm:2.5.0"],
             ["psl", "npm:1.7.0"],
             ["punycode", "npm:2.1.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["traverse", [
+        ["npm:0.6.6", {
+          "packageLocation": "./.yarn/cache/traverse-npm-0.6.6-584cfa4b5f-2.zip/node_modules/traverse/",
+          "packageDependencies": [
+            ["traverse", "npm:0.6.6"]
           ],
           "linkType": "HARD",
         }]

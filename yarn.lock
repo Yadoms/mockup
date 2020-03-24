@@ -31,6 +31,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tailwindcss/custom-forms@npm:^0.2.1":
+  version: 0.2.1
+  resolution: "@tailwindcss/custom-forms@npm:0.2.1"
+  dependencies:
+    lodash: ^4.17.11
+    mini-svg-data-uri: ^1.0.3
+    traverse: ^0.6.6
+  peerDependencies:
+    tailwindcss: ^1.0
+  checksum: 2/ceb3dfa2a7a80855b551093ba8a9558fe0db801f46f00968c0a587a99404a8393c7379abb771f66fe6b22230e2f2b47feb993c7f5b92146c39201462adb6b9d5
+  languageName: node
+  linkType: hard
+
 "@types/babel-types@npm:*, @types/babel-types@npm:^7.0.0":
   version: 7.0.7
   resolution: "@types/babel-types@npm:7.0.7"
@@ -5023,7 +5036,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.17.15, lodash@npm:^4.17.4":
+"lodash@npm:^4.17.11, lodash@npm:^4.17.15, lodash@npm:^4.17.4":
   version: 4.17.15
   resolution: "lodash@npm:4.17.15"
   checksum: 2/aec3fbb7570aa67bda500b8299b1b1821d60646bede87f76a74dfcc7666ab3445267d734ec71424d70809d52ad67a1356fab5ab694a3faa1908d68e9d48f00f5
@@ -5256,6 +5269,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"mini-svg-data-uri@npm:^1.0.3":
+  version: 1.1.3
+  resolution: "mini-svg-data-uri@npm:1.1.3"
+  checksum: 2/08a2b810cccdea968dc2ce6d73e397da2d1d1460d414ee5d665546a4996d0212623c58e7e24be140da52271a00e9fde4efedd59fe8d63490fe622aafa9289fa8
+  languageName: node
+  linkType: hard
+
 "minimalistic-assert@npm:^1.0.0, minimalistic-assert@npm:^1.0.1":
   version: 1.0.1
   resolution: "minimalistic-assert@npm:1.0.1"
@@ -5373,6 +5393,7 @@ fsevents@^1.2.7:
   version: 0.0.0-use.local
   resolution: "mockup@workspace:."
   dependencies:
+    "@tailwindcss/custom-forms": ^0.2.1
     autoprefixer: ^9.7.4
     budo: ^11.6.3
     c3: ^0.7.15
@@ -8161,6 +8182,13 @@ resolve@1.1.7:
     psl: ^1.1.28
     punycode: ^2.1.1
   checksum: 2/bf5d6fac5ce0bebc5876cb9b9a79d3d9ea21c9e4099f3d3e64701d6ba170a052cb88cece6737ec2473bac4f0a4f6c75d46ec17985be8587c6bbdd38d91625cb4
+  languageName: node
+  linkType: hard
+
+"traverse@npm:^0.6.6":
+  version: 0.6.6
+  resolution: "traverse@npm:0.6.6"
+  checksum: 2/f2bfaae69246bc1b630ad51d44be0a2a953be1650f754c299e5a05e4f00e4b493aa6c37a98410f9c2c902a21bef7f1ab10a9cdb9b9e8ee8813e1a9e95074dafd
   languageName: node
   linkType: hard
 

@@ -24,5 +24,8 @@ module.exports = {
       'responsive',
       'hover'
     ]
-  }
+  },
+  plugins: [
+    require('@tailwindcss/custom-forms')
+  ]
 }
