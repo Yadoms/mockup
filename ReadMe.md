@@ -11,7 +11,13 @@ First you need `nodejs`
 To generate the previews, I recommend the `yarn` tool, instead of `npm`.
 
 ```
-npm install -g yarn@berry
+npm install -g yarn
+```
+
+Then you have to set yarn to last version
+
+```
+yarn set version berry
 ```
 
 After installing `yarn`, you have to install all devDependencies present in `package.json`.
