@@ -7,10 +7,11 @@ html(lang="en")
 
   body.flex.h-screen.bg-baseColor.font-sans
     include ../inc/sidebar
+    block sidebar
 
     include ../inc/header
 
-    main.w-full.mx-16.my-4.p-4.flex
+    main#cards.w-full.mx-16.my-4.p-4
       block main
 
     include ../inc/footer

@@ -2,9 +2,32 @@ extends layout/main
 
 include inc/card
 
+block sidebar
+  +sidebar("home")
+
 block main
   +card('Wifi')
-    #myChart
-
-  +card('foo')
-    p Test
+  +card('Salle à manger')
+  +card('Mini-four')
+  +card('')
+  +card('Salle de bain')
+  +card('Musique')
+  +card('Durée allumage Wifi')
+  +card('Conso musique')
+  +card('Humidité salle de bain')
+  +card('PIR')
+  +card('PIR - présence')
+  +card('Conso musique')
+  +card('Vent moyen (m/s)')
+  +card('Vent maximum (m/s)')
+  +card('Internet - Download')
+  +card('')
+  +card('Luminosité entrée')
+  +card('Ping Internet')
+  +card('Vent maximum')
+  +card('Arrosage +1/4h')
+  +card('Arrêt arrosage')
+  +card('Arrosage terrasse')
+  +card('Radiateur Salle de bain')
+  +card('Internet')
+  +card('Batterie onduleur')

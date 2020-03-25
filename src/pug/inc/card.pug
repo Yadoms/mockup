@@ -1,8 +1,9 @@
 mixin card(title)
   .w-auto.h-auto.inline-block.m-2
     .card.rounded-lg.p-1.flex.flex-col-reverse.text-primaryColor.shadow.bg-frontColor
-      .p-2.font-bold.text-xs
-        p.pt-1.title= title
+      if title
+        .p-2.font-bold.text-xs
+          p.pt-1.title= title
       if block
         .px-2.pt-1
           block

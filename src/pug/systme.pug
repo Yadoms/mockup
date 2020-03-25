@@ -1,0 +1,23 @@
+extends layout/main
+
+include inc/card
+
+block sidebar
+  +sidebar("systme")
+
+block main
+  +card('Pi')
+  +card('Charge onduleur')
+  +card('Tension réseau')
+  +card('CPU')
+  +card('Fréquence réseau')
+  +card('Redémarrage Pi')
+  +card('Mémoire')
+  +card('Arrêt de la Pi')
+  +card('Température Pi')
+  +card('Disque')
+  +card('Carte SD')
+  +card('UPS')
+  +card('Shared Memory')
+  +card('Internet')
+  +card('Conso TV')

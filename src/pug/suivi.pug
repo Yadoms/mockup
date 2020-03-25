@@ -1,0 +1,11 @@
+extends layout/main
+
+include inc/card
+
+block sidebar
+  +sidebar("suivi")
+
+block main
+  +card('Vent')
+  +card('Arrosage')
+  +card('Températures')

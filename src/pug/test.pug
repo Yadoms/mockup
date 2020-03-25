@@ -1,0 +1,10 @@
+extends layout/main
+
+include inc/card
+
+block sidebar
+  +sidebar("test")
+
+block main
+  +card('Test')
+    p Test

@@ -1,4 +1,5 @@
 require([
   './preferDarkMode.js', 
-  './charts.js'
+  './charts.js',
+  './navigation.js'
 ]);

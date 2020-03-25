@@ -1,4 +1,5 @@
 require(["d3", "c3"], function(d3, c3) {
+/*
   c3.generate({
     bindto: '#myChart',
     data: {
@@ -21,4 +22,5 @@ require(["d3", "c3"], function(d3, c3) {
         height: 180
     }
   });
+  */
 });
