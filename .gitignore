@@ -1,1 +1,5 @@
-.yarn/
+.yarn
+node_modules
+.pnp.js
+.yarnrc.yml
+yarn.lock
