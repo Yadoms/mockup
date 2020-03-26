@@ -1,5 +1,11 @@
 /*
-
+function ready(fn) {
+  if (document.readyState != 'loading'){
+    fn();
+  } else {
+    document.addEventListener('DOMContentLoaded', fn);
+  }
+}
 
 ready(() => {
   const $items = document.querySelectorAll('#menu a');

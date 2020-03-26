@@ -18,6 +18,7 @@ const clean            = require('del');
 const webpack          = require('webpack-stream');
 const PnpWebpackPlugin = require(`pnp-webpack-plugin`);
 const path             = require('path');
+const prettier         = require('gulp-prettier');
 
 function html() {
   return src('src/pug/*.pug')
@@ -94,7 +95,7 @@ function js() {
 
 function server() {
   watch('src/less/**/*.less', css);
-  watch('src/pug/**/*.pug', series(html, js, css));
+  watch('src/pug/**/*.pug', series(html, css));
   watch('src/js/**/*.js', js);
   budo({
     live: true,
@@ -108,6 +109,22 @@ function cleanDest() {
   return clean(['dest', 'debug']);
 }
 
+// function joliCode() {
+//   return src('src/**/*.*')
+//         .pipe(prettier({
+//           "overrides": [
+//             {
+//               "files": "*.pug",
+//               "options": {
+//                 "parser": "pug",
+//                 "singleQuote": false
+//               }
+//             }
+//           ]
+//         }))
+//         .pipe(dest('tmp'));
+// }
+
 exports.default = series(cleanDest, 
                          html, 
                          css, 
@@ -118,3 +135,4 @@ exports.default = series(cleanDest,
 exports.css = css;
 exports.js = js;
 exports.html = html;
+// exports.joliCode = joliCode;
