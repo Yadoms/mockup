@@ -14,9 +14,10 @@ To generate the previews, I recommend the `yarn` tool, instead of `npm`.
 npm install -g yarn
 ```
 
-Then you have to set yarn to last version
+Then you have to set yarn to last version for the current project (mockup)
 
 ```
+cd mockup
 yarn set version berry
 ```
 
