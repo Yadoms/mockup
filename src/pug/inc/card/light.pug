@@ -1,2 +1,5 @@
-mixin light()
-  p TODO
+mixin light(status)
+  - var clb = status ? 'text-shadow' : ''
+  - var cli = status ? 'fas' : 'far'
+  .text-center.w-full.p-3.text-3xl(class=clb)
+    i.fa-lightbulb(class=cli)
