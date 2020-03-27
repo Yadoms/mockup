@@ -1,6 +1,6 @@
 mixin card(title, battery = -1, wifi = -1)
   .w-auto.h-auto.inline-block.m-2
-    .card.rounded-lg.p-1.flex.flex-col-reverse.text-primaryColor.shadow.bg-frontColor
+    .card.rounded-lg.p-1.flex.flex-col-reverse.text-primaryColor.bg-frontColor
       - var cl = title ? '' : 'hidden'
       .p-2.font-bold.text-xs(class=cl)
         p.pt-1.title= title

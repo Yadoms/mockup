@@ -6,5 +6,7 @@ block sidebar
   +sidebar("test")
 
 block main
-  +card('Test')
-    p Test
+  +card('Allumée')
+    +light(true)
+  +card('Eteinte')
+    +light(false)

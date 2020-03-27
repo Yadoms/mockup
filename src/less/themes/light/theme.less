@@ -1,14 +1,12 @@
 // light_mode
-@base_color :     #F7FAFC;
-@front_color:     #FFFFFF;
-@active_color:    #EDF2F7;
-@primary_color:   #718096;
-@highlight_color: #319795;
+@import '../_common/main.less';
 
-@import '../_common/colors.less';
-@import '../_common/cards.less';
-@import '../_common/override_c3.less';
-
-#colors();
-#cards();
-#override_c3();
+#main(
+  #F7FAFC, // base
+  #FFFFFF, // front
+  #EDF2F7, // active
+  #718096, // primary
+  #319795, // highlight
+  #000000, // shadow
+  #333333 // text-shadow
+);
