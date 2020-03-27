@@ -5,7 +5,7 @@ mixin card(title, battery = -1, wifi = -1)
       .p-2.font-bold.text-xs(class=cl)
         p.pt-1.title= title
       if block
-        .px-2.pt-1
+        .px-2.pt-1.w-full.text-center
           block
 
 include card/chart

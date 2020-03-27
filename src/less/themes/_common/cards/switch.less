@@ -1,0 +1,15 @@
+#switch(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color) {
+  .switch-button {
+    line-height: normal;
+    color: @highlight_color;
+
+    &.active {
+      background-color: @highlight_color;
+      color: @primary_color;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

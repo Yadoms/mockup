@@ -1,4 +1,18 @@
-@import '../../_mixins.less';
+#color() {
+  .generate(@name, @color) {
+    .bg-@{name}Color, .hover\:bg-@{name}Color:hover {
+      background-color: @color;
+    }
+  
+    .text-@{name}Color, .hover\:text-@{name}Color:hover {
+      color: @color;
+    }
+  
+    .border-@{name}Color, .hover\:border-@{name}Color:hover {
+      border-color: @color;
+    }
+  }
+}
 
 #colors(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color) {
   #color.generate(base, @base_color);

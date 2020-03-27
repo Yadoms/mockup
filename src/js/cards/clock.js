@@ -1,4 +1,4 @@
-import { ready } from './functions';
+import { ready } from '../functions';
 
 function displayClock($element) {
   const dateFormat = require('dateformat');
@@ -12,7 +12,7 @@ function displayClock($element) {
 ready( () => {
   setInterval( 
     () => {
-      let $clocks = document.querySelectorAll('.clock');
+      let $clocks = document.querySelectorAll('.card .clock');
       if ($clocks.length)
         $clocks.forEach($el => {
           displayClock($el);

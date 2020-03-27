@@ -1,2 +1,9 @@
-mixin switch(state, type)
-  p TODO
+mixin switch(type, ...args)
+  if type == "button"
+    - var cl = args[0]
+    - var state = args[1]
+    - var clb = state == 'on' ? 'active' : ''
+    button.switch-button.text-3xl.p-3.rounded-lg.border-2.border-highlightColor(class=clb)
+      i.mono-font-3xl.block(class=cl)
+  else
+    p TODO
