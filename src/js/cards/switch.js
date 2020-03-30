@@ -1,7 +1,7 @@
-import { ready } from '../functions';
+import { ready, findAll } from '../functions';
 
 ready( () => {
-  let $switch_buttons = document.querySelectorAll('.card .switch-button');
+  let $switch_buttons = findAll('.card .switch-button');
   if ($switch_buttons.length)
     $switch_buttons.forEach($button => {
       $button.addEventListener('click', (ev) => {

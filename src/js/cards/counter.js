@@ -1,4 +1,4 @@
-import { ready } from '../functions';
+import { ready, findAll } from '../functions';
 
 require(['odometer'], (Odometer) => {
   window.odometerOptions = {
@@ -22,7 +22,7 @@ require(['odometer'], (Odometer) => {
   }
   
   ready(() => {
-    var $counters = document.querySelectorAll('.odometer');
+    var $counters = findAll('.odometer');
     $counters.forEach($counter => {
       let odo = new YadomsOdometer({
         el: $counter,

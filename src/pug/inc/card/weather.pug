@@ -1,2 +1,7 @@
-mixin weather()
-  p TODO
+mixin weather(location, conditions, temperature)
+  .weather.w-full.flex.items-center(data-location=location)
+    - var cond = 'fas fa-' + conditions
+    +indicator(cond)
+    - var temp = temperature + '°C'
+    p= temp
+    
