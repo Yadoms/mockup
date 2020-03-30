@@ -10,7 +10,7 @@ function displayClock($element) {
 ready( () => {
   setInterval( 
     () => {
-      let $clocks = findAll('.card .clock');
+      let $clocks = findAll('.clock');
       if ($clocks.length)
         $clocks.forEach($el => {
           displayClock($el);
