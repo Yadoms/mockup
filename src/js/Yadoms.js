@@ -12,17 +12,38 @@ class Yadoms {
  To have any help, type yadoms.help()\
  ");
   }
-  help() {
-    console.log("List of functions available");
-    console.table({
-      'yadoms.lightOn()': 'Change the current theme to the light mode',
-      'yadoms.lightOff()': 'Change the current theme to the dark mode',
-      'yadoms.changeTheme(theme)': 'Change the current theme to a specific theme',
-      'yadoms.weather(conditions)': 'Change the current weather, conditions are :',
-      'yadoms.weather(conditions).': 'bolt, cloud, cloud-moon, cloud-moon-rain, cloud-rain,',
-      'yadoms.weather(conditions)..': 'cloud-showers-heady, cloud-sun, cloud-sun-rain,',
-      'yadoms.weather(conditions)...': 'moon, smog, snowflake, sun.'
-    });
+  help(func = '') {
+    if (func != '')
+    {
+      if ('weather' == func)
+      {
+        console.log('List of available conditions');
+        console.table(['bolt', 
+                       'cloud', 
+                       'cloud-moon', 
+                       'cloud-moon-rain', 
+                       'cloud-rain',
+                       'cloud-showers-heady', 
+                       'cloud-sun', 
+                       'cloud-sun-rain',
+                       'moon', 
+                       'smog', 
+                       'snowflake', 
+                       'sun'
+                      ]);
+      }
+    }
+    else {
+      console.log("List of available functions");
+      console.table({
+        'yadoms.lightOn()': 'Change the current theme to the light mode',
+        'yadoms.lightOff()': 'Change the current theme to the dark mode',
+        'yadoms.changeTheme(theme)': 'Change the current theme to a specific theme',
+        'yadoms.weather(conditions)': 'Change the current weather'
+      });
+      console.log('To have more information about a function, gives the name of the function in parameter.');
+      console.info('Example : yadoms.help(\'weather\').');
+    }
   }
   lightOn() {
     document.documentElement.className = '';
