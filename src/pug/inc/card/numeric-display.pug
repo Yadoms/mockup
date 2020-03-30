@@ -1,3 +1,8 @@
 mixin numeric-display(value, decimals = 0, unit = '', capture = '')
-  .flex
+  - var val = parseFloat(value).toFixed(decimals)
+  if capture
+    p.text-xs.text-shadowColor= capture
+  p.text-right
+    span.text-4xl= val
+    span.text-xl= unit
     

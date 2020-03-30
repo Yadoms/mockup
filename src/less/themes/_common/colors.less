@@ -7,7 +7,7 @@
     .text-@{name}Color, .hover\:text-@{name}Color:hover {
       color: @color;
     }
-  
+
     .border-@{name}Color, .hover\:border-@{name}Color:hover {
       border-color: @color;
     }
@@ -19,5 +19,6 @@
   #color.generate(front, @front_color);
   #color.generate(active, @active_color);
   #color.generate(primary, @primary_color);
-  #color.generate(highlight, @highlight_color);  
+  #color.generate(highlight, @highlight_color);
+  #color.generate(shadow, @text-shadow_color);
 }
