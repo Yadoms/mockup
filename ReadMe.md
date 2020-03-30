@@ -40,6 +40,13 @@ yarn run gulp
 
 It will open your browser with the `dest/index.html`.
 
+If you want just to preview the mockup run :
+
+```
+yarn run gulp preview
+```
+
+
 ## Theme mode
 
 By default, the application is in a theme corresponding to your OS preferences.
