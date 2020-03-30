@@ -2,11 +2,13 @@
 
 // cards
 @import './cards/switch.less';
+@import './cards/teleinfo-forecast.less';
 
 #cards(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color) {
   .card {
 
     #switch(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color);
+    #teleinfo-forecast(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color);
 
     .title {
       border-top: 1px solid darken(@front_color, 10);

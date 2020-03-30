@@ -1,2 +1,8 @@
-mixin teleinfo-forecast()
-  p TODO
+mixin teleinfo-forecast(color)
+  - 
+    var clr = color == 'red' ? 'bg-red-600 text-red-600 border-red-900' 
+                             : (color == 'blue' ? 'bg-blue-600 text-blue-600 border-blue-900' 
+                                                : 'bg-white text-white border-gray-600'
+                               )
+  .teleinfo-forecast
+    .square.rounded-full.block.mx-auto.border-4(class=clr)
