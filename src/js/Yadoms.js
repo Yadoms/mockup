@@ -67,7 +67,7 @@ class Yadoms {
   changeTheme(theme) {
     document.documentElement.className = '';
     document.documentElement.classList.add('yadoms_theme_' + theme);
-    return 'The theme is set to ' + theme + ' now';
+    return 'The theme is set to ' + ('' == theme ? 'light' : theme) + ' now';
   }
   weather(conditions) {
     let $weathers = findAll('.weather');
