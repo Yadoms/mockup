@@ -1,4 +1,4 @@
-require(["d3", "c3"], function(d3, c3) {
+require([/*"d3", "c3"*/], function(/*d3, c3*/) {
 /*
   c3.generate({
     bindto: '#myChart',
