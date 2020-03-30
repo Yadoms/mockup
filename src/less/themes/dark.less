@@ -2,14 +2,13 @@
 @import './_common/main.less';
 
 @dark_front_color: #1D1C22;
-@dark_primary_color: #FFFFFF;
 
 .yadoms_theme_dark {
   #makeTheme(
     #111111, // base
     @dark_front_color, // front
     #292833, // active
-    @dark_primary_color, // primary
+    #FFFFFF, // primary
     #5980FF, // highlight
     #515151, // shadow
     #CCCCCC  // text_shadow
@@ -31,9 +30,5 @@
         border-left: 1px solid lighten(@dark_front_color, 20);
       }
     }
-  }
-
-  .c3 text {
-    fill: @dark_primary_color;
   }
 }

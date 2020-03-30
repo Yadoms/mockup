@@ -3,5 +3,6 @@ require([
   './charts.js',
   './navigation.js',
   './cards/clock.js',
+  './cards/counter.js',
   './cards/switch.js'
 ]);

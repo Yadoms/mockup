@@ -1,2 +1,3 @@
-mixin counter()
-  p TODO
+mixin counter(value, suffix)
+  .counter
+    .mx-auto.odometer.font-bold(data-value=value, data-suffix=suffix)

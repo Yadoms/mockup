@@ -1,0 +1,20 @@
+#overrides(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color) {
+  .odometer.odometer-auto-theme 
+  {
+    .odometer-hacking-mark ~ .odometer-digit {
+      background-image: linear-gradient(to bottom, 
+                                      #eee0d3 0%, 
+                                      #eee0d3 40%, 
+                                      #bbaa9a 60%, 
+                                      #eee0d3 80%, 
+                                      #eee0d3 100%
+                                        );
+      background-color: #fff5f5;
+      color: #C53030;
+    }
+
+    .odometer-suffix-mark {
+      padding: 0 .15rem;
+    }
+  }
+}
