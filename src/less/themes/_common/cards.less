@@ -7,11 +7,17 @@
 #cards(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color) {
   .card {
 
+    min-height: 125px;
+
     #switch(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color);
     #teleinfo-forecast(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color);
 
     .title {
       border-top: 1px solid darken(@front_color, 10);
+
+      &.no-border {
+        border-top: none;
+      }
 
       .icon {
         border-left: 1px solid darken(@front_color, 20);

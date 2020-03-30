@@ -1,9 +1,9 @@
 mixin card(title, battery = -1, wifi = -1)
-  .w-auto.h-auto.inline-block.m-2
+  .inline-block.m-2
     .card.rounded-lg.p-1.flex.flex-col-reverse.text-primaryColor.bg-frontColor
-      - var cl = title ? '' : 'hidden'
-      .p-2.font-bold.text-xs(class=cl)
-        p.pt-1.title.clearfix
+      - var cl = title ? '' : 'no-border'
+      .flex-grow-0.p-2.font-bold.text-xs
+        p.pt-1.title.clearfix(class=cl)
           if (battery != -1)
             span.icon.float-right.ml-1.pl-1
               if (battery == 0)
@@ -20,11 +20,11 @@ mixin card(title, battery = -1, wifi = -1)
             span.icon.float-right.ml-1.pl-1
               - var clw = wifi < .5 ? 'text-red-600' : ''
               i.fas.fa-wifi(class=clw)
-
           span= title
-      if block
-        .px-2.pt-1.w-full.text-center
-          block
+      .flex-grow
+        if block
+          .px-2.pt-1.flex
+            block
 
 include card/chart
 include card/clock

@@ -1,8 +1,9 @@
 mixin shutter(type, state)
-  if (type == 'door')
-    +indicator('fas fa-door-closed')
-  else if (type == 'window')
-    - var cl = state == 'closed' ? 'fas fa-square' : 'far fa-plus-square'
-    +indicator(cl)
-  else
-    p TODO
+  .shutter.w-full.text-center
+    if (type == 'door')
+      +indicator('fas fa-door-closed')
+    else if (type == 'window')
+      - var cl = state == 'closed' ? 'fas fa-square' : 'far fa-plus-square'
+      +indicator(cl)
+    else
+      p TODO

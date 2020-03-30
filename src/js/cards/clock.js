@@ -4,7 +4,7 @@ function displayClock($element) {
   const dateFormat = require('dateformat');
   let date = new Date();
   $element.innerHTML = dateFormat(date, "mediumTime");
-  let $title = $element.parentNode.parentNode.querySelector('div:first-child');
+  let $title = $element.parentNode.parentNode.parentNode.querySelector('div:first-child');
   $title.classList.remove('hidden');
   $title.querySelector('p').innerHTML = dateFormat(date, "longDate");
 }
