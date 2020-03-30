@@ -6,5 +6,13 @@ mixin switch(type, ...args)
       - var clb = state == 'on' ? 'active' : ''
       button.switch-button.text-3xl.p-3.rounded-lg.border-2.border-highlightColor(class=clb)
         i.mono-font-3xl.block(class=cl)
+    else if type == "arrow"
+      .switch-arrow.flex.flex-col.rounded-lg.items-center
+        - var clau = "hover:bg-highlightColor hover:text-activeColor" + (args[0] == 'up' ? ' active' : '')
+        - var clad = "hover:bg-highlightColor hover:text-activeColor" + (args[0] == 'down' ? ' active' : '')
+        button.rounded-t.w-10.h-10.bg-activeColor.text-highlightColor(class=clau, data-action="up")
+          i.fas.fa-caret-up
+        button.rounded-b.w-10.h-10.bg-activeColor.text-highlightColor(class=clad, data-action="down")
+          i.fas.fa-caret-down
     else
       p TODO
