@@ -15,7 +15,15 @@ class Yadoms {
   help(func = '') {
     if (func != '')
     {
-      if ('weather' == func)
+      if ('changeTheme' == func)
+      {
+        console.log('List of available themes');
+        console.table(['light', 
+                       'dark', 
+                       'lidrea'
+                      ]);
+      }
+      else if ('weather' == func)
       {
         console.log('List of available conditions');
         console.table(['bolt', 
@@ -33,7 +41,8 @@ class Yadoms {
                       ]);
       }
     }
-    else {
+    else if ('' == func)
+    {
       console.log("List of available functions");
       console.table({
         'yadoms.lightOn()': 'Change the current theme to the light mode',
@@ -44,17 +53,21 @@ class Yadoms {
       console.log('To have more information about a function, gives the name of the function in parameter.');
       console.info('Example : yadoms.help(\'weather\').');
     }
+    else
+    {
+      console.log('no documentation for this function');
+    }
   }
   lightOn() {
-    document.documentElement.className = '';
+    return this.changeTheme('');
   }
   lightOff() {
-    document.documentElement.className = '';
-    document.documentElement.classList.add('yadoms_theme_dark');
+    return this.changeTheme('dark');
   }
   changeTheme(theme) {
     document.documentElement.className = '';
     document.documentElement.classList.add('yadoms_theme_' + theme);
+    return 'The theme is set to ' + theme + ' now';
   }
   weather(conditions) {
     let $weathers = findAll('.weather');
