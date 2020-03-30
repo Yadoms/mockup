@@ -39,3 +39,19 @@ yarn run gulp
 ```
 
 It will open your browser with the `dest/index.html`.
+
+## Theme mode
+
+By default, the application is in a theme corresponding to your OS preferences.
+
+In order to preview the different themes of the application, you have to write in the console of the browser :
+
+```
+yadoms.lightOn() // to get the light mode
+```
+
+or
+
+```
+yadoms.lightOff() // to get the dark mode
+```
