@@ -52,10 +52,7 @@ function css() {
         /^yadoms_theme_/
       ]
     }))
-    .pipe(addSrc([
-      'src/lib/fontawesome/css/all.css',
-      'src/lib/c3/c3.css'
-    ]))
+    .pipe(addSrc(['src/lib/**/*.css']))
     .pipe(concat('app.min.css'))
     .pipe(minifyCSS())
     .pipe(dest('dest/css'));
@@ -108,6 +105,15 @@ function cleanDest() {
   return clean(['dest', 'debug']);
 }
 
+function preview() {
+  budo({
+    live: true,
+    dir: 'dest',
+    port: 9966,
+    open: true
+  });
+}
+
 // function joliCode() {
 //   return src('src/**/*.*')
 //         .pipe(prettier({
@@ -134,4 +140,5 @@ exports.default = series(cleanDest,
 exports.css = css;
 exports.js = js;
 exports.html = html;
+exports.preview = preview;
 // exports.joliCode = joliCode;
