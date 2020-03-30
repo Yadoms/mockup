@@ -1,2 +1,9 @@
 mixin curtain()
-  p TODO
+  .curtain.flex.flex-col.rounded-lg.items-center
+    - var cl = "hover:bg-highlightColor hover:text-activeColor"
+    button.rounded-t.w-10.h-10.bg-activeColor.text-highlightColor(class=cl, data-action="up")
+      i.fas.fa-caret-up
+    button.w-10.h-10.bg-activeColor.text-highlightColor(class=cl, data-action="up")
+      i.fas.fa-stop
+    button.rounded-b.w-10.h-10.bg-activeColor.text-highlightColor(class=cl, data-action="down")
+      i.fas.fa-caret-down
