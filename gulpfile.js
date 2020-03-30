@@ -49,8 +49,8 @@ function css() {
         /-(leave|enter|appear)(|-(to|from|active))$/, 
         /^(?!cursor-move).+-move$/, 
         /^router-link(|-exact)-active$/,
-        /^yadoms_theme_(\w+)$/
-      ],
+        /^yadoms_theme_/
+      ]
     }))
     .pipe(addSrc([
       'src/lib/fontawesome/css/all.css',
@@ -58,7 +58,6 @@ function css() {
     ]))
     .pipe(concat('app.min.css'))
     .pipe(minifyCSS())
-    .pipe(concat('app.min.css'))
     .pipe(dest('dest/css'));
 }
 
