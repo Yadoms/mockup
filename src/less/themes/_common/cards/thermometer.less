@@ -1,19 +1,37 @@
 #thermometer(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color) {
+
+  .generateTubeColor(@color) {
+    .liquid {
+      background-color: @color;
+    }
+
+    .bulb {
+      box-shadow: 0 0 20px 0 fadein(@color, 10%);
+    }
+  }
+
   .thermometer {
-    .frost {
-      background-color: #2B6CB0;
+
+    .generateTubeColor(#4A5568);
+
+    &.frost {
+      .generateTubeColor(#2B6CB0);
+   }
+
+    &.cold {
+      .generateTubeColor(#4C51BF);
     }
-    .cold {
-      background-color: #4C51BF;
+
+    &.normal {
+      .generateTubeColor(#6B46C1);
     }
-    .normal {
-      background-color: #6B46C1;
+    
+    &.warm {
+      .generateTubeColor(#B83280);
     }
-    .warm {
-      background-color: #B83280;
-    }
-    .hot {
-      background-color: #C53030;
+
+    &.hot {
+      .generateTubeColor(#C53030);
     }
   }
 }
