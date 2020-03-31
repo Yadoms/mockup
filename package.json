@@ -2,6 +2,7 @@
   "name": "mockup",
   "private": true,
   "devDependencies": {
+    "@jaames/iro": "^5.1.5",
     "@prettier/plugin-pug": "^1.2.0",
     "@tailwindcss/custom-forms": "^0.2.1",
     "autoprefixer": "^9.7.4",
