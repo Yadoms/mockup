@@ -23,19 +23,13 @@
   .switch-toggle {
     &.active, 
     &.hover\:active:hover {
-      .border {
-        border-color: @active_color !important;
-      }
-      .round {
-        background-color: @active_color !important;
+      .wrapper {
+        background-color: @base_color !important;
       }
     }
 
     input[checked] {
-      & ~ .border {
-        border-color: @highlight_color !important;
-      }
-      & ~ .round {
+      & ~ .wrapper {
         background-color: @highlight_color !important;
       }
     }

@@ -18,8 +18,8 @@ mixin switch(type, ...args)
       .switch-toggle.inline-flex.items-center.cursor-pointer(class="hover:active")
         span.relative
           input.absolute.opacity-0.w-0.h-0.left-0.top-0(type="checkbox", checked=(args[0] == 'on'))
-          span.border.block.rounded-full.w-10.h-6.border-2.border-primaryColor
+          span.wrapper.block.rounded-full.w-10.h-6.bg-activeColor.shadow-inner
           - var clr = args[0] == 'on' ? 'transform translate-x-full' : ''
-          span.round.absolute.block.w-4.h-4.m-1.bg-primaryColor.rounded-full.inset-y-0.left-0.transition-transform.duration-300.ease-in-out(class=clr)
+          span.round.absolute.block.w-4.h-4.m-1.rounded-full.inset-y-0.left-0.bg-primaryColor.transition-transform.duration-300.ease-in-out.shadow(class=clr)
     else
       p TODO
