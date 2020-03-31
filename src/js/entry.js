@@ -6,6 +6,7 @@ require([
   './cards/counter.js',
   './cards/dimmer.js',
   './cards/switch.js',
+  './cards/thermometer.js',
   './cards/weather.js',
   './Yadoms.js'
 ]);

@@ -1,2 +1,8 @@
-mixin thermometer(value, min = 0, max = 40)
-  p TODO
+mixin thermometer(value, min = 0, max = 40, unit = '°C')
+  .thermometer(data-value=value, data-min=min, data-max=max, data-unit=unit)
+    .flex.flex-col.items-center.-ml-6
+      .rounded-t-full.w-5.h-20.border-2.bg-white.border-gray-600.z-10.-mb-1.border-b-0.inline-flex.items-end
+        .liquid.bar.rounded-t-full.h-0.w-5.bg-gray-700.mx-1.-mb-1.mt-1.transition-all.duration-700.ease-in-out.relative.text-xs
+          .absolute.top-0.left-0.pl-6
+      .rounded-full.w-8.h-8.border-2.bg-white.border-gray-600.inline-flex
+        .liquid.rounded-full.w-5.h-5.bg-gray-700.m-1.transition-colors.duration-700.ease-in-out
