@@ -91,8 +91,8 @@ function js() {
 
 function server() {
   watch('src/less/**/*.less', css);
-  watch('src/pug/**/*.pug', series(html, css));
   watch('src/js/**/*.js', js);
+  watch('src/pug/**/*.pug', series(html, css));
   budo({
     live: true,
     dir: 'dest',
@@ -132,8 +132,8 @@ function preview() {
 
 exports.default = series(cleanDest, 
                          html, 
-                         css, 
                          js, 
+                         css, 
                          fonts, 
                          server
                         );
