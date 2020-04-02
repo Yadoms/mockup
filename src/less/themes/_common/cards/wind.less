@@ -1,0 +1,34 @@
+#wind(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color) {
+
+  .windDirection(@direction, @rotation) {
+    &.wind-@{direction} {
+      --transform-rotate: @rotation;
+    }
+  }
+
+  .wind {
+    .ring {
+      > div {
+        bottom: -5px;
+      }
+  
+      .windDirection(S, 0deg);
+      .windDirection(SSE, -22.5deg);
+      .windDirection(SE, -45deg);
+      .windDirection(ESE, -67.5deg);
+      .windDirection(E, -90deg);
+      .windDirection(ENE, -112.5deg);
+      .windDirection(NE, -135deg);
+      .windDirection(NNE, -157.5deg);
+      .windDirection(N, 180deg);
+      .windDirection(NNO, 157.5deg);
+      .windDirection(NO, 135deg);
+      .windDirection(ONO, 112.5deg);
+      .windDirection(O, 90deg);
+      .windDirection(OSO, 67.5deg);
+      .windDirection(SO, 45deg);
+      .windDirection(SSO, 22.5deg);
+      
+    }
+  }
+}

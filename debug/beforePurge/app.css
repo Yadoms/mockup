@@ -68771,6 +68771,74 @@ video {
   box-shadow: 0 0 20px 0 #c53030;
 }
 
+.card .wind .ring > div {
+  bottom: -5px;
+}
+
+.card .wind .ring.wind-S {
+  --transform-rotate: 0deg;
+}
+
+.card .wind .ring.wind-SSE {
+  --transform-rotate: -22.5deg;
+}
+
+.card .wind .ring.wind-SE {
+  --transform-rotate: -45deg;
+}
+
+.card .wind .ring.wind-ESE {
+  --transform-rotate: -67.5deg;
+}
+
+.card .wind .ring.wind-E {
+  --transform-rotate: -90deg;
+}
+
+.card .wind .ring.wind-ENE {
+  --transform-rotate: -112.5deg;
+}
+
+.card .wind .ring.wind-NE {
+  --transform-rotate: -135deg;
+}
+
+.card .wind .ring.wind-NNE {
+  --transform-rotate: -157.5deg;
+}
+
+.card .wind .ring.wind-N {
+  --transform-rotate: 180deg;
+}
+
+.card .wind .ring.wind-NNO {
+  --transform-rotate: 157.5deg;
+}
+
+.card .wind .ring.wind-NO {
+  --transform-rotate: 135deg;
+}
+
+.card .wind .ring.wind-ONO {
+  --transform-rotate: 112.5deg;
+}
+
+.card .wind .ring.wind-O {
+  --transform-rotate: 90deg;
+}
+
+.card .wind .ring.wind-OSO {
+  --transform-rotate: 67.5deg;
+}
+
+.card .wind .ring.wind-SO {
+  --transform-rotate: 45deg;
+}
+
+.card .wind .ring.wind-SSO {
+  --transform-rotate: 22.5deg;
+}
+
 .card .title {
   border-top: 1px solid #e6e6e6;
 }
@@ -69195,6 +69263,74 @@ video {
 
 .yadoms_theme_dark .card .thermometer.hot .bulb {
   box-shadow: 0 0 20px 0 #c53030;
+}
+
+.yadoms_theme_dark .card .wind .ring > div {
+  bottom: -5px;
+}
+
+.yadoms_theme_dark .card .wind .ring.wind-S {
+  --transform-rotate: 0deg;
+}
+
+.yadoms_theme_dark .card .wind .ring.wind-SSE {
+  --transform-rotate: -22.5deg;
+}
+
+.yadoms_theme_dark .card .wind .ring.wind-SE {
+  --transform-rotate: -45deg;
+}
+
+.yadoms_theme_dark .card .wind .ring.wind-ESE {
+  --transform-rotate: -67.5deg;
+}
+
+.yadoms_theme_dark .card .wind .ring.wind-E {
+  --transform-rotate: -90deg;
+}
+
+.yadoms_theme_dark .card .wind .ring.wind-ENE {
+  --transform-rotate: -112.5deg;
+}
+
+.yadoms_theme_dark .card .wind .ring.wind-NE {
+  --transform-rotate: -135deg;
+}
+
+.yadoms_theme_dark .card .wind .ring.wind-NNE {
+  --transform-rotate: -157.5deg;
+}
+
+.yadoms_theme_dark .card .wind .ring.wind-N {
+  --transform-rotate: 180deg;
+}
+
+.yadoms_theme_dark .card .wind .ring.wind-NNO {
+  --transform-rotate: 157.5deg;
+}
+
+.yadoms_theme_dark .card .wind .ring.wind-NO {
+  --transform-rotate: 135deg;
+}
+
+.yadoms_theme_dark .card .wind .ring.wind-ONO {
+  --transform-rotate: 112.5deg;
+}
+
+.yadoms_theme_dark .card .wind .ring.wind-O {
+  --transform-rotate: 90deg;
+}
+
+.yadoms_theme_dark .card .wind .ring.wind-OSO {
+  --transform-rotate: 67.5deg;
+}
+
+.yadoms_theme_dark .card .wind .ring.wind-SO {
+  --transform-rotate: 45deg;
+}
+
+.yadoms_theme_dark .card .wind .ring.wind-SSO {
+  --transform-rotate: 22.5deg;
 }
 
 .yadoms_theme_dark .card .title {
@@ -69649,6 +69785,74 @@ video {
 
 .yadoms_theme_lidrea .card .thermometer.hot .bulb {
   box-shadow: 0 0 20px 0 #c53030;
+}
+
+.yadoms_theme_lidrea .card .wind .ring > div {
+  bottom: -5px;
+}
+
+.yadoms_theme_lidrea .card .wind .ring.wind-S {
+  --transform-rotate: 0deg;
+}
+
+.yadoms_theme_lidrea .card .wind .ring.wind-SSE {
+  --transform-rotate: -22.5deg;
+}
+
+.yadoms_theme_lidrea .card .wind .ring.wind-SE {
+  --transform-rotate: -45deg;
+}
+
+.yadoms_theme_lidrea .card .wind .ring.wind-ESE {
+  --transform-rotate: -67.5deg;
+}
+
+.yadoms_theme_lidrea .card .wind .ring.wind-E {
+  --transform-rotate: -90deg;
+}
+
+.yadoms_theme_lidrea .card .wind .ring.wind-ENE {
+  --transform-rotate: -112.5deg;
+}
+
+.yadoms_theme_lidrea .card .wind .ring.wind-NE {
+  --transform-rotate: -135deg;
+}
+
+.yadoms_theme_lidrea .card .wind .ring.wind-NNE {
+  --transform-rotate: -157.5deg;
+}
+
+.yadoms_theme_lidrea .card .wind .ring.wind-N {
+  --transform-rotate: 180deg;
+}
+
+.yadoms_theme_lidrea .card .wind .ring.wind-NNO {
+  --transform-rotate: 157.5deg;
+}
+
+.yadoms_theme_lidrea .card .wind .ring.wind-NO {
+  --transform-rotate: 135deg;
+}
+
+.yadoms_theme_lidrea .card .wind .ring.wind-ONO {
+  --transform-rotate: 112.5deg;
+}
+
+.yadoms_theme_lidrea .card .wind .ring.wind-O {
+  --transform-rotate: 90deg;
+}
+
+.yadoms_theme_lidrea .card .wind .ring.wind-OSO {
+  --transform-rotate: 67.5deg;
+}
+
+.yadoms_theme_lidrea .card .wind .ring.wind-SO {
+  --transform-rotate: 45deg;
+}
+
+.yadoms_theme_lidrea .card .wind .ring.wind-SSO {
+  --transform-rotate: 22.5deg;
 }
 
 .yadoms_theme_lidrea .card .title {
