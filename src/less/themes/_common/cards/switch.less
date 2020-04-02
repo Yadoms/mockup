@@ -25,12 +25,14 @@
     &.hover\:active:hover {
       .wrapper {
         background-color: @base_color !important;
+        box-shadow: none;
       }
     }
 
     input[checked] {
       & ~ .wrapper {
         background-color: @highlight_color !important;
+        box-shadow: 0 0 10px 0 fadein(@highlight_color, 10%);
       }
     }
   }
