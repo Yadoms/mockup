@@ -1,9 +1,10 @@
 mixin gauge(value, min = 0, max = 100, unit = '%')
   .gauge(data-value=value, data-min=min, data-max=max)
     .wrapper.w-24.h-24.rounded-full.mx-auto
-      .ring.w-24.h-24.rounded-full.p-2.border-2.border-primaryColor.shadow-inner
-        .shadow-lg.rounded-full.bg-primaryColor.w-full.h-full.p-2
-          .w-full.h-full.shadow-inner.rounded-full.text-center.relative
-            .container.text-frontColor.absolute.-mt-3.inline-block.inset-x-0
+      .ring.w-24.h-24.rounded-full.p-2.border-2.border-gray-100.shadow-inner.relative.overflow-hidden
+        .fill.absolute.w-full.h-full.inset-x-0.bottom-0
+        .shadow-lg.rounded-full.bg-gray-100.w-full.h-full.p-2.relative
+          .w-full.h-full.shadow-inner.rounded-full.text-center.relative.bg-gray-200
+            .container.text-gray-900.absolute.-mt-3.inline-block.inset-x-0
               span.text-sm= value
               span.text-xs= unit

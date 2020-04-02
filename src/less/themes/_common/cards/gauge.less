@@ -1,39 +1,41 @@
 #gauge(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color) {
-  .generateRingColor(@color) {
+  .generateRingColor(@color, @percent) {
     .wrapper {
-      box-shadow: 0 0 20px 0 fadein(@color, 10%);
+      box-shadow: 0 0 20px * @percent 0 fadein(@color, 10%);
     }
     .ring {
-      background-color: @color;
+      .fill {
+        background-color: @color;
+      }
     }
   }
 
   .gauge {
 
-    .generateRingColor(#4A5568);
+    .generateRingColor(#4A5568, 1);
 
     .container {
       top: 50%;
     }
 
     &.frost {
-      .generateRingColor(#2B6CB0);
+      .generateRingColor(#2B6CB0, .2);
     }
 
     &.cold {
-      .generateRingColor(#4C51BF);
+      .generateRingColor(#4C51BF, .4);
     }
 
     &.normal {
-      .generateRingColor(#6B46C1);
+      .generateRingColor(#6B46C1, .6);
     }
     
     &.warm {
-      .generateRingColor(#B83280);
+      .generateRingColor(#B83280, .8);
     }
 
     &.hot {
-      .generateRingColor(#C53030);
+      .generateRingColor(#C53030, 1);
     }
   }
 }

@@ -6,8 +6,10 @@ ready(() => {
     $gauges.forEach($gauge => {
       const min  = $gauge.dataset.min,
             max  = $gauge.dataset.max,
-            val  = $gauge.dataset.value;
+            val  = $gauge.dataset.value,
+            $fill = $gauge.querySelector('.fill');
       let percent = 100 * (val - min) / (max - min);
+      $fill.style.height = percent + '%';
       if (percent < 20)
         $gauge.classList.add('frost');
       else if (percent < 40)
