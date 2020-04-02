@@ -1,0 +1,39 @@
+#gauge(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color) {
+  .generateRingColor(@color) {
+    .wrapper {
+      box-shadow: 0 0 20px 0 fadein(@color, 10%);
+    }
+    .ring {
+      background-color: @color;
+    }
+  }
+
+  .gauge {
+
+    .generateRingColor(#4A5568);
+
+    .container {
+      top: 50%;
+    }
+
+    &.frost {
+      .generateRingColor(#2B6CB0);
+    }
+
+    &.cold {
+      .generateRingColor(#4C51BF);
+    }
+
+    &.normal {
+      .generateRingColor(#6B46C1);
+    }
+    
+    &.warm {
+      .generateRingColor(#B83280);
+    }
+
+    &.hot {
+      .generateRingColor(#C53030);
+    }
+  }
+}

@@ -5,6 +5,7 @@ require([
   './cards/clock.js',
   './cards/counter.js',
   './cards/dimmer.js',
+  './cards/gauge.js',
   './cards/rgb-color-picker.js',
   './cards/switch.js',
   './cards/thermometer.js',
