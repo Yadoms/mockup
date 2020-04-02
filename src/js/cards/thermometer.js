@@ -11,7 +11,6 @@ ready(() => {
       let percent = 100 * (val - min) / (max - min),
           $bar = $thermometer.querySelector('.bar');
       $bar.style.height = percent + '%';
-      $bar.querySelector('div').innerHTML = val + unit;
       if (percent < 20)
         $thermometer.classList.add('frost');
       else if (percent < 40)

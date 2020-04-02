@@ -6,6 +6,6 @@ mixin thermostat(value, state, current, unit)
           i.fas.fa-fire
         if current
           - var cur = current + '' + unit
-          p= cur
+          p.font-mono.tracking-tighter= cur
     .w-full
       +dimmer(value, 0, 100, 1, unit)

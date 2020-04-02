@@ -35,7 +35,7 @@ function css() {
       tailwindcss('./tailwind.config.js'),
       autoprefixer(),
     ]))
-    //.pipe(dest('debug/beforePurge'))
+    .pipe(dest('debug/beforePurge'))
     .pipe(purgecss({
       content: [
         'dest/**/*.html',
