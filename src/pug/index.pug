@@ -13,7 +13,52 @@ block main
   +card('Mini-four')
     +indicator('fas fa-utensils')
   +card('')
-    +forecast('Royanne')
+    +forecast('Royanne', [
+      {
+        'day': 'jeu. 5',
+        'cond': 'cloud-sun',
+        'Tmin': 5,
+        'Tmax': 16,
+        'Tunit': '°C',
+        'Wmin': 2,
+        'Wmax': 13,
+        'Wdir': 'E',
+        'rain': 0
+      },
+      {
+        'day': 'ven. 6',
+        'cond': 'cloud',
+        'Tmin': 10,
+        'Tmax': 18,
+        'Tunit': '°C',
+        'Wmin': 29,
+        'Wmax': 40,
+        'Wdir': 'S',
+        'rain': 7
+      },
+      {
+        'day': 'sam. 7',
+        'cond': 'cloud-rain',
+        'Tmin': 3,
+        'Tmax': 15,
+        'Tunit': '°C',
+        'Wmin': 19,
+        'Wmax': 24,
+        'Wdir': 'SE',
+        'rain': 1
+      },
+      {
+        'day': 'dim. 8',
+        'cond': 'cloud-rain',
+        'Tmin': 4,
+        'Tmax': 14,
+        'Tunit': '°C',
+        'Wmin': 10,
+        'Wmax': 15,
+        'Wdir': 'ONO',
+        'rain': 5
+      }
+    ])
   +card('Salle de bain')
     +thermometer(29, 8, 30)
   +card('Musique')

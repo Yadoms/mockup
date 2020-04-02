@@ -1,2 +1,28 @@
-mixin forecast()
-  p TODO
+mixin forecast(city, datas)
+  .forecast(data-city=city)
+    .flex
+      each data in datas
+        .forecast-day.mx-2
+          .text-center= data.day
+          .forecast-weather.flex
+            - var cond = 'fas fa-' + data.cond
+            +indicator(cond)
+            .flex.flex-col.justify-center.text-xs.font-mono.tracking-tighter
+              - var tmin = data.Tmin + data.Tunit
+              - var tmax = data.Tmax + data.Tunit
+              .temp-min.text-blue-500= tmin
+              .temp-max.text-red-500= tmax
+          .forecast-conditions.flex.justify-around
+            .forecast-wind.relative.w-10.h-10
+              - var wdir = 'wind-' + data.Wdir
+              .ring.relative.border.w-full.h-full.rounded-full.transform.duration-200.inset-0.flex.justify-center(class=wdir)
+                .inline-block.absolute.mono-font-xs
+                  i.fa.fa-caret-up
+              .absolute.flex.flex-col.justify-center.text-xs.font-mono.tracking-tighter.text-center.leading-tight.h-full.inset-0
+                .wind-min.text-blue-500= data.Wmin
+                .wind-max.text-red-500= data.Wmax
+            .forecast-rain.w-3.h-10.border-2.rounded-full.border-t-0.rounded-t-none.inline-flex.items-end(data-rain=data.rain)
+              .liquid.h-0.w-3.transition-all.duration-700.ease-in-out.relative.text-xs
+                .absolute.top-0.left-0.w-full.h-full.rounded-b-full.bg-blue-600
+                .absolute.top-0.left-0.pl-3.-mt-2.text-primaryColor.font-mono.tracking-tighter= data.rain
+
