@@ -18,7 +18,8 @@ Then you have to set yarn to last version for the current project (mockup)
 
 ```
 cd mockup
-yarn set version berry
+yarn policies set-version berry # below v1.22
+yarn set version berry          # on v1.22+
 ```
 
 After installing `yarn`, you have to install all devDependencies present in `package.json`.
