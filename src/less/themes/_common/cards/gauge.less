@@ -1,7 +1,7 @@
 #gauge(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color) {
   .generateRingColor(@color, @percent) {
     .wrapper {
-      box-shadow: 0 0 20px * @percent 0 fadein(@color, 10%);
+      box-shadow: 0 0 (10px + 10px * @percent) 0 fadein(@color, 10%);
     }
     .ring {
       .fill {
