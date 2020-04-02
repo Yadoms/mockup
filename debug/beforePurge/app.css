@@ -68941,6 +68941,16 @@ video {
   border-color: #333333;
 }
 
+.chart .ct-label,
+.chart .ct-axis-title {
+  fill: #718096;
+  color: #718096;
+}
+
+.chart .ct-grid {
+  stroke: #718096;
+}
+
 .shadow-xs,
 .sm\:shadow-xs,
 .md\:shadow-xs,
@@ -69433,6 +69443,16 @@ video {
 .yadoms_theme_dark .border-shadowColor,
 .yadoms_theme_dark .hover\:border-shadowColor:hover {
   border-color: #CCCCCC;
+}
+
+.yadoms_theme_dark .chart .ct-label,
+.yadoms_theme_dark .chart .ct-axis-title {
+  fill: #ffffff;
+  color: #ffffff;
+}
+
+.yadoms_theme_dark .chart .ct-grid {
+  stroke: #ffffff;
 }
 
 .yadoms_theme_dark .shadow-xs,
@@ -69955,6 +69975,16 @@ video {
 .yadoms_theme_lidrea .border-shadowColor,
 .yadoms_theme_lidrea .hover\:border-shadowColor:hover {
   border-color: #333333;
+}
+
+.yadoms_theme_lidrea .chart .ct-label,
+.yadoms_theme_lidrea .chart .ct-axis-title {
+  fill: #061e18;
+  color: #061e18;
+}
+
+.yadoms_theme_lidrea .chart .ct-grid {
+  stroke: #061e18;
 }
 
 .yadoms_theme_lidrea .shadow-xs,

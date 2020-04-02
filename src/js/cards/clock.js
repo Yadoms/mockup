@@ -11,10 +11,10 @@ ready(() => {
     () => {
       let $clocks = findAll('.clock');
       if ($clocks.length)
-      $clocks.forEach($el => {
-        changeCardTitle($el, moment().format("MMMM do, YYYY"));
-        displayClock($el);
-      })
+        $clocks.forEach($el => {
+          changeCardTitle($el, moment().format("MMMM do, YYYY"));
+          displayClock($el);
+        });
     }, 
     1000 
   );
