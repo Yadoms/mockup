@@ -1,2 +1,6 @@
-mixin rain-gauge()
-  p TODO
+mixin rain-gauge(hour, day)
+  .rain-gauge
+    .flex
+      .mr-2.pr-2.border-r.border-primaryColor
+        +numeric-display(hour, 1, 'mm', 'depuis 1h')
+      +numeric-display(day, 1, 'mm', 'depuis 24h')
