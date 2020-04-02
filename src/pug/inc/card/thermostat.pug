@@ -1,2 +1,11 @@
-mixin thermostat()
-  p TODO
+mixin thermostat(value, state, current, unit)
+  .flex.flex-col
+    .w-full
+      .flex.justify-around.mx-auto(class="w-2/3")
+        if state
+          i.fas.fa-fire
+        if current
+          - var cur = current + '' + unit
+          p= cur
+    .w-full
+      +dimmer(value, 0, 100, 1, unit)
