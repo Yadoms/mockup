@@ -1,27 +1,27 @@
-import Chartist from 'chartist';
-import ChartistTooltip from 'chartist-plugin-tooltips-updated';
-import ChartistAxisTitle from 'chartist-plugin-axistitle';
-import { ready, findAll } from '../functions';
+import Chartist from "chartist";
+import ChartistTooltip from "chartist-plugin-tooltips-updated";
+import ChartistAxisTitle from "chartist-plugin-axistitle";
+import { ready, findAll } from "../functions";
 
 ready(() => {
-  let $charts = findAll('.chart');
+  let $charts = findAll(".chart");
   if ($charts.length)
-    $charts.forEach($chart => {
+    $charts.forEach(($chart) => {
       let chartData = JSON.parse($chart.dataset.chart),
-          data = {
-            labels: [],
-            series: []
-          };
-      chartData.datas.forEach(d => {
+        data = {
+          labels: [],
+          series: [],
+        };
+      chartData.datas.forEach((d) => {
         let sd = [];
-        d.data.forEach(o => {
+        d.data.forEach((o) => {
           data.labels.push(o.date);
           sd.push(o.value);
         });
         data.series.push(sd);
       });
       new Chartist.Line($chart, data, {
-        width: '500px',
+        width: "500px",
         showPoint: true,
         low: 0,
         showArea: true,
@@ -33,21 +33,21 @@ ready(() => {
               axisClass: "ct-axis-title",
               offset: {
                 x: 0,
-                y: 32
+                y: 32,
               },
-              textAnchor: "middle"
+              textAnchor: "middle",
             },
             axisY: {
               axisTitle: chartData.unit,
               axisClass: "ct-axis-title",
               offset: {
                 x: 0,
-                y: -1
+                y: -1,
               },
-              flipTitle: false
-            }
-          })
-        ]
+              flipTitle: false,
+            },
+          }),
+        ],
       });
     });
 });

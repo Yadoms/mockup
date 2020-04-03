@@ -1,18 +1,17 @@
-@import '../../_vars.less';
+@import "../../_vars.less";
 
 // cards
-@import './cards/counter.less';
-@import './cards/dimmer.less';
-@import './cards/forecast.less';
-@import './cards/gauge.less';
-@import './cards/switch.less';
-@import './cards/teleinfo-forecast.less';
-@import './cards/thermometer.less';
-@import './cards/wind.less';
+@import "./cards/counter.less";
+@import "./cards/dimmer.less";
+@import "./cards/forecast.less";
+@import "./cards/gauge.less";
+@import "./cards/switch.less";
+@import "./cards/teleinfo-forecast.less";
+@import "./cards/thermometer.less";
+@import "./cards/wind.less";
 
 #cards(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color) {
   .card {
-
     min-height: 125px;
 
     #counter(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color);
@@ -35,5 +34,5 @@
         border-left: 1px solid darken(@front_color, 20);
       }
     }
-  }  
+  }
 }

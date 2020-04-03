@@ -1,5 +1,4 @@
 #forecast(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color) {
-
   .windDirection(@direction, @rotation) {
     &.wind-@{direction} {
       --transform-rotate: @rotation;
@@ -11,7 +10,7 @@
       > div {
         bottom: -5px;
       }
-  
+
       .windDirection(S, 0deg);
       .windDirection(SSE, -22.5deg);
       .windDirection(SE, -45deg);
@@ -28,7 +27,6 @@
       .windDirection(OSO, 67.5deg);
       .windDirection(SO, 45deg);
       .windDirection(SSO, 22.5deg);
-      
     }
   }
 }

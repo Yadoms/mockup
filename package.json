@@ -3,7 +3,6 @@
   "private": true,
   "devDependencies": {
     "@jaames/iro": "^5.1.5",
-    "@prettier/plugin-pug": "^1.2.0",
     "@tailwindcss/custom-forms": "^0.2.1",
     "autoprefixer": "^9.7.4",
     "budo": "^11.6.3",
@@ -27,7 +26,6 @@
     "less": "^3.11.1",
     "odometer": "^0.4.8",
     "pnp-webpack-plugin": "^1.6.4",
-    "prettier": "^2.0.2",
     "pug": "^2.0.4",
     "tailwindcss": "^1.2.0",
     "webpack": "^4.42.1",

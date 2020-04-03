@@ -1,5 +1,4 @@
 #thermometer(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color) {
-
   .generateTubeColor(@color) {
     .liquid {
       background-color: @color;
@@ -11,21 +10,20 @@
   }
 
   .thermometer {
-
-    .generateTubeColor(#4A5568);
+    .generateTubeColor(#4a5568);
 
     &.frost {
-      .generateTubeColor(#2B6CB0);
+      .generateTubeColor(#2b6cb0);
     }
 
     &.cold {
-      .generateTubeColor(#4C51BF);
+      .generateTubeColor(#4c51bf);
     }
 
     &.normal {
-      .generateTubeColor(#6B46C1);
+      .generateTubeColor(#6b46c1);
     }
-    
+
     &.warm {
       .generateTubeColor(#B83280);
     }

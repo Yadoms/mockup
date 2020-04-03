@@ -1,12 +1,24 @@
 mixin dimmer(value, min = 0, max = 100, step = 1, suffix = '%')
   .dimmer.flex.flex-row.rounded-lg.h-10
-    button.h-full.w-10.rounded-l.outline-none.bg-activeColor.text-highlightColor(class="hover:bg-highlightColor hover:text-activeColor", data-action="decrement")
+    button.h-full.w-10.rounded-l.outline-none.bg-activeColor.text-highlightColor(
+      class='hover:bg-highlightColor hover:text-activeColor',
+      data-action='decrement'
+    )
       .m-auto.text-lg.font-bold
         i.fas.fa-minus
     .relative.h-full.bg-activeColor.text-highlightColor.font-mono.tracking-tighter
-      input.outline-none.text-right.h-full.bg-activeColor.pr-4(type="number", value=value, min=min, max=max, step=step)
+      input.outline-none.text-right.h-full.bg-activeColor.pr-4(
+        type='number',
+        value=value,
+        min=min,
+        max=max,
+        step=step
+      )
       .absolute.inline-block.inset-y-0.right-0.flex.items-center
         span.text-xs= suffix
-    button.h-full.w-10.rounded-r.outline-none.bg-activeColor.text-highlightColor(class="hover:bg-highlightColor hover:text-activeColor", data-action="increment")
+    button.h-full.w-10.rounded-r.outline-none.bg-activeColor.text-highlightColor(
+      class='hover:bg-highlightColor hover:text-activeColor',
+      data-action='increment'
+    )
       .m-auto.text-lg.font-bold
         i.fas.fa-plus

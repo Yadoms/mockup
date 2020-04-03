@@ -1,10 +1,15 @@
 - let targetString = (value) => { return '' + value}
 
 mixin menu_entry_content(icon, text, target)
-  a.block.align-middle.text-primaryColor.no-underline.flex(class="md:py-3 hover:text-highlightColor", href='' + targetString(target))
+  a.block.align-middle.text-primaryColor.no-underline.flex(
+    class='md:py-3 hover:text-highlightColor',
+    href="" + targetString(target)
+  )
     span.inline-block.w-6.text-center
       i(class=icon)
-    span.absolute.text-sm.opacity-0.ml-3.ease-in-out.transition-opacity.duration-300.ml-6.pl-2(class="md:pb-0")= text
+    span.absolute.text-sm.opacity-0.ml-3.ease-in-out.transition-opacity.duration-300.ml-6.pl-2(
+      class='md:pb-0'
+    )= text
 
 mixin menu_entry(icon, text, target, isActive = false)
   if isActive
@@ -15,7 +20,9 @@ mixin menu_entry(icon, text, target, isActive = false)
       +menu_entry_content(icon, text, target)
 
 mixin sidebar(page)
-  #sidebar.h-screen.w-16.bg-frontColor.flex.items-center.fixed.shadow.ease-in-out.transition-all.duration-300.z-50(class="hover:w-48 hover:shadow-2xl")
+  #sidebar.h-screen.w-16.bg-frontColor.flex.items-center.fixed.shadow.ease-in-out.transition-all.duration-300.z-50(
+    class='hover:w-48 hover:shadow-2xl'
+  )
     nav#menu.w-full
       ul.w-full
         +menu_entry('fas fa-home', 'Accueil', '/', page == "home")
