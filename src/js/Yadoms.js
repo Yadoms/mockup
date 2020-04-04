@@ -1,4 +1,4 @@
-import { findAll } from './functions';
+import { findAll, changeTheme } from './functions';
 
 class Yadoms {
   constructor() {
@@ -61,7 +61,7 @@ class Yadoms {
   }
   changeTheme(theme) {
     if ('' == theme) theme = 'light';
-    document.querySelector('link[id="theme"]').href = `/css/${theme}.min.css`;
+    changeTheme(theme);
     return 'The theme is set to ' + theme + ' now';
   }
   weather(conditions) {

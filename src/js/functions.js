@@ -24,3 +24,7 @@ export function changeCardTitle($element, content) {
 export function findAll(selector) {
   return document.querySelectorAll(selector);
 }
+
+export function changeTheme(theme) {
+  document.querySelector('link[id="theme"]').href = `/css/${theme}.min.css`;
+}
