@@ -69353,7 +69353,7 @@ video {
 
 .card .switch-toggle.active .wrapper,
 .card .switch-toggle.hover\:active:hover .wrapper {
-  background-color: #F7FAFC !important;
+  background-color: #718096 !important;
   box-shadow: none;
 }
 
@@ -69861,7 +69861,7 @@ video {
 
 .yadoms_theme_dark .card .switch-toggle.active .wrapper,
 .yadoms_theme_dark .card .switch-toggle.hover\:active:hover .wrapper {
-  background-color: #111111 !important;
+  background-color: #FFFFFF !important;
   box-shadow: none;
 }
 
@@ -70401,7 +70401,7 @@ video {
 
 .yadoms_theme_lidrea .card .switch-toggle.active .wrapper,
 .yadoms_theme_lidrea .card .switch-toggle.hover\:active:hover .wrapper {
-  background-color: #25BA92 !important;
+  background-color: #061E18 !important;
   box-shadow: none;
 }
 
