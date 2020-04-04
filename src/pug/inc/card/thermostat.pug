@@ -1,11 +1,12 @@
-mixin thermostat(value, state, current, unit)
+mixin thermostat(value, state, current, unit, digital = true)
   .flex.flex-col
     .w-full
       .flex.justify-around.mx-auto(class='w-2/3')
         if state
           i.fas.fa-fire
         if current
-          span.font-mono= current
+          - var cl = digital ? "font-mono" : "";
+          span(class=cl)= current
           span= unit
     .w-full
-      +dimmer(value, 0, 100, 1, unit)
+      +dimmer(value, 0, 100, 1, unit, digital)

@@ -5,6 +5,6 @@ mixin numeric-display(value, decimals = 0, unit = '', capture = '', digital = tr
       p.text-center.text-xs.text-shadowColor= capture
     .text-right.rounded-lg.text-highlightColor.flex.items-end.py-1.px-2.mt-2.glass.shadow-inner.items-center
       .flex-grow
-        .relative.overflow-hidden.text-3xl.font-mono.inline-block
+        .relative.overflow-hidden.text-3xl.inline-block
           +makeDigital(val, digital)
       .text-xl= unit

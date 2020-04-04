@@ -1,4 +1,4 @@
-mixin gauge(value, min = 0, max = 100, unit = '%')
+mixin gauge(value, min = 0, max = 100, unit = '%', digital = true)
   .gauge(data-value=value, data-min=min, data-max=max)
     .wrapper.w-24.h-24.rounded-full.mx-auto.bg-activeColor
       .ring.w-24.h-24.rounded-full.p-2.border-2.border-gray-100.shadow-inner.relative.overflow-hidden
@@ -6,5 +6,6 @@ mixin gauge(value, min = 0, max = 100, unit = '%')
         .shadow-lg.rounded-full.w-full.h-full.p-2.relative.bg-gray-100
           .w-full.h-full.shadow-inner.rounded-full.text-center.relative.bg-activeColor
             .container.text-primaryColor.absolute.-mt-3.inline-block.inset-x-0
-              .text-xs.font-mono= value
+              - var cl = digital ? "font-mono" : "";
+              .text-xs(class=cl)= value
               .text-2xs= unit

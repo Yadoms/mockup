@@ -1,6 +1,7 @@
-mixin weather(location, conditions, temperature)
+mixin weather(location, conditions, temperature, digital = true)
   .weather.w-full.flex.items-center(data-location=location)
     - var cond = "fas fa-" + conditions;
     +indicator(cond)
-    span.font-mono= temperature
+    - var cl = digital ? "font-mono" : "";
+    span(class=cl)= temperature
     span °C
