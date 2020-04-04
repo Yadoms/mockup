@@ -22,7 +22,7 @@ mixin card(title, battery = -1, wifi = -1)
               - var clw = wifi < 0.5 ? "text-red-600" : "";
               i.fas.fa-wifi(class=clw)
           span!= text
-      .flex-grow
+      .flex-grow.p-1
         if block
           .px-2.pt-1
             block
