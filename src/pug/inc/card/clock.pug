@@ -1,6 +1,6 @@
-mixin clock(seconds=false)
-  .clock.text-3xl.rounded-lg.text-highlightColor.shadow-inner.p-2.flex.glass(data-seconds=seconds)
-    .relative.overflow-hidden.font-mono
-      span.hollow.absolute.inset-0.opacity-12 88:88:88
-      span.digits
+mixin clock(seconds=false, digital=true)
+  .clock.text-3xl.rounded-lg.text-highlightColor.shadow-inner.p-2.flex.glass(
+    data-seconds=seconds
+  )
+    +makeDigital('', digital, '88:88:88')
     .ampm
