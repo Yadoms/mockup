@@ -3,7 +3,7 @@ mixin numeric-display(value, decimals = 0, unit = '', capture = '')
     - var val = parseFloat(value).toFixed(decimals);
     if capture
       p.text-center.text-xs.text-shadowColor= capture
-    .text-right.rounded-lg.text-highlightColor.flex.items-end.py-1.px-2.mt-2.bg-activeColor.shadow-inner
+    .text-right.rounded-lg.text-highlightColor.flex.items-end.py-1.px-2.mt-2.glass.shadow-inner
       .relative.overflow-hidden.text-3xl.font-mono
         .hollow.absolute.inset-0.opacity-12 8.8.8.8.8.8.8.8.8.8.
         .digits= val

@@ -69494,6 +69494,10 @@ video {
   border-left: 1px solid #cccccc;
 }
 
+.glass {
+  background-color: #fcfcfc;
+}
+
 .bg-minColor,
 .hover\:bg-minColor:hover {
   background-color: #4299e1;
@@ -70031,6 +70035,10 @@ video {
   border-left: 1px solid #000000;
 }
 
+.yadoms_theme_dark .glass {
+  background-color: #1b1a1f;
+}
+
 .yadoms_theme_dark .bg-minColor,
 .yadoms_theme_dark .hover\:bg-minColor:hover {
   background-color: #4299e1;
@@ -70283,7 +70291,7 @@ video {
   border-left: 1px solid #4d4a5a;
 }
 
-.yadoms_theme_dark .card .clock {
+.yadoms_theme_dark .card .glass {
   background-color: #1f1e25;
 }
 
@@ -70598,6 +70606,10 @@ video {
 
 .yadoms_theme_lidrea .card .title .icon {
   border-left: 1px solid #1ce6b0;
+}
+
+.yadoms_theme_lidrea .glass {
+  background-color: #73efce;
 }
 
 .yadoms_theme_lidrea .bg-minColor,
