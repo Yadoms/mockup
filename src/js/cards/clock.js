@@ -2,18 +2,18 @@ import { ready, changeCardTitle, findAll } from "../functions";
 
 const dateFormat = require("dateformat");
 
-function displayClock($element) {
-  $element.querySelector('.digits').innerHTML = dateFormat("hh:MM:ss");
+function displayClock($element, seconds = false) {
+  $element.querySelector('.digits').innerHTML = dateFormat("hh:MM" + (seconds ? ':ss' : ''));
   $element.querySelector('.ampm').innerHTML = dateFormat("TT");
 }
 
 ready(() => {
-  setInterval(() => {
-    let $clocks = findAll(".clock");
-    if ($clocks.length)
+  let $clocks = findAll(".clock");
+  if ($clocks.length)
+    setInterval(() => {
       $clocks.forEach(($el) => {
         changeCardTitle($el, dateFormat("mmmm d, yyyy"));
-        displayClock($el);
+        displayClock($el, $el.dataset.seconds);
       });
-  }, 1000);
+    }, 1000);
 });
