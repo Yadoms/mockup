@@ -4,31 +4,24 @@ const minifyCSS = require('gulp-csso');
 const pug = require('gulp-pug');
 const purgecss = require('gulp-purgecss');
 const budo = require('budo');
-const gap = require('gulp-append-prepend');
 const postcss = require('gulp-postcss');
 const tailwindcss = require('tailwindcss');
 const autoprefixer = require('autoprefixer');
 const addSrc = require('gulp-add-src');
-const concat = require('gulp-concat');
 const clean = require('del');
 const webpack = require('webpack-stream');
 const PnpWebpackPlugin = require(`pnp-webpack-plugin`);
 const path = require('path');
 const imagemin = require('gulp-imagemin');
+const rename = require('gulp-rename');
+const concat = require('gulp-concat');
 
 function html() {
   return src('src/pug/*.pug').pipe(pug()).pipe(dest('dest'));
 }
 
-function css() {
-  return src(['src/less/*.less', '!src/less/_*.less'])
-    .pipe(less())
-    .pipe(concat('app.css'))
-    .pipe(
-      gap.prependText(
-        '@tailwind base;\n@tailwind components;\n@tailwind utilities;\n@tailwind screens;\n'
-      )
-    )
+function cssLib() {
+  return src(['src/lib/main.css'])
     .pipe(postcss([tailwindcss('./tailwind.config.js'), autoprefixer()]))
     .pipe(dest('debug/beforePurge'))
     .pipe(
@@ -49,13 +42,40 @@ function css() {
           /-(leave|enter|appear)(|-(to|from|active))$/,
           /^(?!cursor-move).+-move$/,
           /^router-link(|-exact)-active$/,
-          /^yadoms_theme_/,
         ],
       })
     )
-    .pipe(addSrc(['src/lib/**/*.css']))
-    .pipe(concat('app.min.css'))
+    .pipe(addSrc(['src/lib/**/*.css', '!src/lib/main.css']))
+    .pipe(concat('lib.min.css'))
     .pipe(minifyCSS())
+    .pipe(dest('dest/css'));
+}
+
+function css() {
+  return src(['src/less/*.less', '!src/less/_*.less'])
+    .pipe(less())
+    .pipe(
+      purgecss({
+        content: ['dest/**/*.html', 'dest/**/*.js'],
+        defaultExtractor: (content) => {
+          const contentWithoutStyleBlocks = content.replace(
+            /<style[^]+?<\/style>/gi,
+            ''
+          );
+          return (
+            contentWithoutStyleBlocks.match(
+              /[A-Za-z0-9-_/:]*[A-Za-z0-9-_/]+/g
+            ) || []
+          );
+        },
+      })
+    )
+    .pipe(minifyCSS())
+    .pipe(
+      rename((path) => {
+        path.basename += '.min';
+      })
+    )
     .pipe(dest('dest/css'));
 }
 
@@ -116,12 +136,10 @@ function preview() {
 }
 
 function img() {
-  return src('src/img/**/*.*')
-    .pipe(imagemin())
-    .pipe(dest('dest/img'));
+  return src('src/img/**/*.*').pipe(imagemin()).pipe(dest('dest/img'));
 }
 
-exports.default = series(cleanDest, html, js, css, fonts, img, server);
+exports.default = series(cleanDest, html, js, cssLib, css, fonts, img, server);
 exports.css = css;
 exports.js = js;
 exports.html = html;

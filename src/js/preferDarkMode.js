@@ -1,6 +1,6 @@
 if (
   window.matchMedia &&
-  window.matchMedia("(prefers-color-scheme: dark)").matches
+  window.matchMedia('(prefers-color-scheme: dark)').matches
 )
-  document.documentElement.classList.add("yadoms_theme_dark");
-else document.documentElement.classList.remove("yadoms_theme_dark");
+  document.querySelector('link[id="theme"]').href = '/css/dark.min.css';
+else document.querySelector('link[id="theme"]').href = '/css/light.min.css';
