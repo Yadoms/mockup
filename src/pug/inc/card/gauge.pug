@@ -6,5 +6,5 @@ mixin gauge(value, min = 0, max = 100, unit = '%')
         .shadow-lg.rounded-full.w-full.h-full.p-2.relative.bg-gray-100
           .w-full.h-full.shadow-inner.rounded-full.text-center.relative.bg-activeColor
             .container.text-primaryColor.absolute.-mt-3.inline-block.inset-x-0
-              span.text-sm.font-mono= value
-              span.text-xs= unit
+              .text-xs.font-mono= value
+              .text-2xs= unit
