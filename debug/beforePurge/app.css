@@ -69497,6 +69497,36 @@ video {
   border-left: 1px solid #cccccc;
 }
 
+.bg-minColor,
+.hover\:bg-minColor:hover {
+  background-color: #4299e1;
+}
+
+.text-minColor,
+.hover\:text-minColor:hover {
+  color: #4299e1;
+}
+
+.border-minColor,
+.hover\:border-minColor:hover {
+  border-color: #4299e1;
+}
+
+.bg-maxColor,
+.hover\:bg-maxColor:hover {
+  background-color: #f56565;
+}
+
+.text-maxColor,
+.hover\:text-maxColor:hover {
+  color: #f56565;
+}
+
+.border-maxColor,
+.hover\:border-maxColor:hover {
+  border-color: #f56565;
+}
+
 .bg-baseColor,
 .hover\:bg-baseColor:hover {
   background-color: #F7FAFC;
@@ -70005,6 +70035,36 @@ video {
 
 .yadoms_theme_dark .card .title .icon {
   border-left: 1px solid #000000;
+}
+
+.yadoms_theme_dark .bg-minColor,
+.yadoms_theme_dark .hover\:bg-minColor:hover {
+  background-color: #4299e1;
+}
+
+.yadoms_theme_dark .text-minColor,
+.yadoms_theme_dark .hover\:text-minColor:hover {
+  color: #4299e1;
+}
+
+.yadoms_theme_dark .border-minColor,
+.yadoms_theme_dark .hover\:border-minColor:hover {
+  border-color: #4299e1;
+}
+
+.yadoms_theme_dark .bg-maxColor,
+.yadoms_theme_dark .hover\:bg-maxColor:hover {
+  background-color: #f56565;
+}
+
+.yadoms_theme_dark .text-maxColor,
+.yadoms_theme_dark .hover\:text-maxColor:hover {
+  color: #f56565;
+}
+
+.yadoms_theme_dark .border-maxColor,
+.yadoms_theme_dark .hover\:border-maxColor:hover {
+  border-color: #f56565;
 }
 
 .yadoms_theme_dark .bg-baseColor,
@@ -70547,6 +70607,36 @@ video {
 
 .yadoms_theme_lidrea .card .title .icon {
   border-left: 1px solid #1ce6b0;
+}
+
+.yadoms_theme_lidrea .bg-minColor,
+.yadoms_theme_lidrea .hover\:bg-minColor:hover {
+  background-color: #4299e1;
+}
+
+.yadoms_theme_lidrea .text-minColor,
+.yadoms_theme_lidrea .hover\:text-minColor:hover {
+  color: #4299e1;
+}
+
+.yadoms_theme_lidrea .border-minColor,
+.yadoms_theme_lidrea .hover\:border-minColor:hover {
+  border-color: #4299e1;
+}
+
+.yadoms_theme_lidrea .bg-maxColor,
+.yadoms_theme_lidrea .hover\:bg-maxColor:hover {
+  background-color: #f56565;
+}
+
+.yadoms_theme_lidrea .text-maxColor,
+.yadoms_theme_lidrea .hover\:text-maxColor:hover {
+  color: #f56565;
+}
+
+.yadoms_theme_lidrea .border-maxColor,
+.yadoms_theme_lidrea .hover\:border-maxColor:hover {
+  border-color: #f56565;
 }
 
 .yadoms_theme_lidrea .bg-baseColor,

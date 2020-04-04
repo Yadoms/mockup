@@ -1,3 +1,5 @@
+@import '../../_vars.less';
+
 #color() {
   .generate(@name, @color) {
     .bg-@{name}Color,
@@ -18,6 +20,9 @@
 }
 
 #colors(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color) {
+  #color.generate(min, @color_min);
+  #color.generate(max, @color_max);
+
   #color.generate(base, @base_color);
   #color.generate(front, @front_color);
   #color.generate(active, @active_color);

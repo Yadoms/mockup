@@ -8,10 +8,10 @@ mixin forecast(city, datas)
             - var cond = "fas fa-" + data.cond;
             +indicator(cond)
             .flex.flex-col.justify-center.text-xs
-              .temp-min.text-blue-500.text-right
+              .temp-min.text-minColor.text-right
                 span.font-mono= data.Tmin
                 span= data.Tunit
-              .temp-max.text-red-500.text-right
+              .temp-max.text-maxColor.text-right
                 span.font-mono= data.Tmax
                 span= data.Tunit
           .forecast-conditions.flex.justify-around
@@ -23,8 +23,8 @@ mixin forecast(city, datas)
                 .inline-block.absolute.mono-font-xs
                   i.fa.fa-caret-up
               .absolute.flex.flex-col.justify-center.text-2xs.font-mono.text-center.leading-tight.h-full.inset-0
-                .wind-min.text-blue-500.text-center= data.Wmin
-                .wind-max.text-red-500.text-center= data.Wmax
+                .wind-min.text-minColor.text-center= data.Wmin
+                .wind-max.text-maxColor.text-center= data.Wmax
             .forecast-rain.w-3.h-10.border-2.border-primaryColor.rounded-full.border-t-0.rounded-t-none.inline-flex.items-end(
               data-rain=data.rain
             )
