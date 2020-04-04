@@ -3,7 +3,8 @@ import { ready, changeCardTitle, findAll } from "../functions";
 const dateFormat = require("dateformat");
 
 function displayClock($element) {
-  $element.innerHTML = dateFormat("mediumTime");
+  $element.querySelector('.digits').innerHTML = dateFormat("hh:MM:ss");
+  $element.querySelector('.ampm').innerHTML = dateFormat("TT");
 }
 
 ready(() => {
@@ -11,7 +12,7 @@ ready(() => {
     let $clocks = findAll(".clock");
     if ($clocks.length)
       $clocks.forEach(($el) => {
-        changeCardTitle($el, dateFormat("longDate"));
+        changeCardTitle($el, dateFormat("mmmm d, yyyy"));
         displayClock($el);
       });
   }, 1000);

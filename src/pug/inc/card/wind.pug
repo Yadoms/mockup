@@ -6,6 +6,6 @@ mixin wind(speed, direction, unit = 'km/h')
     )
       .inline-block.absolute.mono-font-xs
         i.fa.fa-caret-up
-    .absolute.flex.flex-col.justify-center.text-xs.font-mono.tracking-tighter.text-center.leading-tight.h-full.inset-0
-      - var wsp = speed + "" + unit;
-      p= wsp
+    .absolute.flex.flex-col.justify-center.text-xs.text-center.leading-tight.h-full.inset-0
+      span.font-mono= speed
+      span= unit

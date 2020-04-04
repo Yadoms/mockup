@@ -1,6 +1,7 @@
 @import "../../_vars.less";
 
 // cards
+@import "./cards/clock.less";
 @import "./cards/counter.less";
 @import "./cards/dimmer.less";
 @import "./cards/forecast.less";
@@ -14,6 +15,7 @@
   .card {
     min-height: 125px;
 
+    #clock(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color);
     #counter(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color);
     #dimmer(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color);
     #forecast(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color);

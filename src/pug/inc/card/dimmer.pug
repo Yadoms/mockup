@@ -6,8 +6,8 @@ mixin dimmer(value, min = 0, max = 100, step = 1, suffix = '%')
     )
       .m-auto.text-lg.font-bold
         i.fas.fa-minus
-    .relative.h-full.bg-activeColor.text-highlightColor.font-mono.tracking-tighter
-      input.outline-none.text-right.h-full.bg-activeColor.pr-4(
+    .relative.h-full.bg-activeColor.text-highlightColor
+      input.outline-none.text-right.h-full.bg-activeColor.pr-4.font-mono(
         type='number',
         value=value,
         min=min,

@@ -7,11 +7,13 @@ mixin forecast(city, datas)
           .forecast-weather.flex
             - var cond = "fas fa-" + data.cond;
             +indicator(cond)
-            .flex.flex-col.justify-center.text-xs.font-mono.tracking-tighter
-              - var tmin = data.Tmin + data.Tunit;
-              - var tmax = data.Tmax + data.Tunit;
-              .temp-min.text-blue-500= tmin
-              .temp-max.text-red-500= tmax
+            .flex.flex-col.justify-center.text-xs
+              .temp-min.text-blue-500.text-right
+                span.font-mono= data.Tmin
+                span= data.Tunit
+              .temp-max.text-red-500.text-right
+                span.font-mono= data.Tmax
+                span= data.Tunit
           .forecast-conditions.flex.justify-around
             .forecast-wind.relative.w-10.h-10
               - var wdir = "wind-" + data.Wdir;
@@ -20,12 +22,12 @@ mixin forecast(city, datas)
               )
                 .inline-block.absolute.mono-font-xs
                   i.fa.fa-caret-up
-              .absolute.flex.flex-col.justify-center.text-xs.font-mono.tracking-tighter.text-center.leading-tight.h-full.inset-0
-                .wind-min.text-blue-500= data.Wmin
-                .wind-max.text-red-500= data.Wmax
+              .absolute.flex.flex-col.justify-center.text-2xs.font-mono.text-center.leading-tight.h-full.inset-0
+                .wind-min.text-blue-500.text-center= data.Wmin
+                .wind-max.text-red-500.text-center= data.Wmax
             .forecast-rain.w-3.h-10.border-2.rounded-full.border-t-0.rounded-t-none.inline-flex.items-end(
               data-rain=data.rain
             )
-              .liquid.h-0.w-3.transition-all.duration-700.ease-in-out.relative.text-xs
+              .liquid.h-0.w-3.transition-all.duration-700.ease-in-out.relative.text-2xs
                 .absolute.top-0.left-0.w-full.h-full.rounded-b-full.bg-blue-600
-                .absolute.top-0.left-0.pl-3.-mt-2.text-primaryColor.font-mono.tracking-tighter= data.rain
+                .absolute.top-0.left-0.pl-3.-mt-2.text-primaryColor.font-mono= data.rain

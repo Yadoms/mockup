@@ -1,2 +1,6 @@
 mixin clock
-  .clock.text-3xl.font-mono.tracking-tighter
+  .clock.text-3xl.rounded-lg.text-primaryColor.shadow-inner.p-2
+    .relative
+      span.hollow.absolute.inset-0.font-mono.opacity-12 00:00:00
+      span.digits.font-mono
+      span.ampm
