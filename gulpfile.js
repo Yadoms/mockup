@@ -14,7 +14,7 @@ const clean = require('del');
 const webpack = require('webpack-stream');
 const PnpWebpackPlugin = require(`pnp-webpack-plugin`);
 const path = require('path');
-const prettier = require('gulp-prettier');
+const imagemin = require('gulp-imagemin');
 
 function html() {
   return src('src/pug/*.pug').pipe(pug()).pipe(dest('dest'));
@@ -115,7 +115,13 @@ function preview() {
   });
 }
 
-exports.default = series(cleanDest, html, js, css, fonts, server);
+function img() {
+  return src('src/img/**/*.*')
+    .pipe(imagemin())
+    .pipe(dest('dest/img'));
+}
+
+exports.default = series(cleanDest, html, js, css, fonts, img, server);
 exports.css = css;
 exports.js = js;
 exports.html = html;

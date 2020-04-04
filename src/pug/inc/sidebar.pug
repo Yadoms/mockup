@@ -20,10 +20,10 @@ mixin menu_entry(icon, text, target, isActive = false)
       +menu_entry_content(icon, text, target)
 
 mixin sidebar(page)
-  #sidebar.h-screen.w-16.bg-frontColor.flex.items-center.fixed.shadow.ease-in-out.transition-all.duration-300.z-50(
+  #sidebar.h-screen.w-16.bg-frontColor.flex.items-center.fixed.shadow.ease-in-out.transition-all.duration-300.z-50.flex-col(
     class='hover:w-48 hover:shadow-2xl'
   )
-    nav#menu.w-full
+    nav#menu.w-full.flex-grow
       ul.w-full
         +menu_entry('fas fa-home', 'Accueil', '/', page == "home")
         +menu_entry('fas fa-door-open', 'Volets', '/volets.html', page == "volets")
@@ -32,3 +32,14 @@ mixin sidebar(page)
         +menu_entry('far fa-hdd', 'Système', '/systme.html', page == "systme")
         +menu_entry('far fa-lightbulb', 'Test', '/test.html', page == "test")
         +menu_entry('fas fa-cog', 'Configuration', '/config.html', page == "config")
+    .w-full.p-2
+      a.block.align-middle.flex.text-primaryColor.p-2.no-underline(
+        href='https://yadoms.com',
+        target='_blank',
+        class='md:py-3 hover:text-highlightColor'
+      )
+        span.inline-block.w-6.text-center
+          img(src='/img/icon.png')
+        span.absolute.text-sm.opacity-0.ml-3.ease-in-out.transition-opacity.duration-300.ml-6.pl-2(
+          class='md:pb-0'
+        ) Yadoms.com
