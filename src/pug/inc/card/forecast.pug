@@ -17,7 +17,7 @@ mixin forecast(city, datas)
           .forecast-conditions.flex.justify-around
             .forecast-wind.relative.w-10.h-10
               - var wdir = "wind-" + data.Wdir;
-              .ring.relative.border.w-full.h-full.rounded-full.transform.duration-200.inset-0.flex.justify-center(
+              .ring.relative.border-2.border-primaryColor.w-full.h-full.rounded-full.transform.duration-200.inset-0.flex.justify-center(
                 class=wdir
               )
                 .inline-block.absolute.mono-font-xs
@@ -25,7 +25,7 @@ mixin forecast(city, datas)
               .absolute.flex.flex-col.justify-center.text-2xs.font-mono.text-center.leading-tight.h-full.inset-0
                 .wind-min.text-blue-500.text-center= data.Wmin
                 .wind-max.text-red-500.text-center= data.Wmax
-            .forecast-rain.w-3.h-10.border-2.rounded-full.border-t-0.rounded-t-none.inline-flex.items-end(
+            .forecast-rain.w-3.h-10.border-2.border-primaryColor.rounded-full.border-t-0.rounded-t-none.inline-flex.items-end(
               data-rain=data.rain
             )
               .liquid.h-0.w-3.transition-all.duration-700.ease-in-out.relative.text-xs
