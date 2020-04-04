@@ -1,5 +1,7 @@
 mixin makeDigital(value, hollow = true, format = '8.8.8.8.8.8.8.8.')
-  .relative.overflow-hidden.font-mono
+  .relative.overflow-hidden
     if hollow
-      span.hollow.absolute.inset-0.opacity-12= format
-    span.digits= value
+      span.hollow.absolute.inset-0.opacity-12.font-mono= format
+      span.digits.font-mono= value
+    else
+      span.digits= value
