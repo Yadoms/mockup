@@ -1,11 +1,23 @@
+@import '../../../_vars.less';
+
 #switch(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color) {
   .switch-button {
     line-height: normal;
-    color: @highlight_color;
+
+    border-color: darken(@front_color, 2%);
+
+    box-shadow: -@shadow_size -@shadow_size @shadow_size*2
+        lighten(@front_color, -2.5%),
+      @shadow_size @shadow_size @shadow_size*2
+        lighten(@front_color, 2.5%);
 
     &.active {
-      background-color: @highlight_color;
-      color: @front_color;
+      color: @highlight_color;
+      background: linear-gradient(
+        145deg,
+        lighten(@front_color, 1.5%),
+        lighten(@front_color, -1.5%)
+      );
     }
 
     &:focus {

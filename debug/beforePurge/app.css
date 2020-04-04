@@ -69331,12 +69331,13 @@ video {
 
 .card .switch-button {
   line-height: normal;
-  color: #319795;
+  border-color: #fafafa;
+  box-shadow: -5px -5px 10px #f9f9f9, 5px 5px 10px #ffffff;
 }
 
 .card .switch-button.active {
-  background-color: #319795;
-  color: #FFFFFF;
+  color: #319795;
+  background: linear-gradient(145deg, #ffffff, #fbfbfb);
 }
 
 .card .switch-button:focus {
@@ -69867,12 +69868,13 @@ video {
 
 .yadoms_theme_dark .card .switch-button {
   line-height: normal;
-  color: #5980FF;
+  border-color: #18171c;
+  box-shadow: -5px -5px 10px #17161b, 5px 5px 10px #232229;
 }
 
 .yadoms_theme_dark .card .switch-button.active {
-  background-color: #5980FF;
-  color: #1d1c22;
+  color: #5980FF;
+  background: linear-gradient(145deg, #211f26, #19191e);
 }
 
 .yadoms_theme_dark .card .switch-button:focus {
@@ -70435,12 +70437,13 @@ video {
 
 .yadoms_theme_lidrea .card .switch-button {
   line-height: normal;
-  color: #FA255B;
+  border-color: #6fefcd;
+  box-shadow: -5px -5px 10px #6defcc, 5px 5px 10px #83f1d4;
 }
 
 .yadoms_theme_lidrea .card .switch-button.active {
-  background-color: #FA255B;
-  color: #78F0D0;
+  color: #FA255B;
+  background: linear-gradient(145deg, #7ff1d2, #71efce);
 }
 
 .yadoms_theme_lidrea .card .switch-button:focus {

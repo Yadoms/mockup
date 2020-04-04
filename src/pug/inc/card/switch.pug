@@ -4,7 +4,7 @@ mixin switch(type, ...args)
       - var cl = args[0]
       - var state = args[1]
       - var clb = state == 'on' ? 'active' : ''
-      button.switch-button.text-3xl.p-3.rounded-lg.border-2.border-highlightColor(class=clb)
+      button.switch-button.text-3xl.p-3.rounded-lg.border.text-primaryColor(class=clb)
         i.mono-font-3xl.block(class=cl)
     else if type == "arrow"
       .switch-arrow.flex.flex-col.rounded-lg.items-center
