@@ -9,10 +9,10 @@ mixin forecast(city, datas)
             +indicator(cond)
             .flex.flex-col.justify-center.text-xs
               .temp-min.text-minColor.text-right
-                span.font-mono= data.Tmin
+                span= data.Tmin
                 span= data.Tunit
               .temp-max.text-maxColor.text-right
-                span.font-mono= data.Tmax
+                span= data.Tmax
                 span= data.Tunit
           .forecast-conditions.flex.justify-around
             .forecast-wind.relative.w-10.h-10
@@ -22,7 +22,7 @@ mixin forecast(city, datas)
               )
                 .inline-block.absolute.mono-font-xs
                   i.fa.fa-caret-up
-              .absolute.flex.flex-col.justify-center.text-2xs.font-mono.text-center.leading-tight.h-full.inset-0
+              .absolute.flex.flex-col.justify-center.text-2xs.text-center.leading-tight.h-full.inset-0
                 .wind-min.text-minColor.text-center= data.Wmin
                 .wind-max.text-maxColor.text-center= data.Wmax
             .forecast-rain.w-3.h-10.border-2.border-primaryColor.rounded-full.border-t-0.rounded-t-none.inline-flex.items-end(
