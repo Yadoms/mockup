@@ -15,7 +15,7 @@ mixin switch(type, ...args)
         button.rounded-b.w-10.h-10.bg-activeColor.text-highlightColor(class=clad, data-action="down")
           i.fas.fa-caret-down
     else if type == "toggle"
-      .switch-toggle.inline-flex.items-center.cursor-pointer(class="hover:active")
+      .switch-toggle.inline-flex.items-center.cursor-pointer.my-4(class="hover:active")
         span.relative
           input.absolute.opacity-0.w-0.h-0.left-0.top-0(type="checkbox", checked=(args[0] == 'on'))
           span.wrapper.block.rounded-full.w-10.h-6.bg-activeColor.shadow-inner
