@@ -69187,10 +69187,6 @@ video {
   box-shadow: -6px -6px 16px #ffffff, 6px 6px 16px #ffffff;
 }
 
-.card .clock {
-  background-color: #ffffff;
-}
-
 .card .odometer.odometer-auto-theme .odometer-hacking-mark ~ .odometer-digit {
   background-image: linear-gradient(to bottom, #eee0d3 0%, #eee0d3 40%, #bbaa9a 60%, #eee0d3 80%, #eee0d3 100%);
   background-color: #fff5f5;
@@ -69725,10 +69721,6 @@ video {
   min-height: 125px;
   border: 1px solid #292833;
   box-shadow: -6px -6px 16px #1d1c22, 6px 6px 16px #1d1c22;
-}
-
-.yadoms_theme_dark .card .clock {
-  background-color: #ffffff;
 }
 
 .yadoms_theme_dark .card .odometer.odometer-auto-theme .odometer-hacking-mark ~ .odometer-digit {
@@ -70297,10 +70289,6 @@ video {
   min-height: 125px;
   border: 1px solid #25ba92;
   box-shadow: -6px -6px 16px #78f0d0, 6px 6px 16px #78f0d0;
-}
-
-.yadoms_theme_lidrea .card .clock {
-  background-color: #ffffff;
 }
 
 .yadoms_theme_lidrea .card .odometer.odometer-auto-theme .odometer-hacking-mark ~ .odometer-digit {

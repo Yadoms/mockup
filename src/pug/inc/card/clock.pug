@@ -1,5 +1,5 @@
 mixin clock(seconds=false)
-  .clock.text-3xl.rounded-lg.text-highlightColor.shadow-inner.p-2.flex(data-seconds=seconds)
+  .clock.text-3xl.rounded-lg.text-highlightColor.shadow-inner.p-2.flex.bg-activeColor(data-seconds=seconds)
     .relative.overflow-hidden
       span.hollow.absolute.inset-0.font-mono.opacity-12 00:00:00
       span.digits.font-mono
