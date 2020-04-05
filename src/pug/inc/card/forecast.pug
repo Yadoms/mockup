@@ -20,9 +20,9 @@ mixin forecast(city, datas)
               .ring.relative.border-2.border-primaryColor.w-full.h-full.rounded-full.transform.duration-200.inset-0.flex.justify-center(
                 class=wdir
               )
-                .inline-block.absolute.mono-font-xs
+                .inline-block.absolute.mono-font-2xs
                   i.fa.fa-caret-up
-              .absolute.flex.flex-col.justify-center.text-2xs.text-center.leading-tight.h-full.inset-0
+              .absolute.flex.flex-col.justify-center.text-xs.text-center.leading-tight.h-full.inset-0
                 .wind-min.text-minColor.text-center= data.Wmin
                 .wind-max.text-maxColor.text-center= data.Wmax
             .forecast-rain.w-3.h-10.border-2.border-primaryColor.rounded-full.border-t-0.rounded-t-none.inline-flex.items-end(
