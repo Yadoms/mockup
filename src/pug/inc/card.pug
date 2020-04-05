@@ -1,5 +1,5 @@
 mixin card(title, battery = -1, wifi = -1)
-  .inline-block.m-2
+  .inline-block.m-2.relative.top-0.left-0.transform.transition-full.duration-500.ease-in-out
     .card.rounded-lg.p-1.flex.flex-col-reverse.text-primaryColor.bg-frontColor
       - var cl = title ? "" : "no-border";
       - var text = title ? title : "&nbsp;";

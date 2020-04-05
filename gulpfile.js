@@ -113,7 +113,7 @@ function js() {
 function server() {
   watch('src/less/**/*.less', css);
   watch('src/js/**/*.js', js);
-  watch('src/pug/**/*.pug', series(html, css));
+  watch('src/pug/**/*.pug', series(html, cssLib, css));
   budo({
     live: true,
     dir: 'dest',

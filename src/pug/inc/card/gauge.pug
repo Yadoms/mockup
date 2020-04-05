@@ -1,5 +1,5 @@
 mixin gauge(value, min = 0, max = 100, unit = '%', digital = true)
-  .gauge(data-value=value, data-min=min, data-max=max)
+  .gauge.w-32(data-value=value, data-min=min, data-max=max)
     .wrapper.w-24.h-24.rounded-full.mx-auto.bg-activeColor
       .ring.w-24.h-24.rounded-full.p-2.border-2.border-gray-100.shadow-inner.relative.overflow-hidden
         .fill.absolute.w-full.h-full.inset-x-0.bottom-0

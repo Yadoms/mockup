@@ -8,37 +8,22 @@ module.exports = {
   },
   plugins: [require('@tailwindcss/custom-forms')],
   theme: {
-    fontSize: {
-      '3xs': '.5rem',
-      '2xs': '.625rem',
-      xs: '.75rem',
-      sm: '.875rem',
-      base: '1rem',
-      lg: '1.125rem',
-      xl: '1.25rem',
-      '2xl': '1.5rem',
-      '3xl': '1.875rem',
-      '4xl': '2.25rem',
-      '5xl': '3rem',
-      '6xl': '4rem',
-      '7xl': '5rem',
+    extend: {
+      fontSize: {
+        '3xs': '.5rem',
+        '2xs': '.625rem',
+      },
+      opacity: {
+        12: 0.12,
+      },
+      width: {
+        96: '24rem',
+        128: '32rem',
+        144: '36rem',
+      },
+      transitionProperty: {
+        'full': 'all'
+      }
     },
-    opacity: {
-      '0': '0',
-     '12': '.12',
-     '25': '.25',
-     '50': '.5',
-     '75': '.75',
-     '10': '.1',
-     '20': '.2',
-     '30': '.3',
-     '40': '.4',
-     '50': '.5',
-     '60': '.6',
-     '70': '.7',
-     '80': '.8',
-     '90': '.9',
-     '100': '1',
-    }
   },
 };

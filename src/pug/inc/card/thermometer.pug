@@ -1,5 +1,10 @@
 mixin thermometer(value, min = 0, max = 40, unit = '°C', digital = true)
-  .thermometer(data-value=value, data-min=min, data-max=max, data-unit=unit)
+  .thermometer.w-24(
+    data-value=value,
+    data-min=min,
+    data-max=max,
+    data-unit=unit
+  )
     .w-20.h-0
     .flex.flex-col.items-center.-ml-6
       .rounded-t-full.w-5.h-20.border-2.bg-white.border-gray-600.z-10.-mb-1.border-b-0.inline-flex.items-end

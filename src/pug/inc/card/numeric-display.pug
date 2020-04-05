@@ -1,5 +1,5 @@
 mixin numeric-display(value, decimals = 0, unit = '', capture = '', digital = true)
-  .numeric-display.w-full
+  .numeric-display.w-40
     - var val = parseFloat(value).toFixed(decimals);
     if capture
       p.text-center.text-xs.text-shadowColor= capture
