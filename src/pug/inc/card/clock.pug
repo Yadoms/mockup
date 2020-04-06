@@ -1,6 +1,6 @@
 mixin clock(seconds=false, digital=true)
   - var cl = digital ? (seconds ? "w-64" : "w-48") : seconds ? "w-48" : "w-32";
-  .clock.text-3xl.rounded-lg.text-highlightColor.shadow-inner.p-2.flex.glass.items-center(
+  .clock.text-3xl.rounded-lg.text-highlightColor.shadow-inner.p-2.glass.flex.items-center.h-16(
     data-seconds=seconds,
     class=cl
   )

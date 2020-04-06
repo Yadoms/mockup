@@ -1,10 +1,10 @@
 mixin forecast(city, datas)
-  .forecast.w-144(data-city=city)
-    .flex
+  .forecast.w-144.h-48(data-city=city)
+    .flex.h-full.items-center
       each data in datas
         .forecast-day.mx-2
           .text-center= data.day
-          .forecast-weather.flex
+          .forecast-weather.flex.mb-2
             - var cond = "fas fa-" + data.cond;
             +indicator(cond)
             .flex.flex-col.justify-center.text-xs

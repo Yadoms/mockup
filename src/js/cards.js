@@ -1,16 +1,25 @@
-import { ready } from './functions';
+import { ready, findAll } from './functions';
 import { Masis, MasisPosition } from 'masis';
 
 ready(() => {
+  let $cards = findAll('.card');
+  if ($cards.length)
+    $cards.forEach(($card) => {
+      const $component = $card.querySelector('.card-wrapper > div');
+      $component.classList.forEach(cl => {
+        if (cl.match(/w-\d+/))
+          $card.querySelector('.card-title').classList.add(cl);
+      })
+    });
 
   var m = new Masis('#cards');
   setTimeout(() => {
     MasisPosition(m);
 
-    const resizeObserver = new ResizeObserver(entries => {
+    const resizeObserver = new ResizeObserver((entries) => {
       MasisPosition(m);
     });
-    
+
     resizeObserver.observe(document.querySelector('#cards'));
   }, 500);
 });

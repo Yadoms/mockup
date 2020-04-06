@@ -1,24 +1,22 @@
 export function ready(fn) {
-  if (document.readyState != "loading") {
+  if (document.readyState != 'loading') {
     fn();
   } else {
-    document.addEventListener("DOMContentLoaded", fn);
+    document.addEventListener('DOMContentLoaded', fn);
   }
 }
 
 export function findCardTitle($element) {
-  return $element.parentNode.parentNode.parentNode.querySelector(
-    "div:first-child"
-  );
+  return $element.parentNode.parentNode.querySelector('.card-title');
 }
 
 export function changeCardTitle($element, content) {
-  let $title = findCardTitle($element);
-  $title.classList.remove("hidden");
-  let $p = $title.querySelector("p");
-  $p.innerHTML = content;
-  if (content == "") $p.classList.add("no-border");
-  else $p.classList.remove("no-border");
+  let $cardtitle = findCardTitle($element);
+  $cardtitle.classList.remove('hidden');
+  let $title = $cardtitle.querySelector('.title');
+  $title.innerHTML = content;
+  if (content == '') $cardtitle.classList.add('no-border');
+  else $cardtitle.classList.remove('no-border');
 }
 
 export function findAll(selector) {

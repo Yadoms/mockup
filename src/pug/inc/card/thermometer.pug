@@ -1,17 +1,16 @@
 mixin thermometer(value, min = 0, max = 40, unit = '°C', digital = true)
-  .thermometer.w-24(
+  .thermometer.w-24.h-32(
     data-value=value,
     data-min=min,
     data-max=max,
     data-unit=unit
   )
-    .w-20.h-0
-    .flex.flex-col.items-center.-ml-6
-      .rounded-t-full.w-5.h-20.border-2.bg-white.border-gray-600.z-10.-mb-1.border-b-0.inline-flex.items-end
+    .flex.flex-col.items-center.-ml-6.mt-2
+      .rounded-t-full.w-5.h-20.border-2.bg-white.border-gray-600.z-10.-mb-1.border-b-0.inline-flex.items-end.-ml-6
         .liquid.bar.rounded-t-full.h-0.w-5.mx-1.-mb-1.mt-1.transition-all.duration-700.ease-in-out.relative.text-xs
           .absolute.top-0.left-0.pl-6.text-primaryColor= val
             - var cl = digital ? "font-mono" : "";
             span(class=cl)= value
             span= unit
-      .bulb.rounded-full.w-8.h-8.border-2.bg-white.border-gray-600.inline-flex
+      .bulb.rounded-full.w-8.h-8.border-2.bg-white.border-gray-600.inline-flex.-ml-6
         .liquid.rounded-full.w-5.h-5.m-1.transition-colors.duration-700.ease-in-out

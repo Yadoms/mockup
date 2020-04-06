@@ -1,6 +1,6 @@
 mixin thermostat(value, state, current, unit, digital = true)
-  .thermostat.flex.flex-col.w-48
-    .w-full
+  .thermostat.w-48.h-24
+    .flex.flex-col.mx-auto
       .flex.justify-around.mx-auto(class='w-2/3')
         if state
           i.fas.fa-fire
@@ -8,5 +8,4 @@ mixin thermostat(value, state, current, unit, digital = true)
           - var cl = digital ? "font-mono" : "";
           span(class=cl)= current
           span= unit
-    .w-full
       +dimmer(value, 0, 100, 1, unit, digital)

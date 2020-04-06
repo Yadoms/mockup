@@ -1,26 +1,27 @@
 mixin dimmer(value, min = 0, max = 100, step = 1, suffix = '%', digital = true)
-  .dimmer.flex.flex-row.rounded-lg.h-10.text-highlightColor.shadow-inner.flex.bg-activeColor.mt-2.overflow-hidden.w-48
-    button.h-full.w-10.outline-none(
-      class='hover:bg-highlightColor hover:text-activeColor',
-      data-action='decrement'
-    )
-      .m-auto.text-lg.font-bold.p-2
-        i.fas.fa-minus
-    .relative.h-full.py-2.px-4.shadow-inner.flex-grow
-      - var cl = digital ? "font-mono" : "";
-      input.outline-none.text-right.h-full.bg-activeColor.pr-4.w-full(
-        type='number',
-        value=value,
-        min=min,
-        max=max,
-        step=step,
-        class=cl
+  .dimmer.w-48.h-16.flex.items-center
+    .w-full.h-10.flex.flex-row.rounded-lg.text-highlightColor.shadow-inner.bg-activeColor.mt-2.overflow-hidden
+      button.h-full.w-10.outline-none(
+        class='hover:bg-highlightColor hover:text-activeColor',
+        data-action='decrement'
       )
-      .absolute.inline-block.inset-y-0.right-0.flex.items-center
-        span.text-xs.pr-2= suffix
-    button.h-full.w-10.outline-none.p-2(
-      class='hover:bg-highlightColor hover:text-activeColor',
-      data-action='increment'
-    )
-      .m-auto.text-lg.font-bold
-        i.fas.fa-plus
+        .m-auto.text-lg.font-bold.p-2
+          i.fas.fa-minus
+      .relative.h-full.py-2.px-4.shadow-inner.flex-grow
+        - var cl = digital ? "font-mono" : "";
+        input.outline-none.text-right.h-full.bg-activeColor.pr-4.w-full(
+          type='number',
+          value=value,
+          min=min,
+          max=max,
+          step=step,
+          class=cl
+        )
+        .absolute.inline-block.inset-y-0.right-0.flex.items-center
+          span.text-xs.pr-2= suffix
+      button.h-full.w-10.outline-none.p-2(
+        class='hover:bg-highlightColor hover:text-activeColor',
+        data-action='increment'
+      )
+        .m-auto.text-lg.font-bold
+          i.fas.fa-plus

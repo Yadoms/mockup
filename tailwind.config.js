@@ -21,9 +21,14 @@ module.exports = {
         128: '32rem',
         144: '36rem',
       },
+      height: {
+        96: '24rem',
+        128: '32rem',
+        144: '36rem',
+      },
       transitionProperty: {
-        'full': 'all'
-      }
+        full: 'all',
+      },
     },
   },
 };

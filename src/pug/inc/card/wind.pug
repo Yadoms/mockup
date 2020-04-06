@@ -1,5 +1,6 @@
 mixin wind(speed, direction, unit = 'km/h', digital = true)
-  .wind.relative.h-24.w-24
+  .wind.w-32.h-32.p-4
+    .relative.h-24.w-24
       - var wdir = "wind-" + direction;
       .ring.relative.border-2.border-primaryColor.w-full.h-full.rounded-full.transform.duration-200.inset-0.flex.justify-center(
         class=wdir
