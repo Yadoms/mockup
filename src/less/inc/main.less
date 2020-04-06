@@ -1,7 +1,7 @@
-@import "./cards.less";
-@import "./colors.less";
-@import "./overrides.less";
-@import "./shadows.less";
+@import './cards.less';
+@import './colors.less';
+@import './overrides.less';
+@import './shadows.less';
 
 #makeTheme(@base_color, 
            @front_color, 
@@ -11,6 +11,20 @@
            @shadow_color, 
            @text_shadow_color
     ) {
+  #illustration {
+    background: linear-gradient(
+        fade(@base_color, 90%),
+        fade(@base_color, 92.5%),
+        fade(@base_color, 95%)
+      );
+    background-size: cover;
+
+    #cover {
+      z-index: -1;
+      background-size: cover;
+    }
+  }
+
   #cards(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text_shadow_color);
   #colors(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text_shadow_color);
   #overrides(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text_shadow_color);

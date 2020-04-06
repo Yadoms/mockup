@@ -15,6 +15,8 @@ const path = require('path');
 const imagemin = require('gulp-imagemin');
 const rename = require('gulp-rename');
 const concat = require('gulp-concat');
+const scaleImages = require('gulp-scale-images');
+const flatMap = require('flat-map').default;
 
 function html() {
   return src('src/pug/*.pug').pipe(pug()).pipe(dest('dest'));
@@ -135,12 +137,32 @@ function preview() {
   });
 }
 
+const computeScaleInstructions = (file, cb) => {
+  const jpegFile = file.clone();
+  jpegFile.scale = { maxWidth: 640, maxHeight: 640, format: 'jpeg' };
+  cb(null, [jpegFile]);
+};
+
+const computeFileName = (output, scale, cb) => {
+  const fileName = [
+    path.basename(output.path, output.extname), // strip extension
+    scale.format || output.extname,
+  ].join('.');
+  cb(null, fileName);
+};
+
 function img() {
-  return src('src/img/**/*.*').pipe(imagemin()).pipe(dest('dest/img'));
+  return src('src/img/backgrounds/*.*')
+    .pipe(flatMap(computeScaleInstructions))
+    .pipe(scaleImages(computeFileName))
+    .pipe(addSrc('src/img/*.*'))
+    .pipe(imagemin())
+    .pipe(dest('dest/img'));
 }
 
 exports.default = series(cleanDest, html, js, cssLib, css, fonts, img, server);
 exports.css = css;
 exports.js = js;
 exports.html = html;
+exports.img = img;
 exports.preview = preview;

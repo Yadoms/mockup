@@ -9,7 +9,13 @@ html(lang='en')
 
   include ../inc/mixins
 
-  body.flex.h-screen.bg-baseColor.font-sans
+  block vars
+
+  body.flex.h-screen.font-sans
+    #illustration.absolute.w-full.inset-0.min-h-full
+      - var bg = "background-image:url(" + bgUrl + ")"
+      #cover.absolute.w-full.inset-0.min-h-full(style=bg)
+
     include ../inc/sidebar
     block sidebar
 
