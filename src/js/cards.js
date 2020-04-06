@@ -14,10 +14,14 @@ ready(() => {
 
   var m = new Masis('#cards');
   setTimeout(() => {
-    MasisPosition(m);
+    MasisPosition(m, {
+      pad: 8
+    });
 
     const resizeObserver = new ResizeObserver((entries) => {
-      MasisPosition(m);
+      MasisPosition(m, {
+        pad: 8
+      });
     });
 
     resizeObserver.observe(document.querySelector('#cards'));
