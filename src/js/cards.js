@@ -14,12 +14,14 @@ ready(() => {
     });
 
   const positionOptions = {
-    pad: 8,
+    pad: 100,
   };
 
   var m = new Masis('#cards');
   setTimeout(() => {
-    MasisMove(m);
+    MasisMove(m, {
+      class: String.fromCodePoint(0x1f47b)
+    });
 
     MasisPosition(m, positionOptions);
 

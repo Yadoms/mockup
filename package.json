@@ -27,7 +27,7 @@
     "gulp-uglify": "^3.0.2",
     "gulp-uglify-es": "^2.0.0",
     "less": "^3.11.1",
-    "masis": "^2.0.6",
+    "masis": "^2.1.0",
     "odometer": "^0.4.8",
     "pnp-webpack-plugin": "^1.6.4",
     "pug": "^2.0.4",
