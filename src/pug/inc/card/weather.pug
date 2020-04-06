@@ -1,7 +1,8 @@
 mixin weather(location, conditions, temperature, digital = true)
-  .weather.flex.items-center.justify-around.w-32.h-24(data-location=location)
-    - var cond = "fas fa-" + conditions;
-    +indicator(cond)
-    - var cl = digital ? "font-mono" : "";
-    span(class=cl)= temperature
-    span °C
+  .weather.card-width-1.card-height-1(data-location=location)
+    .flex.items-center.justify-center.w-full.h-full
+      - var cond = "fas fa-" + conditions;
+      +indicator(cond)
+      - var cl = digital ? "font-mono" : "";
+      span(class=cl)= temperature
+      span.pr-2 °C

@@ -1,5 +1,6 @@
 mixin indicator(classes, active = false)
-  .indicator.text-center.w-24.h-16
-    - var cl = active ? "text-highlightColor" : "";
-    .p-3.text-3xl(class=cl)
-      i.mono-font-3xl(class=classes)
+  .indicator.text-center.card-width-1.card-height-1
+    .flex.items-center.justify-center.w-full.h-full
+      - var cl = active ? "text-highlightColor" : "";
+      .text-4xl(class=cl)
+        i.mono-font-4xl(class=classes)

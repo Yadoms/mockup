@@ -14407,6 +14407,10 @@ video {
   transition-property: all;
 }
 
+.transition-coord {
+  transition-property: left, top;
+}
+
 .ease-linear {
   transition-timing-function: linear;
 }
@@ -27989,6 +27993,10 @@ video {
 
   .sm\:transition-full {
     transition-property: all;
+  }
+
+  .sm\:transition-coord {
+    transition-property: left, top;
   }
 
   .sm\:ease-linear {
@@ -41576,6 +41584,10 @@ video {
     transition-property: all;
   }
 
+  .md\:transition-coord {
+    transition-property: left, top;
+  }
+
   .md\:ease-linear {
     transition-timing-function: linear;
   }
@@ -55161,6 +55173,10 @@ video {
     transition-property: all;
   }
 
+  .lg\:transition-coord {
+    transition-property: left, top;
+  }
+
   .lg\:ease-linear {
     transition-timing-function: linear;
   }
@@ -68744,6 +68760,10 @@ video {
 
   .xl\:transition-full {
     transition-property: all;
+  }
+
+  .xl\:transition-coord {
+    transition-property: left, top;
   }
 
   .xl\:ease-linear {

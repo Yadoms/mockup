@@ -1,11 +1,12 @@
 mixin gauge(value, min = 0, max = 100, unit = '%', digital = true)
-  .gauge.w-32.h-32.p-4(data-value=value, data-min=min, data-max=max)
-    .wrapper.w-24.h-24.rounded-full.bg-activeColor
-      .ring.w-24.h-24.rounded-full.p-2.border-2.border-gray-100.shadow-inner.relative.overflow-hidden
-        .fill.absolute.w-full.h-full.inset-x-0.bottom-0
-        .shadow-lg.rounded-full.w-full.h-full.p-2.relative.bg-gray-100
-          .w-full.h-full.shadow-inner.rounded-full.text-center.relative.bg-activeColor
-            .container.text-primaryColor.absolute.-mt-3.inline-block.inset-x-0
-              - var cl = digital ? "font-mono" : "";
-              .text-xs(class=cl)= value
-              .text-2xs= unit
+  .gauge.card-width-2.card-height-2(data-value=value, data-min=min, data-max=max)
+    .flex.items-center.justify-center.w-full.h-full
+      .wrapper.w-48.h-48.rounded-full.bg-activeColor
+        .ring.w-full.h-full.rounded-full.p-4.border-2.border-gray-100.shadow-inner.relative.overflow-hidden
+          .fill.absolute.w-full.h-full.inset-x-0.bottom-0
+          .shadow-lg.rounded-full.w-full.h-full.p-4.relative.bg-gray-100
+            .w-full.h-full.shadow-inner.rounded-full.text-center.relative.bg-activeColor
+              .container.text-primaryColor.flex.flex-col.items-center.justify-center.w-full.h-full
+                - var cl = digital ? "font-mono" : "";
+                .text-xl(class=cl)= value
+                .text-lg= unit

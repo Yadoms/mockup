@@ -1,25 +1,25 @@
 mixin switch(type, ...args)
-  .switch.text-center.inner-flex.items-center.w-32.h-24
-    if type == "button"
-      - var cl = args[0]
-      - var state = args[1]
-      - var clb = state == 'on' ? 'active' : ''
-      button.switch-button.text-3xl.p-3.rounded-lg.border.text-primaryColor(class=clb)
-        i.mono-font-3xl.block(class=cl)
-    else if type == "arrow"
-      .switch-arrow.flex.flex-col.rounded-lg.items-center
-        - var clau = "hover:bg-highlightColor hover:text-activeColor" + (args[0] == 'up' ? ' active' : '')
-        - var clad = "hover:bg-highlightColor hover:text-activeColor" + (args[0] == 'down' ? ' active' : '')
-        button.rounded-t.w-10.h-10.bg-activeColor.text-highlightColor(class=clau, data-action="up")
-          i.fas.fa-caret-up
-        button.rounded-b.w-10.h-10.bg-activeColor.text-highlightColor(class=clad, data-action="down")
-          i.fas.fa-caret-down
-    else if type == "toggle"
-      .switch-toggle.inline-flex.items-center.cursor-pointer.my-4(class="hover:active")
-        span.relative
-          input.absolute.opacity-0.w-0.h-0.left-0.top-0(type="checkbox", checked=(args[0] == 'on'))
-          span.wrapper.block.rounded-full.w-10.h-6.bg-activeColor.shadow-inner
-          - var clr = args[0] == 'on' ? 'transform translate-x-full' : ''
-          span.round.absolute.block.w-4.h-4.m-1.rounded-full.inset-y-0.left-0.bg-frontColor.transition-transform.duration-300.ease-in-out.shadow(class=clr)
-    else
-      p TODO
+  .switch.text-center.flex.items-center.card-width-1.card-height-1
+    .w-full.flex.justify-center
+      if type == "button"
+        - var cl = args[0]
+        - var state = args[1]
+        - var clb = state == 'on' ? 'active' : ''
+        button.switch-button.text-3xl.p-3.rounded-lg.border.text-primaryColor.bg-baseColor(class=clb)
+          i.mono-font-3xl.block(class=cl)
+      else if type == "arrow"
+        .switch-arrow.flex.flex-col.rounded-lg.items-center
+          - var cla = "hover:bg-highlightColor hover:text-activeColor"
+          button.rounded-t.w-10.h-10.bg-activeColor.text-highlightColor.border-b.border-highlightColor(class=cla, data-action="up")
+            i.fas.fa-caret-up
+          button.rounded-b.w-10.h-10.bg-activeColor.text-highlightColor(class=cla, data-action="down")
+            i.fas.fa-caret-down
+      else if type == "toggle"
+        .switch-toggle.inline-flex.items-center.cursor-pointer.my-4(class="hover:active")
+          span.relative
+            input.absolute.opacity-0.w-0.h-0.left-0.top-0(type="checkbox", checked=(args[0] == 'on'))
+            span.wrapper.block.rounded-full.w-10.h-6.bg-activeColor.shadow-inner
+            - var clr = args[0] == 'on' ? 'transform translate-x-full' : ''
+            span.round.absolute.block.w-4.h-4.m-1.rounded-full.inset-y-0.left-0.bg-frontColor.transition-transform.duration-300.ease-in-out.shadow(class=clr)
+      else
+        p TODO

@@ -1,15 +1,11 @@
+mixin curtainButton(icon, action, classes)
+  - var cl = "hover:bg-highlightColor hover:text-activeColor " + classes;
+  button.w-16.h-16.bg-activeColor.text-highlightColor(class=cl, data-action=action)
+    i.fas(class=icon)
+
 mixin curtain
-  .curtain.flex.flex-col.rounded-lg.items-center.w-32.h-32
-    - var cl = "hover:bg-highlightColor hover:text-activeColor";
-    button.rounded-t.w-10.h-10.bg-activeColor.text-highlightColor(
-      class=cl,
-      data-action='up'
-    )
-      i.fas.fa-caret-up
-    button.w-10.h-10.bg-activeColor.text-highlightColor(class=cl, data-action='up')
-      i.fas.fa-stop
-    button.rounded-b.w-10.h-10.bg-activeColor.text-highlightColor(
-      class=cl,
-      data-action='down'
-    )
-      i.fas.fa-caret-down
+  .curtain.card-width-1.card-height-2
+    .flex.flex-col.items-center.justify-center.w-full.h-full
+      +curtainButton('fa-caret-up', 'up', 'rounded-t')
+      +curtainButton('fa-stop', 'stop', 'border-highlightColor border-t border-b')
+      +curtainButton('fa-caret-down', 'down', 'rounded-b')

@@ -28,17 +28,9 @@ function cssLib() {
     .pipe(dest('debug/beforePurge'))
     .pipe(
       purgecss({
-        content: ['dest/**/*.html', 'dest/**/*.js'],
+        content: ['dest/**/*.html', 'dest/js/**/*.js'],
         defaultExtractor: (content) => {
-          const contentWithoutStyleBlocks = content.replace(
-            /<style[^]+?<\/style>/gi,
-            ''
-          );
-          return (
-            contentWithoutStyleBlocks.match(
-              /[A-Za-z0-9-_/:]*[A-Za-z0-9-_/]+/g
-            ) || []
-          );
+          return content.match(/[A-Za-z0-9-_/:]*[A-Za-z0-9-_/]+/g) || [];
         },
         whitelistPatterns: [
           /-(leave|enter|appear)(|-(to|from|active))$/,
@@ -56,20 +48,14 @@ function cssLib() {
 function css() {
   return src(['src/less/*.less', '!src/less/_*.less'])
     .pipe(less())
+    .pipe(dest('debug/beforePurge'))
     .pipe(
       purgecss({
-        content: ['dest/**/*.html', 'dest/**/*.js'],
+        content: ['dest/**/*.html', 'dest/js/**/*.js'],
         defaultExtractor: (content) => {
-          const contentWithoutStyleBlocks = content.replace(
-            /<style[^]+?<\/style>/gi,
-            ''
-          );
-          return (
-            contentWithoutStyleBlocks.match(
-              /[A-Za-z0-9-_/:]*[A-Za-z0-9-_/]+/g
-            ) || []
-          );
+          return content.match(/[A-Za-z0-9-_/:]*[A-Za-z0-9-_/]+/g) || [];
         },
+        whitelist: [String.fromCodePoint(0x1f47b)],
       })
     )
     .pipe(minifyCSS())

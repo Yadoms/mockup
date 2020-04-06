@@ -1,3 +1,4 @@
 mixin counter(value, suffix)
-  .counter.w-48.h-16.flex.items-center
-    .odometer.mx-auto.font-bold(data-value=value, data-suffix=suffix)
+  .counter.card-width-2.card-height-1
+    .flex.items-center.justify-center.w-full.h-full
+      .odometer.font-bold.text-xl(data-value=value, data-suffix=suffix)

@@ -1,10 +1,12 @@
 mixin numeric-display(value, decimals = 0, unit = '', capture = '', digital = true)
-  .numeric-display.w-40.h-24
-    - var val = parseFloat(value).toFixed(decimals);
-    if capture
-      p.text-center.text-xs.text-shadowColor= capture
-    .text-right.rounded-lg.text-highlightColor.flex.items-end.py-1.px-2.mt-2.glass.shadow-inner.items-center
-      .flex-grow
-        .relative.overflow-hidden.text-3xl.inline-block
-          +makeDigital(val, digital)
-      .text-xl= unit
+  .numeric-display.card-width-1.card-height-1
+    .flex.flex-col.items-center.justify-around.w-full.h-full.p-2
+      - var val = parseFloat(value).toFixed(decimals);
+      if capture
+        p.text-center.text-xs.text-shadowColor= capture
+      .text-right.rounded-lg.text-highlightColor.pt-2.pr-1.glass.shadow-inner.w-full
+        .flex.items-end.h-full
+          .flex-grow.h-full
+            .relative.overflow-hidden.text-xl.inline-block
+              +makeDigital(val, digital)
+          .h-full.text-xs= unit

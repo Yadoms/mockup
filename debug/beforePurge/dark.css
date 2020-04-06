@@ -1,0 +1,599 @@
+#sidebar:hover span {
+  opacity: 1;
+}
+#sidebar .active a {
+  margin-left: -4px;
+}
+/*
+@font-face {
+  font-family: "D7MML";
+  src: url("/webfonts/DSEG7ModernMini-Light.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D7MMLI";
+  src: url("/webfonts/DSEG7ModernMini-LightItalic.woff") format('woff');
+}
+*/
+@font-face {
+  font-family: "D7MMR";
+  src: url("/webfonts/DSEG7ModernMini-Regular.woff") format('woff');
+}
+/*
+@font-face {
+  font-family: "D7MMI";
+  src: url("/webfonts/DSEG7ModernMini-Italic.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D7MMB";
+  src: url("/webfonts/DSEG7ModernMini-Bold.woff") format('woff');
+}
+
+@font-face {
+  font-family: "D7MMBI";
+  src: url("/webfonts/DSEG7ModernMini-BoldItalic.woff") format('woff');
+}
+*/
+.font-mono {
+  font-family: "D7MMR";
+  letter-spacing: 0.025em;
+}
+.mono-font {
+  text-align: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  line-height: 1.25rem;
+}
+.mono-font-xs {
+  text-align: center;
+  width: 1rem;
+  height: 1rem;
+  line-height: 1rem;
+}
+.mono-font-sm {
+  text-align: center;
+  width: 1.125rem;
+  height: 1.125rem;
+  line-height: 1.125rem;
+}
+.mono-font-lg {
+  text-align: center;
+  width: 1.375rem;
+  height: 1.375rem;
+  line-height: 1.375rem;
+}
+.mono-font-xl {
+  text-align: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+}
+.mono-font-2xl {
+  text-align: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  line-height: 1.75rem;
+}
+.mono-font-3xl {
+  text-align: center;
+  width: 2.125rem;
+  height: 2.125rem;
+  line-height: 2.125rem;
+}
+.mono-font-4xl {
+  text-align: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+}
+.mono-font-5xl {
+  text-align: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  line-height: 3.25rem;
+}
+.mono-font-6xl {
+  text-align: center;
+  width: 4.25rem;
+  height: 4.25rem;
+  line-height: 4.25rem;
+}
+#illustration .filter {
+  background: linear-gradient(rgba(17, 17, 17, 0.9), rgba(17, 17, 17, 0.925), rgba(17, 17, 17, 0.95));
+  background-size: cover;
+  z-index: -1;
+}
+#illustration .cover {
+  z-index: -2;
+  background-size: cover;
+}
+.card {
+  border: 1px solid #292833;
+  box-shadow: -6px -6px 16px #1d1c22, 6px 6px 16px #1d1c22;
+}
+.card .odometer .odometer-hacking-mark ~ .odometer-digit {
+  background-image: linear-gradient(to bottom, #eee0d3 0%, #eee0d3 40%, #bbaa9a 60%, #eee0d3 80%, #eee0d3 100%);
+  background-color: #fff5f5;
+  color: #c53030;
+}
+.card .odometer .odometer-suffix-mark {
+  padding: 0 0.15rem;
+}
+.card .dimmer input[type="number"]::-webkit-inner-spin-button,
+.card .dimmer input[type="number"]::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+.card .dimmer input:focus,
+.card .dimmer button:focus {
+  outline: none !important;
+}
+.card .forecast .ring > div {
+  bottom: -5px;
+}
+.card .forecast .ring.wind-S {
+  --transform-rotate: 0deg;
+}
+.card .forecast .ring.wind-SSE {
+  --transform-rotate: -22.5deg;
+}
+.card .forecast .ring.wind-SE {
+  --transform-rotate: -45deg;
+}
+.card .forecast .ring.wind-ESE {
+  --transform-rotate: -67.5deg;
+}
+.card .forecast .ring.wind-E {
+  --transform-rotate: -90deg;
+}
+.card .forecast .ring.wind-ENE {
+  --transform-rotate: -112.5deg;
+}
+.card .forecast .ring.wind-NE {
+  --transform-rotate: -135deg;
+}
+.card .forecast .ring.wind-NNE {
+  --transform-rotate: -157.5deg;
+}
+.card .forecast .ring.wind-N {
+  --transform-rotate: 180deg;
+}
+.card .forecast .ring.wind-NNO {
+  --transform-rotate: 157.5deg;
+}
+.card .forecast .ring.wind-NO {
+  --transform-rotate: 135deg;
+}
+.card .forecast .ring.wind-ONO {
+  --transform-rotate: 112.5deg;
+}
+.card .forecast .ring.wind-O {
+  --transform-rotate: 90deg;
+}
+.card .forecast .ring.wind-OSO {
+  --transform-rotate: 67.5deg;
+}
+.card .forecast .ring.wind-SO {
+  --transform-rotate: 45deg;
+}
+.card .forecast .ring.wind-SSO {
+  --transform-rotate: 22.5deg;
+}
+.card .gauge .wrapper {
+  box-shadow: 0 0 3rem 0 #292833;
+}
+.card .gauge .ring .fill {
+  background-color: #292833;
+}
+.card .gauge .container {
+  top: 50%;
+}
+.card .gauge.frost .wrapper {
+  box-shadow: 0 0 2.2rem 0 #2b6cb0;
+}
+.card .gauge.frost .ring .fill {
+  background-color: #2b6cb0;
+}
+.card .gauge.cold .wrapper {
+  box-shadow: 0 0 2.4rem 0 #4c51bf;
+}
+.card .gauge.cold .ring .fill {
+  background-color: #4c51bf;
+}
+.card .gauge.normal .wrapper {
+  box-shadow: 0 0 2.6rem 0 #6b46c1;
+}
+.card .gauge.normal .ring .fill {
+  background-color: #6b46c1;
+}
+.card .gauge.warm .wrapper {
+  box-shadow: 0 0 2.8rem 0 #b83280;
+}
+.card .gauge.warm .ring .fill {
+  background-color: #B83280;
+}
+.card .gauge.hot .wrapper {
+  box-shadow: 0 0 3rem 0 #c53030;
+}
+.card .gauge.hot .ring .fill {
+  background-color: #C53030;
+}
+.card .switch-button {
+  line-height: normal;
+  border-color: #0c0c0c;
+  box-shadow: -5px -5px 10px #0b0b0b, 5px 5px 10px #171717;
+}
+.card .switch-button.active {
+  color: #5980FF;
+  background: linear-gradient(145deg, #151515, #0d0d0d);
+}
+.card .switch-button:focus {
+  outline: none;
+}
+.card .switch-arrow:focus {
+  outline: none;
+}
+.card .switch-toggle.active .wrapper,
+.card .switch-toggle.hover\:active:hover .wrapper {
+  background-color: #FFFFFF !important;
+  box-shadow: none;
+}
+.card .switch-toggle input[checked] ~ .wrapper {
+  background-color: #5980FF !important;
+  box-shadow: 0 0 10px 0 #5980ff;
+}
+.card .teleinfo-forecast .square {
+  width: 3rem;
+  height: 3rem;
+  box-shadow: 0 0 20px currentColor;
+}
+.card .thermometer .liquid {
+  background-color: #4a5568;
+}
+.card .thermometer .bulb {
+  box-shadow: 0 0 20px 0 #4a5568;
+}
+.card .thermometer.frost .liquid {
+  background-color: #2b6cb0;
+}
+.card .thermometer.frost .bulb {
+  box-shadow: 0 0 20px 0 #2b6cb0;
+}
+.card .thermometer.cold .liquid {
+  background-color: #4c51bf;
+}
+.card .thermometer.cold .bulb {
+  box-shadow: 0 0 20px 0 #4c51bf;
+}
+.card .thermometer.normal .liquid {
+  background-color: #6b46c1;
+}
+.card .thermometer.normal .bulb {
+  box-shadow: 0 0 20px 0 #6b46c1;
+}
+.card .thermometer.warm .liquid {
+  background-color: #B83280;
+}
+.card .thermometer.warm .bulb {
+  box-shadow: 0 0 20px 0 #b83280;
+}
+.card .thermometer.hot .liquid {
+  background-color: #C53030;
+}
+.card .thermometer.hot .bulb {
+  box-shadow: 0 0 20px 0 #c53030;
+}
+.card .wind .ring > div {
+  bottom: -5px;
+}
+.card .wind .ring.wind-S {
+  --transform-rotate: 0deg;
+}
+.card .wind .ring.wind-SSE {
+  --transform-rotate: -22.5deg;
+}
+.card .wind .ring.wind-SE {
+  --transform-rotate: -45deg;
+}
+.card .wind .ring.wind-ESE {
+  --transform-rotate: -67.5deg;
+}
+.card .wind .ring.wind-E {
+  --transform-rotate: -90deg;
+}
+.card .wind .ring.wind-ENE {
+  --transform-rotate: -112.5deg;
+}
+.card .wind .ring.wind-NE {
+  --transform-rotate: -135deg;
+}
+.card .wind .ring.wind-NNE {
+  --transform-rotate: -157.5deg;
+}
+.card .wind .ring.wind-N {
+  --transform-rotate: 180deg;
+}
+.card .wind .ring.wind-NNO {
+  --transform-rotate: 157.5deg;
+}
+.card .wind .ring.wind-NO {
+  --transform-rotate: 135deg;
+}
+.card .wind .ring.wind-ONO {
+  --transform-rotate: 112.5deg;
+}
+.card .wind .ring.wind-O {
+  --transform-rotate: 90deg;
+}
+.card .wind .ring.wind-OSO {
+  --transform-rotate: 67.5deg;
+}
+.card .wind .ring.wind-SO {
+  --transform-rotate: 45deg;
+}
+.card .wind .ring.wind-SSO {
+  --transform-rotate: 22.5deg;
+}
+.card .card-title {
+  border-top: 1px solid #050506;
+}
+.card .card-title.no-border {
+  border-top: none;
+}
+.card .card-title .icon {
+  border-left: 1px solid #000000;
+}
+.card .card-width-1 {
+  width: 8rem;
+}
+.card .card-height-1 {
+  height: 6rem;
+}
+.card .card-width-2 {
+  width: 17.65rem;
+}
+.card .card-height-2 {
+  height: 15.8rem;
+}
+.card .card-width-3 {
+  width: 27.3rem;
+}
+.card .card-height-3 {
+  height: 25.6rem;
+}
+.card .card-width-4 {
+  width: 36.95rem;
+}
+.card .card-height-4 {
+  height: 35.4rem;
+}
+.card .card-width-5 {
+  width: 46.6rem;
+}
+.card .card-height-5 {
+  height: 45.2rem;
+}
+.👻 {
+  z-index: 99;
+  opacity: 0.75;
+  transition-duration: 0ms;
+}
+.glass {
+  background-color: #1b1a1f;
+}
+.bg-minColor,
+.hover\:bg-minColor:hover {
+  background-color: #4299e1;
+}
+.text-minColor,
+.hover\:text-minColor:hover {
+  color: #4299e1;
+}
+.border-minColor,
+.hover\:border-minColor:hover {
+  border-color: #4299e1;
+}
+.bg-maxColor,
+.hover\:bg-maxColor:hover {
+  background-color: #f56565;
+}
+.text-maxColor,
+.hover\:text-maxColor:hover {
+  color: #f56565;
+}
+.border-maxColor,
+.hover\:border-maxColor:hover {
+  border-color: #f56565;
+}
+.bg-baseColor,
+.hover\:bg-baseColor:hover {
+  background-color: #111111;
+}
+.text-baseColor,
+.hover\:text-baseColor:hover {
+  color: #111111;
+}
+.border-baseColor,
+.hover\:border-baseColor:hover {
+  border-color: #111111;
+}
+.bg-frontColor,
+.hover\:bg-frontColor:hover {
+  background-color: #1d1c22;
+}
+.text-frontColor,
+.hover\:text-frontColor:hover {
+  color: #1d1c22;
+}
+.border-frontColor,
+.hover\:border-frontColor:hover {
+  border-color: #1d1c22;
+}
+.bg-activeColor,
+.hover\:bg-activeColor:hover {
+  background-color: #292833;
+}
+.text-activeColor,
+.hover\:text-activeColor:hover {
+  color: #292833;
+}
+.border-activeColor,
+.hover\:border-activeColor:hover {
+  border-color: #292833;
+}
+.bg-primaryColor,
+.hover\:bg-primaryColor:hover {
+  background-color: #FFFFFF;
+}
+.text-primaryColor,
+.hover\:text-primaryColor:hover {
+  color: #FFFFFF;
+}
+.border-primaryColor,
+.hover\:border-primaryColor:hover {
+  border-color: #FFFFFF;
+}
+.bg-highlightColor,
+.hover\:bg-highlightColor:hover {
+  background-color: #5980FF;
+}
+.text-highlightColor,
+.hover\:text-highlightColor:hover {
+  color: #5980FF;
+}
+.border-highlightColor,
+.hover\:border-highlightColor:hover {
+  border-color: #5980FF;
+}
+.bg-shadowColor,
+.hover\:bg-shadowColor:hover {
+  background-color: #CCCCCC;
+}
+.text-shadowColor,
+.hover\:text-shadowColor:hover {
+  color: #CCCCCC;
+}
+.border-shadowColor,
+.hover\:border-shadowColor:hover {
+  border-color: #CCCCCC;
+}
+.chart .ct-label,
+.chart .ct-axis-title {
+  fill: #ffffff;
+  color: #ffffff;
+}
+.chart .ct-grid {
+  stroke: #ffffff;
+}
+.shadow-xs,
+.sm\:shadow-xs,
+.md\:shadow-xs,
+.lg\:shadow-xs,
+.xl\:shadow-xs,
+.hover\:shadow-xs:hover,
+.focus\:shadow-xs:focus {
+  box-shadow: 0 0 0 1px #515151;
+}
+.shadow-sm,
+.sm\:shadow-sm,
+.md\:shadow-sm,
+.lg\:shadow-sm,
+.xl\:shadow-sm,
+.hover\:shadow-sm:hover,
+.focus\:shadow-sm:focus {
+  box-shadow: 0 1px 2px 0 #515151;
+}
+.shadow,
+.sm\:shadow,
+.md\:shadow,
+.lg\:shadow,
+.xl\:shadow,
+.hover\:shadow:hover,
+.focus\:shadow:focus {
+  box-shadow: 0 1px 3px 0 #515151, 0 1px 2px 0 #515151;
+}
+.shadow-md,
+.sm\:shadow-md,
+.md\:shadow-md,
+.lg\:shadow-md,
+.xl\:shadow-md,
+.hover\:shadow-md:hover,
+.focus\:shadow-md:focus {
+  box-shadow: 0 4px 6px -1px #515151, 0 2px 4px -1px #515151;
+}
+.shadow-lg,
+.sm\:shadow-lg,
+.md\:shadow-lg,
+.lg\:shadow-lg,
+.xl\:shadow-lg,
+.hover\:shadow-lg:hover,
+.focus\:shadow-lg:focus {
+  box-shadow: 0 10px 15px -3px #515151, 0 4px 6px -2px #515151;
+}
+.shadow-xl,
+.sm\:shadow-xl,
+.md\:shadow-xl,
+.lg\:shadow-xl,
+.xl\:shadow-xl,
+.hover\:shadow-xl:hover,
+.focus\:shadow-xl:focus {
+  box-shadow: 0 20px 25px -5px #515151, 0 10px 10px -5px #515151;
+}
+.shadow-2xl,
+.sm\:shadow-2xl,
+.md\:shadow-2xl,
+.lg\:shadow-2xl,
+.xl\:shadow-2xl,
+.hover\:shadow-2xl:hover,
+.focus\:shadow-2xl:focus {
+  box-shadow: 0 25px 50px -12px #515151;
+}
+.shadow-3xl,
+.sm\:shadow-3xl,
+.md\:shadow-3xl,
+.lg\:shadow-3xl,
+.xl\:shadow-3xl,
+.hover\:shadow-3xl:hover,
+.focus\:shadow-3xl:focus {
+  box-shadow: 0 35px 60px -15px #515151;
+}
+.shadow-inner,
+.sm\:shadow-inner,
+.md\:shadow-inner,
+.lg\:shadow-inner,
+.xl\:shadow-inner,
+.hover\:shadow-inner:hover,
+.focus\:shadow-inner:focus {
+  box-shadow: inset 0 2px 4px 0 #515151;
+}
+.text-shadow {
+  text-shadow: 0 0 20px #cccccc;
+}
+.shadow-outline,
+.sm\:shadow-outline,
+.md\:shadow-outline,
+.lg\:shadow-outline,
+.xl\:shadow-outline,
+.hover\:shadow-outline:hover,
+.focus\:shadow-outline:focus {
+  box-shadow: 0 0 0 3px rgba(189, 202, 30, 0.5);
+}
+.shadow-focus,
+.sm\:shadow-focus,
+.md\:shadow-focus,
+.lg\:shadow-focus,
+.xl\:shadow-focus,
+.hover\:shadow-focus:hover,
+.focus\:shadow-focus:focus {
+  box-shadow: 0 0 0 3px rgba(189, 202, 30, 0.5);
+}
+.card .card-title {
+  border-top: 1px solid #35333e;
+}
+.card .card-title .icon {
+  border-left: 1px solid #4d4a5a;
+}
+.card .glass {
+  background-color: #1f1e25;
+}

@@ -28,6 +28,7 @@ module.exports = {
       },
       transitionProperty: {
         full: 'all',
+        coord: 'left, top'
       },
       transitionTimingFunction: {
         'ease-in-expo': 'cubic-bezier(0.95, 0.05, 0.795, 0.035)',

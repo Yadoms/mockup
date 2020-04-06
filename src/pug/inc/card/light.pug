@@ -1,6 +1,7 @@
 mixin light(status)
-  .light.text-center.w-24.h-16
-    - var clb = status ? "text-shadow" : "";
-    - var cli = status ? "fas" : "far";
-    .p-3.text-3xl(class=clb)
-      i.mono-font-3xl.fa-lightbulb(class=cli)
+  .light.text-center.card-width-1.card-height-1
+    .flex.items-center.justify-center.w-full.h-full
+      - var clb = status ? "text-shadow" : "";
+      - var cli = status ? "fas" : "far";
+      .text-4xl(class=clb)
+        i.mono-font-4xl.fa-lightbulb(class=cli)

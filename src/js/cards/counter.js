@@ -13,7 +13,7 @@ require(["odometer"], (Odometer) => {
         $fm.classList.add("odometer-hacking-mark");
       }
       let $el = document.createElement("span");
-      $el.className = "odometer-formatting-mark odometer-suffix-mark";
+      $el.className = "odometer-formatting-mark odometer-suffix-mark text-lg";
       $el.innerHTML = $element.dataset.suffix;
       let $inside = $element.querySelector(".odometer-inside");
       $inside.appendChild($el);

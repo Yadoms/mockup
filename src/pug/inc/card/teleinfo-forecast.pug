@@ -1,8 +1,9 @@
 mixin teleinfo-forecast(color)
-  .teleinfo-forecast.text-center.w-24.h-16
-    -
-      var clr = color == 'red' ? 'bg-red-600 text-red-600 border-red-800' 
-                              : (color == 'blue' ? 'bg-blue-600 text-blue-600 border-blue-800' 
-                                                  : 'bg-white text-white border-gray-300'
-                                )
-    .square.rounded-full.block.mx-auto.my-2.border-2(class=clr)
+  .teleinfo-forecast.text-center.card-width-1.card-height-1
+    .flex.items-center.justify-center.w-full.h-full
+      -
+        var clr = color == 'red' ? 'bg-red-600 text-red-600 border-red-800' 
+                                : (color == 'blue' ? 'bg-blue-600 text-blue-600 border-blue-800' 
+                                                    : 'bg-white text-white border-gray-300'
+                                  )
+      .square.rounded-full.block.border-2(class=clr)

@@ -1,13 +1,13 @@
 mixin forecast(city, datas)
-  .forecast.w-144.h-48(data-city=city)
-    .flex.h-full.items-center
+  .forecast.card-width-5.card-height-2(data-city=city)
+    .flex.items-center.justify-center.w-full.h-full
       each data in datas
         .forecast-day.mx-2
           .text-center= data.day
-          .forecast-weather.flex.mb-2
+          .forecast-weather.flex
             - var cond = "fas fa-" + data.cond;
             +indicator(cond)
-            .flex.flex-col.justify-center.text-xs
+            .flex.flex-col.justify-center
               .temp-min.text-minColor.text-right
                 span= data.Tmin
                 span= data.Tunit
@@ -15,19 +15,19 @@ mixin forecast(city, datas)
                 span= data.Tmax
                 span= data.Tunit
           .forecast-conditions.flex.justify-around
-            .forecast-wind.relative.w-10.h-10
+            .forecast-wind.relative.w-16.h-16
               - var wdir = "wind-" + data.Wdir;
               .ring.relative.border-2.border-primaryColor.w-full.h-full.rounded-full.transform.duration-200.inset-0.flex.justify-center(
                 class=wdir
               )
-                .inline-block.absolute.mono-font-2xs
+                .inline-block.absolute.mono-font-xs
                   i.fa.fa-caret-up
-              .absolute.flex.flex-col.justify-center.text-xs.text-center.leading-tight.h-full.inset-0
+              .absolute.flex.flex-col.justify-center.text-center.leading-tight.h-full.inset-0
                 .wind-min.text-minColor.text-center= data.Wmin
                 .wind-max.text-maxColor.text-center= data.Wmax
-            .forecast-rain.w-3.h-10.border-2.border-primaryColor.rounded-full.border-t-0.rounded-t-none.inline-flex.items-end(
+            .forecast-rain.w-3.h-16.border-2.border-primaryColor.rounded-full.border-t-0.rounded-t-none.inline-flex.items-end(
               data-rain=data.rain
             )
-              .liquid.h-0.w-3.transition-all.duration-700.ease-in-out.relative.text-xs
+              .liquid.h-0.w-3.transition-all.duration-700.ease-in-out.relative
                 .absolute.top-0.left-0.w-full.h-full.rounded-b-full.bg-blue-600
-                .absolute.top-0.left-0.pl-4.-mt-2.text-primaryColor= data.rain
+                .absolute.top-0.left-0.pl-4.-mt-4.text-primaryColor= data.rain
