@@ -12,9 +12,10 @@ html(lang='en')
   block vars
 
   body.flex.h-screen.font-sans
-    #illustration.absolute.w-full.inset-0.min-h-full
+    #illustration.fixed.w-full.inset-0.min-h-full
+      .filter.w-full.inset-0.min-h-full.absolute
       - var bg = "background-image:url(" + bgUrl + ")"
-      #cover.absolute.w-full.inset-0.min-h-full(style=bg)
+      .cover.w-full.inset-0.min-h-full.absolute(style=bg)
 
     include ../inc/sidebar
     block sidebar

@@ -12,15 +12,18 @@
            @text_shadow_color
     ) {
   #illustration {
-    background: linear-gradient(
-        fade(@base_color, 90%),
-        fade(@base_color, 92.5%),
-        fade(@base_color, 95%)
-      );
-    background-size: cover;
-
-    #cover {
+    .filter {
+      background: linear-gradient(
+          fade(@base_color, 90%),
+          fade(@base_color, 92.5%),
+          fade(@base_color, 95%)
+        );
+      background-size: cover;
       z-index: -1;
+    }
+
+    .cover {
+      z-index: -2;
       background-size: cover;
     }
   }
