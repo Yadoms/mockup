@@ -26,3 +26,13 @@ export function findAll(selector) {
 export function changeTheme(theme) {
   document.querySelector('link[id="theme"]').href = `/css/${theme}.min.css`;
 }
+
+export function triggerEvent(eventName, data = {}) {
+  if (window.CustomEvent && typeof window.CustomEvent === 'function') {
+    var event = new CustomEvent(eventName, { detail: data });
+  } else {
+    var event = document.createEvent('CustomEvent');
+    event.initCustomEvent(eventName, true, true, data);
+  }
+  el.dispatchEvent(event);
+}

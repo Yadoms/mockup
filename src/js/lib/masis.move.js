@@ -1,4 +1,5 @@
 import { MasisPosition, MasisSort } from 'masis';
+import { triggerEvent } from '../functions';
 
 function pad(n, width, z) {
   z = z || '0';
@@ -46,11 +47,12 @@ export function MasisMove(Masis, options = {}) {
           let positionsX = Object.keys(positions[positionsY[i]]).reverse();
           for (let j in positionsX)
             if (positionsX[j].localeCompare(_x) == -1) {
-              let newPos = joliNumber(
-                parseInt(
-                  positions[positionsY[i]][positionsX[j]].replace('_', '')
-                ) - 1
-              ) + '_';
+              let newPos =
+                joliNumber(
+                  parseInt(
+                    positions[positionsY[i]][positionsX[j]].replace('_', '')
+                  ) - 1
+                ) + '_';
               if (newPos != oldpos) {
                 let $robot = Masis.$element.querySelector(
                   '#' + String.fromCodePoint(0x1f916)
@@ -93,6 +95,7 @@ export function MasisMove(Masis, options = {}) {
     Masis.$element.appendChild($ghost);
     MasisPosition(MasisSort(Masis.populate(), '[data-sort]'));
     oldpos = '';
+    triggerEvent('masis_moved');
   };
 
   document.addEventListener('dragstart', createGhost, false);
