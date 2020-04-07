@@ -34,5 +34,5 @@ export function triggerEvent(eventName, data = {}) {
     var event = document.createEvent('CustomEvent');
     event.initCustomEvent(eventName, true, true, data);
   }
-  el.dispatchEvent(event);
+  document.dispatchEvent(event);
 }
