@@ -55,21 +55,18 @@
     .cardSize(3);
     .cardSize(4);
     .cardSize(5);
-  }
 
-  #🤖 {
-    opacity: 0.75;
-  }
-
-  .👻 {
-    z-index: 99;
-    opacity: 0.75;
-    transition-duration: 0ms;
-  }
-
-  .📐 {
-    position: relative;
-    &:after {
+    &#🤖 {
+      opacity: 0.75;
+    }
+  
+    &.👻 {
+      z-index: 99;
+      opacity: 0.50;
+      transition-duration: 0ms;
+    }
+  
+    .📐 {
       position: absolute;
       bottom: 0;
       right: 0;
@@ -84,5 +81,10 @@
       height: .75rem;
       cursor: se-resize;
     }
+  
+    &.🏄 {
+      cursor: move;
+    }
+
   }
 }

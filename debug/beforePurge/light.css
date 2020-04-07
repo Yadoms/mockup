@@ -374,18 +374,15 @@
 .card .card-height-5 {
   height: 45.5rem;
 }
-#🤖 {
+.card#🤖 {
   opacity: 0.75;
 }
-.👻 {
+.card.👻 {
   z-index: 99;
-  opacity: 0.75;
+  opacity: 0.5;
   transition-duration: 0ms;
 }
-.📐 {
-  position: relative;
-}
-.📐:after {
+.card .📐 {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -395,6 +392,9 @@
   width: 0.75rem;
   height: 0.75rem;
   cursor: se-resize;
+}
+.card.🏄 {
+  cursor: move;
 }
 .glass {
   background-color: #fcfcfc;

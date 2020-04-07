@@ -59,6 +59,7 @@ function css() {
           String.fromCodePoint(0x1f47b),
           String.fromCodePoint(0x1f916),
           String.fromCodePoint(0x1f4d0),
+          String.fromCodePoint(0x1f3c4),
         ],
       })
     )

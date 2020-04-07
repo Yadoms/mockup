@@ -21,7 +21,9 @@ ready(() => {
   var m = new Masis('#cards');
   setTimeout(() => {
     MasisMove(m, {
-      class: String.fromCodePoint(0x1f47b),
+      class: String.fromCodePoint(0x1f3c4),
+      ghost: String.fromCodePoint(0x1f47b),
+      exclude: String.fromCodePoint(0x1f4d0),
     });
 
     MasisResize(m, {

@@ -3,10 +3,11 @@ import { triggerEvent } from '../functions';
 
 export function MasisMove(Masis, options = {}) {
   if (options.attr == null) options.attr = 'data-sort';
-  if (options.class == null) options.class = 'ghost';
+  if (options.ghost == null) options.ghost = 'ghost';
   let $ghost;
   let positions;
   let oldpos = '';
+  let onDrag = false;
   const pad = (n, width, z) => {
     z = z || '0';
     n = n + '';
@@ -31,6 +32,7 @@ export function MasisMove(Masis, options = {}) {
     });
   };
   const moveGhost = (ev) => {
+    if (!onDrag) return;
     let newX = ev.pageX;
     let newY = ev.pageY;
     newX -= 90;
@@ -57,35 +59,37 @@ export function MasisMove(Masis, options = {}) {
             }
           break;
         }
-        if (newPos != oldpos) {
-          let $robot = Masis.$element.querySelector(
-            '#' + String.fromCodePoint(0x1f916)
-          );
-          if ($robot != null) Masis.$element.removeChild($robot);
-          $robot = document.createElement('div');
-          $robot.setAttribute('id', String.fromCodePoint(0x1f916));
-          $robot.classList = $ghost.classList;
-          $robot.classList.remove(options.class);
-          $robot.innerHTML = $ghost.innerHTML;
-          $robot.setAttribute(options.attr, newPos);
-          Masis.$element.appendChild($robot);
-          MasisPosition(MasisSort(Masis.populate(), '[data-sort]'));
-          oldpos = newPos;
-        }
+      if (newPos != oldpos) {
+        let $robot = Masis.$element.querySelector(
+          '#' + String.fromCodePoint(0x1f916)
+        );
+        if ($robot != null) Masis.$element.removeChild($robot);
+        $robot = document.createElement('div');
+        $robot.setAttribute('id', String.fromCodePoint(0x1f916));
+        $robot.classList = $ghost.classList;
+        $robot.classList.remove(options.ghost);
+        $robot.innerHTML = $ghost.innerHTML;
+        $robot.setAttribute(options.attr, newPos);
+        Masis.$element.appendChild($robot);
+        MasisPosition(MasisSort(Masis.populate(), '[data-sort]'));
+        oldpos = newPos;
+      }
     }
   };
   const createGhost = (ev) => {
-    $ghost = event.target;
+    if (ev.target.classList.contains(options.exclude))
+      return;
+    onDrag = true;
+    $ghost = event.currentTarget;
     Masis.$element.parentNode.appendChild($ghost);
-    ev.dataTransfer.setDragImage($ghost, -99999, -99999);
-    $ghost.classList.add(options.class);
+    $ghost.classList.add(options.ghost);
     MasisPosition(Masis.populate());
     setTimeout(() => {
       generatePositionsMap();
     }, 200);
   };
   const removeGhost = (ev) => {
-    $ghost.classList.remove(options.class);
+    $ghost.classList.remove(options.ghost);
     moveGhost(ev);
     let $robot = Masis.$element.querySelector(
       '#' + String.fromCodePoint(0x1f916)
@@ -96,11 +100,16 @@ export function MasisMove(Masis, options = {}) {
     MasisPosition(MasisSort(Masis.populate(), '[data-sort]'));
     redefineSort();
     oldpos = '';
+    onDrag = false;
     triggerEvent('masis.moved');
   };
 
-  document.addEventListener('dragstart', createGhost, false);
-  document.addEventListener('dragend', removeGhost, false);
-  document.addEventListener('drag', moveGhost, false);
+  Masis.$children.forEach(($el) => {
+    $el.classList.add(options.class);
+    $el.addEventListener('mousedown', createGhost, false);
+    $el.addEventListener('mouseup', removeGhost, false);
+  });
+
+  document.addEventListener('mousemove', moveGhost, false);
   return redefineSort();
 }

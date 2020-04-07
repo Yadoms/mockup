@@ -1,7 +1,5 @@
 mixin card(title, battery = -1, wifi = -1)
-  .card.inline-block.m-2.top-0.left-0.transform.transition-coord.duration-150.ease-in-expo.rounded-lg.p-1.flex.flex-col-reverse.text-primaryColor.bg-baseColor.cursor-move(
-    draggable='true'
-  )
+  .card.inline-block.m-2.top-0.left-0.transform.transition-coord.duration-150.ease-in-expo.rounded-lg.p-1.flex.flex-col-reverse.text-primaryColor.bg-baseColor
     - var cl = title ? "" : "no-border";
     - var text = title ? title : "&nbsp;";
     .card-title.mt-1.pt-1.clearfix.p-2.font-bold.text-xs.h-8.truncate(class=cl)

@@ -3,7 +3,9 @@ import { triggerEvent } from '../functions';
 
 export function MasisResize(Masis, options) {
   Masis.$children.forEach(($el) => {
-    $el.classList.add(options.class);
+    let $div = document.createElement('div');
+    $div.classList.add(options.class);
+    $el.appendChild($div);
   });
   return Masis;
 }
