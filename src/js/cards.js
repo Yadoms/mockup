@@ -1,6 +1,7 @@
 import { ready, findAll } from './functions';
 import { Masis, MasisPosition } from 'masis';
 import { MasisMove } from './lib/masis.move';
+import { MasisResize } from './lib/masis.resize';
 
 ready(() => {
   let $cards = findAll('.card');
@@ -20,7 +21,11 @@ ready(() => {
   var m = new Masis('#cards');
   setTimeout(() => {
     MasisMove(m, {
-      class: String.fromCodePoint(0x1f47b)
+      class: String.fromCodePoint(0x1f47b),
+    });
+
+    MasisResize(m, {
+      class: String.fromCodePoint(0x1f4d0),
     });
 
     MasisPosition(m, positionOptions);

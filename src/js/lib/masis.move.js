@@ -1,18 +1,17 @@
 import { MasisPosition, MasisSort } from 'masis';
 import { triggerEvent } from '../functions';
 
-function pad(n, width, z) {
-  z = z || '0';
-  n = n + '';
-  return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
-}
-
 export function MasisMove(Masis, options = {}) {
   if (options.attr == null) options.attr = 'data-sort';
   if (options.class == null) options.class = 'ghost';
   let $ghost;
   let positions;
   let oldpos = '';
+  const pad = (n, width, z) => {
+    z = z || '0';
+    n = n + '';
+    return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+  };
   const joliNumber = (num) => {
     return `_${pad(num, 6, '0')}`;
   };
@@ -42,35 +41,36 @@ export function MasisMove(Masis, options = {}) {
     let _y = joliNumber(newY);
     if (positions != null) {
       let positionsY = Object.keys(positions).reverse();
+      let newPos = joliNumber(0);
       for (let i in positionsY)
         if (positionsY[i].localeCompare(_y) == -1) {
           let positionsX = Object.keys(positions[positionsY[i]]).reverse();
           for (let j in positionsX)
             if (positionsX[j].localeCompare(_x) == -1) {
-              let newPos =
+              newPos =
                 joliNumber(
                   parseInt(
                     positions[positionsY[i]][positionsX[j]].replace('_', '')
-                  ) - 1
+                  )
                 ) + '_';
-              if (newPos != oldpos) {
-                let $robot = Masis.$element.querySelector(
-                  '#' + String.fromCodePoint(0x1f916)
-                );
-                if ($robot != null) Masis.$element.removeChild($robot);
-                $robot = document.createElement('div');
-                $robot.setAttribute('id', String.fromCodePoint(0x1f916));
-                $robot.classList = $ghost.classList;
-                $robot.classList.remove(options.class);
-                $robot.innerHTML = $ghost.innerHTML;
-                $robot.setAttribute(options.attr, newPos);
-                Masis.$element.appendChild($robot);
-                MasisPosition(MasisSort(Masis.populate(), '[data-sort]'));
-                oldpos = newPos;
-              }
               break;
             }
           break;
+        }
+        if (newPos != oldpos) {
+          let $robot = Masis.$element.querySelector(
+            '#' + String.fromCodePoint(0x1f916)
+          );
+          if ($robot != null) Masis.$element.removeChild($robot);
+          $robot = document.createElement('div');
+          $robot.setAttribute('id', String.fromCodePoint(0x1f916));
+          $robot.classList = $ghost.classList;
+          $robot.classList.remove(options.class);
+          $robot.innerHTML = $ghost.innerHTML;
+          $robot.setAttribute(options.attr, newPos);
+          Masis.$element.appendChild($robot);
+          MasisPosition(MasisSort(Masis.populate(), '[data-sort]'));
+          oldpos = newPos;
         }
     }
   };
@@ -94,8 +94,9 @@ export function MasisMove(Masis, options = {}) {
     Masis.$element.removeChild($robot);
     Masis.$element.appendChild($ghost);
     MasisPosition(MasisSort(Masis.populate(), '[data-sort]'));
+    redefineSort();
     oldpos = '';
-    triggerEvent('masis_moved');
+    triggerEvent('masis.moved');
   };
 
   document.addEventListener('dragstart', createGhost, false);

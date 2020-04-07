@@ -55,7 +55,11 @@ function css() {
         defaultExtractor: (content) => {
           return content.match(/[A-Za-z0-9-_/:]*[A-Za-z0-9-_/]+/g) || [];
         },
-        whitelist: [String.fromCodePoint(0x1f47b)],
+        whitelist: [
+          String.fromCodePoint(0x1f47b),
+          String.fromCodePoint(0x1f916),
+          String.fromCodePoint(0x1f4d0),
+        ],
       })
     )
     .pipe(minifyCSS())

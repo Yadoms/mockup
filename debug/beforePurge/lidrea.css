@@ -382,6 +382,20 @@
   opacity: 0.75;
   transition-duration: 0ms;
 }
+.📐 {
+  position: relative;
+}
+.📐:after {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 99;
+  content: '';
+  background: linear-gradient(135deg, #25BA92, #25ba92);
+  width: 0.75rem;
+  height: 0.75rem;
+  cursor: se-resize;
+}
 .glass {
   background-color: #73efce;
 }
