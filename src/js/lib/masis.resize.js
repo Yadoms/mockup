@@ -5,7 +5,6 @@ export function MasisResize(Masis, options) {
   let onResize = false;
   let $element;
   let offsetX, offsetY, previousX, previousY;
-  let prevWidth, prevHeight;
 
   const createResize = (ev) => {
     onResize = true;
@@ -19,7 +18,10 @@ export function MasisResize(Masis, options) {
 
   const deleteResize = () => {
     onResize = false;
-    $element.classList.remove(options.active);
+    if ($element) {
+      $element.classList.remove(options.active);
+      options.callbackEnd($element);
+    }
     $element = null;
   };
 
@@ -27,23 +29,25 @@ export function MasisResize(Masis, options) {
     if (!onResize) return;
     ev.preventDefault();
     if ($element != null) {
-      let width = 1;
-      let height = 1;
+      let width = options.breakpoints.width.length - 1;
+      let height = options.breakpoints.height.length - 1;
       offsetX += ev.pageX - previousX;
       offsetY += ev.pageY - previousY;
       previousX = ev.pageX;
       previousY = ev.pageY;
       for (let i in options.breakpoints.width)
-        if (options.breakpoints.width[i] > offsetX) {
-          width = parseInt(i) + 1;
+        if (options.breakpoints.width[i] > Math.abs(offsetX)) {
+          width = parseInt(i);
           break;
         }
       for (let i in options.breakpoints.height)
-        if (options.breakpoints.height[i] > offsetY) {
-          height = parseInt(i) + 1;
+        if (options.breakpoints.height[i] > Math.abs(offsetY)) {
+          height = parseInt(i);
           break;
         }
-      options.callback($element, width, height);
+      if (offsetX < 0) width *= -1;
+      if (offsetY < 0) height *= -1;
+      options.callbackMove($element, width, height);
     }
   };
 

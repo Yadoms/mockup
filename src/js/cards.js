@@ -9,10 +9,21 @@ ready(() => {
     $cards.forEach(($card) => {
       const $component = $card.querySelector('.card-wrapper > div');
       $component.classList.forEach((cl) => {
-        if (cl.match(/card-width-\d+/))
+        if (cl.match(/card-width-\d+/)) {
           $card.querySelector('.card-title').classList.add(cl);
+          $card.dataset.cardWidth = cl.replace('card-width-', '');
+          //@TODO : this following value must be set in Vue
+          $card.dataset.cardMinWidth = cl.replace('card-width-', '');
+        } else if (cl.match(/card-height-\d+/)) {
+          $card.dataset.cardHeight = cl.replace('card-height-', '');
+          //@TODO : this following value must be set in Vue
+          $card.dataset.cardMinHeight = cl.replace('card-height-', '');
+        }
       });
     });
+
+  const maxCardWidthSize = 5;
+  const maxCardHeightSize = 5;
 
   const positionOptions = {
     pad: 154,
@@ -30,8 +41,11 @@ ready(() => {
       width: [],
       height: [],
     };
-    for (let i = 1; i < 6; i++) {
-      const $div = createCard(i, i);
+    for (let i = 1; i <= Math.max(maxCardWidthSize, maxCardHeightSize); i++) {
+      const $div = createCard(
+        Math.min(i, maxCardWidthSize),
+        Math.min(i, maxCardHeightSize)
+      );
       document.querySelector('body').appendChild($div);
       const style = getComputedStyle($div);
       const rect = $div.getBoundingClientRect();
@@ -63,10 +77,29 @@ ready(() => {
       active: String.fromCodePoint(0x1f4dc),
       selector: '.card-wrapper > div',
       breakpoints: breakpoints,
-      callback: ($card, w, h) => {
-        resizeCard($card.querySelector('.card-title'), w, h);
-        resizeCard($card.querySelector('.card-wrapper > div'), w, h, true);
+      callbackMove: ($card, w, h) => {
+        let newW = parseInt(w) + parseInt($card.dataset.cardWidth);
+        let newH = parseInt(h) + parseInt($card.dataset.cardHeight);
+        if (newW < parseInt($card.dataset.cardMinWidth))
+          newW = parseInt($card.dataset.cardMinWidth);
+        if (newH < parseInt($card.dataset.cardMinHeight))
+          newH = parseInt($card.dataset.cardMinHeight);
+        if (newW > maxCardWidthSize) newW = maxCardWidthSize;
+        if (newH > maxCardHeightSize) newW = maxCardHeightSize;
+        resizeCard($card.querySelector('.card-title'), newW, newH);
+        resizeCard(
+          $card.querySelector('.card-wrapper > div'),
+          newW,
+          newH,
+          true
+        );
+        $card.dataset.cardTmpWidth = newW;
+        $card.dataset.cardTmpHeight = newH;
         MasisPosition(m);
+      },
+      callbackEnd: ($card) => {
+        $card.dataset.cardWidth = $card.dataset.cardTmpWidth;
+        $card.dataset.cardHeight = $card.dataset.cardTmpHeight;
       },
     });
 
