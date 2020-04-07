@@ -59,14 +59,23 @@
     &#🤖 {
       opacity: 0.75;
     }
-  
+
     &.👻 {
       z-index: 99;
-      opacity: 0.50;
+      opacity: 0.5;
       transition-duration: 0ms;
     }
-  
+
+    &.🏄 {
+      cursor: move;
+    }
+
+    &.📜 {
+      z-index: 10;
+    }
+
     .📐 {
+      display: none;
       position: absolute;
       bottom: 0;
       right: 0;
@@ -77,14 +86,13 @@
         @base_color,
         fadein(@active_color, 0.2)
       );
-      width: .75rem;
-      height: .75rem;
+      width: 1rem;
+      height: 1rem;
       cursor: se-resize;
     }
-  
-    &.🏄 {
-      cursor: move;
-    }
 
+    &:hover .📐 {
+      display: block;
+    }
   }
 }

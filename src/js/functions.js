@@ -36,3 +36,28 @@ export function triggerEvent(eventName, data = {}) {
   }
   document.dispatchEvent(event);
 }
+
+export function createCard(width, height) {
+  let $div = document.createElement('div');
+  let cls = [
+    'card',
+    'm-2',
+    'rounded-lg',
+    'p-1',
+    'flex',
+    'flex-col-reverse',
+    'opacity-0',
+    'absolute',
+  ];
+  $div.classList.add(...cls);
+  $div.innerHTML = `
+    <div class="card-title mt-1 pt-1 clearfix p-2 font-bold text-xs h-8 truncate card-width-1">
+      <span class="title"></span>
+    </div>
+    <div class="card-wrapper flex-grow">
+      <div class="card-width-${width} card-height-${height}">
+      </div>
+    </div>
+  `;
+  return $div;
+}

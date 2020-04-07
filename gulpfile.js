@@ -60,7 +60,9 @@ function css() {
           String.fromCodePoint(0x1f916),
           String.fromCodePoint(0x1f4d0),
           String.fromCodePoint(0x1f3c4),
+          String.fromCodePoint(0x1f4dc),
         ],
+        whitelistPatterns: [/^card-width-\d+$/, /^card-height-\d+$/],
       })
     )
     .pipe(minifyCSS())

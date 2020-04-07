@@ -382,19 +382,26 @@
   opacity: 0.5;
   transition-duration: 0ms;
 }
+.card.🏄 {
+  cursor: move;
+}
+.card.📜 {
+  z-index: 10;
+}
 .card .📐 {
+  display: none;
   position: absolute;
   bottom: 0;
   right: 0;
   z-index: 99;
   content: '';
   background: linear-gradient(135deg, #111111, #292833);
-  width: 0.75rem;
-  height: 0.75rem;
+  width: 1rem;
+  height: 1rem;
   cursor: se-resize;
 }
-.card.🏄 {
-  cursor: move;
+.card:hover .📐 {
+  display: block;
 }
 .glass {
   background-color: #1b1a1f;
