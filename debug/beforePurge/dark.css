@@ -400,6 +400,15 @@
   height: 1rem;
   cursor: se-resize;
 }
+.card:hover {
+  z-index: 2;
+}
+.card:hover .card-title:hover {
+  word-wrap: none;
+  overflow: visible;
+  text-overflow: none;
+  width: auto;
+}
 .card:hover .📐 {
   display: block;
 }

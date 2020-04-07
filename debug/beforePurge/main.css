@@ -14407,8 +14407,8 @@ video {
   transition-property: all;
 }
 
-.transition-coord {
-  transition-property: left, top, opacity;
+.transition-card {
+  transition-property: left, top, opacity, width, height;
 }
 
 .ease-linear {
@@ -27995,8 +27995,8 @@ video {
     transition-property: all;
   }
 
-  .sm\:transition-coord {
-    transition-property: left, top, opacity;
+  .sm\:transition-card {
+    transition-property: left, top, opacity, width, height;
   }
 
   .sm\:ease-linear {
@@ -41584,8 +41584,8 @@ video {
     transition-property: all;
   }
 
-  .md\:transition-coord {
-    transition-property: left, top, opacity;
+  .md\:transition-card {
+    transition-property: left, top, opacity, width, height;
   }
 
   .md\:ease-linear {
@@ -55173,8 +55173,8 @@ video {
     transition-property: all;
   }
 
-  .lg\:transition-coord {
-    transition-property: left, top, opacity;
+  .lg\:transition-card {
+    transition-property: left, top, opacity, width, height;
   }
 
   .lg\:ease-linear {
@@ -68762,8 +68762,8 @@ video {
     transition-property: all;
   }
 
-  .xl\:transition-coord {
-    transition-property: left, top, opacity;
+  .xl\:transition-card {
+    transition-property: left, top, opacity, width, height;
   }
 
   .xl\:ease-linear {
