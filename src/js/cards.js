@@ -14,7 +14,7 @@ ready(() => {
     });
 
   const positionOptions = {
-    pad: 100,
+    pad: 154,
   };
 
   var m = new Masis('#cards');

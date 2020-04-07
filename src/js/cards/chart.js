@@ -21,7 +21,7 @@ ready(() => {
         data.series.push(sd);
       });
       new Chartist.Line($chart, data, {
-        width: "500px",
+        width: "100%",
         showPoint: true,
         low: 0,
         showArea: true,

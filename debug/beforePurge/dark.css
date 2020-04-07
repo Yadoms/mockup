@@ -351,34 +351,36 @@
   height: 6rem;
 }
 .card .card-width-2 {
-  width: 17.65rem;
+  width: 17.625rem;
 }
 .card .card-height-2 {
-  height: 15.8rem;
+  height: 15.875rem;
 }
 .card .card-width-3 {
-  width: 27.3rem;
+  width: 27.25rem;
 }
 .card .card-height-3 {
-  height: 25.6rem;
+  height: 25.75rem;
 }
 .card .card-width-4 {
-  width: 36.95rem;
+  width: 36.875rem;
 }
 .card .card-height-4 {
-  height: 35.4rem;
+  height: 35.625rem;
 }
 .card .card-width-5 {
-  width: 46.6rem;
+  width: 46.5rem;
 }
 .card .card-height-5 {
-  height: 45.2rem;
+  height: 45.5rem;
+}
+#🤖 {
+  opacity: 0.75;
 }
 .👻 {
   z-index: 99;
   opacity: 0.75;
   transition-duration: 0ms;
-  cursor: move;
 }
 .glass {
   background-color: #1b1a1f;
