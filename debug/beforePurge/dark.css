@@ -405,7 +405,8 @@
   height: 45.5rem;
 }
 .card#🤖 {
-  opacity: 0.75;
+  opacity: 1;
+  border-color: #c53030;
   transition-duration: 0ms;
 }
 .card.👻 {
