@@ -1,6 +1,10 @@
 #header(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color) {
   #top {
-    > a {
+    @apply fixed py-4 pr-4 top-0 right-0;
+
+    #button-design {
+      @apply block rounded-lg border text-xl p-2 mb-1;
+
       line-height: normal;
 
       border-color: darken(@front_color, 2%);
@@ -20,6 +24,10 @@
 
       &:focus {
         outline: none;
+      }
+
+      i {
+        @apply block;
       }
     }
   }

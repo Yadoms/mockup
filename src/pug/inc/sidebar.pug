@@ -1,44 +1,38 @@
 - let targetString = (value) => { return '' + value}
 
 mixin menu_entry_content(icon, text, target)
-  a.block.align-middle.text-primaryColor.no-underline.flex(
+  a.text-primaryColor(
     class='md:py-3 hover:text-highlightColor',
     href="" + targetString(target)
   )
-    span.inline-block.w-6.text-center
+    span.icon
       i(class=icon)
-    span.absolute.text-sm.opacity-0.ml-3.ease-in-out.transition-opacity.duration-300.ml-6.pl-2(
-      class='md:pb-0'
-    )= text
+    span.word(class='md:pb-0')= text
 
 mixin menu_entry(icon, text, target, isActive = false)
   if isActive
-    li.block.px-4.w-full.active.border-l-4.border-highlightColor.bg-activeColor
+    li.active.border-l-4.border-highlightColor.bg-activeColor
       +menu_entry_content(icon, text, target)
   else
-    li.block.px-4.w-full
+    li
       +menu_entry_content(icon, text, target)
 
 mixin sidebar(page)
-  #sidebar.h-screen.w-16.bg-frontColor.flex.items-center.fixed.shadow.ease-in-out.transition-all.duration-300.z-50.flex-col(
-    class='hover:w-48 hover:shadow-2xl'
-  )
-    nav#menu.w-full.flex-grow
-      ul.w-full
+  #sidebar.w-16.bg-frontColor(class='hover:w-48 hover:shadow-2xl')
+    nav#menu
+      ul
         +menu_entry('fas fa-home', 'Accueil', '/', page == "home")
         +menu_entry('fas fa-door-open', 'Volets', '/volets.html', page == "volets")
         +menu_entry('far fa-chart-bar', 'Suivi', '/suivi.html', page == "suivi")
         +menu_entry('fas fa-bullhorn', 'Alarme', '/alarme.html', page == "alarme")
         +menu_entry('far fa-hdd', 'Système', '/systme.html', page == "systme")
         +menu_entry('far fa-lightbulb', 'Test', '/test.html', page == "test")
-    .w-full.p-2
-      a.block.align-middle.flex.text-primaryColor.p-2.no-underline(
+    #yadoms-icon
+      a.text-primaryColor(
         href='https://yadoms.com',
         target='_blank',
         class='md:py-3 hover:text-highlightColor'
       )
-        span.inline-block.w-6.text-center
+        span.icon
           img(src='/img/icon.png')
-        span.absolute.text-sm.opacity-0.ml-3.ease-in-out.transition-opacity.duration-300.ml-6.pl-2(
-          class='md:pb-0'
-        ) Yadoms.com
+        span.word(class='md:pb-0') Yadoms.com

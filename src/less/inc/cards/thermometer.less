@@ -10,6 +10,30 @@
   }
 
   .thermometer {
+    > div {
+      @apply flex flex-col items-center -ml-6 pt-2 h-full;
+
+      .tube {
+        @apply rounded-t-full w-5 h-full border-2 z-10 -mb-1 border-b-0 inline-flex items-end -ml-6;
+
+        .liquid {
+          @apply rounded-t-full h-0 w-5 mx-1 -mb-1 mt-1 transition-all duration-700 ease-in-out relative text-xs;
+
+          > div {
+            @apply absolute top-0 left-0 pl-8 -mt-2;
+          }
+        }
+      }
+
+      .bulb {
+        @apply rounded-full w-8 h-8 border-2 inline-flex -ml-6;
+
+        .liquid {
+          @apply rounded-full w-5 h-5 m-1 transition-colors duration-700 ease-in-out;
+        }
+      }
+    }
+
     .generateTubeColor(#4a5568);
 
     &.frost {

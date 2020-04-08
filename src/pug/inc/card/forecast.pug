@@ -1,33 +1,29 @@
 mixin forecast(city, datas)
   .forecast.card-width-5.card-height-2(data-city=city)
-    .flex.items-center.justify-center.w-full.h-full
+    .joliePosition
       each data in datas
-        .forecast-day.mx-2
+        .forecast-day
           .text-center= data.day
-          .forecast-weather.flex
+          .forecast-weather
             - var cond = "fas fa-" + data.cond;
             +indicator(cond)
-            .flex.flex-col.justify-center
-              .temp-min.text-minColor.text-right
+            .temp-wrapper
+              .temp-min.text-minColor
                 span= data.Tmin
                 span= data.Tunit
-              .temp-max.text-maxColor.text-right
+              .temp-max.text-maxColor
                 span= data.Tmax
                 span= data.Tunit
-          .forecast-conditions.flex.justify-around
-            .forecast-wind.relative.w-16.h-16
+          .forecast-conditions
+            .forecast-wind
               - var wdir = "wind-" + data.Wdir;
-              .ring.relative.border-2.border-primaryColor.w-full.h-full.rounded-full.transform.duration-200.inset-0.flex.justify-center(
-                class=wdir
-              )
+              .ring.border-primaryColor(class=wdir)
                 .inline-block.absolute.mono-font-xs
                   i.fa.fa-caret-up
-              .absolute.flex.flex-col.justify-center.text-center.leading-tight.h-full.inset-0
-                .wind-min.text-minColor.text-center= data.Wmin
-                .wind-max.text-maxColor.text-center= data.Wmax
-            .forecast-rain.w-3.h-16.border-2.border-primaryColor.rounded-full.border-t-0.rounded-t-none.inline-flex.items-end(
-              data-rain=data.rain
-            )
-              .liquid.h-0.w-3.transition-all.duration-700.ease-in-out.relative
-                .absolute.top-0.left-0.w-full.h-full.rounded-b-full.bg-blue-600
-                .absolute.top-0.left-0.pl-4.-mt-4.text-primaryColor= data.rain
+              .wind-wrapper
+                .wind-min.text-minColor= data.Wmin
+                .wind-max.text-maxColor= data.Wmax
+            .forecast-rain.border-primaryColor(data-rain=data.rain)
+              .liquid
+                .fill.bg-blue-600
+                .word.text-primaryColor= data.rain

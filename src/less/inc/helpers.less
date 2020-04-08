@@ -1,0 +1,26 @@
+#helpers(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color) {
+  .digital {
+    @apply relative overflow-hidden;
+
+    span {
+      &.hollow {
+        @apply absolute inset-0 opacity-12;
+      }
+    }
+  }
+
+  .joliePosition {
+    @apply flex items-center justify-center w-full h-full;
+  }
+
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    appearance: none;
+    margin: 0;
+  }
+
+  input:focus,
+  button:focus {
+    outline: none !important;
+  }
+}

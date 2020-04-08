@@ -17,14 +17,29 @@ const rename = require('gulp-rename');
 const concat = require('gulp-concat');
 const scaleImages = require('gulp-scale-images');
 const flatMap = require('flat-map').default;
+const postcssImport = require('postcss-import');
 
 function html() {
   return src('src/pug/*.pug').pipe(pug()).pipe(dest('dest'));
 }
 
 function cssLib() {
-  return src(['src/lib/main.css'])
-    .pipe(postcss([tailwindcss('./tailwind.config.js'), autoprefixer()]))
+  return src(['src/lib/**/*.css'])
+    .pipe(concat('lib.min.css'))
+    .pipe(minifyCSS())
+    .pipe(dest('dest/css'));
+}
+
+function css() {
+  return src(['src/less/*.less', '!src/less/_*.less'])
+    .pipe(less())
+    .pipe(
+      postcss([
+        postcssImport(),
+        tailwindcss('./tailwind.config.js'),
+        autoprefixer(),
+      ])
+    )
     .pipe(dest('debug/beforePurge'))
     .pipe(
       purgecss({
@@ -36,26 +51,6 @@ function cssLib() {
           /-(leave|enter|appear)(|-(to|from|active))$/,
           /^(?!cursor-move).+-move$/,
           /^router-link(|-exact)-active$/,
-        ],
-      })
-    )
-    .pipe(addSrc(['src/lib/**/*.css', '!src/lib/main.css']))
-    .pipe(concat('lib.min.css'))
-    .pipe(minifyCSS())
-    .pipe(dest('dest/css'));
-}
-
-function css() {
-  return src(['src/less/*.less', '!src/less/_*.less'])
-    .pipe(less())
-    .pipe(dest('debug/beforePurge'))
-    .pipe(
-      purgecss({
-        content: ['dest/**/*.html', 'dest/js/**/*.js'],
-        defaultExtractor: (content) => {
-          return content.match(/[A-Za-z0-9-_/:]*[A-Za-z0-9-_/]+/g) || [];
-        },
-        whitelistPatterns: [
           /^card-width-\d+$/,
           /^card-height-\d+$/,
           /(?:[\u2700-\u27bf]|(?:\ud83c[\udde6-\uddff]){2}|[\ud800-\udbff][\udc00-\udfff])[\ufe0e\ufe0f]?(?:[\u0300-\u036f\ufe20-\ufe23\u20d0-\u20f0]|\ud83c[\udffb-\udfff])?(?:\u200d(?:[^\ud800-\udfff]|(?:\ud83c[\udde6-\uddff]){2}|[\ud800-\udbff][\udc00-\udfff])[\ufe0e\ufe0f]?(?:[\u0300-\u036f\ufe20-\ufe23\u20d0-\u20f0]|\ud83c[\udffb-\udfff])?)*/,
@@ -152,6 +147,7 @@ function img() {
 
 exports.default = series(cleanDest, html, js, cssLib, css, fonts, img, server);
 exports.css = css;
+exports.cssLib = cssLib;
 exports.js = js;
 exports.html = html;
 exports.img = img;

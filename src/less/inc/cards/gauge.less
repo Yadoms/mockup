@@ -2,10 +2,10 @@
   .generateRingColor(@color, @percent) {
     .wrapper {
       box-shadow: 0 0 (2rem + 1rem * @percent) 0 fadein(@color, 10%);
-    }
-    .ring {
-      .fill {
-        background-color: @color;
+      .ring {
+        .fill {
+          background-color: @color;
+        }
       }
     }
   }
@@ -13,8 +13,36 @@
   .gauge {
     .generateRingColor(@active_color, 1);
 
-    .container {
-      top: 50%;
+    .wrapper {
+      @apply w-48 h-48 rounded-full;
+
+      .ring {
+        @apply w-full h-full rounded-full p-4 border-2 relative overflow-hidden;
+
+        .fill {
+          @apply absolute w-full h-full inset-x-0 bottom-0;
+        }
+
+        .inner-wrapper {
+          @apply shadow-lg rounded-full w-full h-full p-4 relative;
+
+          > div {
+            @apply w-full h-full rounded-full text-center relative;
+
+            .container {
+              top: 50%;
+
+              .value {
+                @apply text-xl;
+              }
+
+              .unit {
+                @apply text-lg;
+              }
+            }
+          }
+        }
+      }
     }
 
     &.frost {

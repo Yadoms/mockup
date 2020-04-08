@@ -1,0 +1,27 @@
+#numeric-display(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color) {
+  .numeric-display {
+    p {
+      @apply text-center text-xs;
+    }
+
+    .wrapper {
+      @apply text-right rounded-lg pt-2 pr-1 w-full;
+
+      > div {
+        @apply flex items-end h-full;
+
+        .value {
+          @apply flex-grow h-full;
+
+          > div {
+            @apply relative overflow-hidden text-xl inline-block;
+          }
+        }
+
+        .unit {
+          @apply h-full text-xs;
+        }
+      }
+    }
+  }
+}

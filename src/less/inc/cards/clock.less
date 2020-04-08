@@ -1,3 +1,13 @@
 #clock(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color) {
+  .clock {
+    @apply text-3xl;
 
+    .wrapper {
+      @apply rounded-lg flex items-center justify-center h-16 px-2;
+
+      .ampm {
+        @apply text-xl pl-2;
+      }
+    }
+  }
 }

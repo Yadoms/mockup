@@ -1,12 +1,53 @@
 #sidebar {
+  @apply h-screen flex items-center fixed shadow ease-in-out transition-all duration-300 z-50 flex-col;
   &:hover {
-    span {
-      opacity: 1;
+    .word {
+      opacity: 1 !important;
     }
   }
   .active {
     a {
       margin-left: -4px;
+    }
+  }
+
+  #menu {
+    @apply w-full flex-grow;
+
+    ul {
+      @apply w-full;
+
+      li {
+        @apply block px-4 w-full;
+
+        a {
+          @apply block align-middle no-underline flex;
+
+          .icon {
+            @apply inline-block w-6 text-center;
+          }
+
+          .word {
+            @apply absolute text-sm opacity-0 ml-3 ease-in-out transition-opacity duration-300 ml-6 pl-2;
+          }
+        }
+      }
+    }
+  }
+
+  #yadoms-icon {
+    @apply w-full p-2;
+
+    a {
+      @apply block align-middle flex p-2 no-underline;
+
+      .icon {
+        @apply inline-block w-6 text-center;
+      }
+
+      .word {
+        @apply absolute text-sm opacity-0 ml-3 ease-in-out transition-opacity duration-300 ml-6 pl-2;
+      }
     }
   }
 }

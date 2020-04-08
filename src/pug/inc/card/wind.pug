@@ -1,14 +1,12 @@
 mixin wind(speed, direction, unit = 'km/h', digital = true)
   .wind.card-width-1.card-height-1
-    .flex.items-center.justify-center.w-full.h-full
-      .relative.h-20.w-20
+    .joliePosition
+      .wrapper
         - var wdir = "wind-" + direction;
-        .ring.relative.border-2.border-primaryColor.w-full.h-full.rounded-full.transform.duration-200.inset-0.flex.justify-center(
-          class=wdir
-        )
-          .inline-block.absolute.mono-font-xs
+        .ring.border-primaryColor(class=wdir)
+          .mono-font-xs
             i.fa.fa-caret-up
-        .absolute.flex.flex-col.justify-center.text-xs.text-center.leading-tight.h-full.inset-0
+        .value
           - var cl = digital ? "font-mono" : "";
           span(class=cl)= speed
           span= unit

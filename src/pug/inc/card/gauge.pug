@@ -1,12 +1,16 @@
 mixin gauge(value, min = 0, max = 100, unit = '%', digital = true)
-  .gauge.card-width-2.card-height-2(data-value=value, data-min=min, data-max=max)
-    .flex.items-center.justify-center.w-full.h-full
-      .wrapper.w-48.h-48.rounded-full.bg-activeColor
-        .ring.w-full.h-full.rounded-full.p-4.border-2.border-gray-100.shadow-inner.relative.overflow-hidden
-          .fill.absolute.w-full.h-full.inset-x-0.bottom-0
-          .shadow-lg.rounded-full.w-full.h-full.p-4.relative.bg-gray-100
-            .w-full.h-full.shadow-inner.rounded-full.text-center.relative.bg-activeColor
-              .container.text-primaryColor.flex.flex-col.items-center.justify-center.w-full.h-full
+  .gauge.card-width-2.card-height-2(
+    data-value=value,
+    data-min=min,
+    data-max=max
+  )
+    .joliePosition
+      .wrapper.bg-activeColor
+        .ring.border-gray-100.shadow-inner
+          .fill
+          .inner-wrapper.bg-gray-100
+            .shadow-inner.bg-activeColor
+              .container.text-primaryColor.joliePosition
                 - var cl = digital ? "font-mono" : "";
-                .text-xl(class=cl)= value
-                .text-lg= unit
+                .value(class=cl)= value
+                .unit= unit

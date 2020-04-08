@@ -1,6 +1,6 @@
 // dark_mode
 @import './_includes.less';
-@import "./inc/main.less";
+@import './inc/main.less';
 
 @dark_front_color: #1d1c22;
 
@@ -33,17 +33,18 @@
 .focus\:shadow-focus:focus {
   box-shadow: 0 0 0 3px rgba(189, 202, 30, 0.5);
 }
+#cards {
+  .card {
+    .card-title {
+      border-top: 1px solid lighten(@dark_front_color, 10%);
 
-.card {
-  .card-title {
-    border-top: 1px solid lighten(@dark_front_color, 10%);
-
-    .icon {
-      border-left: 1px solid lighten(@dark_front_color, 20%);
+      .icon {
+        border-left: 1px solid lighten(@dark_front_color, 20%);
+      }
     }
-  }
 
-  .glass {
-    background-color: lighten(@dark_front_color, 1%);
+    .glass {
+      background-color: lighten(@dark_front_color, 1%);
+    }
   }
 }

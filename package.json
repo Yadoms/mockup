@@ -30,6 +30,7 @@
     "masis": "^2.1.0",
     "odometer": "^0.4.8",
     "pnp-webpack-plugin": "^1.6.4",
+    "postcss-import": "^12.0.1",
     "pug": "^2.0.4",
     "tailwindcss": "^1.2.0",
     "webpack": "^4.42.1",

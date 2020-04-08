@@ -12,19 +12,19 @@ html(lang='en')
 
   block vars
 
-  body.flex.h-screen.font-sans
-    #illustration.fixed.w-full.inset-0.min-h-full
-      .filter.w-full.inset-0.min-h-full.absolute
+  body
+    #illustration
+      .filter
       - var bg = "background-image:url(" + bgUrl + ")";
-      .cover.w-full.inset-0.min-h-full.absolute(style=bg)
+      .cover(style=bg)
 
     include ../inc/sidebar
     block sidebar
 
     include ../inc/header
 
-    main.w-full.mx-16.my-4.p-4.relative
-      #cards.clearfix.w-full
+    main
+      #cards.clearfix 
         block main
 
     include ../inc/footer
