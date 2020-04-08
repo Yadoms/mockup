@@ -63,7 +63,7 @@ export function MasisMove(Masis, options = {}) {
         let $robot = Masis.$element.querySelector('#' + options.exclude);
         if ($robot != null) Masis.$element.removeChild($robot);
         $robot = document.createElement('div');
-        $robot.setAttribute('id', '🤖');
+        $robot.setAttribute('id', options.exclude);
         $robot.classList = $ghost.classList;
         $robot.classList.remove(options.ghost);
         $robot.innerHTML = $ghost.innerHTML;
