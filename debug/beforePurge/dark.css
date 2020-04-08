@@ -415,6 +415,17 @@
 .card.🏄 {
   cursor: move;
 }
+.card.🏄::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #131313;
+  z-index: 50;
+  opacity: 0.2;
+  content: ' ';
+}
 .card.📜 {
   z-index: 10;
 }
@@ -438,6 +449,7 @@
   top: 0.5rem;
   right: 0.5rem;
   z-index: 99;
+  background-color: #121212;
   cursor: pointer;
 }
 .card .🗑️::before {
