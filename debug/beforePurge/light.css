@@ -391,14 +391,16 @@
 .card .📐 {
   display: none;
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: -1px;
+  right: -1px;
   z-index: 99;
   content: '';
-  background: linear-gradient(135deg, #F7FAFC, #edf2f7);
+  background: linear-gradient(135deg, #F7FAFC, #edf2f7, #edf2f7);
   width: 1rem;
   height: 1rem;
   cursor: se-resize;
+  border-top-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
 }
 .card:hover {
   z-index: 2;
