@@ -1,10 +1,11 @@
 doctype html
+- var timeStampInMs = Date.now();
 html(lang='en')
   head
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     link(rel='stylesheet', href='/css/lib.min.css')
-    link#theme(rel='stylesheet', href='/css/light.min.css')
+    link#theme(rel='stylesheet', href="/css/light.min.css?" + timeStampInMs)
     link(rel='icon', href='/img/icon.png', type='image/png')
 
   include ../inc/mixins
@@ -14,7 +15,7 @@ html(lang='en')
   body.flex.h-screen.font-sans
     #illustration.fixed.w-full.inset-0.min-h-full
       .filter.w-full.inset-0.min-h-full.absolute
-      - var bg = "background-image:url(" + bgUrl + ")"
+      - var bg = "background-image:url(" + bgUrl + ")";
       .cover.w-full.inset-0.min-h-full.absolute(style=bg)
 
     include ../inc/sidebar
@@ -28,4 +29,4 @@ html(lang='en')
 
     include ../inc/footer
 
-    script(src='/js/app.min.js')
+    script(src="/js/app.min.js?" + timeStampInMs)
