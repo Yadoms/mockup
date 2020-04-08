@@ -33,6 +33,7 @@ export function MasisMove(Masis, options = {}) {
   };
   const moveGhost = (ev) => {
     if (!onDrag) return;
+    ev.preventDefault();
     let newX = ev.pageX;
     let newY = ev.pageY;
     newX -= 90;
