@@ -432,6 +432,18 @@
   border-top-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
 }
+.card .🗑️ {
+  display: none;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 99;
+  cursor: pointer;
+}
+.card .🗑️::before {
+  content: '🗑️';
+  display: block;
+}
 .card:hover {
   z-index: 2;
 }
@@ -441,7 +453,8 @@
   text-overflow: none;
   width: auto;
 }
-.card:hover.🏄 .📐 {
+.card:hover.🏄 .📐,
+.card:hover.🏄 .🗑️ {
   display: block;
 }
 .glass {

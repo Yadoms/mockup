@@ -2,6 +2,7 @@ import { ready, findAll, createCard } from './functions';
 import { Masis, MasisPosition } from 'masis';
 import { MasisMove } from './lib/masis.move';
 import { MasisResize } from './lib/masis.resize';
+import { MasisDelete } from './lib/masis.delete';
 
 ready(() => {
   let $cards = findAll('.card');
@@ -101,6 +102,11 @@ ready(() => {
         $card.dataset.cardWidth = $card.dataset.cardTmpWidth;
         $card.dataset.cardHeight = $card.dataset.cardTmpHeight;
       },
+    });
+
+    MasisDelete(m, {
+      class: '🗑️',
+      message: 'Etes-vous sûr de vouloir supprimer cette tuile ?',
     });
 
     MasisPosition(m, positionOptions);

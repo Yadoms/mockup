@@ -54,15 +54,20 @@ function css() {
         content: ['dest/**/*.html', 'dest/js/**/*.js'],
         defaultExtractor: (content) => {
           return content.match(/[A-Za-z0-9-_/:]*[A-Za-z0-9-_/]+/g) || [];
-        },
+        } /*
         whitelist: [
           String.fromCodePoint(0x1f47b),
           String.fromCodePoint(0x1f916),
           String.fromCodePoint(0x1f4d0),
           String.fromCodePoint(0x1f3c4),
           String.fromCodePoint(0x1f4dc),
+          String.fromCodePoint(0x1f5d1),
+        ],*/,
+        whitelistPatterns: [
+          /^card-width-\d+$/,
+          /^card-height-\d+$/,
+          /(?:[\u2700-\u27bf]|(?:\ud83c[\udde6-\uddff]){2}|[\ud800-\udbff][\udc00-\udfff])[\ufe0e\ufe0f]?(?:[\u0300-\u036f\ufe20-\ufe23\u20d0-\u20f0]|\ud83c[\udffb-\udfff])?(?:\u200d(?:[^\ud800-\udfff]|(?:\ud83c[\udde6-\uddff]){2}|[\ud800-\udbff][\udc00-\udfff])[\ufe0e\ufe0f]?(?:[\u0300-\u036f\ufe20-\ufe23\u20d0-\u20f0]|\ud83c[\udffb-\udfff])?)*/,
         ],
-        whitelistPatterns: [/^card-width-\d+$/, /^card-height-\d+$/],
       })
     )
     .pipe(minifyCSS())

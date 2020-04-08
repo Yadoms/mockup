@@ -1,4 +1,3 @@
-import { MasisPosition } from 'masis';
 import { triggerEvent } from '../functions';
 
 export function MasisResize(Masis, options) {
@@ -21,6 +20,9 @@ export function MasisResize(Masis, options) {
     onResize = false;
     if ($element) {
       $element.classList.remove(options.active);
+      triggerEvent('masis.resize', {
+        element: $element,
+      });
       options.callbackEnd($element);
     }
     $element = null;

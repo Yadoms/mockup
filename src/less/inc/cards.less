@@ -94,6 +94,19 @@
       border-bottom-right-radius: 0.5rem;
     }
 
+    .🗑️ {
+      display: none;
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      z-index: 99;
+      cursor: pointer;
+      &::before {
+        content: '🗑️';
+        display: block;
+      }
+    }
+
     &:hover {
       z-index: 2;
 
@@ -104,7 +117,8 @@
         width: auto;
       }
 
-      &.🏄 .📐 {
+      &.🏄 .📐,
+      &.🏄 .🗑️ {
         display: block;
       }
     }
