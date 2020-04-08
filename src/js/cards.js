@@ -32,9 +32,9 @@ ready(() => {
   var m = new Masis('#cards');
   setTimeout(() => {
     MasisMove(m, {
-      class: String.fromCodePoint(0x1f3c4),
-      ghost: String.fromCodePoint(0x1f47b),
-      exclude: String.fromCodePoint(0x1f4d0),
+      class: '🏄',
+      ghost: '👻',
+      exclude: '🤖',
     });
 
     let breakpoints = {
@@ -73,8 +73,8 @@ ready(() => {
     };
 
     MasisResize(m, {
-      class: String.fromCodePoint(0x1f4d0),
-      active: String.fromCodePoint(0x1f4dc),
+      class: '📐',
+      active: '📜',
       selector: '.card-wrapper > div',
       breakpoints: breakpoints,
       callbackMove: ($card, w, h) => {

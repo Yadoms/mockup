@@ -60,12 +60,10 @@ export function MasisMove(Masis, options = {}) {
           break;
         }
       if (newPos != oldpos) {
-        let $robot = Masis.$element.querySelector(
-          '#' + String.fromCodePoint(0x1f916)
-        );
+        let $robot = Masis.$element.querySelector('#🤖');
         if ($robot != null) Masis.$element.removeChild($robot);
         $robot = document.createElement('div');
-        $robot.setAttribute('id', String.fromCodePoint(0x1f916));
+        $robot.setAttribute('id', '🤖');
         $robot.classList = $ghost.classList;
         $robot.classList.remove(options.ghost);
         $robot.innerHTML = $ghost.innerHTML;
@@ -91,9 +89,7 @@ export function MasisMove(Masis, options = {}) {
     if ($ghost != null) {
       $ghost.classList.remove(options.ghost);
       moveGhost(ev);
-      let $robot = Masis.$element.querySelector(
-        '#' + String.fromCodePoint(0x1f916)
-      );
+      let $robot = Masis.$element.querySelector('#🤖');
       $ghost.setAttribute(options.attr, $robot.getAttribute(options.attr));
       Masis.$element.removeChild($robot);
       Masis.$element.appendChild($ghost);
