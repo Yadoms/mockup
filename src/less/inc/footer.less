@@ -1,0 +1,34 @@
+#footer(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color) {
+  #bottom {
+    > a {
+      line-height: normal;
+
+      border-color: darken(@front_color, 2%);
+
+      box-shadow: -@shadow_size -@shadow_size @shadow_size*2
+          lighten(@front_color, -2.5%),
+        @shadow_size @shadow_size @shadow_size*2 lighten(@front_color, 2.5%);
+
+      &.active {
+        color: @highlight_color;
+        background: linear-gradient(
+          145deg,
+          lighten(@base_color, 1.5%),
+          lighten(@base_color, -1.5%)
+        );
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+    #menu-config {
+      &,
+      li {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+    }
+  }
+}

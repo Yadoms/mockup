@@ -7,6 +7,7 @@ export function MasisResize(Masis, options) {
   let offsetX, offsetY, previousX, previousY;
 
   const createResize = (ev) => {
+    if (!ev.target.classList.contains(options.class)) return;
     onResize = true;
     $element = ev.currentTarget.parentNode;
     $element.classList.add(options.active);

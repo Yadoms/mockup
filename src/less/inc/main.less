@@ -1,5 +1,7 @@
 @import './cards.less';
 @import './colors.less';
+@import './footer.less';
+@import './header.less';
 @import './overrides.less';
 @import './shadows.less';
 
@@ -14,10 +16,10 @@
   #illustration {
     .filter {
       background: linear-gradient(
-          fade(@base_color, 90%),
-          fade(@base_color, 92.5%),
-          fade(@base_color, 95%)
-        );
+        fade(@base_color, 90%),
+        fade(@base_color, 92.5%),
+        fade(@base_color, 95%)
+      );
       background-size: cover;
       z-index: -1;
     }
@@ -27,6 +29,9 @@
       background-size: cover;
     }
   }
+
+  #header(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text_shadow_color);
+  #footer(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text_shadow_color);
 
   #cards(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text_shadow_color);
   #colors(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text_shadow_color);

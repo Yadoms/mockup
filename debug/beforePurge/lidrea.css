@@ -108,6 +108,36 @@
   z-index: -2;
   background-size: cover;
 }
+#top > a {
+  line-height: normal;
+  border-color: #6fefcd;
+  box-shadow: -5px -5px 10px #6defcc, 5px 5px 10px #83f1d4;
+}
+#top > a.active {
+  color: #FA255B;
+  background: linear-gradient(145deg, #26c097, #24b48d);
+}
+#top > a:focus {
+  outline: none;
+}
+#bottom > a {
+  line-height: normal;
+  border-color: #6fefcd;
+  box-shadow: -5px -5px 10px #6defcc, 5px 5px 10px #83f1d4;
+}
+#bottom > a.active {
+  color: #FA255B;
+  background: linear-gradient(145deg, #26c097, #24b48d);
+}
+#bottom > a:focus {
+  outline: none;
+}
+#bottom #menu-config,
+#bottom #menu-config li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
 .card {
   border: 1px solid #25ba92;
   box-shadow: -6px -6px 16px #78f0d0, 6px 6px 16px #78f0d0;
@@ -411,7 +441,7 @@
   text-overflow: none;
   width: auto;
 }
-.card:hover .📐 {
+.card:hover.🏄 .📐 {
   display: block;
 }
 .glass {

@@ -1,0 +1,23 @@
+mixin configItemMenu(title, icon, link)
+  li
+    a(href=link, title=title)
+      i.fas.mono-font-xl.block(class=icon)
+
+footer#bottom.fixed.py-4.pr-4.bottom-0.right-0
+  a#button-config.block.rounded-lg.border.text-primaryColor.bg-frontColor.text-xl.p-2.mt-1(
+    href='#menu-config',
+    title='Configuration',
+    class='hover:text-highlightColor'
+  )
+    i.fas.fa-cog.mono-font-xl.block
+    span.sr-only Configuration
+  ul#menu-config.text-xl.hidden
+    +configItemMenu('Résumé', 'fa-info', '#')
+    +configItemMenu('Configuration Système', 'fa-cogs', '#')
+    +configItemMenu('Plugins', 'fa-rocket', '#')
+    +configItemMenu('Equipements', 'fa-microchip', '#')
+    +configItemMenu('Centre d\'automatisation', 'fa-code-branch', '#')
+    +configItemMenu('Destinataires', 'fa-envelope', '#')
+    +configItemMenu('Installation & Mise à jour', 'fa-download', '#')
+    +configItemMenu('Maintenance', 'fa-briefcase', '#')
+    +configItemMenu('A propos', 'fa-comment', '#')

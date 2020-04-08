@@ -110,5 +110,31 @@ ready(() => {
     });
 
     resizeObserver.observe(document.querySelector('#cards'));
+
+    // we remove drag classes to avoid some strange comportement
+    m.$children.forEach(($el) => {
+      $el.classList.remove('🏄');
+    });
   }, 500);
+
+  let wrenchState = false;
+  document.querySelector('#button-design').addEventListener(
+    'click',
+    (ev) => {
+      ev.preventDefault();
+      wrenchState = !wrenchState;
+      ev.currentTarget.classList.remove('active');
+      if (wrenchState) {
+        ev.currentTarget.classList.add('active');
+        m.$children.forEach(($el) => {
+          $el.classList.add('🏄');
+        });
+      } else {
+        m.$children.forEach(($el) => {
+          $el.classList.remove('🏄');
+        });
+      }
+    },
+    false
+  );
 });
