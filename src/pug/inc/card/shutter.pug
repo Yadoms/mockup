@@ -1,9 +1,0 @@
-mixin shutter(type, state)
-  .shutter.card-width-1.card-height-1
-    if (type == 'door')
-      +indicator('fas fa-door-closed')
-    else if (type == 'window')
-      - var cl = state == "closed" ? "fas fa-square" : "far fa-plus-square";
-      +indicator(cl)
-    else
-      p TODO

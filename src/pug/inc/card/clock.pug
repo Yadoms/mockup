@@ -1,7 +1,0 @@
-mixin clock(seconds=false, digital=true)
-  - var cl = !digital ? (seconds ? "card-width-2" : "card-width-1") : "card-width-2";
-  .clock.card-height-1(data-seconds=seconds, class=cl)
-    .joliePosition
-      .wrapper.text-highlightColor.glass.shadow-inner
-        +makeDigital('', digital, '88:88:88')
-        .ampm

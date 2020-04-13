@@ -1,7 +1,0 @@
-mixin rain-gauge(hour, day, digital = true)
-  .rain-gauge.card-width-2.card-height-1
-    .joliePosition
-      .left.border-primaryColor
-        +numeric-display(hour, 1, 'mm', 'depuis 1h', digital)
-      .right
-        +numeric-display(day, 1, 'mm', 'depuis 24h', digital)

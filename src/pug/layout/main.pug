@@ -8,18 +8,21 @@ html(lang='en')
     link#theme(rel='stylesheet', href="/css/light.min.css?" + timeStampInMs)
     link(rel='icon', href='/img/icon.png', type='image/png')
 
-  include ../inc/mixins
-
   block vars
 
   body
     #illustration
       .filter
-      - var bg = "background-image:url(" + bgUrl + ")";
-      .cover(style=bg)
+      .cover
 
-    include ../inc/sidebar
-    block sidebar
+    #sidebar.w-16.bg-frontColor(class='hover:w-48 hover:shadow-2xl')
+      nav#menu
+        ul
+      #yadoms-icon
+        a.text-primaryColor(href='https://yadoms.com', target='_blank')
+          span.icon
+            img(src='/img/icon.png')
+          span.word Yadoms.com
 
     include ../inc/header
 

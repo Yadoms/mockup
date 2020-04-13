@@ -9,8 +9,6 @@ const tailwindcss = require('tailwindcss');
 const autoprefixer = require('autoprefixer');
 const addSrc = require('gulp-add-src');
 const clean = require('del');
-const webpack = require('webpack-stream');
-const PnpWebpackPlugin = require(`pnp-webpack-plugin`);
 const path = require('path');
 const imagemin = require('gulp-imagemin');
 const rename = require('gulp-rename');
@@ -18,6 +16,7 @@ const concat = require('gulp-concat');
 const scaleImages = require('gulp-scale-images');
 const flatMap = require('flat-map').default;
 const postcssImport = require('postcss-import');
+const uglify = require('gulp-uglify-es').default;
 
 function html() {
   return src('src/pug/*.pug').pipe(pug()).pipe(dest('dest'));
@@ -53,6 +52,19 @@ function css() {
           /^router-link(|-exact)-active$/,
           /^card-width-\d+$/,
           /^card-height-\d+$/,
+          /^font-mono$/,
+          /^mono-font-/,
+          /joliePosition/,
+          /red(-bg)*/,
+          /blue(-bg)*/,
+          /:root/,
+          /^shadow/,
+          /^text-shadow/,
+          /^transform$/,
+          /glass/,
+          /$digital/,
+          /neumorphism/,
+          /^:(focus|-webkit)/,
           /(?:[\u2700-\u27bf]|(?:\ud83c[\udde6-\uddff]){2}|[\ud800-\udbff][\udc00-\udfff])[\ufe0e\ufe0f]?(?:[\u0300-\u036f\ufe20-\ufe23\u20d0-\u20f0]|\ud83c[\udffb-\udfff])?(?:\u200d(?:[^\ud800-\udfff]|(?:\ud83c[\udde6-\uddff]){2}|[\ud800-\udbff][\udc00-\udfff])[\ufe0e\ufe0f]?(?:[\u0300-\u036f\ufe20-\ufe23\u20d0-\u20f0]|\ud83c[\udffb-\udfff])?)*/,
         ],
       })
@@ -74,32 +86,19 @@ function fonts() {
 }
 
 function js() {
-  return src('src/js/entry.js')
-    .pipe(
-      webpack({
-        entry: {
-          main: './src/js/entry.js',
-        },
-        output: {
-          filename: 'app.min.js',
-          publicPath: '/js/',
-          path: path.resolve(__dirname, 'dist/js'),
-        },
-        mode: 'production',
-        resolve: {
-          plugins: [PnpWebpackPlugin],
-        },
-        resolveLoader: {
-          plugins: [PnpWebpackPlugin.moduleLoader(module)],
-        },
-      })
-    )
-    .pipe(dest('dest/js'));
+  return (
+    src('src/js/**/*.js')
+      //.pipe(uglify())
+      .pipe(concat('app.min.js'))
+      .pipe(dest('dest/js'))
+  );
 }
 
 function server() {
   watch('src/less/**/*.less', css);
   watch('src/js/**/*.js', js);
+  watch('src/components/*.mjs', series(copy, copyComponentLibs));
+  watch('src/yadoms.instance.json', copy);
   watch('src/pug/**/*.pug', series(html, cssLib, css));
   budo({
     live: true,
@@ -145,10 +144,32 @@ function img() {
     .pipe(dest('dest/img'));
 }
 
-exports.default = series(cleanDest, html, js, cssLib, css, fonts, img, server);
+function copy() {
+  return src(['src/yadoms.instance.json']).pipe(dest('dest'));
+}
+
+function copyComponentLibs() {
+  return src(['src/components/**/*.*']).pipe(dest('dest/components'));
+}
+
+exports.default = series(
+  cleanDest,
+  copy,
+  copyComponentLibs,
+  html,
+  js,
+  cssLib,
+  css,
+  fonts,
+  img,
+  server
+);
+
+exports.clean = cleanDest;
+exports.copy = copy;
 exports.css = css;
 exports.cssLib = cssLib;
-exports.js = js;
 exports.html = html;
 exports.img = img;
+exports.js = js;
 exports.preview = preview;

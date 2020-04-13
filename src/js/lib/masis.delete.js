@@ -1,23 +1,37 @@
-import { triggerEvent } from '../functions';
-import { MasisPosition } from 'masis';
+class MasisDelete {
+  Masis = null;
+  options = {};
 
-export function MasisDelete(Masis, options) {
-  const removeChild = (ev) => {
+  constructor(Masis, options) {
+    this.Masis = Masis;
+    this.options = options;
+  }
+
+  init() {
+    let self = this;
+    this.Masis.$children.forEach(($el) => {
+      let $div = document.createElement('div');
+      $div.classList.add(self.options.class);
+      $div.addEventListener(
+        'mousedown',
+        (ev) => {
+          self.removeChild(ev);
+        },
+        false
+      );
+      $el.appendChild($div);
+    });
+  }
+
+  removeChild(ev) {
     ev.preventDefault();
     ev.stopImmediatePropagation();
-    if (confirm(options.message)) {
-      triggerEvent('masis.delete', {
+    if (confirm(this.options.message)) {
+      Yadoms.triggerEvent('masis.delete', {
         element: ev.currentTarget.parentNode,
       });
-      Masis.$element.removeChild(ev.currentTarget.parentNode);
-      MasisPosition(Masis.populate());
+      this.Masis.$element.removeChild(ev.currentTarget.parentNode);
+      MasisPosition(this.Masis.populate());
     }
-  };
-
-  Masis.$children.forEach(($el) => {
-    let $div = document.createElement('div');
-    $div.classList.add(options.class);
-    $div.addEventListener('mousedown', removeChild, false);
-    $el.appendChild($div);
-  });
+  }
 }

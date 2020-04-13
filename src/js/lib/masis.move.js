@@ -1,116 +1,159 @@
-import { MasisPosition, MasisSort } from 'masis';
-import { triggerEvent } from '../functions';
+class MasisMove {
+  Masis = null;
+  options = {};
+  $ghost;
+  positions;
+  oldpos = '';
+  onDrag = false;
 
-export function MasisMove(Masis, options = {}) {
-  if (options.attr == null) options.attr = 'data-sort';
-  if (options.ghost == null) options.ghost = 'ghost';
-  let $ghost;
-  let positions;
-  let oldpos = '';
-  let onDrag = false;
-  const pad = (n, width, z) => {
+  constructor(Masis, options = {}) {
+    this.Masis = Masis;
+    if (options.attr == null) options.attr = 'data-sort';
+    if (options.ghost == null) options.ghost = 'ghost';
+    this.options = options;
+
+    let self = this;
+
+    document.addEventListener(
+      'mousemove',
+      (ev) => {
+        self.moveGhost(ev);
+      },
+      false
+    );
+    this.redefineSort();
+  }
+
+  init() {
+    let self = this;
+    this.Masis.$children.forEach(($el) => {
+      $el.addEventListener(
+        'mousedown',
+        (ev) => {
+          self.createGhost(ev);
+        },
+        false
+      );
+      $el.addEventListener(
+        'mouseup',
+        (ev) => {
+          self.removeGhost(ev);
+        },
+        false
+      );
+    });
+  }
+
+  static pad(n, width, z) {
     z = z || '0';
     n = n + '';
     return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
-  };
-  const joliNumber = (num) => {
-    return `_${pad(num, 6, '0')}`;
-  };
-  const redefineSort = () => {
-    Masis.$children.forEach(($el, i) => {
-      $el.setAttribute(options.attr, joliNumber(i + 1));
+  }
+
+  static joliNumber(num) {
+    return `_${MasisMove.pad(num, 6, '0')}`;
+  }
+
+  redefineSort() {
+    let self = this;
+    this.Masis.$children.forEach(($el, i) => {
+      $el.setAttribute(this.options.attr, MasisMove.joliNumber(i + 1));
     });
-    return Masis;
-  };
-  const generatePositionsMap = () => {
-    positions = {};
-    Masis.$children.forEach(($el) => {
-      let et = joliNumber($el.style.top.replace('px', ''));
-      let el = joliNumber($el.style.left.replace('px', ''));
-      if (typeof positions[et] == 'undefined') positions[et] = {};
-      positions[et][el] = $el.getAttribute(options.attr);
+  }
+
+  generatePositionsMap() {
+    this.positions = {};
+    let self = this;
+    this.Masis.$children.forEach(($el) => {
+      let et = MasisMove.joliNumber($el.style.top.replace('px', ''));
+      let el = MasisMove.joliNumber($el.style.left.replace('px', ''));
+      if (typeof self.positions[et] == 'undefined') self.positions[et] = {};
+      self.positions[et][el] = $el.getAttribute(self.options.attr);
     });
-  };
-  const createFake = (newPos) => {
-    let $robot = Masis.$element.querySelector('#' + options.exclude);
-    if ($robot != null) Masis.$element.removeChild($robot);
+  }
+
+  createFake(newPos) {
+    let $robot = this.Masis.$element.querySelector('#' + this.options.exclude);
+    if ($robot != null) this.Masis.$element.removeChild($robot);
     $robot = document.createElement('div');
-    $robot.setAttribute('id', options.exclude);
-    $robot.classList = $ghost.classList;
-    $robot.classList.remove(options.ghost);
-    $robot.innerHTML = $ghost.innerHTML;
-    $robot.setAttribute(options.attr, newPos);
-    Masis.$element.appendChild($robot);
-  };
-  const moveGhost = (ev) => {
-    if (!onDrag) return;
+    $robot.setAttribute('id', this.options.exclude);
+    $robot.classList = this.$ghost.classList;
+    $robot.classList.remove(this.options.ghost);
+    $robot.innerHTML = this.$ghost.innerHTML;
+    $robot.setAttribute(this.options.attr, newPos);
+    this.Masis.$element.appendChild($robot);
+  }
+
+  moveGhost(ev) {
+    if (!this.onDrag) return;
     ev.preventDefault();
     let newX = ev.pageX;
     let newY = ev.pageY;
     newX -= 90;
     newY -= 50;
-    $ghost.style.left = newX + 'px';
-    $ghost.style.top = newY + 'px';
-    let _x = joliNumber(newX);
-    let _y = joliNumber(newY);
-    if (positions != null) {
-      let positionsY = Object.keys(positions).reverse();
-      let newPos = joliNumber(0);
+    this.$ghost.style.left = newX + 'px';
+    this.$ghost.style.top = newY + 'px';
+    let _x = MasisMove.joliNumber(newX);
+    let _y = MasisMove.joliNumber(newY);
+    if (this.positions != null) {
+      let positionsY = Object.keys(this.positions).reverse();
+      let newPos = MasisMove.joliNumber(0);
       for (let i in positionsY)
         if (positionsY[i].localeCompare(_y) == -1) {
-          let positionsX = Object.keys(positions[positionsY[i]]).reverse();
+          let positionsX = Object.keys(this.positions[positionsY[i]]).reverse();
           for (let j in positionsX)
             if (positionsX[j].localeCompare(_x) == -1) {
               newPos =
-                joliNumber(
+                MasisMove.joliNumber(
                   parseInt(
-                    positions[positionsY[i]][positionsX[j]].replace('_', '')
+                    this.positions[positionsY[i]][positionsX[j]].replace(
+                      '_',
+                      ''
+                    )
                   )
                 ) + '_';
               break;
             }
           break;
         }
-      if (newPos != oldpos) {
-        createFake(newPos);
-        MasisPosition(MasisSort(Masis.populate(), '[data-sort]'));
-        oldpos = newPos;
+      if (newPos != this.oldpos) {
+        this.createFake(newPos);
+        MasisPosition(MasisSort(this.Masis.populate(), '[data-sort]'));
+        this.oldpos = newPos;
       }
     }
-  };
-  const createGhost = (ev) => {
-    if (ev.currentTarget.classList.contains(options.exclude)) return;
-    if (!ev.currentTarget.classList.contains(options.class)) return;
-    onDrag = true;
-    $ghost = event.currentTarget;
-    Masis.$element.parentNode.appendChild($ghost);
-    $ghost.classList.add(options.ghost);
-    createFake($ghost.getAttribute(options.attr));
-    MasisPosition(MasisSort(Masis.populate(), '[data-sort]'));
-    generatePositionsMap();
-  };
-  const removeGhost = (ev) => {
-    if ($ghost != null) {
-      $ghost.classList.remove(options.ghost);
-      moveGhost(ev);
-      let $robot = Masis.$element.querySelector('#' + options.exclude);
-      $ghost.setAttribute(options.attr, $robot.getAttribute(options.attr));
-      Masis.$element.removeChild($robot);
-      Masis.$element.appendChild($ghost);
-      MasisPosition(MasisSort(Masis.populate(), '[data-sort]'));
-      redefineSort();
-      oldpos = '';
-      onDrag = false;
-      triggerEvent('masis.moved');
+  }
+
+  createGhost(ev) {
+    if (ev.currentTarget.classList.contains(this.options.exclude)) return;
+    if (!ev.currentTarget.classList.contains(this.options.class)) return;
+    this.onDrag = true;
+    this.$ghost = event.currentTarget;
+    this.Masis.$element.parentNode.appendChild(this.$ghost);
+    this.$ghost.classList.add(this.options.ghost);
+    this.createFake(this.$ghost.getAttribute(this.options.attr));
+    MasisPosition(MasisSort(this.Masis.populate(), '[data-sort]'));
+    this.generatePositionsMap();
+  }
+
+  removeGhost(ev) {
+    if (this.$ghost != null) {
+      this.$ghost.classList.remove(this.options.ghost);
+      this.moveGhost(ev);
+      let $robot = this.Masis.$element.querySelector(
+        '#' + this.options.exclude
+      );
+      this.$ghost.setAttribute(
+        this.options.attr,
+        $robot.getAttribute(this.options.attr)
+      );
+      this.Masis.$element.removeChild($robot);
+      this.Masis.$element.appendChild(this.$ghost);
+      MasisPosition(MasisSort(this.Masis.populate(), '[data-sort]'));
+      this.redefineSort();
+      this.oldpos = '';
+      this.onDrag = false;
+      Yadoms.triggerEvent('masis.moved');
     }
-  };
-
-  Masis.$children.forEach(($el) => {
-    $el.classList.add(options.class);
-    $el.addEventListener('mousedown', createGhost, false);
-    $el.addEventListener('mouseup', removeGhost, false);
-  });
-
-  document.addEventListener('mousemove', moveGhost, false);
-  return redefineSort();
+  }
 }

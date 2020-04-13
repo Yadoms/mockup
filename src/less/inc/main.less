@@ -3,7 +3,6 @@
 @import './footer.less';
 @import './header.less';
 @import './helpers.less';
-@import './overrides.less';
 @import './shadows.less';
 
 #makeTheme(@base_color, 
@@ -41,6 +40,17 @@
     }
   }
 
+  #sidebar {
+    li.active {
+      background-color: @active_color;
+      border-color: @highlight_color;
+    }
+
+    a:hover {
+      @color: @highlight_color;
+    }
+  }
+
   main {
     @apply w-full mx-16 my-4 p-4 relative;
   }
@@ -51,6 +61,5 @@
 
   #cards(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text_shadow_color);
   #colors(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text_shadow_color);
-  #overrides(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text_shadow_color);
   #shadows(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text_shadow_color);
 }

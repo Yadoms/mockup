@@ -2,6 +2,10 @@
 
 #color() {
   .generate(@name, @color) {
+    :root {
+      --@{name}Color: @color;
+    }
+
     .bg-@{name}Color,
     .hover\:bg-@{name}Color:hover {
       background-color: @color;
@@ -20,9 +24,16 @@
 }
 
 #colors(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color) {
-
   .glass {
     background-color: darken(@front_color, 1%);
+  }
+
+  .red {
+    color: #e53e3e;
+  }
+
+  .blue {
+    color: #3182ce;
   }
 
   #color.generate(min, @color_min);

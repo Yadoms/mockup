@@ -68860,11 +68860,17 @@ video {
   width: 100%;
 }
 
+#sidebar #menu ul li.active {
+  border-left-width: 4px;
+}
+
 #sidebar #menu ul li a {
   display: block;
   vertical-align: middle;
   text-decoration: none;
   display: flex;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 #sidebar #menu ul li a .icon {
@@ -68883,6 +68889,7 @@ video {
   transition-duration: 300ms;
   margin-left: 1.5rem;
   padding-left: 0.5rem;
+  padding-bottom: 0;
 }
 
 #sidebar #yadoms-icon {
@@ -68914,6 +68921,7 @@ video {
   transition-duration: 300ms;
   margin-left: 1.5rem;
   padding-left: 0.5rem;
+  padding-bottom: 0;
 }
 
 /*
@@ -69067,6 +69075,11 @@ body {
   background-size: cover;
 }
 
+#sidebar li.active {
+  background-color: #292833;
+  border-color: #5980FF;
+}
+
 main {
   width: 100%;
   margin-left: 4rem;
@@ -69099,16 +69112,24 @@ main {
   height: 100%;
 }
 
-input[type='number']::-webkit-inner-spin-button,
-input[type='number']::-webkit-outer-spin-button {
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
   -webkit-appearance: none;
           appearance: none;
   margin: 0;
 }
 
-input:focus,
-button:focus {
+:focus {
   outline: none !important;
+}
+
+.neumorphism {
+  border-color: #0c0c0c;
+  box-shadow: -5px -5px 10px #0b0b0b, 5px 5px 10px #171717;
+}
+
+.neumorphism.active {
+  background: linear-gradient(145deg, #151515, #0d0d0d);
 }
 
 #top {
@@ -69194,7 +69215,7 @@ button:focus {
   width: 100%;
 }
 
-#cards .card {
+.card {
   margin: 0.5rem;
   top: 0;
   left: 0;
@@ -69210,741 +69231,13 @@ button:focus {
   transition-duration: 150ms;
   border-radius: 0.5rem;
   padding: 0.25rem;
-  display: flex;
+  display: inline-flex;
   flex-direction: column-reverse;
   border: 1px solid #292833;
   box-shadow: -6px -6px 16px #1d1c22, 6px 6px 16px #1d1c22;
 }
 
-#cards .card .clock {
-  font-size: 1.875rem;
-}
-
-#cards .card .clock .wrapper {
-  border-radius: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 4rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
-#cards .card .clock .wrapper .ampm {
-  font-size: 1.25rem;
-  padding-left: 0.5rem;
-}
-
-#cards .card .odometer {
-  font-weight: 700;
-  font-size: 1.25rem;
-}
-
-#cards .card .odometer .odometer-hacking-mark ~ .odometer-digit {
-  background-image: linear-gradient(to bottom, #eee0d3 0%, #eee0d3 40%, #bbaa9a 60%, #eee0d3 80%, #eee0d3 100%);
-  background-color: #fff5f5;
-  color: #c53030;
-}
-
-#cards .card .odometer .odometer-suffix-mark {
-  padding: 0 0.15rem;
-}
-
-#cards .card .curtain {
-  font-weight: 700;
-  font-size: 1.25rem;
-}
-
-#cards .card .curtain button {
-  width: 4rem;
-  height: 4rem;
-}
-
-#cards .card .dimmer .wrapper {
-  width: 100%;
-  height: 2.5rem;
-  display: flex;
-  flex-direction: row;
-  border-radius: 0.5rem;
-  margin-top: 0.5rem;
-  overflow: hidden;
-}
-
-#cards .card .dimmer .wrapper button {
-  height: 100%;
-  width: 2.5rem;
-  outline: 0;
-}
-
-#cards .card .dimmer .wrapper button > div {
-  margin: auto;
-  font-size: 1.125rem;
-  font-weight: 700;
-}
-
-#cards .card .dimmer .wrapper .inner-wrapper {
-  position: relative;
-  height: 100%;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  flex-grow: 1;
-}
-
-#cards .card .dimmer .wrapper .inner-wrapper input {
-  outline: 0;
-  text-align: right;
-  height: 100%;
-  padding-right: 1rem;
-  width: 100%;
-}
-
-#cards .card .dimmer .wrapper .inner-wrapper .suffix {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-}
-
-#cards .card .dimmer .wrapper .inner-wrapper .suffix span {
-  font-size: 0.75rem;
-  padding-right: 0.5rem;
-}
-
-#cards .card .forecast .forecast-day {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
-
-#cards .card .forecast .forecast-day .forecast-weather {
-  display: flex;
-}
-
-#cards .card .forecast .forecast-day .forecast-weather .temp-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: right;
-}
-
-#cards .card .forecast .forecast-day .forecast-conditions {
-  display: flex;
-  justify-content: space-around;
-}
-
-#cards .card .forecast .forecast-day .forecast-conditions .forecast-wind {
-  position: relative;
-  width: 4rem;
-  height: 4rem;
-}
-
-#cards .card .forecast .forecast-day .forecast-conditions .forecast-wind .ring {
-  position: relative;
-  border-width: 2px;
-  width: 100%;
-  height: 100%;
-  border-radius: 9999px;
-  --transform-translate-x: 0;
-  --transform-translate-y: 0;
-  --transform-rotate: 0;
-  --transform-skew-x: 0;
-  --transform-skew-y: 0;
-  --transform-scale-x: 1;
-  --transform-scale-y: 1;
-  transform: translateX(var(--transform-translate-x)) translateY(var(--transform-translate-y)) rotate(var(--transform-rotate)) skewX(var(--transform-skew-x)) skewY(var(--transform-skew-y)) scaleX(var(--transform-scale-x)) scaleY(var(--transform-scale-y));
-  transition-duration: 200ms;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-}
-
-#cards .card .forecast .forecast-day .forecast-conditions .forecast-wind .ring > div {
-  bottom: -5px;
-}
-
-#cards .card .forecast .forecast-day .forecast-conditions .forecast-wind .ring.wind-S {
-  --transform-rotate: 0deg;
-}
-
-#cards .card .forecast .forecast-day .forecast-conditions .forecast-wind .ring.wind-SSE {
-  --transform-rotate: -22.5deg;
-}
-
-#cards .card .forecast .forecast-day .forecast-conditions .forecast-wind .ring.wind-SE {
-  --transform-rotate: -45deg;
-}
-
-#cards .card .forecast .forecast-day .forecast-conditions .forecast-wind .ring.wind-ESE {
-  --transform-rotate: -67.5deg;
-}
-
-#cards .card .forecast .forecast-day .forecast-conditions .forecast-wind .ring.wind-E {
-  --transform-rotate: -90deg;
-}
-
-#cards .card .forecast .forecast-day .forecast-conditions .forecast-wind .ring.wind-ENE {
-  --transform-rotate: -112.5deg;
-}
-
-#cards .card .forecast .forecast-day .forecast-conditions .forecast-wind .ring.wind-NE {
-  --transform-rotate: -135deg;
-}
-
-#cards .card .forecast .forecast-day .forecast-conditions .forecast-wind .ring.wind-NNE {
-  --transform-rotate: -157.5deg;
-}
-
-#cards .card .forecast .forecast-day .forecast-conditions .forecast-wind .ring.wind-N {
-  --transform-rotate: 180deg;
-}
-
-#cards .card .forecast .forecast-day .forecast-conditions .forecast-wind .ring.wind-NNO {
-  --transform-rotate: 157.5deg;
-}
-
-#cards .card .forecast .forecast-day .forecast-conditions .forecast-wind .ring.wind-NO {
-  --transform-rotate: 135deg;
-}
-
-#cards .card .forecast .forecast-day .forecast-conditions .forecast-wind .ring.wind-ONO {
-  --transform-rotate: 112.5deg;
-}
-
-#cards .card .forecast .forecast-day .forecast-conditions .forecast-wind .ring.wind-O {
-  --transform-rotate: 90deg;
-}
-
-#cards .card .forecast .forecast-day .forecast-conditions .forecast-wind .ring.wind-OSO {
-  --transform-rotate: 67.5deg;
-}
-
-#cards .card .forecast .forecast-day .forecast-conditions .forecast-wind .ring.wind-SO {
-  --transform-rotate: 45deg;
-}
-
-#cards .card .forecast .forecast-day .forecast-conditions .forecast-wind .ring.wind-SSO {
-  --transform-rotate: 22.5deg;
-}
-
-#cards .card .forecast .forecast-day .forecast-conditions .forecast-wind .wind-wrapper {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  line-height: 1.25;
-  height: 100%;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-#cards .card .forecast .forecast-day .forecast-conditions .forecast-rain {
-  width: 0.75rem;
-  height: 4rem;
-  border-width: 2px;
-  border-radius: 9999px;
-  border-top-width: 0;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  display: inline-flex;
-  align-items: flex-end;
-}
-
-#cards .card .forecast .forecast-day .forecast-conditions .forecast-rain .liquid {
-  height: 0;
-  width: 0.75rem;
-  transition-property: all;
-  transition-duration: 700ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-}
-
-#cards .card .forecast .forecast-day .forecast-conditions .forecast-rain .liquid .fill {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-bottom-right-radius: 9999px;
-  border-bottom-left-radius: 9999px;
-}
-
-#cards .card .forecast .forecast-day .forecast-conditions .forecast-rain .liquid .word {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding-left: 1rem;
-  margin-top: -1rem;
-}
-
-#cards .card .gauge .wrapper {
-  box-shadow: 0 0 3rem 0 #292833;
-}
-
-#cards .card .gauge .wrapper .ring .fill {
-  background-color: #292833;
-}
-
-#cards .card .gauge .wrapper {
-  width: 12rem;
-  height: 12rem;
-  border-radius: 9999px;
-}
-
-#cards .card .gauge .wrapper .ring {
-  width: 100%;
-  height: 100%;
-  border-radius: 9999px;
-  padding: 1rem;
-  border-width: 2px;
-  position: relative;
-  overflow: hidden;
-}
-
-#cards .card .gauge .wrapper .ring .fill {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  right: 0;
-  left: 0;
-  bottom: 0;
-}
-
-#cards .card .gauge .wrapper .ring .inner-wrapper {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  border-radius: 9999px;
-  width: 100%;
-  height: 100%;
-  padding: 1rem;
-  position: relative;
-}
-
-#cards .card .gauge .wrapper .ring .inner-wrapper > div {
-  width: 100%;
-  height: 100%;
-  border-radius: 9999px;
-  text-align: center;
-  position: relative;
-}
-
-#cards .card .gauge .wrapper .ring .inner-wrapper > div .container {
-  top: 50%;
-}
-
-#cards .card .gauge .wrapper .ring .inner-wrapper > div .container .value {
-  font-size: 1.25rem;
-}
-
-#cards .card .gauge .wrapper .ring .inner-wrapper > div .container .unit {
-  font-size: 1.125rem;
-}
-
-#cards .card .gauge.frost .wrapper {
-  box-shadow: 0 0 2.2rem 0 #2b6cb0;
-}
-
-#cards .card .gauge.frost .wrapper .ring .fill {
-  background-color: #2b6cb0;
-}
-
-#cards .card .gauge.cold .wrapper {
-  box-shadow: 0 0 2.4rem 0 #4c51bf;
-}
-
-#cards .card .gauge.cold .wrapper .ring .fill {
-  background-color: #4c51bf;
-}
-
-#cards .card .gauge.normal .wrapper {
-  box-shadow: 0 0 2.6rem 0 #6b46c1;
-}
-
-#cards .card .gauge.normal .wrapper .ring .fill {
-  background-color: #6b46c1;
-}
-
-#cards .card .gauge.warm .wrapper {
-  box-shadow: 0 0 2.8rem 0 #b83280;
-}
-
-#cards .card .gauge.warm .wrapper .ring .fill {
-  background-color: #B83280;
-}
-
-#cards .card .gauge.hot .wrapper {
-  box-shadow: 0 0 3rem 0 #c53030;
-}
-
-#cards .card .gauge.hot .wrapper .ring .fill {
-  background-color: #C53030;
-}
-
-#cards .card .numeric-display p {
-  text-align: center;
-  font-size: 0.75rem;
-}
-
-#cards .card .numeric-display .wrapper {
-  text-align: right;
-  border-radius: 0.5rem;
-  padding-top: 0.5rem;
-  padding-right: 0.25rem;
-  width: 100%;
-}
-
-#cards .card .numeric-display .wrapper > div {
-  display: flex;
-  align-items: flex-end;
-  height: 100%;
-}
-
-#cards .card .numeric-display .wrapper > div .value {
-  flex-grow: 1;
-  height: 100%;
-}
-
-#cards .card .numeric-display .wrapper > div .value > div {
-  position: relative;
-  overflow: hidden;
-  font-size: 1.25rem;
-  display: inline-block;
-}
-
-#cards .card .numeric-display .wrapper > div .unit {
-  height: 100%;
-  font-size: 0.75rem;
-}
-
-#cards .card .switch-button {
-  font-size: 1.875rem;
-  padding: 0.75rem;
-  border-radius: 0.5rem;
-  border-width: 1px;
-  line-height: normal;
-  border-color: #0c0c0c;
-  box-shadow: -5px -5px 10px #0b0b0b, 5px 5px 10px #171717;
-}
-
-#cards .card .switch-button i {
-  display: block;
-}
-
-#cards .card .switch-button.active {
-  color: #5980FF;
-  background: linear-gradient(145deg, #151515, #0d0d0d);
-}
-
-#cards .card .switch-button:focus {
-  outline: none;
-}
-
-#cards .card .switch-arrow button {
-  width: 2.5rem;
-  height: 2.5rem;
-}
-
-#cards .card .switch-arrow button:focus {
-  outline: none;
-}
-
-#cards .card .switch-toggle {
-  display: inline-flex;
-  align-items: center;
-  cursor: pointer;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-#cards .card .switch-toggle > div {
-  position: relative;
-}
-
-#cards .card .switch-toggle > div input {
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
-  left: 0;
-  top: 0;
-}
-
-#cards .card .switch-toggle > div input[checked] ~ .wrapper {
-  background-color: #5980FF !important;
-  box-shadow: 0 0 10px 0 #5980ff;
-}
-
-#cards .card .switch-toggle > div .wrapper {
-  border-radius: 9999px;
-  width: 2.5rem;
-  height: 1.5rem;
-}
-
-#cards .card .switch-toggle > div .round {
-  position: absolute;
-  width: 1rem;
-  height: 1rem;
-  margin: 0.25rem;
-  border-radius: 9999px;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  transition-property: transform;
-  transition-duration: 300ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-}
-
-#cards .card .switch-toggle.active > div .wrapper,
-#cards .card .switch-toggle.hover\:active:hover > div .wrapper {
-  background-color: #FFFFFF !important;
-  box-shadow: none;
-}
-
-#cards .card .teleinfo-forecast .square {
-  border-radius: 9999px;
-  border-width: 2px;
-  width: 3rem;
-  height: 3rem;
-  box-shadow: 0 0 20px currentColor;
-}
-
-#cards .card .thermometer > div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-left: -1.5rem;
-  padding-top: 0.5rem;
-  height: 100%;
-}
-
-#cards .card .thermometer > div .tube {
-  border-top-left-radius: 9999px;
-  border-top-right-radius: 9999px;
-  width: 1.25rem;
-  height: 100%;
-  border-width: 2px;
-  z-index: 10;
-  margin-bottom: -0.25rem;
-  border-bottom-width: 0;
-  display: inline-flex;
-  align-items: flex-end;
-  margin-left: -1.5rem;
-}
-
-#cards .card .thermometer > div .tube .liquid {
-  border-top-left-radius: 9999px;
-  border-top-right-radius: 9999px;
-  height: 0;
-  width: 1.25rem;
-  margin-left: 0.25rem;
-  margin-right: 0.25rem;
-  margin-bottom: -0.25rem;
-  margin-top: 0.25rem;
-  transition-property: all;
-  transition-duration: 700ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  font-size: 0.75rem;
-}
-
-#cards .card .thermometer > div .tube .liquid > div {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding-left: 2rem;
-  margin-top: -0.5rem;
-}
-
-#cards .card .thermometer > div .bulb {
-  border-radius: 9999px;
-  width: 2rem;
-  height: 2rem;
-  border-width: 2px;
-  display: inline-flex;
-  margin-left: -1.5rem;
-}
-
-#cards .card .thermometer > div .bulb .liquid {
-  border-radius: 9999px;
-  width: 1.25rem;
-  height: 1.25rem;
-  margin: 0.25rem;
-  transition-property: background-color, border-color, color, fill, stroke;
-  transition-duration: 700ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-#cards .card .thermometer .liquid {
-  background-color: #4a5568;
-}
-
-#cards .card .thermometer .bulb {
-  box-shadow: 0 0 20px 0 #4a5568;
-}
-
-#cards .card .thermometer.frost .liquid {
-  background-color: #2b6cb0;
-}
-
-#cards .card .thermometer.frost .bulb {
-  box-shadow: 0 0 20px 0 #2b6cb0;
-}
-
-#cards .card .thermometer.cold .liquid {
-  background-color: #4c51bf;
-}
-
-#cards .card .thermometer.cold .bulb {
-  box-shadow: 0 0 20px 0 #4c51bf;
-}
-
-#cards .card .thermometer.normal .liquid {
-  background-color: #6b46c1;
-}
-
-#cards .card .thermometer.normal .bulb {
-  box-shadow: 0 0 20px 0 #6b46c1;
-}
-
-#cards .card .thermometer.warm .liquid {
-  background-color: #B83280;
-}
-
-#cards .card .thermometer.warm .bulb {
-  box-shadow: 0 0 20px 0 #b83280;
-}
-
-#cards .card .thermometer.hot .liquid {
-  background-color: #C53030;
-}
-
-#cards .card .thermometer.hot .bulb {
-  box-shadow: 0 0 20px 0 #c53030;
-}
-
-#cards .card .wind .wrapper {
-  position: relative;
-  height: 5rem;
-  width: 5rem;
-}
-
-#cards .card .wind .wrapper .ring {
-  position: relative;
-  border-width: 2px;
-  width: 100%;
-  height: 100%;
-  border-radius: 9999px;
-  --transform-translate-x: 0;
-  --transform-translate-y: 0;
-  --transform-rotate: 0;
-  --transform-skew-x: 0;
-  --transform-skew-y: 0;
-  --transform-scale-x: 1;
-  --transform-scale-y: 1;
-  transform: translateX(var(--transform-translate-x)) translateY(var(--transform-translate-y)) rotate(var(--transform-rotate)) skewX(var(--transform-skew-x)) skewY(var(--transform-skew-y)) scaleX(var(--transform-scale-x)) scaleY(var(--transform-scale-y));
-  transition-duration: 200ms;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-}
-
-#cards .card .wind .wrapper .ring > div {
-  display: inline-block;
-  position: absolute;
-  bottom: -5px;
-}
-
-#cards .card .wind .wrapper .ring.wind-S {
-  --transform-rotate: 0deg;
-}
-
-#cards .card .wind .wrapper .ring.wind-SSE {
-  --transform-rotate: -22.5deg;
-}
-
-#cards .card .wind .wrapper .ring.wind-SE {
-  --transform-rotate: -45deg;
-}
-
-#cards .card .wind .wrapper .ring.wind-ESE {
-  --transform-rotate: -67.5deg;
-}
-
-#cards .card .wind .wrapper .ring.wind-E {
-  --transform-rotate: -90deg;
-}
-
-#cards .card .wind .wrapper .ring.wind-ENE {
-  --transform-rotate: -112.5deg;
-}
-
-#cards .card .wind .wrapper .ring.wind-NE {
-  --transform-rotate: -135deg;
-}
-
-#cards .card .wind .wrapper .ring.wind-NNE {
-  --transform-rotate: -157.5deg;
-}
-
-#cards .card .wind .wrapper .ring.wind-N {
-  --transform-rotate: 180deg;
-}
-
-#cards .card .wind .wrapper .ring.wind-NNO {
-  --transform-rotate: 157.5deg;
-}
-
-#cards .card .wind .wrapper .ring.wind-NO {
-  --transform-rotate: 135deg;
-}
-
-#cards .card .wind .wrapper .ring.wind-ONO {
-  --transform-rotate: 112.5deg;
-}
-
-#cards .card .wind .wrapper .ring.wind-O {
-  --transform-rotate: 90deg;
-}
-
-#cards .card .wind .wrapper .ring.wind-OSO {
-  --transform-rotate: 67.5deg;
-}
-
-#cards .card .wind .wrapper .ring.wind-SO {
-  --transform-rotate: 45deg;
-}
-
-#cards .card .wind .wrapper .ring.wind-SSO {
-  --transform-rotate: 22.5deg;
-}
-
-#cards .card .wind .wrapper .value {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-size: 0.75rem;
-  text-align: center;
-  line-height: 1.25;
-  height: 100%;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-#cards .card .card-title {
+.card .card-title {
   margin-top: 0.25rem;
   padding-top: 0.25rem;
   padding: 0.5rem;
@@ -69957,78 +69250,84 @@ button:focus {
   border-top: 1px solid #050506;
 }
 
-#cards .card .card-title.no-border {
+.card .card-title.no-border {
   border-top: none;
 }
 
-#cards .card .card-title .icon {
+.card .card-title .icon {
   float: right;
   margin-left: 0.25rem;
   padding-left: 0.25rem;
   border-left: 1px solid #000000;
 }
 
-#cards .card .card-wrapper {
+.card .card-wrapper {
   flex-grow: 1;
 }
 
-#cards .card .card-width-1 {
+.card .card-wrapper > div > div {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.card .card-width-1 {
   width: 8rem;
 }
 
-#cards .card .card-height-1 {
+.card .card-height-1 {
   height: 6rem;
 }
 
-#cards .card .card-width-2 {
+.card .card-width-2 {
   width: 17.625rem;
 }
 
-#cards .card .card-height-2 {
+.card .card-height-2 {
   height: 15.875rem;
 }
 
-#cards .card .card-width-3 {
+.card .card-width-3 {
   width: 27.25rem;
 }
 
-#cards .card .card-height-3 {
+.card .card-height-3 {
   height: 25.75rem;
 }
 
-#cards .card .card-width-4 {
+.card .card-width-4 {
   width: 36.875rem;
 }
 
-#cards .card .card-height-4 {
+.card .card-height-4 {
   height: 35.625rem;
 }
 
-#cards .card .card-width-5 {
+.card .card-width-5 {
   width: 46.5rem;
 }
 
-#cards .card .card-height-5 {
+.card .card-height-5 {
   height: 45.5rem;
 }
 
-#cards .card#🤖 {
+.card#🤖 {
   opacity: 1;
   border-color: #5980FF;
   transition-duration: 0ms;
 }
 
-#cards .card.👻 {
+.card.👻 {
   z-index: 99;
   opacity: 0.5;
   transition-duration: 0ms;
 }
 
-#cards .card.🏄 {
+.card.🏄 {
   cursor: move;
 }
 
-#cards .card.🏄::before {
+.card.🏄::before {
   position: absolute;
   top: 0;
   left: 0;
@@ -70040,11 +69339,11 @@ button:focus {
   content: ' ';
 }
 
-#cards .card.📜 {
+.card.📜 {
   z-index: 10;
 }
 
-#cards .card .📐 {
+.card .📐 {
   display: none;
   position: absolute;
   bottom: -1px;
@@ -70059,7 +69358,7 @@ button:focus {
   border-bottom-right-radius: 0.5rem;
 }
 
-#cards .card .🗑️ {
+.card .🗑️ {
   display: none;
   position: absolute;
   top: 0.5rem;
@@ -70069,29 +69368,41 @@ button:focus {
   cursor: pointer;
 }
 
-#cards .card .🗑️::before {
+.card .🗑️::before {
   content: '🗑️';
   display: block;
 }
 
-#cards .card:hover {
+.card:hover {
   z-index: 2;
 }
 
-#cards .card:hover .card-title:hover {
+.card:hover .card-title:hover {
   word-wrap: none;
   overflow: visible;
   text-overflow: none;
   width: auto;
 }
 
-#cards .card:hover.🏄 .📐,
-#cards .card:hover.🏄 .🗑️ {
+.card:hover.🏄 .📐,
+.card:hover.🏄 .🗑️ {
   display: block;
 }
 
 .glass {
   background-color: #1b1a1f;
+}
+
+.red {
+  color: #e53e3e;
+}
+
+.blue {
+  color: #3182ce;
+}
+
+:root {
+  --minColor: #4299e1;
 }
 
 .bg-minColor,
@@ -70109,6 +69420,10 @@ button:focus {
   border-color: #4299e1;
 }
 
+:root {
+  --maxColor: #f56565;
+}
+
 .bg-maxColor,
 .hover\:bg-maxColor:hover {
   background-color: #f56565;
@@ -70122,6 +69437,10 @@ button:focus {
 .border-maxColor,
 .hover\:border-maxColor:hover {
   border-color: #f56565;
+}
+
+:root {
+  --baseColor: #111111;
 }
 
 .bg-baseColor,
@@ -70139,6 +69458,10 @@ button:focus {
   border-color: #111111;
 }
 
+:root {
+  --frontColor: #1d1c22;
+}
+
 .bg-frontColor,
 .hover\:bg-frontColor:hover {
   background-color: #1d1c22;
@@ -70152,6 +69475,10 @@ button:focus {
 .border-frontColor,
 .hover\:border-frontColor:hover {
   border-color: #1d1c22;
+}
+
+:root {
+  --activeColor: #292833;
 }
 
 .bg-activeColor,
@@ -70169,6 +69496,10 @@ button:focus {
   border-color: #292833;
 }
 
+:root {
+  --primaryColor: #FFFFFF;
+}
+
 .bg-primaryColor,
 .hover\:bg-primaryColor:hover {
   background-color: #FFFFFF;
@@ -70182,6 +69513,10 @@ button:focus {
 .border-primaryColor,
 .hover\:border-primaryColor:hover {
   border-color: #FFFFFF;
+}
+
+:root {
+  --highlightColor: #5980FF;
 }
 
 .bg-highlightColor,
@@ -70199,6 +69534,10 @@ button:focus {
   border-color: #5980FF;
 }
 
+:root {
+  --shadowColor: #CCCCCC;
+}
+
 .bg-shadowColor,
 .hover\:bg-shadowColor:hover {
   background-color: #CCCCCC;
@@ -70212,16 +69551,6 @@ button:focus {
 .border-shadowColor,
 .hover\:border-shadowColor:hover {
   border-color: #CCCCCC;
-}
-
-.chart .ct-label,
-.chart .ct-axis-title {
-  fill: #ffffff;
-  color: #ffffff;
-}
-
-.chart .ct-grid {
-  stroke: #ffffff;
 }
 
 .shadow-xs,

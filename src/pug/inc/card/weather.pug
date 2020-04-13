@@ -1,8 +1,0 @@
-mixin weather(location, conditions, temperature, digital = true)
-  .weather.card-width-1.card-height-1(data-location=location)
-    .joliePosition
-      - var cond = "fas fa-" + conditions;
-      +indicator(cond)
-      - var cl = digital ? "font-mono" : "";
-      span(class=cl)= temperature
-      span.pr-2 °C

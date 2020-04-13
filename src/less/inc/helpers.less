@@ -13,14 +13,28 @@
     @apply flex items-center justify-center w-full h-full;
   }
 
-  input[type='number']::-webkit-inner-spin-button,
-  input[type='number']::-webkit-outer-spin-button {
+  ::-webkit-inner-spin-button,
+  ::-webkit-outer-spin-button {
     appearance: none;
     margin: 0;
   }
 
-  input:focus,
-  button:focus {
+  :focus {
     outline: none !important;
+  }
+
+  .neumorphism {
+    border-color: darken(@base_color, 2%);
+    box-shadow: -@shadow_size -@shadow_size @shadow_size*2
+        lighten(@base_color, -2.5%),
+      @shadow_size @shadow_size @shadow_size*2 lighten(@base_color, 2.5%);
+
+    &.active {
+      background: linear-gradient(
+        145deg,
+        lighten(@base_color, 1.5%),
+        lighten(@base_color, -1.5%)
+      );
+    }
   }
 }

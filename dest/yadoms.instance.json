@@ -1,0 +1,1444 @@
+{
+  "instance": {
+    "pages": [
+      {
+        "slug": "",
+        "name": "Accueil",
+        "icon": "home",
+        "background": "/img/alexandra-gorn-JIUjvqe2ZHg-unsplash.jpeg",
+        "cards": [
+          {
+            "type": "switch",
+            "title": "Wifi",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 1,
+            "properties": {
+              "type": "toggle",
+              "state": true
+            }
+          },
+          {
+            "type": "thermometer",
+            "title": "Salle à manger",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 2,
+            "properties": {
+              "value": 20.4,
+              "min": 8,
+              "max": 30,
+              "unit": "°C",
+              "digital": true
+            }
+          },
+          {
+            "type": "indicator",
+            "title": "Mini-four",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 3,
+            "properties": {
+              "icon": "utensils",
+              "active": true
+            }
+          },
+          {
+            "type": "forecast",
+            "title": "",
+            "width": 5,
+            "height": 2,
+            "minWidth": 5,
+            "minHeight": 2,
+            "index": 4,
+            "properties": {
+              "location": "Royanne",
+              "datas": [
+                {
+                  "day": "jeu. 5",
+                  "cond": "cloud-sun",
+                  "Tmin": 5,
+                  "Tmax": 16,
+                  "Tunit": "°C",
+                  "Wmin": 2,
+                  "Wmax": 13,
+                  "Wdir": "E",
+                  "rain": 0
+                },
+                {
+                  "day": "ven. 6",
+                  "cond": "cloud",
+                  "Tmin": 10,
+                  "Tmax": 18,
+                  "Tunit": "°C",
+                  "Wmin": 29,
+                  "Wmax": 40,
+                  "Wdir": "S",
+                  "rain": 7
+                },
+                {
+                  "day": "sam. 7",
+                  "cond": "cloud-rain",
+                  "Tmin": 3,
+                  "Tmax": 15,
+                  "Tunit": "°C",
+                  "Wmin": 19,
+                  "Wmax": 24,
+                  "Wdir": "SE",
+                  "rain": 1
+                },
+                {
+                  "day": "dim. 8",
+                  "cond": "cloud-rain",
+                  "Tmin": 4,
+                  "Tmax": 14,
+                  "Tunit": "°C",
+                  "Wmin": 10,
+                  "Wmax": 15,
+                  "Wdir": "ONO",
+                  "rain": 5
+                }
+              ]
+            }
+          },
+          {
+            "type": "thermometer",
+            "title": "Salle de bain",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 5,
+            "properties": {
+              "value": 29,
+              "min": 8,
+              "max": 30,
+              "unit": "°C",
+              "digital": true
+            }
+          },
+          {
+            "type": "indicator",
+            "title": "Musique",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 6,
+            "properties": {
+              "icon": "music"
+            }
+          },
+          {
+            "type": "numeric-display",
+            "title": "Durée allumage Wifi",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 7,
+            "properties": {
+              "value": 15,
+              "decimals": 2,
+              "unit": "s",
+              "capture": "Hier à 23:59",
+              "digital": true
+            }
+          },
+          {
+            "type": "numeric-display",
+            "title": "Conso musique",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 8,
+            "properties": {
+              "value": 0,
+              "decimals": 1,
+              "unit": "W",
+              "capture": "Aujourd'hui à 15:32",
+              "digital": true
+            }
+          },
+          {
+            "type": "numeric-display",
+            "title": "Humidité salle de bain",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 9,
+            "properties": {
+              "value": 46.8,
+              "decimals": 1,
+              "unit": "%",
+              "capture": "Aujourd'hui à 15:40",
+              "digital": true
+            }
+          },
+          {
+            "type": "numeric-display",
+            "title": "PIR",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 10,
+            "properties": {
+              "value": 20,
+              "decimals": 1,
+              "unit": "lux",
+              "capture": "Aujourd'hui à 15:27",
+              "digital": true
+            }
+          },
+          {
+            "type": "indicator",
+            "title": "PIR - présence",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 11,
+            "properties": {
+              "icon": "eye"
+            }
+          },
+          {
+            "type": "gauge",
+            "title": "Conso musique",
+            "width": 2,
+            "height": 2,
+            "minWidth": 2,
+            "minHeight": 2,
+            "index": 12,
+            "properties": {
+              "value": 0,
+              "min": 0,
+              "max": 100,
+              "unit": "W",
+              "digital": true
+            }
+          },
+          {
+            "type": "numeric-display",
+            "title": "Vent moyen (m/s)",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 13,
+            "properties": {
+              "value": 5,
+              "decimals": 1,
+              "unit": "m/s",
+              "capture": "Aujourd'hui à 15:33",
+              "digital": true
+            }
+          },
+          {
+            "type": "numeric-display",
+            "title": "Vent maximum (m/s)",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 14,
+            "properties": {
+              "value": 8,
+              "decimals": 1,
+              "unit": "m/s",
+              "capture": "Aujourd'hui à 15:33",
+              "digital": true
+            }
+          },
+          {
+            "type": "weather",
+            "title": "",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 15,
+            "properties": {
+              "location": "Royanne",
+              "condition": "cloud-sun",
+              "temp": 17,
+              "unit": "°C",
+              "digital": true
+            }
+          },
+          {
+            "type": "numeric-display",
+            "title": "Internet - Download",
+            "width": 2,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 18,
+            "properties": {
+              "value": 779.7,
+              "decimals": 1,
+              "unit": "kbit/s",
+              "capture": "Aujourd'hui à 15:33",
+              "digital": true
+            }
+          },
+          {
+            "type": "clock",
+            "title": "",
+            "width": 2,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 19,
+            "properties": {
+              "seconds": true,
+              "digital": true
+            }
+          },
+          {
+            "type": "gauge",
+            "title": "Luminosité entrée",
+            "width": 2,
+            "height": 2,
+            "minWidth": 2,
+            "minHeight": 2,
+            "index": 20,
+            "properties": {
+              "value": 20,
+              "min": 0,
+              "max": 30,
+              "unit": "lux",
+              "digital": true
+            }
+          },
+          {
+            "type": "numeric-display",
+            "title": "Ping Internet",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 21,
+            "properties": {
+              "value": 0,
+              "decimals": 0,
+              "unit": "ms",
+              "capture": "Aujourd'hui à 15:32",
+              "digital": true
+            }
+          },
+          {
+            "type": "wind",
+            "title": "Vent maximum",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 22,
+            "properties": {
+              "value": 28.8,
+              "unit": "km/h",
+              "direction": "ONO",
+              "digital": true
+            }
+          },
+          {
+            "type": "switch",
+            "title": "Arrosage +1/4h",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 23,
+            "properties": {
+              "type": "button",
+              "state": true,
+              "icon": "tint"
+            }
+          },
+          {
+            "type": "switch",
+            "title": "Arrêt arrosage",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 24,
+            "properties": {
+              "type": "button",
+              "state": false,
+              "icon": "times"
+            }
+          },
+          {
+            "type": "indicator",
+            "title": "Arrosage terrasse",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 25,
+            "properties": {
+              "icon": "tint"
+            }
+          },
+          {
+            "type": "indicator",
+            "title": "Radiateur Salle de bain",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 26,
+            "properties": {
+              "icon": "fire"
+            }
+          },
+          {
+            "type": "indicator",
+            "title": "Internet",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 27,
+            "properties": {
+              "icon": "signal",
+              "state": true
+            }
+          },
+          {
+            "type": "indicator",
+            "title": "Batterie onduleur",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 28,
+            "properties": {
+              "icon": "exclamation-circle"
+            }
+          }
+        ]
+      },
+      {
+        "slug": "volets",
+        "name": "Volets",
+        "icon": "door-open",
+        "background": "/img/sidekix-media-hgbpEk9nDeg-unsplash.jpeg",
+        "cards": [
+          {
+            "type": "switch",
+            "title": "Ouverture automatique volets",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 1,
+            "properties": {
+              "type": "toggle",
+              "state": true
+            }
+          },
+          {
+            "type": "switch",
+            "title": "Ouverture automatique velux",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 2,
+            "properties": {
+              "type": "toggle",
+              "state": false
+            }
+          },
+          {
+            "type": "switch",
+            "title": "Vélux autorisés",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 3,
+            "properties": {
+              "type": "toggle",
+              "state": true
+            }
+          },
+          {
+            "type": "switch",
+            "title": "Vélux bureau",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 4,
+            "properties": {
+              "type": "arrow"
+            }
+          },
+          {
+            "type": "curtain",
+            "title": "Volets battants bureau",
+            "width": 1,
+            "height": 2,
+            "minWidth": 1,
+            "minHeight": 2,
+            "index": 5,
+            "properties": {}
+          },
+          {
+            "type": "switch",
+            "title": "Vélux salle de jeux",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 6,
+            "properties": {
+              "type": "arrow"
+            }
+          },
+          {
+            "type": "curtain",
+            "title": "Salle de jeux porte-fenêtre",
+            "width": 1,
+            "height": 2,
+            "minWidth": 1,
+            "minHeight": 2,
+            "index": 7,
+            "properties": {}
+          },
+          {
+            "type": "curtain",
+            "title": "Salle de jeux fenêtre",
+            "width": 1,
+            "height": 2,
+            "minWidth": 1,
+            "minHeight": 2,
+            "index": 8,
+            "properties": {}
+          }
+        ]
+      },
+      {
+        "slug": "suivi",
+        "name": "Suivi",
+        "icon": "chart-bar",
+        "background": "/img/sidekix-media-1vMz2_MclrM-unsplash.jpeg",
+        "cards": [
+          {
+            "type": "chart",
+            "title": "Vent",
+            "width": 5,
+            "height": 3,
+            "minWidth": 2,
+            "minHeight": 1,
+            "index": 1,
+            "properties": {
+              "datas": [
+                {
+                  "data": [
+                    { "date": "18:00", "value": 0 },
+                    { "date": "18:30", "value": 0 },
+                    { "date": "19:00", "value": 0 },
+                    { "date": "19:30", "value": 1 },
+                    { "date": "20:00", "value": 10 },
+                    { "date": "18:00", "value": 13 },
+                    { "date": "18:00", "value": 4 }
+                  ],
+                  "label": "Vent maximum/speed"
+                }
+              ],
+              "unit": "m/s"
+            }
+          },
+          {
+            "type": "chart",
+            "title": "Arrosage",
+            "width": 5,
+            "height": 3,
+            "minWidth": 2,
+            "minHeight": 1,
+            "index": 2,
+            "properties": {
+              "datas": [
+                {
+                  "data": [],
+                  "unit": "",
+                  "label": "Arrosage (id 050D6004) / Terrasse"
+                }
+              ]
+            }
+          },
+          {
+            "type": "chart",
+            "title": "Températures",
+            "width": 5,
+            "height": 3,
+            "minWidth": 2,
+            "minHeight": 1,
+            "index": 3,
+            "properties": {
+              "datas": [
+                {
+                  "data": [
+                    { "date": "18:00", "value": 0 },
+                    { "date": "18:30", "value": 0 },
+                    { "date": "19:00", "value": 0 },
+                    { "date": "19:30", "value": 1 },
+                    { "date": "20:00", "value": 10 },
+                    { "date": "18:00", "value": 13 },
+                    { "date": "18:00", "value": 4 }
+                  ],
+                  "label": "Température salle à manger / TMP - Temperature"
+                },
+                {
+                  "data": [
+                    { "date": "18:00", "value": 0 },
+                    { "date": "18:30", "value": 0 },
+                    { "date": "19:00", "value": 0 },
+                    { "date": "19:30", "value": 1 },
+                    { "date": "20:00", "value": 10 },
+                    { "date": "18:00", "value": 13 },
+                    { "date": "18:00", "value": 4 }
+                  ],
+                  "label": "Température salle de bain / TMP - Temperature"
+                }
+              ],
+              "unit": "°C"
+            }
+          }
+        ]
+      },
+      {
+        "slug": "alarme",
+        "name": "Alarmes",
+        "icon": "bullhorn",
+        "background": "/img/parker-coffman-YmliIkcjP-g-unsplash.jpeg",
+        "cards": [
+          {
+            "type": "switch",
+            "title": "Activation",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 1,
+            "properties": {
+              "type": "toggle",
+              "state": false
+            }
+          },
+          {
+            "type": "shutter",
+            "title": "Entrée",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 2,
+            "properties": {
+              "type": "door",
+              "state": false
+            }
+          },
+          {
+            "type": "shutter",
+            "title": "Chambre parent",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 3,
+            "properties": {
+              "type": "window",
+              "state": false
+            }
+          },
+          {
+            "type": "shutter",
+            "title": "Chambre Simon",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 4,
+            "properties": {
+              "type": "window",
+              "state": false
+            }
+          },
+          {
+            "type": "shutter",
+            "title": "SAM-Est",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 5,
+            "properties": {
+              "type": "window",
+              "state": false
+            }
+          },
+          {
+            "type": "shutter",
+            "title": "SAM-Ouest",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 6,
+            "properties": {
+              "type": "window",
+              "state": false
+            }
+          },
+          {
+            "type": "indicator",
+            "title": "Sirène",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 7,
+            "properties": {
+              "icon": "bell",
+              "state": false
+            }
+          },
+          {
+            "type": "shutter",
+            "title": "Test",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 8,
+            "properties": {
+              "type": "window",
+              "state": false
+            }
+          },
+          {
+            "type": "shutter",
+            "title": "Chambre Chloé",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 9,
+            "properties": {
+              "type": "window",
+              "state": true
+            }
+          },
+          {
+            "type": "indicator",
+            "title": "PIR entrée",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 10,
+            "properties": {
+              "icon": "eye",
+              "state": false
+            }
+          },
+          {
+            "type": "shutter",
+            "title": "Garage",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 11,
+            "properties": {
+              "type": "door",
+              "state": false
+            }
+          },
+          {
+            "type": "state",
+            "title": "Etat alarme",
+            "width": 2,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 12,
+            "properties": {
+              "wording": "Désarmée"
+            }
+          }
+        ]
+      },
+      {
+        "slug": "systme",
+        "name": "Système",
+        "icon": "hdd",
+        "background": "/img/sidekix-media-BAVam-y_9Wg-unsplash.jpeg",
+        "cards": [
+          {
+            "type": "thermometer",
+            "title": "Pi",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 1,
+            "properties": {
+              "value": 45.3,
+              "min": 30,
+              "max": 70,
+              "unit": "°C",
+              "digital": true
+            }
+          },
+          {
+            "type": "gauge",
+            "title": "Charge onduleur",
+            "width": 2,
+            "height": 2,
+            "minWidth": 2,
+            "minHeight": 2,
+            "index": 2,
+            "properties": {
+              "value": 4,
+              "min": 0,
+              "max": 100,
+              "unit": "%",
+              "digital": true
+            }
+          },
+          {
+            "type": "numeric-display",
+            "title": "Tension réseau",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 3,
+            "properties": {
+              "value": 235.2,
+              "decimals": 1,
+              "unit": "V",
+              "capture": "Aujourd'hui à 15:42",
+              "digital": true
+            }
+          },
+          {
+            "type": "gauge",
+            "title": "CPU",
+            "width": 2,
+            "height": 2,
+            "minWidth": 2,
+            "minHeight": 2,
+            "index": 4,
+            "properties": {
+              "value": 3.54,
+              "min": 0,
+              "max": 100,
+              "unit": "%",
+              "digital": true
+            }
+          },
+          {
+            "type": "numeric-display",
+            "title": "Fréquence réseau",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 5,
+            "properties": {
+              "value": 49.9,
+              "decimals": 1,
+              "unit": "Hz",
+              "capture": "Aujourd'hui à 15:42",
+              "digital": true
+            }
+          },
+          {
+            "type": "switch",
+            "title": "Redémarrage Pi",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 6,
+            "properties": {
+              "type": "button",
+              "state": false,
+              "icon": "sync"
+            }
+          },
+          {
+            "type": "gauge",
+            "title": "Mémoire",
+            "width": 2,
+            "height": 2,
+            "minWidth": 2,
+            "minHeight": 2,
+            "index": 7,
+            "properties": {
+              "value": 11.836,
+              "min": 3,
+              "max": 100,
+              "unit": "%",
+              "digital": true
+            }
+          },
+          {
+            "type": "switch",
+            "title": "Arrêt de la Pi",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 8,
+            "properties": {
+              "type": "button",
+              "state": false,
+              "icon": "power-off"
+            }
+          },
+          {
+            "type": "chart",
+            "title": "Température Pi",
+            "width": 5,
+            "height": 3,
+            "minWidth": 2,
+            "minHeight": 1,
+            "index": 9,
+            "properties": {
+              "datas": [
+                {
+                  "data": [],
+                  "unit": "",
+                  "label": ""
+                }
+              ]
+            }
+          },
+          {
+            "type": "gauge",
+            "title": "Disque",
+            "width": 2,
+            "height": 2,
+            "minWidth": 2,
+            "minHeight": 2,
+            "index": 10,
+            "properties": {
+              "value": 5.927,
+              "min": 0,
+              "max": 100,
+              "unit": "%",
+              "digital": true
+            }
+          },
+          {
+            "type": "gauge",
+            "title": "Carte SD",
+            "width": 2,
+            "height": 2,
+            "minWidth": 2,
+            "minHeight": 2,
+            "index": 11,
+            "properties": {
+              "value": 32.194,
+              "min": 0,
+              "max": 100,
+              "unit": "%",
+              "digital": true
+            }
+          },
+          {
+            "type": "chart",
+            "title": "UPS",
+            "width": 5,
+            "height": 3,
+            "minWidth": 2,
+            "minHeight": 1,
+            "index": 12,
+            "properties": {
+              "datas": [
+                {
+                  "data": [],
+                  "unit": "",
+                  "label": ""
+                }
+              ]
+            }
+          },
+          {
+            "type": "gauge",
+            "title": "Shared Memory",
+            "width": 2,
+            "height": 2,
+            "minWidth": 2,
+            "minHeight": 2,
+            "index": 13,
+            "properties": {
+              "value": 2.873,
+              "min": 0,
+              "max": 100,
+              "unit": "%",
+              "digital": true
+            }
+          },
+          {
+            "type": "chart",
+            "title": "Internet",
+            "width": 5,
+            "height": 3,
+            "minWidth": 2,
+            "minHeight": 1,
+            "index": 14,
+            "properties": {
+              "datas": [
+                {
+                  "data": [],
+                  "unit": "",
+                  "label": ""
+                }
+              ]
+            }
+          },
+          {
+            "type": "chart",
+            "title": "Conso TV",
+            "width": 5,
+            "height": 3,
+            "minWidth": 2,
+            "minHeight": 1,
+            "index": 15,
+            "properties": {
+              "datas": [
+                {
+                  "data": [],
+                  "unit": "",
+                  "label": ""
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "slug": "test",
+        "name": "Test",
+        "icon": "lightbulb",
+        "background": "/img/sidekix-media-g51F6-WYzyU-unsplash.jpeg",
+        "cards": [
+          {
+            "type": "light",
+            "title": "Allumée",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 1,
+            "properties": {
+              "state": true
+            }
+          },
+          {
+            "type": "light",
+            "title": "Eteinte",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 2,
+            "properties": {
+              "state": false
+            }
+          },
+          {
+            "type": "counter",
+            "title": "Test batterie 0%",
+            "width": 2,
+            "height": 1,
+            "minWidth": 2,
+            "minHeight": 1,
+            "index": 3,
+            "battery": 0,
+            "properties": {
+              "value": 3213874.245,
+              "unit": "Wh"
+            }
+          },
+          {
+            "type": "dimmer",
+            "title": "Test batterie 25%",
+            "width": 2,
+            "height": 1,
+            "minWidth": 2,
+            "minHeight": 1,
+            "index": 4,
+            "battery": 0.25,
+            "properties": {
+              "value": 42,
+              "min": 0,
+              "max": 100,
+              "step": 10,
+              "unit": "%",
+              "digital": true
+            }
+          },
+          {
+            "type": "rgb-color-picker",
+            "title": "Test batterie 50%",
+            "width": 2,
+            "height": 2,
+            "minWidth": 2,
+            "minHeight": 2,
+            "index": 5,
+            "battery": 0.5,
+            "properties": {
+              "color": "#131282"
+            }
+          },
+          {
+            "type": "rgbw-color-picker",
+            "title": "Test batterie 75%",
+            "width": 2,
+            "height": 2,
+            "minWidth": 2,
+            "minHeight": 2,
+            "index": 6,
+            "battery": 0.75,
+            "properties": {
+              "color": "#131282"
+            }
+          },
+          {
+            "type": "thermometer",
+            "title": "Test batterie 100%",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 7,
+            "battery": 1,
+            "properties": {
+              "value": 0.2,
+              "min": 0,
+              "max": 100,
+              "unit": "°C",
+              "digital": true
+            }
+          },
+          {
+            "type": "thermometer",
+            "title": "Test signal",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 9,
+            "signal": 1,
+            "properties": {
+              "value": 20.2,
+              "min": 0,
+              "max": 100,
+              "unit": "°C",
+              "digital": true
+            }
+          },
+          {
+            "type": "thermometer",
+            "title": "Test signal faible",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 10,
+            "signal": 0,
+            "properties": {
+              "value": 40.2,
+              "min": 0,
+              "max": 100,
+              "unit": "°C",
+              "digital": true
+            }
+          },
+          {
+            "type": "thermometer",
+            "title": "Test signal & batterie",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 11,
+            "battery": 1,
+            "signal": 0.75,
+            "properties": {
+              "value": 60.2,
+              "min": 0,
+              "max": 100,
+              "unit": "°C",
+              "digital": true
+            }
+          },
+          {
+            "type": "thermometer",
+            "title": "Test signal & batterie 2",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 12,
+            "battery": 0.5,
+            "signal": 0.25,
+            "properties": {
+              "value": 80.2,
+              "min": 0,
+              "max": 100,
+              "unit": "°C",
+              "digital": true
+            }
+          },
+          {
+            "type": "thermometer",
+            "title": "Test",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 13,
+            "battery": 0.5,
+            "signal": 0.25,
+            "properties": {
+              "value": 100,
+              "min": 0,
+              "max": 100,
+              "unit": "°C",
+              "digital": true
+            }
+          },
+          {
+            "type": "gauge",
+            "title": "Test batterie 100%",
+            "width": 2,
+            "height": 2,
+            "minWidth": 2,
+            "minHeight": 2,
+            "index": 14,
+            "battery": 1,
+            "properties": {
+              "value": 0.2,
+              "min": 0,
+              "max": 100,
+              "unit": "°C",
+              "digital": true
+            }
+          },
+          {
+            "type": "gauge",
+            "title": "Test signal",
+            "width": 2,
+            "height": 2,
+            "minWidth": 2,
+            "minHeight": 2,
+            "index": 15,
+            "signal": 1,
+            "properties": {
+              "value": 20.2,
+              "min": 0,
+              "max": 100,
+              "unit": "°C",
+              "digital": true
+            }
+          },
+          {
+            "type": "gauge",
+            "title": "Test signal faible",
+            "width": 2,
+            "height": 2,
+            "minWidth": 2,
+            "minHeight": 2,
+            "index": 16,
+            "signal": 0,
+            "properties": {
+              "value": 40.2,
+              "min": 0,
+              "max": 100,
+              "unit": "°C",
+              "digital": true
+            }
+          },
+          {
+            "type": "gauge",
+            "title": "Test signal & batterie",
+            "width": 2,
+            "height": 2,
+            "minWidth": 2,
+            "minHeight": 2,
+            "index": 17,
+            "battery": 1,
+            "signal": 0.75,
+            "properties": {
+              "value": 60.2,
+              "min": 0,
+              "max": 100,
+              "unit": "°C",
+              "digital": true
+            }
+          },
+          {
+            "type": "gauge",
+            "title": "Test signal & batterie 2",
+            "width": 2,
+            "height": 2,
+            "minWidth": 2,
+            "minHeight": 2,
+            "index": 18,
+            "battery": 0.5,
+            "signal": 0.25,
+            "properties": {
+              "value": 80.2,
+              "min": 0,
+              "max": 100,
+              "unit": "°C",
+              "digital": true
+            }
+          },
+          {
+            "type": "gauge",
+            "title": "Test",
+            "width": 2,
+            "height": 2,
+            "minWidth": 2,
+            "minHeight": 2,
+            "index": 19,
+            "battery": 0.5,
+            "signal": 0.25,
+            "properties": {
+              "value": 100,
+              "min": 0,
+              "max": 100,
+              "unit": "°C",
+              "digital": true
+            }
+          },
+          {
+            "type": "teleinfo-forecast",
+            "title": "Teleinfo Forecast - Blue",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 20,
+            "properties": {
+              "color": "blue"
+            }
+          },
+          {
+            "type": "teleinfo-forecast",
+            "title": "Teleinfo Forecast - White",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 21,
+            "properties": {
+              "color": "white"
+            }
+          },
+          {
+            "type": "teleinfo-forecast",
+            "title": "Teleinfo Forecast - Red",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 21,
+            "properties": {
+              "color": "red"
+            }
+          },
+          {
+            "type": "rain-gauge",
+            "title": "Rain gauge",
+            "width": 2,
+            "height": 1,
+            "minWidth": 2,
+            "minHeight": 1,
+            "index": 22,
+            "properties": {
+              "hour": 0,
+              "day": 4
+            }
+          },
+          {
+            "type": "thermostat",
+            "title": "Thermostat",
+            "width": 2,
+            "height": 1,
+            "minWidth": 2,
+            "minHeight": 1,
+            "index": 23,
+            "properties": {
+              "value": 21,
+              "state": true,
+              "current": 25.1,
+              "unit": "°C"
+            }
+          },
+          {
+            "type": "clock",
+            "title": "Clock avec secondes",
+            "width": 2,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 24,
+            "properties": {
+              "seconds": true,
+              "digital": true
+            }
+          },
+          {
+            "type": "clock",
+            "title": "Clock mode standard",
+            "width": 1,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 25,
+            "properties": {
+              "seconds": false,
+              "digital": false
+            }
+          },
+          {
+            "type": "clock",
+            "title": "Clock mode standard avec secondes",
+            "width": 2,
+            "height": 1,
+            "minWidth": 1,
+            "minHeight": 1,
+            "index": 26,
+            "properties": {
+              "seconds": true,
+              "digital": false
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
