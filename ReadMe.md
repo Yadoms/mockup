@@ -30,8 +30,8 @@ yarn install
 
 Then you can run `gulp` to launch the Dev environment :
 
-* watcher
-* livereload
+- watcher
+- livereload
 
 with this command
 
@@ -47,7 +47,6 @@ If you want just to preview the mockup run :
 yarn run gulp preview
 ```
 
-
 ## Theme mode
 
 By default, the application is in a theme corresponding to your OS preferences.
@@ -55,11 +54,11 @@ By default, the application is in a theme corresponding to your OS preferences.
 In order to preview the different themes of the application, you have to write in the console of the browser :
 
 ```
-yadoms.lightOn() // to get the light mode
+Yadoms.lightOn() // to get the light mode
 ```
 
 or
 
 ```
-yadoms.lightOff() // to get the dark mode
+Yadoms.lightOff() // to get the dark mode
 ```

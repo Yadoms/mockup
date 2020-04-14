@@ -27,21 +27,20 @@ class Yadoms {
    |_| |__,|___|___|_|_|_|___| \n\
  \n\
  Welcome to the dev world!\n\
- To have any help, type yadoms.help()\
+ To have any help, type Yadoms.help()\
  "
     );
     if (
       window.matchMedia &&
       window.matchMedia('(prefers-color-scheme: dark)').matches
     )
-      this.changeTheme('dark');
-    else this.changeTheme('light');
+      Yadoms.changeTheme('dark');
     // creation of a style balise to insert all components styles
     this.$style = document.createElement('style');
     document.querySelector('head').appendChild(this.$style);
   }
 
-  help(func = '') {
+  static help(func = '') {
     if (func != '') {
       if ('changeTheme' == func) {
         console.log('List of available themes');
@@ -50,9 +49,9 @@ class Yadoms {
     } else if ('' == func) {
       console.log('List of available functions');
       console.table({
-        'yadoms.lightOn()': 'Change the current theme to the light mode',
-        'yadoms.lightOff()': 'Change the current theme to the dark mode',
-        'yadoms.changeTheme(theme)':
+        'Yadoms.lightOn()': 'Change the current theme to the light mode',
+        'Yadoms.lightOff()': 'Change the current theme to the dark mode',
+        'Yadoms.changeTheme(theme)':
           'Change the current theme to a specific theme',
       });
       console.log(
@@ -64,15 +63,15 @@ class Yadoms {
     }
   }
 
-  lightOn() {
+  static lightOn() {
     return this.changeTheme('');
   }
 
-  lightOff() {
+  static lightOff() {
     return this.changeTheme('dark');
   }
 
-  changeTheme(theme) {
+  static changeTheme(theme) {
     if ('' == theme) theme = 'light';
     document.querySelector('link[id="theme"]').href = `/css/${theme}.min.css`;
     return 'The theme is set to ' + theme + ' now';
@@ -410,30 +409,30 @@ class Yadoms {
 
   static useComponent(type) {
     return new Promise((resolve) => {
-      if (!Object.keys(window.yadoms.components).includes(type)) {
+      if (!Object.keys(window.yadoms_app.components).includes(type)) {
         import(`/components/${type}.mjs`).then((Component) => {
-          if (!Object.keys(window.yadoms.components).includes(type)) {
+          if (!Object.keys(window.yadoms_app.components).includes(type)) {
             let component = new Component.YadomsComponent();
-            window.yadoms.components[type] = component;
-            window.yadoms.$style.innerHTML += component.style();
+            window.yadoms_app.components[type] = component;
+            window.yadoms_app.$style.innerHTML += component.style();
           }
-          resolve(window.yadoms.components[type]);
+          resolve(window.yadoms_app.components[type]);
         });
-      } else resolve(window.yadoms.components[type]);
+      } else resolve(window.yadoms_app.components[type]);
     });
   }
 }
 
-window.yadoms = new Yadoms();
+window.yadoms_app = new Yadoms();
 
 Yadoms.ready(() => {
   fetch('/yadoms.instance.json')
     .then((response) => response.json())
     .then((json) => {
-      window.yadoms.pages = json.instance.pages;
-      window.yadoms.createMenu();
-      window.yadoms.createNavigationSystem();
-      window.yadoms.createCardManagementSystem();
-      window.yadoms.viewPage(window.location.hash.slice(2));
+      window.yadoms_app.pages = json.instance.pages;
+      window.yadoms_app.createMenu();
+      window.yadoms_app.createNavigationSystem();
+      window.yadoms_app.createCardManagementSystem();
+      window.yadoms_app.viewPage(window.location.hash.slice(2));
     });
 });
