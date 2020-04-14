@@ -17,23 +17,21 @@ class YadomsComponentThermostat {
         <span>${opts.unit}</span>
       `;
     let dimmer = 'thermostat_' + Date.now();
-    Yadoms.useComponent('dimmer').then((Component) => {
-      document.querySelector(`#${dimmer}`).innerHTML = Component.render({
-        value: opts.value,
-        min: 0,
-        max: 100,
-        step: 1,
-        unit: opts.unit,
-        digital: opts.digital,
-      });
-    });
+
     return `
       <div class="thermostat joliePosition">
         <p>
           ${state}
           ${current}
         </p>
-        <div id="${dimmer}"></div>
+        ${Yadoms.useComponent('dimmer', {
+          value: opts.value,
+          min: 0,
+          max: 100,
+          step: 1,
+          unit: opts.unit,
+          digital: opts.digital,
+        })}
       </div>
     `;
   }

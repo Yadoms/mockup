@@ -338,7 +338,7 @@ class Yadoms {
     cards.forEach((card) => {
       cranberries.push(
         new Promise((resolve) => {
-          Yadoms.useComponent(card.type).then(() => {
+          Yadoms._loadComponent(card.type).then(() => {
             self.generateCard(card);
             resolve();
           });
@@ -407,7 +407,7 @@ class Yadoms {
     return Promise.all(cranberries);
   }
 
-  static useComponent(type) {
+  static _loadComponent(type) {
     return new Promise((resolve) => {
       if (!Object.keys(window.yadoms_app.components).includes(type)) {
         import(`/components/${type}.mjs`).then((Component) => {
@@ -420,6 +420,14 @@ class Yadoms {
         });
       } else resolve(window.yadoms_app.components[type]);
     });
+  }
+
+  static useComponent(type, data) {
+    let uniqID = `_${type}_${Date.now()}`;
+    Yadoms._loadComponent(type).then((Component) => {
+      document.querySelector(`#${uniqID}`).innerHTML = Component.render(data);
+    });
+    return `<div id="${uniqID}"></div>`;
   }
 }
 
