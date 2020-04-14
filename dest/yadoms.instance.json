@@ -491,9 +491,9 @@
             "type": "curtain",
             "title": "Volets battants bureau",
             "width": 1,
-            "height": 2,
+            "height": 1,
             "minWidth": 1,
-            "minHeight": 2,
+            "minHeight": 1,
             "index": 5,
             "properties": {}
           },
@@ -515,7 +515,7 @@
             "width": 1,
             "height": 2,
             "minWidth": 1,
-            "minHeight": 2,
+            "minHeight": 1,
             "index": 7,
             "properties": {}
           },
@@ -523,9 +523,9 @@
             "type": "curtain",
             "title": "Salle de jeux fenêtre",
             "width": 1,
-            "height": 2,
+            "height": 1,
             "minWidth": 1,
-            "minHeight": 2,
+            "minHeight": 1,
             "index": 8,
             "properties": {}
           }
