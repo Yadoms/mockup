@@ -64,11 +64,11 @@ class Yadoms {
   }
 
   static lightOn() {
-    return this.changeTheme('');
+    return Yadoms.changeTheme('');
   }
 
   static lightOff() {
-    return this.changeTheme('dark');
+    return Yadoms.changeTheme('dark');
   }
 
   static changeTheme(theme) {
@@ -144,12 +144,12 @@ class Yadoms {
     let signalContent = '';
     if (battery != -1) {
       let icon = '';
-      if (0 == battery) icon = 'fas fa-battery-empty red';
-      else if (0.25 == battery) icon = 'fas fa-battery-quarter';
-      else if (0.5 == battery) icon = 'fas fa-battery-half';
-      else if (0.75 == battery) icon = 'fas fa-battery-three-quarters';
-      else if (1 == battery) icon = 'fas fa-battery-full text-green-600';
-      batteryContent = `<span class="icon"><i class="${icon}"></i></span>`;
+      if (0 == battery) icon = 'empty red';
+      else if (0.25 == battery) icon = 'quarter';
+      else if (0.5 == battery) icon = 'half';
+      else if (0.75 == battery) icon = 'three-quarters';
+      else if (1 == battery) icon = 'full text-green-600';
+      batteryContent = `<span class="icon"><i class="fas fa-battery-${icon}"></i></span>`;
     }
     if (signal != -1) {
       let cl = '';
