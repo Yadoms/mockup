@@ -86,7 +86,8 @@ class YadomsComponentChart {
     });
   }
 
-  update($element, value) {}
+  update($element, name, value) {}
+  getProperty($element, name) {}
 }
 
 export { YadomsComponentChart as YadomsComponent };

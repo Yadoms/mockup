@@ -80,7 +80,8 @@ class YadomsComponentCounter {
     });
   }
 
-  update($element, value) {}
+  update($element, name, value) {}
+  getProperty($element, name) {}
 }
 
 export { YadomsComponentCounter as YadomsComponent };

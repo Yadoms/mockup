@@ -131,7 +131,8 @@ class YadomsComponentDimmer {
       .addEventListener('click', this._decrement, false);
   }
 
-  update($element, value) {}
+  update($element, name, value) {}
+  getProperty($element, name) {}
 }
 
 export { YadomsComponentDimmer as YadomsComponent };

@@ -105,7 +105,8 @@ class YadomsComponentName {
 
   init($element) {}
 
-  update($element, value) {}
+  update($element, name, value) {}
+  getProperty($element, name) {}
 }
 
 export { YadomsComponentName as YadomsComponent };

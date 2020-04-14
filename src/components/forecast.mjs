@@ -226,7 +226,8 @@ class YadomsComponentForecast {
       });
   }
 
-  update($element, value) {}
+  update($element, name, value) {}
+  getProperty($element, name) {}
 }
 
 export { YadomsComponentForecast as YadomsComponent };

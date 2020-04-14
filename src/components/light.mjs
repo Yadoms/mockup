@@ -27,7 +27,8 @@ class YadomsComponentLight {
 
   init($element) {}
 
-  update($element, value) {}
+  update($element, name, value) {}
+  getProperty($element, name) {}
 }
 
 export { YadomsComponentLight as YadomsComponent };

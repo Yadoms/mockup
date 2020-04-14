@@ -56,7 +56,8 @@ class YadomsComponentThermostat {
 
   init($element) {}
 
-  update($element, value) {}
+  update($element, name, value) {}
+  getProperty($element, name) {}
 }
 
 export { YadomsComponentThermostat as YadomsComponent };

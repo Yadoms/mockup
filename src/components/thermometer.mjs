@@ -142,11 +142,13 @@ class YadomsComponentThermometer {
     this._fever($thermometer);
   }
 
-  update($thermometer, value) {
-    $thermometer.dataset.value = parseFloat(value);
+  update($thermometer, name, value) {
+    $thermometer.dataset[name] = parseFloat(value);
     $thermometer.querySelector('span.value').innerText(value);
     this._fever($thermometer);
   }
+
+  getProperty($element, name) {}
 }
 
 export { YadomsComponentThermometer as YadomsComponent };

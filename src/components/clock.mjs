@@ -80,7 +80,8 @@ class YadomsComponentClock {
     this._tick($element);
   }
 
-  update($element, value) {}
+  update($element, name, value) {}
+  getProperty($element, name) {}
 }
 
 export { YadomsComponentClock as YadomsComponent };

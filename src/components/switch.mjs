@@ -187,7 +187,8 @@ class YadomsComponentSwitch {
     }
   }
 
-  update($element, value) {}
+  update($element, name, value) {}
+  getProperty($element, name) {}
 }
 
 export { YadomsComponentSwitch as YadomsComponent };

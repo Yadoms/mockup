@@ -40,7 +40,8 @@ class YadomsComponentWeather {
     );
   }
 
-  update($element, value) {}
+  update($element, name, value) {}
+  getProperty($element, name) {}
 }
 
 export { YadomsComponentWeather as YadomsComponent };

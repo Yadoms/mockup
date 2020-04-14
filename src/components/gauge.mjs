@@ -129,7 +129,8 @@ class YadomsComponentGauge {
     else $gauge.classList.add('hot');
   }
 
-  update($element, value) {}
+  update($element, name, value) {}
+  getProperty($element, name) {}
 }
 
 export { YadomsComponentGauge as YadomsComponent };

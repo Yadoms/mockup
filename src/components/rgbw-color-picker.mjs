@@ -32,7 +32,8 @@ class YadomsComponentRgbwColorPicker {
     });
   }
 
-  update($element, value) {}
+  update($element, name, value) {}
+  getProperty($element, name) {}
 }
 
 export { YadomsComponentRgbwColorPicker as YadomsComponent };

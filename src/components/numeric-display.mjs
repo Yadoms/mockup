@@ -77,7 +77,8 @@ class YadomsComponentNumericDisplay {
 
   init($element) {}
 
-  update($element, value) {}
+  update($element, name, value) {}
+  getProperty($element, name) {}
 }
 
 export { YadomsComponentNumericDisplay as YadomsComponent };

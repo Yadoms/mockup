@@ -1395,7 +1395,8 @@
               "value": 21,
               "state": true,
               "current": 25.1,
-              "unit": "°C"
+              "unit": "°C",
+              "digital": true
             }
           },
           {
