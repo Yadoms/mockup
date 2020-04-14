@@ -16,8 +16,6 @@ class YadomsComponentThermostat {
         </span>
         <span>${opts.unit}</span>
       `;
-    let dimmer = 'thermostat_' + Date.now();
-
     return `
       <div class="thermostat joliePosition">
         <p>
