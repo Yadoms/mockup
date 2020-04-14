@@ -148,7 +148,7 @@ class Yadoms {
       if (0 == battery) icon = 'fas fa-battery-empty red';
       else if (0.25 == battery) icon = 'fas fa-battery-quarter';
       else if (0.5 == battery) icon = 'fas fa-battery-half';
-      else if (0.75 == battery) icon = 'fas fa-three-battery-half';
+      else if (0.75 == battery) icon = 'fas fa-battery-three-quarters';
       else if (1 == battery) icon = 'fas fa-battery-full text-green-600';
       batteryContent = `<span class="icon"><i class="${icon}"></i></span>`;
     }

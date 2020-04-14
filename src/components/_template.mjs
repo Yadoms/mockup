@@ -1,6 +1,4 @@
 class YadomsComponentName {
-  properties = {};
-
   constructor() {}
 
   propsKeys() {
@@ -8,7 +6,6 @@ class YadomsComponentName {
   }
 
   render(opts) {
-    //this.properties.value = opts.value;
     return `
       
     `;

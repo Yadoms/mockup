@@ -95,7 +95,7 @@ function js() {
 function server() {
   watch('src/less/**/*.less', css);
   watch('src/js/**/*.js', js);
-  watch('src/components/*.mjs', series(copy, copyComponentLibs));
+  watch('src/components/*.mjs', series(copyComponents, copyComponentLibs));
   watch('src/yadoms.instance.json', copy);
   watch('src/pug/**/*.pug', series(html, cssLib, css));
   budo({
@@ -147,13 +147,20 @@ function copy() {
 }
 
 function copyComponentLibs() {
-  return src(['src/components/**/*.*']).pipe(dest('dest/components'));
+  return src(['src/components/lib/**/*.*']).pipe(dest('dest/components/lib'));
+}
+
+function copyComponents() {
+  return src(['src/components/*.mjs'])
+    .pipe(uglify())
+    .pipe(dest('dest/components/'));
 }
 
 exports.default = series(
   cleanDest,
   copy,
   copyComponentLibs,
+  copyComponents,
   html,
   js,
   cssLib,
