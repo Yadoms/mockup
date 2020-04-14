@@ -53,7 +53,6 @@ function css() {
           /^card-width-\d+$/,
           /^card-height-\d+$/,
           /^font-mono$/,
-          /^mono-font-/,
           /joliePosition/,
           /^red$/,
           /^blue$/,

@@ -27,9 +27,7 @@ class YadomsComponentForecast {
           <div class="forecast-conditions">
             <div class="forecast-wind">
               <div class="ring transform wind-${day.Wdir}">
-                <div class="mono-font-xs">
-                  <i class="fa fa-caret-up"></i>
-                </div>
+                <i class="fa fa-caret-up"></i>
               </div>
               <div class="wind-wrapper">
                 <div class="wind-min blue">${day.Wmin}</div>
