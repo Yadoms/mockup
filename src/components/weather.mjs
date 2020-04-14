@@ -7,14 +7,12 @@ class YadomsComponentWeather {
 
   render(opts) {
     return `
-      <div class="weather" data-location="${opts.location}">
-        <div class="joliePosition">
-          <i class="fas fa-${opts.condition}"></i>
-          <span class="value ${opts.digital ? 'font-mono' : ''}">
-            ${opts.temp}
-          </span>
-          <span>${opts.unit}</span>
-        </div>
+      <div class="weather joliePosition" data-location="${opts.location}">
+        <i class="fas fa-${opts.condition}"></i>
+        <span class="value ${opts.digital ? 'font-mono' : ''}">
+          ${opts.temp}
+        </span>
+        <span>${opts.unit}</span>
       </div>
     `;
   }

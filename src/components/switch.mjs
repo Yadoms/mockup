@@ -39,10 +39,8 @@ class YadomsComponentSwitch {
       `;
     }
     return `
-      <div class="switch">
-        <div class="joliePosition">
-          ${html}
-        </div>
+      <div class="switch joliePosition">
+        ${html}
       </div>
     `;
   }

@@ -10,19 +10,17 @@ class YadomsComponentNumericDisplay {
     let capture = '';
     if (opts.capture && opts.capture.length) capture = `<p>${opts.capture}</p>`;
     return `
-      <div class="numeric-display">
-        <div class="joliePosition">
-          ${capture}
-          <div class="wrapper glass shadow-inner">
-            <div>
-              <div class="value">
-                <div>
-                  ${Yadoms.makeDigital(opts.value, opts.digital)}
-                </div>
+      <div class="numeric-display joliePosition">
+        ${capture}
+        <div class="wrapper glass shadow-inner">
+          <div>
+            <div class="value">
+              <div>
+                ${Yadoms.makeDigital(opts.value, opts.digital)}
               </div>
-              <div class="unit">
-                ${opts.unit}
-              </div>
+            </div>
+            <div class="unit">
+              ${opts.unit}
             </div>
           </div>
         </div>
@@ -32,7 +30,7 @@ class YadomsComponentNumericDisplay {
 
   style() {
     return `
-      .numeric-display > div {
+      .numeric-display {
         padding: 0.5rem;
         flex-direction: column;
       }

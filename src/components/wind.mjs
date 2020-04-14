@@ -7,20 +7,18 @@ class YadomsComponentName {
 
   render(opts) {
     return `
-      <div class="wind">
-        <div class="joliePosition">
-          <div class="wrapper">
-            <div class="ring transform wind-${opts.direction}">
-              <div>
-                <i class="fa fa-caret-up"></i>
-              </div>
+      <div class="wind joliePosition">
+        <div class="wrapper">
+          <div class="ring transform wind-${opts.direction}">
+            <div>
+              <i class="fa fa-caret-up"></i>
             </div>
-            <div class="value">
-              <span class="${opts.digital ? 'font-mono' : ''}">
-                ${opts.value}
-              </span>
-              <span>${opts.unit}</span>
-            </div>
+          </div>
+          <div class="value">
+            <span class="${opts.digital ? 'font-mono' : ''}">
+              ${opts.value}
+            </span>
+            <span>${opts.unit}</span>
           </div>
         </div>
       </div>

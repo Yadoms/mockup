@@ -7,11 +7,9 @@ class YadomsComponentIndicator {
 
   render(opts) {
     return `
-      <div class="indicator ${opts.state ? 'active' : ''}" 
+      <div class="indicator joliePosition ${opts.state ? 'active' : ''}" 
            data-icon="${opts.icon}">
-        <div class="joliePosition">
-          <i class="fas fa-${opts.icon}"></i>
-        </div>
+        <i class="fas fa-${opts.icon}"></i>
       </div>
     `;
   }

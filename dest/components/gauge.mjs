@@ -7,23 +7,21 @@ class YadomsComponentGauge {
 
   render(opts) {
     return `
-      <div class="gauge" 
+      <div class="gauge joliePosition" 
            data-value="${opts.value}" 
            data-min="${opts.min}" 
            data-max="${opts.max}">
-        <div class="joliePosition">
-          <div class="wrapper">
-            <div class="ring shadow-inner">
-              <div class="fill"></div>
-              <div class="inner-wrapper shadow-lg">
-                <div class="shadow-inner">
-                  <div class="container joliePosition">
-                    <div class="value ${opts.digital ? 'font-mono' : ''}">
-                      ${opts.value}
-                    </div>
-                    <div class="unit">
-                      ${opts.unit}
-                    </div>
+        <div class="wrapper">
+          <div class="ring shadow-inner">
+            <div class="fill"></div>
+            <div class="inner-wrapper shadow-lg">
+              <div class="shadow-inner">
+                <div class="container joliePosition">
+                  <div class="value ${opts.digital ? 'font-mono' : ''}">
+                    ${opts.value}
+                  </div>
+                  <div class="unit">
+                    ${opts.unit}
                   </div>
                 </div>
               </div>

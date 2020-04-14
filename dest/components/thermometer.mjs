@@ -12,18 +12,16 @@ class YadomsComponentThermometer {
           data-value="${opts.value}"
           data-min="${opts.min}"
           data-max="${opts.max}">
-        <div>
-          <div class="tube">
-            <div class="liquid bar">
-              <div class="text-primaryColor">
-                <span class="value ${cl}">${opts.value}</span>
-                <span>${opts.unit}</span>
-              </div>
+        <div class="tube">
+          <div class="liquid bar">
+            <div class="text-primaryColor">
+              <span class="value ${cl}">${opts.value}</span>
+              <span>${opts.unit}</span>
             </div>
           </div>
-          <div class="bulb">
-            <div class="liquid"></div>
-          </div>
+        </div>
+        <div class="bulb">
+          <div class="liquid"></div>
         </div>
       </div>
     `;
@@ -43,7 +41,7 @@ class YadomsComponentThermometer {
 
   style() {
     return `
-      .thermometer > div {
+      .thermometer {
         align-items: center;
         display: flex;
         flex-direction: column;
@@ -52,7 +50,7 @@ class YadomsComponentThermometer {
         padding-top: 0.5rem;
       }
 
-      .thermometer > div .tube {
+      .thermometer .tube {
         border-top-left-radius: 9999px;
         border-top-right-radius: 9999px;
         border-width: 2px;
@@ -68,7 +66,7 @@ class YadomsComponentThermometer {
         margin-left: -1.5rem;
       }
 
-      .thermometer > div .tube .liquid {
+      .thermometer .tube .liquid {
         border-top-left-radius: 9999px;
         border-top-right-radius: 9999px;
         height: 0;
@@ -81,7 +79,7 @@ class YadomsComponentThermometer {
         font-size: .75rem;
       }
 
-      .thermometer > div .tube .liquid > div {
+      .thermometer .tube .liquid > div {
         position: absolute;
         top: 0;
         left: 0;
@@ -90,7 +88,7 @@ class YadomsComponentThermometer {
         display: flex;
       }
 
-      .thermometer > div .bulb {
+      .thermometer .bulb {
         border-radius: 9999px;
         width: 2rem;
         height: 2rem;
@@ -101,7 +99,7 @@ class YadomsComponentThermometer {
         margin-left: -1.5rem;
       }
 
-      .thermometer > div .bulb .liquid {
+      .thermometer .bulb .liquid {
         border-radius: 9999px;
         width: 1.5rem;
         height: 1.5rem;

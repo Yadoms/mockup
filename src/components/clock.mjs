@@ -7,14 +7,12 @@ class YadomsComponentClock {
 
   render(opts) {
     return `
-      <div class="clock" data-seconds="${
+      <div class="clock joliePosition" data-seconds="${
         opts.seconds ? opts.seconds : 'false'
       }">
-        <div class="joliePosition">
-          <div class="wrapper glass shadow-inner">
-            ${Yadoms.makeDigital('', opts.digital, '88:88:88')}
-            <div class="ampm"></div>
-          </div>
+        <div class="wrapper glass shadow-inner">
+          ${Yadoms.makeDigital('', opts.digital, '88:88:88')}
+          <div class="ampm"></div>
         </div>
       </div>
     `;

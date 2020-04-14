@@ -47,11 +47,9 @@ class YadomsComponentForecast {
       `);
     });
     return `
-      <div class="forecast" data-location="${opts.location}">
-        <div class="joliePosition">
-          <div class="wrapper">
-            ${days.join('')}
-          </div>
+      <div class="forecast joliePosition" data-location="${opts.location}">
+        <div class="wrapper">
+          ${days.join('')}
         </div>
       </div>
     `;
