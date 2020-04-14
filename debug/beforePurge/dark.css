@@ -69667,14 +69667,14 @@ main {
   box-shadow: 0 0 0 3px rgba(189, 202, 30, 0.5);
 }
 
-#cards .card .card-title {
+.card .card-title {
   border-top: 1px solid #35333e;
 }
 
-#cards .card .card-title .icon {
+.card .card-title .icon {
   border-left: 1px solid #4d4a5a;
 }
 
-#cards .card .glass {
+.glass {
   background-color: #1f1e25;
 }

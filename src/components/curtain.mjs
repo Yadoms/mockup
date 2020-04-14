@@ -8,13 +8,13 @@ class YadomsComponentCurtain {
   render(opts) {
     return `
       <div class="curtain joliePosition">
-        <button class="up" data-action="up">
+        <button class="up shadow-inner" data-action="up">
           <i class="fas fa-caret-up"></i>
         </button>
-        <button class="stop" data-action="stop">
+        <button class="stop shadow-inner" data-action="stop">
           <i class="fas fa-stop"></i>
         </button>
-        <button class="down" data-action="down">
+        <button class="down shadow-inner" data-action="down">
           <i class="fas fa-caret-down"></i>
         </button>
       </div>

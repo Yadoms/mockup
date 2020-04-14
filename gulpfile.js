@@ -86,12 +86,10 @@ function fonts() {
 }
 
 function js() {
-  return (
-    src('src/js/**/*.js')
-      //.pipe(uglify())
-      .pipe(concat('app.min.js'))
-      .pipe(dest('dest/js'))
-  );
+  return src('src/js/**/*.js')
+    .pipe(uglify())
+    .pipe(concat('app.min.js'))
+    .pipe(dest('dest/js'));
 }
 
 function server() {
