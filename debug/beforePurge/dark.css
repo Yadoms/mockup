@@ -69034,6 +69034,74 @@ video {
   line-height: 4.25rem;
 }
 
+@media (max-width: 640px) {
+  header,
+  footer {
+    display: none;
+  }
+
+  #sidebar {
+    width: 100% !important;
+    height: 4rem;
+    bottom: 0;
+  }
+
+  #sidebar #menu ul {
+    display: flex;
+    height: 100%;
+  }
+
+  #sidebar #menu ul li {
+    padding: 0 !important;
+    border-left-width: 0 !important;
+    border-top-width: 4px;
+  }
+
+  #sidebar #menu ul li a {
+    padding: 0 0.75rem !important;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #sidebar #menu ul li a .word {
+    display: none;
+  }
+
+  #sidebar #yadoms-icon {
+    display: none;
+  }
+
+  main {
+    margin: 0 !important;
+  }
+
+  #cards {
+    height: auto !important;
+    padding-bottom: 4rem !important;
+  }
+
+  .card {
+    width: 100% !important;
+    position: initial !important;
+    margin: 0.5rem 0 !important;
+  }
+
+  .card .card-wrapper > div > div {
+    overflow-x: scroll !important;
+  }
+
+  .card .card-width-1,
+  .card .card-width-2,
+  .card .card-width-3,
+  .card .card-width-4,
+  .card .card-width-5 {
+    width: auto !important;
+    min-width: 100%;
+  }
+}
+
 body {
   display: flex;
   height: 100vh;

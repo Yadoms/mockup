@@ -1,0 +1,66 @@
+@media (max-width: 640px) {
+  header,
+  footer {
+    display: none;
+  }
+
+  #sidebar {
+    width: 100% !important;
+    height: 4rem;
+    bottom: 0;
+
+    #menu ul {
+      display: flex;
+      height: 100%;
+
+      li {
+        padding: 0 !important;
+        border-left-width: 0 !important;
+        border-top-width: 4px;
+        a {
+          padding: 0 0.75rem !important;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .word {
+            display: none;
+          }
+        }
+      }
+    }
+
+    #yadoms-icon {
+      display: none;
+    }
+  }
+
+  main {
+    margin: 0 !important;
+  }
+
+  #cards {
+    height: auto !important;
+    padding-bottom: 4rem !important;
+  }
+
+  .card {
+    width: 100% !important;
+    position: initial !important;
+    margin: 0.5rem 0 !important;
+
+    .card-wrapper > div > div {
+      overflow-x: scroll !important;
+    }
+
+    .card-width-1,
+    .card-width-2,
+    .card-width-3,
+    .card-width-4,
+    .card-width-5 {
+      width: auto !important;
+      min-width: 100%;
+    }
+  }
+}
