@@ -414,7 +414,7 @@ class Yadoms {
           if (!Object.keys(window.yadoms_app.components).includes(type)) {
             let component = new Component.YadomsComponent();
             window.yadoms_app.components[type] = component;
-            window.yadoms_app.$style.innerHTML += component.style();
+            window.yadoms_app.$style.textContent += component.style();
           }
           resolve(window.yadoms_app.components[type]);
         });
