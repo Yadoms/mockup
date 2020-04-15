@@ -1,0 +1,55 @@
+@media (min-width: 641px) and (max-width: 1024px) {
+  header,
+  footer {
+    display: none;
+  }
+
+  #sidebar {
+    width: 100% !important;
+    height: 4rem;
+    bottom: 0;
+
+    #menu ul {
+      display: flex;
+      height: 100%;
+
+      li {
+        padding: 0 !important;
+        border-left-width: 0 !important;
+        border-top-width: 4px;
+        a {
+          padding: 0 0.75rem !important;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .word {
+            display: none;
+          }
+        }
+      }
+    }
+
+    #yadoms-icon {
+      display: none;
+    }
+  }
+
+  main {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  #cards {
+    margin-bottom: 4rem !important;
+  }
+
+  .card {
+    max-width: 95% !important;
+
+    .card-wrapper > div > div {
+      overflow-x: scroll !important;
+    }
+  }
+}
