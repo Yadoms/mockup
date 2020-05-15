@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "masis": "^2.1.1",
+    "resize-observer": "^1.0.0",
     "tailwindcss": "^1.4.6"
   },
   "staticFiles": {

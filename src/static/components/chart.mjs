@@ -30,11 +30,11 @@ class YadomsComponentChart {
   }
 
   init($element) {
-    Yadoms.loader(
+    YadomsApp.loader(
       '/components/lib/chartist/chartist.css',
       '/components/lib/chartist/chartist.min.js'
     ).then(function () {
-      Yadoms.loader(
+      YadomsApp.loader(
         '/components/lib/chartist/chartist-plugin-tooltip.css',
         '/components/lib/chartist/chartist-plugin-axistitle.min.js',
         '/components/lib/chartist/chartist-plugin-tooltip.min.js'

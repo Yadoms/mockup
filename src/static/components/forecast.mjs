@@ -209,7 +209,7 @@ class YadomsComponentForecast {
   }
 
   init($element) {
-    Yadoms.changeCardTitle(
+    YadomsApp.changeCardTitle(
       $element,
       $element.querySelector('.forecast').dataset.location
     );
