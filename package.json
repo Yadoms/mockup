@@ -1,28 +1,39 @@
 {
   "name": "mockup",
-  "private": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Yadoms/mockup.git",
+  "author": "Sylvain Gougouzian <sylvain.gougouzian@gmail.com>",
+  "license": "MIT",
   "devDependencies": {
-    "@tailwindcss/custom-forms": "^0.2.1",
-    "autoprefixer": "^9.7.4",
-    "budo": "^11.6.3",
-    "del": "^5.1.0",
-    "flat-map": "^1.0.0",
-    "gulp": "^4.0.2",
-    "gulp-add-src": "^1.0.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-csso": "^4.0.1",
-    "gulp-imagemin": "^7.1.0",
-    "gulp-less": "^4.0.1",
-    "gulp-postcss": "^8.0.0",
-    "gulp-prettier": "^3.0.0",
-    "gulp-pug": "^4.0.1",
-    "gulp-purgecss": "^2.1.0",
-    "gulp-rename": "^2.0.0",
-    "gulp-scale-images": "^2.0.1",
-    "gulp-uglify-es": "^2.0.0",
+    "@babel/core": "^7.9.6",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@fullhuman/postcss-purgecss": "^2.2.0",
+    "autoprefixer": "^9.7.6",
     "less": "^3.11.1",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-clean-dist": "^0.0.6",
+    "parcel-plugin-imagemin": "^4.0.1",
+    "parcel-plugin-static-files-copy": "^2.3.1",
+    "postcss": "^7.0.30",
     "postcss-import": "^12.0.1",
+    "postcss-less": "^3.1.4",
+    "postcss-modules": "^2.0.0",
+    "postcss-nested": "^4.2.1",
+    "postcss-preset-env": "^6.7.0",
     "pug": "^2.0.4",
-    "tailwindcss": "^1.2.0"
+    "typescript": "^3.9.2"
+  },
+  "scripts": {
+    "dev": "parcel src/index.pug --open",
+    "build": "parcel build src/index.pug --no-source-maps"
+  },
+  "dependencies": {
+    "masis": "^2.1.1",
+    "tailwindcss": "^1.4.6"
+  },
+  "staticFiles": {
+    "staticPath": "src/static",
+    "watcherGlob": "**"
   }
 }

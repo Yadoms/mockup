@@ -1,3 +1,5 @@
+import { MasisPosition } from 'masis';
+
 class MasisDelete {
   Masis = null;
   options = {};
@@ -35,3 +37,6 @@ class MasisDelete {
     }
   }
 }
+
+const _MasisDelete = MasisDelete;
+export { _MasisDelete as MasisDelete };

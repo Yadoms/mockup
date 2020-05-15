@@ -1,1 +1,0 @@
-class YadomsComponentState{properties={};constructor(){}propsKeys(){return["wording"]}render(t){return`\n      <div class="state joliePosition">\n        ${t.wording}\n      </div>\n    `}style(){return"\n      .state {\n        font-size: 1.875rem;\n      }\n    "}init(t){}update(t,n,e){}getProperty(t,n){}}export{YadomsComponentState as YadomsComponent};

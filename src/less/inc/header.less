@@ -1,12 +1,24 @@
+#top {
+  @apply fixed py-4 pr-4 top-0 right-0;
+
+  #button-design {
+    @apply block rounded-lg border text-xl p-2 mb-1;
+
+    line-height: normal;
+
+    &:focus {
+      outline: none;
+    }
+
+    i {
+      @apply block;
+    }
+  }
+}
+
 #header(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color) {
   #top {
-    @apply fixed py-4 pr-4 top-0 right-0;
-
     #button-design {
-      @apply block rounded-lg border text-xl p-2 mb-1;
-
-      line-height: normal;
-
       border-color: darken(@front_color, 2%);
 
       box-shadow: -@shadow_size -@shadow_size @shadow_size*2
@@ -20,14 +32,6 @@
           lighten(@base_color, 1.5%),
           lighten(@base_color, -1.5%)
         );
-      }
-
-      &:focus {
-        outline: none;
-      }
-
-      i {
-        @apply block;
       }
     }
   }

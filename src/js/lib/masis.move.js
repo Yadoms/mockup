@@ -1,3 +1,5 @@
+import { MasisPosition, MasisSort } from 'masis';
+
 class MasisMove {
   Masis = null;
   options = {};
@@ -157,3 +159,6 @@ class MasisMove {
     }
   }
 }
+
+const _MasisMove = MasisMove;
+export { _MasisMove as MasisMove };

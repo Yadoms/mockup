@@ -63,8 +63,6 @@ class YadomsComponentForecast {
 
   style() {
     return `
-
-
       .forecast .wrapper {
         display: flex;
         width: 100%;
@@ -131,7 +129,7 @@ class YadomsComponentForecast {
         border-color: var(--primaryColor);
       }
 
-      .forecast .forecast-day .forecast-conditions .forecast-wind .ring > div {
+      .forecast .forecast-day .forecast-conditions .forecast-wind .ring > i {
         bottom: -5px;
         display: inline-block;
         position: absolute;

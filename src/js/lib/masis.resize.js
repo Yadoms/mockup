@@ -97,3 +97,6 @@ class MasisResize {
     }
   }
 }
+
+const _MasisResize = MasisResize;
+export { _MasisResize as MasisResize };

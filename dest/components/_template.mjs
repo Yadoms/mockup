@@ -1,1 +1,0 @@
-class YadomsComponentName{constructor(){}propsKeys(){return[]}render(e){return"\n      \n    "}style(){return"\n      \n    "}init(e){}update(e,n,o){}getProperty(e,n){}}export{YadomsComponentName as YadomsComponent};

@@ -1,3 +1,10 @@
+import { Masis, MasisPosition, MasisSort } from 'masis';
+import { MasisDelete } from './lib/masis.delete.js';
+import { MasisMove } from './lib/masis.move.js';
+import { MasisResize } from './lib/masis.resize.js';
+
+let themes = ['light', 'dark', 'lidrea'];
+
 class Yadoms {
   components = {};
   pages = [];
@@ -44,7 +51,7 @@ class Yadoms {
     if (func != '') {
       if ('changeTheme' == func) {
         console.log('List of available themes');
-        console.table(['light', 'dark', 'lidrea']);
+        console.table(themes);
       }
     } else if ('' == func) {
       console.log('List of available functions');
@@ -73,8 +80,11 @@ class Yadoms {
 
   static changeTheme(theme) {
     if ('' == theme) theme = 'light';
-    document.querySelector('link[id="theme"]').href = `/css/${theme}.min.css`;
-    return 'The theme is set to ' + theme + ' now';
+    themes.forEach((t) => {
+      document.querySelector('html').classList.remove(`${t}_theme`);
+    });
+    document.querySelector('html').classList.add(`${theme}_theme`);
+    return `The theme is set to ${theme} now`;
   }
 
   static ready(fn) {
@@ -444,3 +454,5 @@ Yadoms.ready(() => {
       window.yadoms_app.viewPage(window.location.hash.slice(2));
     });
 });
+
+window.Yadoms = Yadoms;

@@ -6,7 +6,6 @@ module.exports = {
     boxShadow: ['responsive', 'hover', 'focus'],
     width: ['responsive', 'hover'],
   },
-  plugins: [require('@tailwindcss/custom-forms')],
   theme: {
     extend: {
       fontSize: {

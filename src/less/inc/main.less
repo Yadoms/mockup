@@ -5,6 +5,28 @@
 @import './helpers.less';
 @import './shadows.less';
 
+body {
+  @apply flex h-screen font-sans;
+}
+
+#illustration {
+  @apply fixed w-full inset-0 min-h-full;
+  .filter {
+    @apply w-full inset-0 min-h-full absolute;
+    background-size: cover;
+    z-index: -1;
+    .cover {
+      @apply w-full inset-0 min-h-full absolute;
+      z-index: -2;
+      background-size: cover;
+    }
+  }
+}
+
+main {
+  @apply w-full mx-16 my-4 p-4 relative;
+}
+
 #makeTheme(@base_color, 
            @front_color, 
            @active_color, 
@@ -13,30 +35,13 @@
            @shadow_color, 
            @text_shadow_color
     ) {
-  body {
-    @apply flex h-screen font-sans;
-  }
-
   #illustration {
-    @apply fixed w-full inset-0 min-h-full;
-
     .filter {
-      @apply w-full inset-0 min-h-full absolute;
-
       background: linear-gradient(
         fade(@base_color, 90%),
         fade(@base_color, 92.5%),
         fade(@base_color, 95%)
       );
-      background-size: cover;
-      z-index: -1;
-    }
-
-    .cover {
-      @apply w-full inset-0 min-h-full absolute;
-
-      z-index: -2;
-      background-size: cover;
     }
   }
 
@@ -49,10 +54,6 @@
     a:hover {
       @color: @highlight_color;
     }
-  }
-
-  main {
-    @apply w-full mx-16 my-4 p-4 relative;
   }
 
   #helpers(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text_shadow_color);
