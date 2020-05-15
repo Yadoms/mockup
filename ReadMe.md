@@ -16,35 +16,24 @@ npm install -g yarn
 
 Then you have to set yarn to last version for the current project (mockup)
 
-```
-cd mockup
-yarn policies set-version berry # below v1.22
-yarn set version berry          # on v1.22+
-```
-
 After installing `yarn`, you have to install all devDependencies present in `package.json`.
 
 ```
 yarn install
 ```
 
-Then you can run `gulp` to launch the Dev environment :
-
-- watcher
-- livereload
-
-with this command
+Then launch
 
 ```
-yarn run gulp
+yarn dev
 ```
 
-It will open your browser with the `dest/index.html`.
+to have the development environment (watcher, livereload, ...)
 
-If you want just to preview the mockup run :
+To build the source then delete `dist` and launch
 
 ```
-yarn run gulp preview
+yarn build
 ```
 
 ## Theme mode
