@@ -69086,10 +69086,11 @@ video {
     width: 100% !important;
     position: initial !important;
     margin: 0.5rem 0 !important;
+    overflow: hidden;
   }
 
-  .card .card-wrapper > div > div {
-    overflow-x: scroll !important;
+  .card .card-wrapper {
+    overflow: auto;
   }
 
   .card .card-width-1,
@@ -69152,10 +69153,6 @@ video {
 
   .card {
     max-width: 95% !important;
-  }
-
-  .card .card-wrapper > div > div {
-    overflow-x: scroll !important;
   }
 }
 
