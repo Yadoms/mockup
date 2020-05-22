@@ -4,3 +4,4 @@ doc
 debug
 dist
 .cache
+.yarn*

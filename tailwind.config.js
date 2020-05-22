@@ -35,4 +35,8 @@ module.exports = {
       },
     },
   },
+  purge: {
+    enabled: true,
+    content: ['./src/**/*.pug', './src/**/*.ts'],
+  },
 };
