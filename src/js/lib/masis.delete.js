@@ -29,9 +29,12 @@ class MasisDelete {
     ev.preventDefault();
     ev.stopImmediatePropagation();
     if (confirm(this.options.message)) {
-      Yadoms.triggerEvent('masis.delete', {
-        element: ev.currentTarget.parentNode,
+      let event = new CustomEvent('masis.delete', {
+        detail: {
+          element: ev.currentTarget.parentNode,
+        },
       });
+      document.dispatchEvent(event);
       this.Masis.$element.removeChild(ev.currentTarget.parentNode);
       MasisPosition(this.Masis.populate());
     }

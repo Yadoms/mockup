@@ -1,12 +1,5 @@
-class YadomsComponentDimmer {
-  constructor() {}
-
-  propsKeys() {
-    return ['value', 'min', 'max', 'step', 'unit', 'digital'];
-  }
-
-  render(opts) {
-    return `
+export function render(opts) {
+  return `
       <div class="dimmer joliePosition">
         <div class="wrapper shadow-inner">
           <button class="shadow-inner" data-action="decrement">
@@ -29,10 +22,10 @@ class YadomsComponentDimmer {
         </div>
       </div>
     `;
-  }
+}
 
-  style() {
-    return `
+export function style() {
+  return `
       .dimmer {
         padding: 0 2rem;
       }
@@ -98,41 +91,35 @@ class YadomsComponentDimmer {
       }
 
     `;
-  }
-
-  _decrement(ev) {
-    const $element = ev.currentTarget.parentNode,
-      $input = $element.querySelector('input'),
-      step = Number($input.getAttribute('step')),
-      min = Number($input.getAttribute('min'));
-    let value = Number($input.value),
-      val = value - step;
-    if (val < min) val = value;
-    $input.value = val;
-  }
-
-  _increment(ev) {
-    const $element = ev.currentTarget.parentNode,
-      $input = $element.querySelector('input'),
-      step = Number($input.getAttribute('step')),
-      max = Number($input.getAttribute('max'));
-    let value = Number($input.value),
-      val = value + step;
-    if (val > max) val = value;
-    $input.value = val;
-  }
-
-  init($element) {
-    $element
-      .querySelector('.dimmer button[data-action="increment"]')
-      .addEventListener('click', this._increment, false);
-    $element
-      .querySelector('.dimmer button[data-action="decrement"]')
-      .addEventListener('click', this._decrement, false);
-  }
-
-  update($element, name, value) {}
-  getProperty($element, name) {}
 }
 
-export { YadomsComponentDimmer as YadomsComponent };
+function _decrement(ev) {
+  const $element = ev.currentTarget.parentNode,
+    $input = $element.querySelector('input'),
+    step = Number($input.getAttribute('step')),
+    min = Number($input.getAttribute('min'));
+  let value = Number($input.value),
+    val = value - step;
+  if (val < min) val = value;
+  $input.value = val;
+}
+
+function _increment(ev) {
+  const $element = ev.currentTarget.parentNode,
+    $input = $element.querySelector('input'),
+    step = Number($input.getAttribute('step')),
+    max = Number($input.getAttribute('max'));
+  let value = Number($input.value),
+    val = value + step;
+  if (val > max) val = value;
+  $input.value = val;
+}
+
+export function init($element) {
+  $element
+    .querySelector('.dimmer button[data-action="increment"]')
+    .addEventListener('click', _increment, false);
+  $element
+    .querySelector('.dimmer button[data-action="decrement"]')
+    .addEventListener('click', _decrement, false);
+}

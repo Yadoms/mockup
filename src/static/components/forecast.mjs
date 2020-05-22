@@ -1,14 +1,7 @@
-class YadomsComponentForecast {
-  constructor() {}
-
-  propsKeys() {
-    return ['location'];
-  }
-
-  render(opts) {
-    let days = [];
-    opts.datas.forEach((day) => {
-      days.push(`
+export function render(opts) {
+  let days = [];
+  opts.datas.forEach((day) => {
+    days.push(`
         <div class="forecast-day">
           <div class="forecast-date">${day.day}</div>
           <div class="forecast-weather">
@@ -43,26 +36,26 @@ class YadomsComponentForecast {
           </div>
         </div>
       `);
-    });
-    return `
+  });
+  return `
       <div class="forecast joliePosition" data-location="${opts.location}">
         <div class="wrapper">
           ${days.join('')}
         </div>
       </div>
     `;
-  }
+}
 
-  _windDirection(direction, rotation) {
-    return `
+function _windDirection(direction, rotation) {
+  return `
       .forecast .forecast-day .forecast-conditions .forecast-wind .ring.wind-${direction} {
         --transform-rotate: ${rotation};
       }
     `;
-  }
+}
 
-  style() {
-    return `
+export function style() {
+  return `
       .forecast .wrapper {
         display: flex;
         width: 100%;
@@ -135,22 +128,22 @@ class YadomsComponentForecast {
         position: absolute;
       }
 
-      ${this._windDirection('S', '0deg')}
-      ${this._windDirection('SSE', '-22.5deg')}
-      ${this._windDirection('SE', '-45deg')}
-      ${this._windDirection('ESE', '-67.5deg')}
-      ${this._windDirection('E', '-90deg')}
-      ${this._windDirection('ENE', '-112.5deg')}
-      ${this._windDirection('NE', '-135deg')}
-      ${this._windDirection('NNE', '-157.5deg')}
-      ${this._windDirection('N', '180deg')}
-      ${this._windDirection('NNO', '157.5deg')}
-      ${this._windDirection('NO', '135deg')}
-      ${this._windDirection('ONO', '112.5deg')}
-      ${this._windDirection('O', '90deg')}
-      ${this._windDirection('OSO', '67.5deg')}
-      ${this._windDirection('SO', '45deg')}
-      ${this._windDirection('SSO', '22.5deg')}
+      ${_windDirection('S', '0deg')}
+      ${_windDirection('SSE', '-22.5deg')}
+      ${_windDirection('SE', '-45deg')}
+      ${_windDirection('ESE', '-67.5deg')}
+      ${_windDirection('E', '-90deg')}
+      ${_windDirection('ENE', '-112.5deg')}
+      ${_windDirection('NE', '-135deg')}
+      ${_windDirection('NNE', '-157.5deg')}
+      ${_windDirection('N', '180deg')}
+      ${_windDirection('NNO', '157.5deg')}
+      ${_windDirection('NO', '135deg')}
+      ${_windDirection('ONO', '112.5deg')}
+      ${_windDirection('O', '90deg')}
+      ${_windDirection('OSO', '67.5deg')}
+      ${_windDirection('SO', '45deg')}
+      ${_windDirection('SSO', '22.5deg')}
 
       .forecast .forecast-day .forecast-conditions .forecast-wind .wind-wrapper {
         position: absolute;
@@ -206,24 +199,18 @@ class YadomsComponentForecast {
         color: var(--primaryColor);
       }
     `;
-  }
-
-  init($element) {
-    YadomsApp.changeCardTitle(
-      $element,
-      $element.querySelector('.forecast').dataset.location
-    );
-    let $rains = $element.querySelectorAll('.forecast-rain');
-    if ($rains.length)
-      $rains.forEach(($rain) => {
-        let percent = (100 * parseFloat($rain.dataset.rain)) / 45;
-        if (percent > 100) percent = 100;
-        $rain.querySelector('.liquid').style.height = `${percent}%`;
-      });
-  }
-
-  update($element, name, value) {}
-  getProperty($element, name) {}
 }
 
-export { YadomsComponentForecast as YadomsComponent };
+export function init($element) {
+  YadomsHelper.changeCardTitle(
+    $element,
+    $element.querySelector('.forecast').dataset.location
+  );
+  let $rains = $element.querySelectorAll('.forecast-rain');
+  if ($rains.length)
+    $rains.forEach(($rain) => {
+      let percent = (100 * parseFloat($rain.dataset.rain)) / 45;
+      if (percent > 100) percent = 100;
+      $rain.querySelector('.liquid').style.height = `${percent}%`;
+    });
+}

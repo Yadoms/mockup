@@ -1,22 +1,15 @@
-class YadomsComponentShutter {
-  constructor() {}
-
-  propsKeys() {
-    return ['type', 'state'];
-  }
-
-  render(opts) {
-    let cl = 'fas fa-door-closed';
-    if ('window' == opts.type) cl = 'far fa-plus-square';
-    return `
+export function render(opts) {
+  let cl = 'fas fa-door-closed';
+  if ('window' == opts.type) cl = 'far fa-plus-square';
+  return `
       <div class="shutter joliePosition ${opts.state ? 'active' : ''}">
         <i class="${cl}"></i>
       </div>
     `;
-  }
+}
 
-  style() {
-    return `
+export function style() {
+  return `
       .shutter.active {
         color: var(--highlightColor);
       }
@@ -30,12 +23,6 @@ class YadomsComponentShutter {
         font-size: 1.875rem;
       }
     `;
-  }
-
-  init($element) {}
-
-  update($element, name, value) {}
-  getProperty($element, name) {}
 }
 
-export { YadomsComponentShutter as YadomsComponent };
+export function init($element) {}

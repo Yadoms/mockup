@@ -1,20 +1,13 @@
-class YadomsComponentName {
-  constructor() {}
-
-  propsKeys() {
-    return ['color'];
-  }
-
-  render(opts) {
-    return `
+export function render(opts) {
+  return `
       <div class="teleinfo-forecast joliePosition">
         <div class="square ${opts.color}"></div>
       </div>
     `;
-  }
+}
 
-  style() {
-    return `
+export function style() {
+  return `
       .teleinfo-forecast .square {
         border-radius: 9999px;
         border-width: 2px;
@@ -41,12 +34,6 @@ class YadomsComponentName {
         border-color: #9B2C2C;
       }
     `;
-  }
-
-  init($element) {}
-
-  update($element, name, value) {}
-  getProperty($element, name) {}
 }
 
-export { YadomsComponentName as YadomsComponent };
+export function init($element) {}

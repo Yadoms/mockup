@@ -43,28 +43,4 @@ To have any help, type Yadoms.help()
   public lightOff() {
     return Yadoms.changeTheme('dark');
   }
-
-  public changeCardTitle($element, content) {
-    let $cardtitle = $element.querySelector('.card-title');
-    let $title = $cardtitle.querySelector('.title');
-    $title.innerHTML = content;
-    if (content == '') $cardtitle.classList.add('no-border');
-    else $cardtitle.classList.remove('no-border');
-  }
-
-  public static makeDigital(value, hollow = true, format = '8.8.8.8.8.8.8.8.') {
-    if (hollow)
-      return `
-        <div class="digital">
-          <span class="hollow font-mono">${format}</span>
-          <span class="digits font-mono">${value}</span>
-        </div>
-      `;
-    else
-      return `
-        <div class="digital">
-          <span class="digits">${value}</span>
-        </div>
-      `;
-  }
 }

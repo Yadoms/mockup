@@ -3,7 +3,7 @@ import { MasisDelete } from '../js/lib/masis.delete.js';
 import { MasisMove } from '../js/lib/masis.move.js';
 import { MasisResize } from '../js/lib/masis.resize.js';
 import { themes } from './YadomsThemes';
-import { YadomsLoader } from './YadomsLoader';
+import { YadomsHelper } from './YadomsHelper';
 import { ResizeObserver } from 'resize-observer';
 
 declare global {
@@ -58,11 +58,6 @@ export class Yadoms {
     } else {
       document.addEventListener('DOMContentLoaded', fn);
     }
-  }
-
-  public triggerEvent(eventName: string, data = {}) {
-    let event = new CustomEvent(eventName, { detail: data });
-    document.dispatchEvent(event);
   }
 
   public createMenu() {
@@ -300,7 +295,7 @@ export class Yadoms {
     cards.forEach((card) => {
       cranberries.push(
         new Promise((resolve) => {
-          YadomsLoader.loadComponent(card.type).then(() => {
+          YadomsHelper.loadComponent(card.type).then(() => {
             self._generateCard(card);
             resolve();
           });

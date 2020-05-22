@@ -1,13 +1,27 @@
-class YadomsComponent {
-  style(): string {
-    return '';
+export class YadomsHelper {
+  public changeCardTitle($element, content) {
+    let $cardtitle = $element.querySelector('.card-title');
+    let $title = $cardtitle.querySelector('.title');
+    $title.innerHTML = content;
+    if (content == '') $cardtitle.classList.add('no-border');
+    else $cardtitle.classList.remove('no-border');
   }
-  render(data): string {
-    return '';
-  }
-}
 
-export class YadomsLoader {
+  public makeDigital(value, hollow = true, format = '8.8.8.8.8.8.8.8.') {
+    if (hollow)
+      return `
+        <div class="digital">
+          <span class="hollow font-mono">${format}</span>
+          <span class="digits font-mono">${value}</span>
+        </div>
+      `;
+    else
+      return `
+        <div class="digital">
+          <span class="digits">${value}</span>
+        </div>
+      `;
+  }
   private static _load(tag, url) {
     return new Promise((resolve, reject) => {
       let $element = document.createElement(tag);
@@ -35,13 +49,13 @@ export class YadomsLoader {
     });
   }
 
-  public static loader(...urls) {
+  public loader(...urls) {
     const cranberries = [];
     urls.forEach((url) => {
       if (url.endsWith('.js'))
-        cranberries.push(YadomsLoader._load('script', url));
+        cranberries.push(YadomsHelper._load('script', url));
       if (url.endsWith('.css'))
-        cranberries.push(YadomsLoader._load('link', url));
+        cranberries.push(YadomsHelper._load('link', url));
     });
     return Promise.all(cranberries);
   }
@@ -49,9 +63,8 @@ export class YadomsLoader {
   public static loadComponent(type) {
     return new Promise((resolve) => {
       if (!Object.keys(window.YadomsApp.components).includes(type)) {
-        import(`/components/${type}.mjs`)
-          .then((Component: YadomsComponent) => {
-            console.log(Component);
+        import(`./components/${type}.mjs`)
+          .then((Component: any) => {
             if (!Object.keys(window.YadomsApp.components).includes(type)) {
               window.YadomsApp.components[type] = Component;
               window.YadomsApp.$style.textContent += Component.style();
@@ -65,9 +78,9 @@ export class YadomsLoader {
     });
   }
 
-  public static useComponent(type, data) {
+  public useComponent(type, data) {
     let uniqID = `_${type}_${Date.now()}`;
-    YadomsLoader.loadComponent(type).then((Component: YadomsComponent) => {
+    YadomsHelper.loadComponent(type).then((Component) => {
       document.querySelector(`#${uniqID}`).innerHTML = Component.render(data);
     });
     return `<div id="${uniqID}"></div>`;

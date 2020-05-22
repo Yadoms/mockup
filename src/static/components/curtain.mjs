@@ -1,12 +1,5 @@
-class YadomsComponentCurtain {
-  constructor() {}
-
-  propsKeys() {
-    return [];
-  }
-
-  render(opts) {
-    return `
+export function render(opts) {
+  return `
       <div class="curtain joliePosition">
         <button class="up shadow-inner" data-action="up">
           <i class="fas fa-caret-up"></i>
@@ -19,10 +12,10 @@ class YadomsComponentCurtain {
         </button>
       </div>
     `;
-  }
+}
 
-  style() {
-    return `
+export function style() {
+  return `
       .curtain {
         font-weight: bold;
         font-size: 1.25rem;
@@ -58,12 +51,6 @@ class YadomsComponentCurtain {
         border-bottom-right-radius: 0.25rem;
       }
     `;
-  }
-
-  init($element) {}
-
-  update($element, name, value) {}
-  getProperty($element, name) {}
 }
 
-export { YadomsComponentCurtain as YadomsComponent };
+export function init($element) {}

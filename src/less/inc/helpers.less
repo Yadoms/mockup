@@ -12,10 +12,14 @@
   @apply flex items-center justify-center w-full h-full;
 }
 
-::-webkit-inner-spin-button,
-::-webkit-outer-spin-button {
-  appearance: none;
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
   margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
 }
 
 :focus {

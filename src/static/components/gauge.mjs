@@ -1,12 +1,5 @@
-class YadomsComponentGauge {
-  constructor() {}
-
-  propsKeys() {
-    return ['value', 'min', 'max', 'unit', 'digital'];
-  }
-
-  render(opts) {
-    return `
+export function render(opts) {
+  return `
       <div class="gauge joliePosition" 
            data-value="${opts.value}" 
            data-min="${opts.min}" 
@@ -30,21 +23,21 @@ class YadomsComponentGauge {
         </div>
       </div>
     `;
-  }
+}
 
-  _generateRingColor(name, color, percent) {
-    return `
+function _generateRingColor(name, color, percent) {
+  return `
       .gauge${name} .wrapper {
         box-shadow: 0 0 ${2 + percent}rem 0 ${color};
       }
 
       .gauge${name} .wrapper .ring .fill { background-color: ${color}; }
     `;
-  }
+}
 
-  style() {
-    return `
-      ${this._generateRingColor('', 'var(--activeColor)', 1)}
+export function style() {
+  return `
+      ${_generateRingColor('', 'var(--activeColor)', 1)}
 
       .gauge .wrapper {
         width: 12rem;
@@ -106,31 +99,25 @@ class YadomsComponentGauge {
         font-size: 1.125rem;
       }
 
-      ${this._generateRingColor('.frost', '#2b6cb0', 0.2)}
-      ${this._generateRingColor('.cold', '#4c51bf', 0.4)}
-      ${this._generateRingColor('.normal', '#6b46c1', 0.6)}
-      ${this._generateRingColor('.warm', '#B83280', 0.8)}
-      ${this._generateRingColor('.hot', '#C53030', 1)}
+      ${_generateRingColor('.frost', '#2b6cb0', 0.2)}
+      ${_generateRingColor('.cold', '#4c51bf', 0.4)}
+      ${_generateRingColor('.normal', '#6b46c1', 0.6)}
+      ${_generateRingColor('.warm', '#B83280', 0.8)}
+      ${_generateRingColor('.hot', '#C53030', 1)}
     `;
-  }
-
-  init($element) {
-    let $gauge = $element.querySelector('.gauge');
-    const min = $gauge.dataset.min,
-      max = $gauge.dataset.max,
-      val = $gauge.dataset.value,
-      $fill = $gauge.querySelector('.fill');
-    let percent = (100 * (val - min)) / (max - min);
-    $fill.style.height = percent + '%';
-    if (percent < 20) $gauge.classList.add('frost');
-    else if (percent < 40) $gauge.classList.add('cold');
-    else if (percent < 60) $gauge.classList.add('normal');
-    else if (percent < 80) $gauge.classList.add('warm');
-    else $gauge.classList.add('hot');
-  }
-
-  update($element, name, value) {}
-  getProperty($element, name) {}
 }
 
-export { YadomsComponentGauge as YadomsComponent };
+export function init($element) {
+  let $gauge = $element.querySelector('.gauge');
+  const min = $gauge.dataset.min,
+    max = $gauge.dataset.max,
+    val = $gauge.dataset.value,
+    $fill = $gauge.querySelector('.fill');
+  let percent = (100 * (val - min)) / (max - min);
+  $fill.style.height = percent + '%';
+  if (percent < 20) $gauge.classList.add('frost');
+  else if (percent < 40) $gauge.classList.add('cold');
+  else if (percent < 60) $gauge.classList.add('normal');
+  else if (percent < 80) $gauge.classList.add('warm');
+  else $gauge.classList.add('hot');
+}

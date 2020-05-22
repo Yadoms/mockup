@@ -1,32 +1,17 @@
-class YadomsComponentState {
-  properties = {};
-
-  constructor() {}
-
-  propsKeys() {
-    return ['wording'];
-  }
-
-  render(opts) {
-    return `
+export function render(opts) {
+  return `
       <div class="state joliePosition">
         ${opts.wording}
       </div>
     `;
-  }
+}
 
-  style() {
-    return `
+export function style() {
+  return `
       .state {
         font-size: 1.875rem;
       }
     `;
-  }
-
-  init($element) {}
-
-  update($element, name, value) {}
-  getProperty($element, name) {}
 }
 
-export { YadomsComponentState as YadomsComponent };
+export function init($element) {}

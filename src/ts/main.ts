@@ -1,16 +1,17 @@
 import { Yadoms } from './Yadoms';
 import { YadomsConsole } from './YadomsConsole';
-import { YadomsLoader } from './YadomsLoader';
+import { YadomsHelper } from './YadomsHelper';
 
 declare global {
   interface Window {
     Yadoms: YadomsConsole;
-    YadomsLoader: YadomsLoader;
+    YadomsHelper: YadomsHelper;
   }
 }
 
 Yadoms.ready(() => {
   window.Yadoms = new YadomsConsole();
+  window.YadomsHelper = new YadomsHelper();
 
   fetch('/yadoms.instance.json')
     .then((response) => response.json())

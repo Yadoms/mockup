@@ -1,22 +1,13 @@
-class YadomsComponentSwitch {
-  properties = {};
-
-  constructor() {}
-
-  propsKeys() {
-    return [];
-  }
-
-  render(opts) {
-    let html = '';
-    if ('button' == opts.type) {
-      html = `
+export function render(opts) {
+  let html = '';
+  if ('button' == opts.type) {
+    html = `
         <button class="switch-button neumorphism ${opts.state ? 'active' : ''}">
           <i class="fas fa-${opts.icon}"></i>
         </button>
       `;
-    } else if ('arrow' == opts.type) {
-      html = `
+  } else if ('arrow' == opts.type) {
+    html = `
         <div class="switch-arrow joliePosition">
           <button class="up shadow-inner" data-action="up">
             <i class="fas fa-caret-up"></i>
@@ -26,8 +17,8 @@ class YadomsComponentSwitch {
           </button>
         </div>
       `;
-    } else if ('toggle' == opts.type) {
-      html = `
+  } else if ('toggle' == opts.type) {
+    html = `
         <div class="switch-toggle">
           <div>
             <input type="checkbox" ${opts.state == true ? 'checked' : ''} />
@@ -37,16 +28,16 @@ class YadomsComponentSwitch {
           </div>
         </div>
       `;
-    }
-    return `
+  }
+  return `
       <div class="switch joliePosition">
         ${html}
       </div>
     `;
-  }
+}
 
-  style() {
-    return `
+export function style() {
+  return `
       .switch-arrow {
         flex-direction: column;
       }
@@ -154,41 +145,35 @@ class YadomsComponentSwitch {
         box-shadow: none;
       }
     `;
-  }
-
-  init($element) {
-    if ($element.querySelectorAll('.switch-toggle').length) {
-      $element.querySelector('.switch-toggle').addEventListener(
-        'click',
-        (ev) => {
-          ev.stopPropagation();
-          let $input = ev.currentTarget.querySelector('input');
-          if ($input.hasAttribute('checked')) {
-            $input.removeAttribute('checked');
-          } else {
-            $input.setAttribute('checked', 'checked');
-          }
-        },
-        false
-      );
-    }
-    if ($element.querySelectorAll('.switch-button').length) {
-      $element.querySelector('.switch-button').addEventListener(
-        'click',
-        (ev) => {
-          ev.preventDefault();
-          let $el = ev.currentTarget;
-          if ($el.classList.contains('active')) $el.classList.remove('active');
-          else $el.classList.add('active');
-          ev.stopPropagation();
-        },
-        false
-      );
-    }
-  }
-
-  update($element, name, value) {}
-  getProperty($element, name) {}
 }
 
-export { YadomsComponentSwitch as YadomsComponent };
+export function init($element) {
+  if ($element.querySelectorAll('.switch-toggle').length) {
+    $element.querySelector('.switch-toggle').addEventListener(
+      'click',
+      (ev) => {
+        ev.stopPropagation();
+        let $input = ev.currentTarget.querySelector('input');
+        if ($input.hasAttribute('checked')) {
+          $input.removeAttribute('checked');
+        } else {
+          $input.setAttribute('checked', 'checked');
+        }
+      },
+      false
+    );
+  }
+  if ($element.querySelectorAll('.switch-button').length) {
+    $element.querySelector('.switch-button').addEventListener(
+      'click',
+      (ev) => {
+        ev.preventDefault();
+        let $el = ev.currentTarget;
+        if ($el.classList.contains('active')) $el.classList.remove('active');
+        else $el.classList.add('active');
+        ev.stopPropagation();
+      },
+      false
+    );
+  }
+}

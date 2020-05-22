@@ -155,7 +155,10 @@ class MasisMove {
       this.redefineSort();
       this.oldpos = '';
       this.onDrag = false;
-      Yadoms.triggerEvent('masis.moved');
+      let event = new CustomEvent('masis.moved', {
+        detail: {},
+      });
+      document.dispatchEvent(event);
     }
   }
 }

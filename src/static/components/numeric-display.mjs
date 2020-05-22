@@ -1,22 +1,15 @@
-class YadomsComponentNumericDisplay {
-  constructor() {}
-
-  propsKeys() {
-    return ['value', 'decimals', 'unit', 'capture', 'digital'];
-  }
-
-  render(opts) {
-    let val = parseFloat(opts.value).toFixed(opts.decimals);
-    let capture = '';
-    if (opts.capture && opts.capture.length) capture = `<p>${opts.capture}</p>`;
-    return `
+export function render(opts) {
+  let val = parseFloat(opts.value).toFixed(opts.decimals);
+  let capture = '';
+  if (opts.capture && opts.capture.length) capture = `<p>${opts.capture}</p>`;
+  return `
       <div class="numeric-display joliePosition">
         ${capture}
         <div class="wrapper glass shadow-inner">
           <div>
             <div class="value">
               <div>
-                ${Yadoms.makeDigital(opts.value, opts.digital)}
+                ${YadomsHelper.makeDigital(opts.value, opts.digital)}
               </div>
             </div>
             <div class="unit">
@@ -26,10 +19,10 @@ class YadomsComponentNumericDisplay {
         </div>
       </div>
     `;
-  }
+}
 
-  style() {
-    return `
+export function style() {
+  return `
       .numeric-display {
         padding: 0.5rem;
         flex-direction: column;
@@ -73,12 +66,6 @@ class YadomsComponentNumericDisplay {
         font-size: 0.75rm;
       }
     `;
-  }
-
-  init($element) {}
-
-  update($element, name, value) {}
-  getProperty($element, name) {}
 }
 
-export { YadomsComponentNumericDisplay as YadomsComponent };
+export function init($element) {}

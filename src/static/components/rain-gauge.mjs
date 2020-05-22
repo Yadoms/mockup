@@ -1,15 +1,8 @@
-class YadomsComponentRainGauge {
-  constructor() {}
-
-  propsKeys() {
-    return [];
-  }
-
-  render(opts) {
-    return `
+export function render(opts) {
+  return `
       <div class="rain-gauge joliePosition">
         <div class="left">
-          ${Yadoms.useComponent('numeric-display', {
+          ${YadomsHelper.useComponent('numeric-display', {
             value: opts.hour,
             decimals: 1,
             unit: 'mm',
@@ -18,7 +11,7 @@ class YadomsComponentRainGauge {
           })}
         </div>
         <div class="right">
-          ${Yadoms.useComponent('numeric-display', {
+          ${YadomsHelper.useComponent('numeric-display', {
             value: opts.day,
             decimals: 1,
             unit: 'mm',
@@ -28,10 +21,10 @@ class YadomsComponentRainGauge {
         </div>
       </div>
     `;
-  }
+}
 
-  style() {
-    return `
+export function style() {
+  return `
       .rain-gauge > div {
         flex-grow: 1;
       }
@@ -48,12 +41,6 @@ class YadomsComponentRainGauge {
         display: inline-block;
       }
     `;
-  }
-
-  init($element) {}
-
-  update($element, name, value) {}
-  getProperty($element, name) {}
 }
 
-export { YadomsComponentRainGauge as YadomsComponent };
+export function init($element) {}

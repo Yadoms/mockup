@@ -63,9 +63,12 @@ class MasisResize {
     if (this.$element) {
       this.$element.classList.remove(this.options.active);
       let self = this;
-      Yadoms.triggerEvent('masis.resize', {
-        element: self.$element,
+      let event = new CustomEvent('masis.resize', {
+        detail: {
+          element: self.$element,
+        },
       });
+      document.dispatchEvent(event);
       this.options.callbackEnd(this.$element);
     }
     this.$element = null;

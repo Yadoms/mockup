@@ -1,13 +1,6 @@
-class YadomsComponentThermometer {
-  constructor() {}
-
-  propsKeys() {
-    return ['value', 'min', 'max', 'unit', 'digital'];
-  }
-
-  render(opts) {
-    let cl = opts.digital ? 'font-mono' : '';
-    return `
+export function render(opts) {
+  let cl = opts.digital ? 'font-mono' : '';
+  return `
       <div class="thermometer" 
           data-value="${opts.value}"
           data-min="${opts.min}"
@@ -25,10 +18,10 @@ class YadomsComponentThermometer {
         </div>
       </div>
     `;
-  }
+}
 
-  _generateTubeColor(temp, hexColor) {
-    return `
+function _generateTubeColor(temp, hexColor) {
+  return `
       .thermometer${temp} .liquid {
         background-color: ${hexColor};
       }
@@ -37,10 +30,10 @@ class YadomsComponentThermometer {
         box-shadow: 0 0 20px 0 ${hexColor};
       }
     `;
-  }
+}
 
-  style() {
-    return `
+export function style() {
+  return `
       .thermometer {
         align-items: center;
         display: flex;
@@ -109,46 +102,36 @@ class YadomsComponentThermometer {
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
       }
 
-      ${this._generateTubeColor('', '#4a5568')}
-
-      ${this._generateTubeColor('.frost', '#2b6cb0')}
-
-      ${this._generateTubeColor('.cold', '#4c51bf')}
-
-      ${this._generateTubeColor('.normal', '#6b46c1')}
-
-      ${this._generateTubeColor('.warm', '#b83280')}
-
-      ${this._generateTubeColor('.hot', '#c53030')}
+      ${_generateTubeColor('', '#4a5568')}
+      ${_generateTubeColor('.frost', '#2b6cb0')}
+      ${_generateTubeColor('.cold', '#4c51bf')}
+      ${_generateTubeColor('.normal', '#6b46c1')}
+      ${_generateTubeColor('.warm', '#b83280')}
+      ${_generateTubeColor('.hot', '#c53030')}
     `;
-  }
-
-  _fever($thermometer) {
-    $thermometer = $thermometer.querySelector('.thermometer');
-    const min = $thermometer.dataset.min,
-      max = $thermometer.dataset.max,
-      val = $thermometer.dataset.value;
-    let percent = (100 * (val - min)) / (max - min),
-      $bar = $thermometer.querySelector('.bar');
-    $bar.style.height = percent + '%';
-    if (percent < 20) $thermometer.classList.add('frost');
-    else if (percent < 40) $thermometer.classList.add('cold');
-    else if (percent < 60) $thermometer.classList.add('normal');
-    else if (percent < 80) $thermometer.classList.add('warm');
-    else $thermometer.classList.add('hot');
-  }
-
-  init($thermometer) {
-    this._fever($thermometer);
-  }
-
-  update($thermometer, name, value) {
-    $thermometer.dataset[name] = parseFloat(value);
-    $thermometer.querySelector('span.value').innerText(value);
-    this._fever($thermometer);
-  }
-
-  getProperty($element, name) {}
 }
 
-export { YadomsComponentThermometer as YadomsComponent };
+function _fever($thermometer) {
+  $thermometer = $thermometer.querySelector('.thermometer');
+  const min = $thermometer.dataset.min,
+    max = $thermometer.dataset.max,
+    val = $thermometer.dataset.value;
+  let percent = (100 * (val - min)) / (max - min),
+    $bar = $thermometer.querySelector('.bar');
+  $bar.style.height = percent + '%';
+  if (percent < 20) $thermometer.classList.add('frost');
+  else if (percent < 40) $thermometer.classList.add('cold');
+  else if (percent < 60) $thermometer.classList.add('normal');
+  else if (percent < 80) $thermometer.classList.add('warm');
+  else $thermometer.classList.add('hot');
+}
+
+export function init($thermometer) {
+  _fever($thermometer);
+}
+
+export function update($thermometer, name, value) {
+  $thermometer.dataset[name] = parseFloat(value);
+  $thermometer.querySelector('span.value').innerText(value);
+  _fever($thermometer);
+}
