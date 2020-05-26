@@ -10,6 +10,7 @@
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@fullhuman/postcss-purgecss": "^2.2.0",
     "autoprefixer": "^9.7.6",
+    "js-md5": "^0.7.3",
     "less": "^3.11.1",
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-imagemin": "^4.0.1",

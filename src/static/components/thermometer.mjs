@@ -85,7 +85,7 @@ export function style() {
         border-radius: 9999px;
         width: 2rem;
         height: 2rem;
-        border: 2px;
+        border-width: 2px;
         border-color: #718096;
         background-color: #fff;
         display: inline-flex;
@@ -95,7 +95,7 @@ export function style() {
       .thermometer .bulb .liquid {
         border-radius: 9999px;
         width: 1.5rem;
-        height: 1.5rem;
+        height: 1.25rem;
         margin: 0.25rem;
         transition-property: background-color, border-color, color, fill, stroke;
         transition-duration: 700ms;

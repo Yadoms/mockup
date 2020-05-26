@@ -1,3 +1,8 @@
+import md5 from 'js-md5';
+
+let loadLibraries = [];
+let libLoaded = [];
+
 export class YadomsHelper {
   public changeCardTitle($element, content) {
     let $cardtitle = $element.querySelector('.card-title');
@@ -24,10 +29,13 @@ export class YadomsHelper {
   }
   private static _load(tag, url) {
     return new Promise((resolve, reject) => {
+      loadLibraries.push(url);
       let $element = document.createElement(tag);
+      $element.id = `_${md5(url)}`;
       let parent = 'body';
       let attr = 'src';
       $element.onload = function () {
+        libLoaded.push(url);
         resolve(url);
       };
       $element.onerror = function () {
@@ -49,13 +57,29 @@ export class YadomsHelper {
     });
   }
 
+  private _waitForLoad(url, resolve) {
+    if (libLoaded.indexOf(url) != -1) resolve();
+    else
+      setTimeout(() => {
+        this._waitForLoad(url, resolve);
+      }, 100);
+  }
+
   public loader(...urls) {
     const cranberries = [];
     urls.forEach((url) => {
-      if (url.endsWith('.js'))
-        cranberries.push(YadomsHelper._load('script', url));
-      if (url.endsWith('.css'))
-        cranberries.push(YadomsHelper._load('link', url));
+      if (loadLibraries.indexOf(url) == -1) {
+        if (url.endsWith('.js'))
+          cranberries.push(YadomsHelper._load('script', url));
+        if (url.endsWith('.css'))
+          cranberries.push(YadomsHelper._load('link', url));
+      } else {
+        cranberries.push(
+          new Promise((resolve) => {
+            this._waitForLoad(url, resolve);
+          })
+        );
+      }
     });
     return Promise.all(cranberries);
   }

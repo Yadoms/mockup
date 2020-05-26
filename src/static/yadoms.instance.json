@@ -5,7 +5,7 @@
         "slug": "",
         "name": "Accueil",
         "icon": "home",
-        "background": "/img/alexandra-gorn-JIUjvqe2ZHg-unsplash.jpeg",
+        "background": "/backgrounds/alexandra-gorn-JIUjvqe2ZHg-unsplash.jpg",
         "cards": [
           {
             "type": "switch",
@@ -434,7 +434,7 @@
         "slug": "volets",
         "name": "Volets",
         "icon": "door-open",
-        "background": "/img/sidekix-media-hgbpEk9nDeg-unsplash.jpeg",
+        "background": "/backgrounds/sidekix-media-hgbpEk9nDeg-unsplash.jpg",
         "cards": [
           {
             "type": "switch",
@@ -535,7 +535,7 @@
         "slug": "suivi",
         "name": "Suivi",
         "icon": "chart-bar",
-        "background": "/img/sidekix-media-1vMz2_MclrM-unsplash.jpeg",
+        "background": "/backgrounds/sidekix-media-1vMz2_MclrM-unsplash.jpg",
         "cards": [
           {
             "type": "chart",
@@ -625,7 +625,7 @@
         "slug": "alarme",
         "name": "Alarmes",
         "icon": "bullhorn",
-        "background": "/img/parker-coffman-YmliIkcjP-g-unsplash.jpeg",
+        "background": "/backgrounds/parker-coffman-YmliIkcjP-g-unsplash.jpg",
         "cards": [
           {
             "type": "switch",
@@ -788,7 +788,7 @@
         "slug": "systme",
         "name": "Système",
         "icon": "hdd",
-        "background": "/img/sidekix-media-BAVam-y_9Wg-unsplash.jpeg",
+        "background": "/backgrounds/sidekix-media-BAVam-y_9Wg-unsplash.jpg",
         "cards": [
           {
             "type": "thermometer",
@@ -1040,7 +1040,7 @@
         "slug": "test",
         "name": "Test",
         "icon": "lightbulb",
-        "background": "/img/sidekix-media-g51F6-WYzyU-unsplash.jpeg",
+        "background": "/backgrounds/sidekix-media-g51F6-WYzyU-unsplash.jpg",
         "cards": [
           {
             "type": "light",
