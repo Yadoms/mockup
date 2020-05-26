@@ -5,6 +5,11 @@ html.light_theme(lang='en')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     link(rel='stylesheet', href='/main.pcss')
     link(rel='icon', href='/img/icon.png', type='image/png')
+    link(rel='apple-touch-icon', href='/img/icon_192.png')
+    meta(name='theme-color', content='#000000')
+    link(rel='manifest', href='/manifest.webmanifest')
+    title Yadoms | mockups
+    meta(name='description', content='Mockups for the next version')
 
   block vars
 
@@ -17,7 +22,11 @@ html.light_theme(lang='en')
       nav#menu
         ul
       #yadoms-icon
-        a.text-primaryColor(href='https://yadoms.com', target='_blank')
+        a.text-primaryColor(
+          href='https://yadoms.com',
+          target='_blank',
+          rel='noopener noreferrer'
+        )
           span.icon
             img(src='/img/icon.png')
           span.word Yadoms.com
@@ -31,3 +40,4 @@ html.light_theme(lang='en')
     include pug/inc/footer
 
     script(src='/ts/main.ts')
+    script(src='/js/sw.js')

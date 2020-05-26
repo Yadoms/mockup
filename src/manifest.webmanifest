@@ -1,0 +1,25 @@
+{
+  "short_name": "yadoms",
+  "name": "Yadoms Mockups",
+  "icons": [
+    {
+      "src": "img/icon.png",
+      "type": "image/png",
+      "sizes": "24x24"
+    },
+    {
+      "src": "img/icon_192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "img/icon_512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
