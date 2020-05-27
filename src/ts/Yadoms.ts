@@ -83,11 +83,13 @@ export class Yadoms {
         <a
           class="text-primaryColor hover:text-highlightColor"
           href="#/${page.slug}"
+          title="${page.name}"
         >
           <span class="icon">
             <i class="fas fa-${page.icon}"></i>
           </span>
           <span class="word md:pb-0">${page.name}</span>
+          <span class="sr-only">${page.name}</span>
         </a>
       `;
       $sidebar.appendChild($item);
