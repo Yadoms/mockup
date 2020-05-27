@@ -1,23 +1,25 @@
 mixin configItemMenu(title, icon, link)
   li
-    a(href=link, title=title)
+    a.text-primaryColor.bg-frontColor(href=link, title=title)
+      span= title
       i.fas.mono-font-xl(class=icon)
 
 footer#bottom
-  a#button-config.text-primaryColor.bg-frontColor(
-    href='#menu-config',
-    title='Configuration',
-    class='hover:text-highlightColor'
-  )
-    i.fas.fa-cog.mono-font-xl
-    span.sr-only Configuration
-  ul#menu-config.hidden
-    +configItemMenu('Résumé', 'fa-info', '#')
-    +configItemMenu('Configuration Système', 'fa-cogs', '#')
-    +configItemMenu('Plugins', 'fa-rocket', '#')
-    +configItemMenu('Equipements', 'fa-microchip', '#')
-    +configItemMenu('Centre d\'automatisation', 'fa-code-branch', '#')
-    +configItemMenu('Destinataires', 'fa-envelope', '#')
-    +configItemMenu('Installation & Mise à jour', 'fa-download', '#')
-    +configItemMenu('Maintenance', 'fa-briefcase', '#')
-    +configItemMenu('A propos', 'fa-comment', '#')
+  #bottom-wrapper
+    a#button-config.text-primaryColor.bg-frontColor(
+      href='#menu-config',
+      title='Configuration',
+      class='hover:text-highlightColor'
+    )
+      i.fas.fa-cog.mono-font-xl
+      span.sr-only Configuration
+    ul#menu-config
+      +configItemMenu('Résumé', 'fa-info', '#')
+      +configItemMenu('Configuration Système', 'fa-cogs', '#')
+      +configItemMenu('Plugins', 'fa-rocket', '#')
+      +configItemMenu('Equipements', 'fa-microchip', '#')
+      +configItemMenu('Centre d\'automatisation', 'fa-code-branch', '#')
+      +configItemMenu('Destinataires', 'fa-envelope', '#')
+      +configItemMenu('Installation & Mise à jour', 'fa-download', '#')
+      +configItemMenu('Maintenance', 'fa-briefcase', '#')
+      +configItemMenu('A propos', 'fa-comment', '#')

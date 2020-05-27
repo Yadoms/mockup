@@ -2,12 +2,6 @@
   @apply fixed py-4 pr-4 bottom-0 right-0;
 
   a {
-    i {
-      @apply block;
-    }
-  }
-
-  #button-config {
     @apply block rounded-lg border text-xl p-2 mt-1;
 
     line-height: normal;
@@ -15,29 +9,64 @@
     &:focus {
       outline: none;
     }
+    i {
+      @apply block;
+    }
   }
-  #menu-config {
-    @apply text-xl;
 
-    &,
-    li {
-      padding: 0;
-      margin: 0;
-      list-style: none;
+  #bottom-wrapper {
+    @apply flex flex-col-reverse items-end;
+
+    #menu-config {
+      @apply text-xl transform duration-500;
+
+      text-align: right;
+
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-property: all;
+      transition-duration: 300ms;
+      height: 0;
+      overflow: hidden;
+
+      &,
+      li {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        a {
+          @apply inline-flex justify-end;
+
+          span {
+            @apply text-xs pr-2 hidden;
+          }
+
+          &:hover {
+            span {
+              @apply block;
+            }
+          }
+        }
+      }
+    }
+
+    #button-config.active ~ #menu-config {
+      height: auto;
     }
   }
 }
 
 #footer(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color) {
   #bottom {
-    #button-config {
+    a {
       border-color: darken(@front_color, 2%);
 
       box-shadow: -@shadow_size -@shadow_size @shadow_size*2
           lighten(@front_color, -2.5%),
         @shadow_size @shadow_size @shadow_size*2 lighten(@front_color, 2.5%);
 
-      &.active {
+      &.active,
+      &:hover {
         color: @highlight_color;
         background: linear-gradient(
           145deg,

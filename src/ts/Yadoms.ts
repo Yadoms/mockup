@@ -41,6 +41,21 @@ export class Yadoms {
     // creation of a style balise to insert all components styles
     this.$style = document.createElement('style');
     document.querySelector('head').appendChild(this.$style);
+
+    let configState = false;
+    document.querySelector('#button-config').addEventListener(
+      'click',
+      (ev) => {
+        ev.preventDefault();
+        configState = !configState;
+        let $e = ev.currentTarget as HTMLElement;
+        $e.classList.remove('active');
+        if (configState) {
+          $e.classList.add('active');
+        }
+      },
+      false
+    );
   }
 
   public static changeTheme(theme: string) {
@@ -267,12 +282,21 @@ export class Yadoms {
     }
   }
 
+  private _wrapperRendering(render: string): string {
+    let result: string = render;
+    result = result.replace(/-=\[ID\]=-/g, `_${Date.now()}`);
+    return result;
+  }
+
   private _generateCard(card) {
+    card.properties.cardTitle = card.title;
     let $card = this._createCard(
       card.width,
       card.height,
       card.title,
-      this.components[card.type].render(card.properties),
+      this._wrapperRendering(
+        this.components[card.type].render(card.properties)
+      ),
       typeof card.battery != undefined ? card.battery : -1,
       typeof card.signal != undefined ? card.signal : -1
     );

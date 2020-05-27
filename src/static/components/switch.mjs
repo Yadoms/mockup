@@ -4,6 +4,7 @@ export function render(opts) {
     html = `
         <button class="switch-button neumorphism ${opts.state ? 'active' : ''}">
           <i class="fas fa-${opts.icon}"></i>
+          <span class="sr-only">${opts.cardTitle}</span>
         </button>
       `;
   } else if ('arrow' == opts.type) {
@@ -11,9 +12,11 @@ export function render(opts) {
         <div class="switch-arrow joliePosition">
           <button class="up shadow-inner" data-action="up">
             <i class="fas fa-caret-up"></i>
+            <span class="sr-only">Up</span>
           </button>
           <button class="down shadow-inner" data-action="down">
             <i class="fas fa-caret-down"></i>
+            <span class="sr-only">Down</span>
           </button>
         </div>
       `;
@@ -21,7 +24,10 @@ export function render(opts) {
     html = `
         <div class="switch-toggle">
           <div>
-            <input type="checkbox" ${opts.state == true ? 'checked' : ''} />
+            <label for="-=[ID]=-" class="sr-only">${opts.cardTitle}</label>
+            <input id="-=[ID]=-" type="checkbox" ${
+              opts.state == true ? 'checked' : ''
+            } />
             <div class="wrapper shadow-inner">
               <div class="round shadow transform"></div>
             </div>
