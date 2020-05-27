@@ -38,6 +38,7 @@ export class Yadoms {
       window.matchMedia('(prefers-color-scheme: dark)').matches
     )
       Yadoms.changeTheme('dark');
+    else Yadoms.changeTheme('light');
     // creation of a style balise to insert all components styles
     this.$style = document.createElement('style');
     document.querySelector('head').appendChild(this.$style);
