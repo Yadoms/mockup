@@ -1,0 +1,40 @@
+#subpage(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color) {
+  .subpage {
+    &:before {
+      @apply inset-0 absolute;
+      z-index: -1;
+      background-color: fade(@base_color, 80%);
+      content: ' ';
+    }
+    @apply z-50 inset-0 absolute p-20 flex;
+
+    .subpage-wrapper {
+      @apply flex-grow flex flex-col z-0;
+      background-color: @base_color;
+
+      .subpage-title {
+        @apply m-1 p-3 flex;
+        color: @primary_color;
+        border-bottom: 1px solid @primary_color;
+
+        span {
+          @apply flex-grow;
+        }
+
+        a {
+          &:hover {
+            color: @highlight_color;
+          }
+        }
+      }
+
+      .subpage-content {
+        @apply m-3 flex-grow;
+
+        & > div {
+          @apply h-full;
+        }
+      }
+    }
+  }
+}

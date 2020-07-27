@@ -5,6 +5,7 @@ import { MasisResize } from '../js/lib/masis.resize.js';
 import { themes } from './YadomsThemes';
 import { YadomsHelper } from './YadomsHelper';
 import { ResizeObserver } from 'resize-observer';
+import * as Blockly from 'blockly';
 
 declare global {
   interface Window {
@@ -24,12 +25,12 @@ export class Yadoms {
   private _masisDelete = null;
   private _breakpoints = {
     width: [],
-    height: [],
+    height: []
   };
   private _maxCardWidthSize: number = 5;
   private _maxCardHeightSize: number = 5;
   private _positionOptions = {
-    pad: 154,
+    pad: 154
   };
 
   public constructor() {
@@ -46,7 +47,7 @@ export class Yadoms {
     let configState = false;
     document.querySelector('#button-config').addEventListener(
       'click',
-      (ev) => {
+      ev => {
         ev.preventDefault();
         configState = !configState;
         let $e = ev.currentTarget as HTMLElement;
@@ -78,7 +79,7 @@ export class Yadoms {
 
   public createMenu() {
     const $sidebar = document.querySelector('nav#menu ul');
-    this.pages.forEach((page) => {
+    this.pages.forEach(page => {
       let $item = document.createElement('li');
       $item.innerHTML = `
         <a
@@ -99,10 +100,10 @@ export class Yadoms {
 
   public createNavigationSystem() {
     let $items = document.querySelectorAll('nav#menu ul li a');
-    $items.forEach(($el) => {
+    $items.forEach($el => {
       $el.addEventListener(
         'click',
-        (ev) => {
+        ev => {
           ev.stopImmediatePropagation();
           let $e = ev.currentTarget as HTMLElement;
           this.viewPage($e.getAttribute('href').slice(2));
@@ -183,7 +184,7 @@ export class Yadoms {
     this._masisMove = new MasisMove(this._masis, {
       class: '🏄',
       ghost: '👻',
-      exclude: '🤖',
+      exclude: '🤖'
     });
 
     const resizeCard = ($el, width, height, setHeight = false) => {
@@ -220,20 +221,20 @@ export class Yadoms {
         $card.dataset.cardTmpHeight = newH;
         MasisPosition(self._masis);
       },
-      callbackEnd: ($card) => {
+      callbackEnd: $card => {
         $card.dataset.cardWidth = $card.dataset.cardTmpWidth;
         $card.dataset.cardHeight = $card.dataset.cardTmpHeight;
-      },
+      }
     });
 
     this._masisDelete = new MasisDelete(this._masis, {
       class: '🗑️',
-      message: 'Etes-vous sûr de vouloir supprimer cette tuile ?',
+      message: 'Etes-vous sûr de vouloir supprimer cette tuile ?'
     });
 
     MasisPosition(this._masis, this._positionOptions);
 
-    const resizeObserver = new ResizeObserver((entries) => {
+    const resizeObserver = new ResizeObserver(entries => {
       MasisPosition(this._masis, this._positionOptions);
     });
 
@@ -243,18 +244,18 @@ export class Yadoms {
 
     document.querySelector('#button-design').addEventListener(
       'click',
-      (ev) => {
+      ev => {
         ev.preventDefault();
         wrenchState = !wrenchState;
         let $e = ev.currentTarget as HTMLElement;
         $e.classList.remove('active');
         if (wrenchState) {
           $e.classList.add('active');
-          self._masis.$children.forEach(($el) => {
+          self._masis.$children.forEach($el => {
             $el.classList.add('🏄');
           });
         } else {
-          self._masis.$children.forEach(($el) => {
+          self._masis.$children.forEach($el => {
             $el.classList.remove('🏄');
           });
         }
@@ -263,9 +264,12 @@ export class Yadoms {
     );
   }
 
-  public viewPage(slug) {
+  public viewPage(slug: string) {
+    if (slug.startsWith('!/')) slug = '';
+    let found: Boolean = false;
     for (let page of this.pages) {
       if (page.slug == slug) {
+        found = true;
         if (page.background != '') {
           let $cover = document.querySelector(
             '#illustration .cover'
@@ -273,7 +277,7 @@ export class Yadoms {
           $cover.style.backgroundImage = `url(${page.background})`;
         }
         let $sidebar_items = document.querySelectorAll('#menu a');
-        $sidebar_items.forEach((el) => {
+        $sidebar_items.forEach(el => {
           let $e = el.parentNode as HTMLElement;
           $e.classList.remove('active');
           if (el.getAttribute('href') == `#/${page.slug}`)
@@ -283,6 +287,86 @@ export class Yadoms {
         break;
       }
     }
+    if (!found) this.viewPage('');
+  }
+
+  private _viewConfigPage(slug: string, title: string) {
+    slug = slug.substr(2);
+    let content: string = '';
+    if ('code' == slug) {
+      content = `
+        <div id='blocklyDiv'></div>
+        <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+          <block type="controls_ifelse"></block>
+          <block type="logic_compare"></block>
+          <block type="logic_operation"></block>
+          <block type="controls_repeat_ext">
+              <value name="TIMES">
+                  <shadow type="math_number">
+                      <field name="NUM">10</field>
+                  </shadow>
+              </value>
+          </block>
+          <block type="logic_operation"></block>
+          <block type="logic_negate"></block>
+          <block type="logic_boolean"></block>
+          <block type="logic_null" disabled="true"></block>
+          <block type="logic_ternary"></block>
+          <block type="text_charAt">
+              <value name="VALUE">
+                  <block type="variables_get">
+                      <field name="VAR">text</field>
+                  </block>
+              </value>
+          </block>
+      </xml>`;
+      this._generateConfigPage(title, content);
+      var toolbox = document.getElementById('toolbox');
+      var workspace = Blockly.inject('blocklyDiv', {
+        comments: true,
+        collapse: true,
+        disable: true,
+        grid: {
+          spacing: 25,
+          length: 3,
+          colour: '#ccc',
+          snap: true
+        },
+        toolbox: toolbox,
+        zoom: {
+          controls: true,
+          wheel: true,
+          startScale: 1.0,
+          maxScale: 4,
+          minScale: 0.25,
+          scaleSpeed: 1.1
+        }
+      });
+    }
+  }
+
+  private _generateConfigPage(title: string, content: string) {
+    let subpagetemplate: string = `
+      <div class="subpage-wrapper">
+        <div class="subpage-title">
+          <span>${title}</span>
+          <a id="subpage-close" href="#">x</a>
+        </div>
+        <div class="subpage-content">${content}</div>
+      </div>
+    `;
+    let $subpage = document.createElement('div');
+    $subpage.classList.add('subpage');
+    $subpage.innerHTML = subpagetemplate;
+    document.querySelector('body').appendChild($subpage);
+    document.querySelector('#subpage-close').addEventListener(
+      'click',
+      () => {
+        let sub = document.querySelector('.subpage');
+        sub.parentNode.removeChild(sub);
+      },
+      true
+    );
   }
 
   private _wrapperRendering(render: string): string {
@@ -319,9 +403,9 @@ export class Yadoms {
     document.querySelector('#cards').innerHTML = '';
     let self = this;
     let cranberries = [];
-    cards.forEach((card) => {
+    cards.forEach(card => {
       cranberries.push(
-        new Promise((resolve) => {
+        new Promise(resolve => {
           YadomsHelper.loadComponent(card.type).then(() => {
             self._generateCard(card);
             resolve();
@@ -336,6 +420,22 @@ export class Yadoms {
       this._masisResize.init();
       this._masisDelete.init();
       MasisPosition(this._masis);
+    });
+  }
+
+  public manageAppLinks() {
+    document.querySelectorAll('#menu-config a').forEach($a => {
+      $a.addEventListener(
+        'click',
+        ev => {
+          ev.stopImmediatePropagation();
+          this._viewConfigPage(
+            $a.getAttribute('href').slice(2),
+            $a.getAttribute('title')
+          );
+        },
+        true
+      );
     });
   }
 }
