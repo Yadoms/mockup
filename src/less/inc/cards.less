@@ -11,7 +11,7 @@
     @apply mt-1 pt-1 p-2 font-bold text-xs h-8 truncate;
 
     &.no-border {
-      border-top: none;
+      @apply border-t-0;
     }
 
     .icon {
@@ -23,9 +23,7 @@
     @apply flex-grow;
 
     > div > div {
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
+      @apply w-full h-full overflow-hidden;
     }
   }
 
@@ -46,58 +44,47 @@
   .cardSize(5);
 
   &#🤖 {
-    opacity: 1;
+    @apply opacity-100;
     transition-duration: 0ms;
   }
 
   &.👻 {
+    @apply opacity-50;
     z-index: 99;
-    opacity: 0.5;
     transition-duration: 0ms;
   }
 
   &.🏄 {
-    cursor: move;
+    @apply cursor-move;
     &::before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 50;
-      opacity: 0.2;
+      @apply inset-0 absolute z-50 opacity-25;
       content: ' ';
     }
   }
 
   &.📜 {
-    z-index: 10;
+    @apply z-10;
   }
 
   .📐 {
-    display: none;
-    position: absolute;
+    @apply hidden absolute w-4 h-4;
     bottom: -1px;
     right: -1px;
     z-index: 99;
     content: '';
-    width: 1rem;
-    height: 1rem;
     cursor: se-resize;
     border-top-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
   }
 
   .🗑️ {
-    display: none;
-    position: absolute;
+    @apply hidden absolute cursor-pointer;
     top: 0.5rem;
     right: 0.5rem;
     z-index: 99;
-    cursor: pointer;
     &::before {
+      @apply block;
       content: '🗑️';
-      display: block;
     }
   }
 
@@ -113,7 +100,7 @@
 
     &.🏄 .📐,
     &.🏄 .🗑️ {
-      display: block;
+      @apply block;
     }
   }
 }

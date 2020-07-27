@@ -7,7 +7,7 @@
     line-height: normal;
 
     &:focus {
-      outline: none;
+      @apply outline-none;
     }
     i {
       @apply block;
@@ -18,21 +18,13 @@
     @apply flex flex-col-reverse items-end;
 
     #menu-config {
-      @apply text-xl transform duration-500;
-
-      text-align: right;
+      @apply text-xl transform duration-500 text-right transition-all h-0 duration-300 overflow-hidden;
 
       transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-property: all;
-      transition-duration: 300ms;
-      height: 0;
-      overflow: hidden;
 
       &,
       li {
-        padding: 0;
-        margin: 0;
-        list-style: none;
+        @apply p-0 m-0 list-none;
 
         a {
           @apply inline-flex justify-end;
