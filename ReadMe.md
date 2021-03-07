@@ -1,31 +1,24 @@
-# Yadoms mockup 2k20
+# Yadoms mockup 2k21
 
-The `dest` directory contains the generated previews.
+The `dist` directory contains the generated previews.
 
 If you want to modify them, you need to rebuild them with the gulp tasks.
 
 ## Development environment
 
+### Installation : 
+
 First you need `nodejs`
 
-To generate the previews, I recommend the `yarn` tool, instead of `npm`.
-
+Install all devDependencies present in `package.json`
 ```
-npm install -g yarn
-```
-
-Then you have to set yarn to last version for the current project (mockup)
-
-After installing `yarn`, you have to install all devDependencies present in `package.json`.
-
-```
-yarn install
+npm install
 ```
 
 Then launch
 
 ```
-yarn dev
+npm run dev
 ```
 
 to have the development environment (watcher, livereload, ...)
@@ -33,7 +26,7 @@ to have the development environment (watcher, livereload, ...)
 To build the source then delete `dist` and launch
 
 ```
-yarn build
+npm run build
 ```
 
 ## Theme mode
