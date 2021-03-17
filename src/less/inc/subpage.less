@@ -1,6 +1,7 @@
 #subpage(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color) {
   .subpage {
-    &:before {
+
+     &:before {
       @apply inset-0 absolute;
       z-index: -1;
       background-color: fade(@base_color, 80%);
@@ -9,7 +10,7 @@
     @apply z-50 inset-0 absolute p-20 flex;
 
     .subpage-wrapper {
-      @apply flex-grow flex flex-col z-0;
+      @apply flex-grow flex flex-col z-0 shadow-lg;
       background-color: @base_color;
 
       .subpage-title {
@@ -30,6 +31,8 @@
 
       .subpage-content {
         @apply m-3 flex-grow;
+
+        color: @primary_color;
 
         & > div {
           @apply h-full;

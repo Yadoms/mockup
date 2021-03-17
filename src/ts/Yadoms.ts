@@ -290,59 +290,41 @@ export class Yadoms {
     if (!found) this.viewPage('');
   }
 
+  private _postProcessConfigPageCode() {
+    var toolbox = document.getElementById('toolbox');
+    var workspace = Blockly.inject('blocklyDiv', {
+      comments: true,
+      collapse: true,
+      disable: true,
+      grid: {
+        spacing: 25,
+        length: 3,
+        colour: '#ccc',
+        snap: true
+      },
+      toolbox: toolbox,
+      zoom: {
+        controls: true,
+        wheel: true,
+        startScale: 1.0,
+        maxScale: 4,
+        minScale: 0.25,
+        scaleSpeed: 1.1
+      }
+    });
+  }
+
   private _viewConfigPage(slug: string, title: string) {
     slug = slug.substr(2);
     let content: string = '';
-    if ('code' == slug) {
-      content = `
-        <div id='blocklyDiv'></div>
-        <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
-          <block type="controls_ifelse"></block>
-          <block type="logic_compare"></block>
-          <block type="logic_operation"></block>
-          <block type="controls_repeat_ext">
-              <value name="TIMES">
-                  <shadow type="math_number">
-                      <field name="NUM">10</field>
-                  </shadow>
-              </value>
-          </block>
-          <block type="logic_operation"></block>
-          <block type="logic_negate"></block>
-          <block type="logic_boolean"></block>
-          <block type="logic_null" disabled="true"></block>
-          <block type="logic_ternary"></block>
-          <block type="text_charAt">
-              <value name="VALUE">
-                  <block type="variables_get">
-                      <field name="VAR">text</field>
-                  </block>
-              </value>
-          </block>
-      </xml>`;
-      this._generateConfigPage(title, content);
-      var toolbox = document.getElementById('toolbox');
-      var workspace = Blockly.inject('blocklyDiv', {
-        comments: true,
-        collapse: true,
-        disable: true,
-        grid: {
-          spacing: 25,
-          length: 3,
-          colour: '#ccc',
-          snap: true
-        },
-        toolbox: toolbox,
-        zoom: {
-          controls: true,
-          wheel: true,
-          startScale: 1.0,
-          maxScale: 4,
-          minScale: 0.25,
-          scaleSpeed: 1.1
-        }
+    fetch(`/config_pages/${slug}.html`)
+      .then(response => {
+        return response.text();
+      })
+      .then(html => {
+        this._generateConfigPage(title, html);
+        if ('code' == slug) this._postProcessConfigPageCode();
       });
-    }
   }
 
   private _generateConfigPage(title: string, content: string) {
@@ -350,7 +332,7 @@ export class Yadoms {
       <div class="subpage-wrapper">
         <div class="subpage-title">
           <span>${title}</span>
-          <a id="subpage-close" href="#">x</a>
+          <a id="subpage-close" href="#">&times;</a>
         </div>
         <div class="subpage-content">${content}</div>
       </div>
