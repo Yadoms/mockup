@@ -4,6 +4,9 @@
   #button-design {
     @apply block rounded-lg border text-xl p-2 mb-1;
 
+    color: var(--primaryColor);
+    background-color: var(--frontColor);
+
     line-height: normal;
 
     &:focus {
@@ -13,10 +16,14 @@
     i {
       @apply block;
     }
+
+    &:hover {
+      color: var(--highlightColor);
+    }
   }
 }
 
-#header(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color) {
+#header(@base_color, @front_color) {
   #top {
     #button-design {
       border-color: darken(@front_color, 2%);
@@ -26,7 +33,7 @@
         @shadow_size @shadow_size @shadow_size*2 lighten(@front_color, 2.5%);
 
       &.active {
-        color: @highlight_color;
+        color: var(--highlightColor);
         background: linear-gradient(
           145deg,
           lighten(@base_color, 1.5%),

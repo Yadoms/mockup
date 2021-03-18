@@ -26,7 +26,7 @@ input[type='number'] {
   outline: none !important;
 }
 
-#helpers(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color) {
+#helpers(@base_color) {
   .neumorphism {
     border-color: darken(@base_color, 2%);
     box-shadow: -@shadow_size -@shadow_size @shadow_size*2

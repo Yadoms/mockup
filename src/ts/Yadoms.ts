@@ -82,15 +82,11 @@ export class Yadoms {
     this.pages.forEach(page => {
       let $item = document.createElement('li');
       $item.innerHTML = `
-        <a
-          class="text-primaryColor hover:text-highlightColor"
-          href="#/${page.slug}"
-          title="${page.name}"
-        >
+        <a href="#/${page.slug}" title="${page.name}">
           <span class="icon">
             <i class="fas fa-${page.icon}"></i>
           </span>
-          <span class="word md:pb-0">${page.name}</span>
+          <span class="word">${page.name}</span>
           <span class="sr-only">${page.name}</span>
         </a>
       `;
@@ -122,7 +118,7 @@ export class Yadoms {
     signal = -1
   ) {
     let $div = document.createElement('div');
-    let cls = ['card', 'text-primaryColor', 'bg-baseColor'];
+    let cls = ['card'];
     $div.classList.add(...cls);
     let batteryContent = '';
     let signalContent = '';
@@ -146,7 +142,7 @@ export class Yadoms {
         ${signalContent}
         <span class="title">${title}</span>
       </div>
-      <div class="card-wrapper flex-grow">
+      <div class="card-wrapper">
         <div class="card-width-${width} card-height-${height}">
           ${content}
         </div>

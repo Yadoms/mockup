@@ -1,5 +1,4 @@
 @import './cards.less';
-@import './colors.less';
 @import './footer.less';
 @import './header.less';
 @import './helpers.less';
@@ -30,11 +29,22 @@ main {
 #makeTheme(@base_color, 
            @front_color, 
            @active_color, 
-           @primary_color, 
+           @primary_color,
            @highlight_color, 
            @shadow_color, 
            @text_shadow_color
     ) {
+
+  &:root {
+    --baseColor: @base_color;
+    --frontColor: @front_color;
+    --activeColor: @active_color;
+    --primaryColor: @primary_color;
+    --highlightColor: @highlight_color;
+    --shadowColor: @shadow_color;
+    --text_shadowColor: @text_shadow_color;
+  }
+
   #illustration {
     .filter {
       background: linear-gradient(
@@ -45,22 +55,10 @@ main {
     }
   }
 
-  #sidebar {
-    li.active {
-      background-color: @active_color;
-      border-color: @highlight_color;
-    }
-
-    a:hover {
-      @color: @highlight_color;
-    }
-  }
-
-  #helpers(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text_shadow_color);
-  #header(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text_shadow_color);
-  #footer(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text_shadow_color);
-  #subpage(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text_shadow_color);
-  #cards(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text_shadow_color);
-  #colors(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text_shadow_color);
-  #shadows(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text_shadow_color);
+  #helpers(@base_color);
+  #header(@base_color, @front_color);
+  #footer(@base_color, @front_color);
+  #subpage(@base_color);
+  #cards(@base_color, @front_color, @active_color);
+  #shadows(@shadow_color, @text_shadow_color);
 }

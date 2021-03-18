@@ -29,6 +29,9 @@
         a {
           @apply inline-flex justify-end;
 
+          color: var(--primaryColor);
+          background-color: var(--frontColor);
+
           span {
             @apply text-xs pr-2 hidden;
           }
@@ -42,13 +45,22 @@
       }
     }
 
+    #button-config {
+      color: var(--primaryColor);
+      background-color: var(--frontColor);
+
+      &:hover {
+        color: var(--highlightColor);
+      }
+    }
+
     #button-config.active ~ #menu-config {
       height: auto;
     }
   }
 }
 
-#footer(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color) {
+#footer(@base_color, @front_color) {
   #bottom {
     a {
       border-color: darken(@front_color, 2%);
@@ -59,7 +71,7 @@
 
       &.active,
       &:hover {
-        color: @highlight_color;
+        color: var(--highlightColor);
         background: linear-gradient(
           145deg,
           lighten(@base_color, 1.5%),

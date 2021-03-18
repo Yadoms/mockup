@@ -1,4 +1,4 @@
-#subpage(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color) {
+#subpage(@base_color) {
   .subpage {
 
      &:before {
@@ -11,12 +11,12 @@
 
     .subpage-wrapper {
       @apply flex-grow flex flex-col z-0 shadow-lg;
-      background-color: @base_color;
+      background-color: var(--baseColor);
 
       .subpage-title {
         @apply m-1 p-3 flex;
-        color: @primary_color;
-        border-bottom: 1px solid @primary_color;
+        color: var(--primaryColor);
+        border-bottom: 1px solid var(--primaryColor);
 
         span {
           @apply flex-grow;
@@ -24,7 +24,7 @@
 
         a {
           &:hover {
-            color: @highlight_color;
+            color: var(--highlightColor);
           }
         }
       }
@@ -32,7 +32,7 @@
       .subpage-content {
         @apply m-3 flex-grow;
 
-        color: @primary_color;
+        color: var(--primaryColor);
 
         & > div {
           @apply h-full;

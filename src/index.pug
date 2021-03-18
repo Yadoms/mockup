@@ -18,11 +18,11 @@ html.dark_theme(lang='en')
       .filter
       .cover
 
-    #sidebar.w-16.bg-frontColor(class='hover:w-48 hover:shadow-2xl')
+    #sidebar
       nav#menu
         ul
       #yadoms-icon
-        a.text-primaryColor(
+        a(
           href='https://yadoms.com',
           target='_blank',
           rel='noopener noreferrer'
@@ -40,4 +40,3 @@ html.dark_theme(lang='en')
     include pug/inc/footer
 
     script(src='/ts/main.ts')
-    //script(src='/js/sw.js')

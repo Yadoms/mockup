@@ -7,6 +7,9 @@
 .card {
   @apply m-2 top-0 left-0 transform transition-card duration-150 rounded-lg p-1 inline-flex flex-col-reverse;
 
+  color: var(--primaryColor);
+  background-color: var(--baseColor);
+
   .card-title {
     @apply mt-1 pt-1 p-2 font-bold text-xs h-8 truncate;
 
@@ -105,7 +108,7 @@
   }
 }
 
-#cards(@base_color, @front_color, @active_color, @primary_color, @highlight_color, @shadow_color, @text-shadow_color) {
+#cards(@base_color, @front_color, @active_color) {
   .card {
     border: 1px solid fadein(@active_color, 0.2);
 
@@ -121,7 +124,7 @@
     }
 
     &#🤖 {
-      border-color: @highlight_color;
+      border-color: var(--highlightColor);
     }
 
     &.🏄 {

@@ -1,6 +1,11 @@
 #sidebar {
-  @apply h-screen flex items-center fixed shadow ease-in-out transition-all duration-300 z-50 flex-col;
+  @apply h-screen flex items-center fixed shadow ease-in-out transition-all duration-300 z-50 flex-col w-16;
+
+  background-color: var(--frontColor);
+
   &:hover {
+    @apply w-48 shadow-2xl;
+
     .word {
       opacity: 1 !important;
     }
@@ -12,6 +17,19 @@
       color: var(--highlightColor);
     }
   }
+
+  li.active {
+    background-color: var(--activeColor);
+    border-color: var(--highlightColor);
+  }
+
+  a {
+    color: var(--primaryColor);
+    &:hover {
+      color: var(--highlightColor);
+    }
+  }
+    
 
   #menu {
     @apply w-full flex-grow;
@@ -46,6 +64,7 @@
 
     a {
       @apply block align-middle flex p-2 no-underline;
+      color: var(--primaryColor);
 
       .icon {
         @apply inline-block w-6 text-center;
@@ -55,5 +74,11 @@
         @apply absolute text-sm opacity-0 ml-3 ease-in-out transition-opacity duration-300 ml-6 pl-2 pb-0;
       }
     }
+  }
+}
+
+@screen md {
+  #sidebar ul li a .word {
+    @apply pb-0;
   }
 }

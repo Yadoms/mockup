@@ -1,15 +1,14 @@
 mixin configItemMenu(title, icon, link)
   li
-    a.text-primaryColor.bg-frontColor(href=link, title=title)
+    a(href=link, title=title)
       span= title
       i.fas.mono-font-xl(class=icon)
 
 footer#bottom
   #bottom-wrapper
-    a#button-config.text-primaryColor.bg-frontColor(
+    a#button-config(
       href='#menu-config',
-      title='Configuration',
-      class='hover:text-highlightColor'
+      title='Configuration'
     )
       i.fas.fa-cog.mono-font-xl
       span.sr-only Configuration
