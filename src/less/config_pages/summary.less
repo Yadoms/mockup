@@ -1,0 +1,37 @@
+.summary{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__card{
+    width: 650px;
+    height: 200px;
+    border: solid;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+
+    ul{
+      li{
+        margin-right: 1.5rem;
+      }
+    }
+    &__icon{
+      flex-basis: 30%;
+      i{
+        color: var(--highlightColor);
+      }
+    }
+    &__items{
+      flex-basis: 30%;
+    }
+    &__values{
+      flex-basis: 25%;
+    }
+  }
+}
+.left{
+  border-right-width: 1px;
+  border-color: var(--primaryColor);
+}
