@@ -77,4 +77,4 @@ var o;!function(e,t){"function"==typeof o&&o.amd?o(["./browser"],t):"object"==ty
 },{"./Yadoms":"nZlp","./YadomsThemes":"fMY5"}],"g7hl":[function(require,module,exports) {
 "use strict";var e=require("./Yadoms"),o=require("./YadomsConsole"),n=require("./YadomsHelper");e.Yadoms.ready(function(){window.Yadoms=new o.YadomsConsole,window.YadomsHelper=new n.YadomsHelper,fetch("/yadoms.instance.json").then(function(e){return e.json()}).then(function(e){window.YadomsApp.pages=e.instance.pages,window.YadomsApp.createMenu(),window.YadomsApp.createNavigationSystem(),window.YadomsApp.createCardManagementSystem(),window.YadomsApp.manageAppLinks(),window.YadomsApp.viewPage(window.location.hash.slice(2))})});
 },{"./Yadoms":"nZlp","./YadomsConsole":"ggtb","./YadomsHelper":"Nne7"}]},{},["g7hl"], null)
-//# sourceMappingURL=/main.6d6d2b10.js.map
+//# sourceMappingURL=main.6d6d2b10.js.map
