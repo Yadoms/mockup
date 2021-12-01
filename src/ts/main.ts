@@ -13,7 +13,7 @@ Yadoms.ready(() => {
   window.Yadoms = new YadomsConsole();
   window.YadomsHelper = new YadomsHelper();
 
-  fetch('/yadoms.instance.json')
+  fetch('./yadoms.instance.json')
     .then(response => response.json())
     .then(json => {
       window.YadomsApp.pages = json.instance.pages;
